@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { businessInfo } from '../data/business';
 
 export function Footer() {
@@ -77,9 +78,13 @@ export function Footer() {
         {/* Footer bottom */}
         <div className="py-6 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} {businessInfo.name}. Alle rechten voorbehouden.
-            </p>
+            <div className="text-gray-400 text-sm flex items-center gap-2">
+              <span>&copy; {new Date().getFullYear()} {businessInfo.name}.</span>
+              <span>Alle rechten voorbehouden.</span>
+              <Link to="/disclaimer" className="text-gray-400 hover:text-white transition-colors">
+                Disclaimer
+              </Link>
+            </div>
             
             <div className="flex items-center gap-4">
               <a 

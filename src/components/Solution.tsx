@@ -48,6 +48,11 @@ export function Solution() {
                   <span>Depressie</span>
                 </li>
               </ul>
+              <div className="mt-4 text-xs text-gray-400">
+                <Link to="/disclaimer" className="hover:text-blue-600 transition-colors">
+                  Lees onze disclaimer
+                </Link>
+              </div>
             </div>
           </div>
 

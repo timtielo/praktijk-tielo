@@ -38,10 +38,10 @@ export function Symptoms() {
           </div>
 
           <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <Droplets className="w-10 h-10 text-blue-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-3">Vocht in onderbuik</h3>
+            <Activity className="w-10 h-10 text-blue-600 mb-4" />
+            <h3 className="text-xl font-semibold mb-3">Sportblessures</h3>
             <p className="text-gray-600">
-              Je merkt dat er vocht achterblijft in je onderbuik en dit voelt onprettig
+              Je hebt last van blessures die je belemmeren tijdens het sporten
             </p>
           </div>
         </div>

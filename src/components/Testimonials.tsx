@@ -6,7 +6,7 @@ export function Testimonials() {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">Wat onze cliënten zeggen</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">Wat onze klanten zeggen</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
             <div key={testimonial.name} className="bg-white p-6 rounded-lg shadow-sm">
