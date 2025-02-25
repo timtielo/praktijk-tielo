@@ -35,11 +35,13 @@ export function Header() {
         <nav className="flex items-center justify-between h-20">
           <Link 
             to="/" 
-            className={`text-2xl font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-gray-900' : 'text-gray-900'
-            }`}
+            className="flex items-center py-2"
           >
-            {businessInfo.name}
+            <img 
+              src="/assets/logos/praktijktielotransparent.svg" 
+              alt={businessInfo.name}
+              className="h-16 w-auto"
+            />
           </Link>
 
           {/* Mobile menu button */}

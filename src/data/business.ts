@@ -2,7 +2,7 @@ export const businessInfo = {
   name: "Praktijk Tielo",
   contact: {
     phone: "030 - 123 4567",
-    email: "info@praktijktielo.nl",
+    email: "info@praktijk-tielo.nl",
     address: {
       street: "Binnenkort",
       postalCode: "0000",
