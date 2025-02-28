@@ -141,7 +141,7 @@ export function Solution() {
         <div className="mt-12 text-center">
           <Link
             to="/contact"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold inline-flex items-center gap-2 transition-colors shadow-lg shadow-blue-600/20"
+            className="btn-cta btn-cta-shine bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold inline-flex items-center gap-2 transition-colors shadow-lg shadow-blue-600/20"
           >
             Begin je herstel nu <ChevronRight className="w-5 h-5" />
           </Link>

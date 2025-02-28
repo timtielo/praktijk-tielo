@@ -4,6 +4,8 @@ import { businessInfo } from '../data/business';
 import { testimonials } from '../data/testimonials';
 import { SEO } from '../components/SEO';
 import { submitContactForm, type ContactFormData } from '../utils/forms';
+import { TestimonialsSection } from '../components/blocks/testimonials-with-marquee';
+import { extendedTestimonialsShadcn } from '../data/testimonials';
 
 export function ContactPage() {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -51,7 +53,7 @@ export function ContactPage() {
       
       {/* Contact Hero */}
       <section className="min-h-[400px] bg-gradient-to-br from-blue-50 to-white flex items-center">
-        <div className="container mx-auto px-4 pt-32 pb-16">
+        <div className="container mx-auto px-4 pt-32 pb-12">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Begin vandaag nog met je herstel</h1>
             <p className="text-gray-600 text-xl mb-8">
@@ -75,18 +77,18 @@ export function ContactPage() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
-            <div className="mb-8">
+            <div className="mb-6">
               <h2 className="text-2xl font-bold mb-4">Plan je afspraak</h2>
               <p className="text-gray-600">
                 Laat je gegevens achter en we nemen binnen 24 uur contact met je op.
               </p>
             </div>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Je naam *
@@ -149,7 +151,7 @@ export function ContactPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-colors ${
+                className={`btn-cta btn-cta-shine w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-colors ${
                   isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
                 }`}
               >
@@ -180,7 +182,7 @@ export function ContactPage() {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <h2 className="text-2xl font-bold mb-6">Direct contact opnemen?</h2>
               <div className="space-y-6">
@@ -247,32 +249,15 @@ export function ContactPage() {
           </div>
         </div>
 
-        {/* Reviews Section */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold mb-8 text-center">Wat anderen zeggen over onze behandeling</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.name} className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-6">"{testimonial.text}"</p>
-                <div className="flex items-center gap-4">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-gray-500">Tevreden klant</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Testimonials Marquee Section */}
+        <div className="mt-10 -mx-4">
+          <h2 className="text-2xl font-bold mb-4 px-4">Wat anderen zeggen over onze behandeling</h2>
+          <TestimonialsSection
+            title=""
+            description=""
+            testimonials={extendedTestimonialsShadcn}
+            className="bg-white py-6 sm:py-8"
+          />
         </div>
       </div>
     </>

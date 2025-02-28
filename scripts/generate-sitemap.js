@@ -19,6 +19,16 @@ const routes = [
     path: '/contact',
     changefreq: 'monthly',
     priority: 0.8
+  },
+  {
+    path: '/disclaimer',
+    changefreq: 'yearly',
+    priority: 0.5
+  },
+  {
+    path: '/reviews',
+    changefreq: 'weekly',
+    priority: 0.9
   }
 ];
 
@@ -38,3 +48,5 @@ fs.writeFileSync(
   path.join(__dirname, '../dist/sitemap.xml'),
   sitemap
 );
+
+console.log('Sitemap generated successfully!');

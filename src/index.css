@@ -7,3 +7,70 @@
     transform: translateX(100%);
   }
 }
+
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@layer components {
+  .btn-cta {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+  
+  .btn-cta:hover {
+    @apply shadow-lg;
+  }
+  
+  .btn-cta:hover svg {
+    animation: slide-right 1s ease-in-out infinite;
+  }
+  
+  .btn-cta::after {
+    content: '';
+    @apply absolute inset-0 w-full h-full bg-white opacity-0 transition-opacity duration-300;
+  }
+  
+  .btn-cta:active::after {
+    @apply opacity-20;
+  }
+  
+  .btn-cta-pulse {
+    animation: pulse-scale 2s ease-in-out infinite;
+  }
+  
+  .btn-cta-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .btn-cta-shine::before {
+    content: '';
+    @apply absolute top-0 left-0 w-1/3 h-full bg-white opacity-0 skew-x-[45deg] transform-gpu;
+    animation: shimmer 2.5s ease-in-out infinite;
+  }
+}

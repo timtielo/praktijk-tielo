@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { businessInfo } from '../data/business';
 import { useScrollDirection } from '../hooks/useScrollDirection';
@@ -44,6 +44,17 @@ export function Header() {
             />
           </Link>
 
+          {/* Desktop navigation */}
+          <div className="hidden md:flex items-center gap-6">
+            <Link 
+              to="/reviews" 
+              className="flex items-center gap-1 text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              <Star className="w-4 h-4" />
+              <span>Reviews</span>
+            </Link>
+          </div>
+
           {/* Mobile menu button */}
           <button
             className="md:hidden"
@@ -76,7 +87,7 @@ export function Header() {
             </div>
             <Link 
               to="/contact"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+              className="btn-cta bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
             >
               Maak afspraak
             </Link>
@@ -89,6 +100,14 @@ export function Header() {
             isMenuOpen ? 'block' : 'hidden'
           } py-4 space-y-4 bg-white rounded-lg shadow-lg mt-2`}
         >
+          <Link
+            to="/reviews"
+            className="flex items-center gap-2 px-4 text-gray-600 hover:text-blue-600"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Star className="w-4 h-4" />
+            <span>Reviews</span>
+          </Link>
           <a
             href={`tel:${contact.phone}`}
             className="flex items-center gap-2 px-4 text-gray-600 hover:text-blue-600"
@@ -108,7 +127,7 @@ export function Header() {
           <div className="px-4 pb-2">
             <Link
               to="/contact"
-              className="block w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors text-center"
+              className="btn-cta block w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Maak afspraak

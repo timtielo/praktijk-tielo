@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
 import { ContactPage } from './pages/ContactPage';
 import { DisclaimerPage } from './pages/DisclaimerPage';
+import { ReviewsPage } from './pages/ReviewsPage';
 import { ScrollToTop } from './components/ScrollToTop';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/disclaimer" element={<DisclaimerPage />} />
+          <Route path="/reviews" element={<ReviewsPage />} />
         </Routes>
       </main>
       <Footer />

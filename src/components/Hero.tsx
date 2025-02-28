@@ -89,13 +89,13 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 to="/contact"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-colors shadow-lg shadow-blue-600/20 hover:shadow-blue-600/30"
+                className="btn-cta btn-cta-pulse bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-colors shadow-lg shadow-blue-600/20 hover:shadow-blue-600/30"
               >
                 Plan een afspraak <ChevronRight className="w-5 h-5" />
               </Link>
               <button
                 onClick={scrollToTreatment}
-                className="bg-white hover:bg-gray-50 text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-colors border border-gray-200"
+                className="btn-cta bg-white hover:bg-gray-50 text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-colors border border-gray-200"
               >
                 Bekijk onze aanpak
               </button>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Clock, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { businessInfo } from '../data/business';
 
@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4">
         {/* Main footer content */}
-        <div className="py-12 grid md:grid-cols-2 gap-12">
+        <div className="py-12 grid md:grid-cols-3 gap-12">
           <div className="space-y-6">
             <div>
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
@@ -69,6 +69,41 @@ export function Footer() {
                       {contact.address.postalCode} {contact.address.city}
                     </span>
                   </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-xl font-bold mb-4">Links</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link 
+                    to="/reviews"
+                    className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                  >
+                    <Star className="w-4 h-4 text-blue-400" />
+                    Reviews
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/contact"
+                    className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                  >
+                    <Mail className="w-4 h-4 text-blue-400" />
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/disclaimer"
+                    className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                  >
+                    <MapPin className="w-4 h-4 text-blue-400" />
+                    Disclaimer
+                  </Link>
                 </li>
               </ul>
             </div>

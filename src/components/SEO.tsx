@@ -17,7 +17,7 @@ export function SEO({
   canonicalPath
 }: SEOProps) {
   const fullTitle = `${title} | ${name}`;
-  const baseUrl = 'https://praktijktielo.nl';
+  const baseUrl = 'https://www.praktijk-tielo.nl';
   const canonicalUrl = canonicalPath ? `${baseUrl}${canonicalPath}` : baseUrl;
   
   return (
@@ -30,14 +30,14 @@ export function SEO({
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
-      <meta property="og:url" content={window.location.href} />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={window.location.href} />
+      <meta property="twitter:url" content={canonicalUrl} />
       <meta property="twitter:title" content={fullTitle} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80" />
