@@ -17,12 +17,12 @@ const routes = [
   },
   {
     path: '/contact',
-    changefreq: 'monthly',
+    changefreq: 'weekly',
     priority: 0.8
   },
   {
     path: '/disclaimer',
-    changefreq: 'yearly',
+    changefreq: 'weekly',
     priority: 0.5
   },
   {
