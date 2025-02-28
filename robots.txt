@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /disclaimer
 
-Sitemap: https://praktijktielo.nl/sitemap.xml
+Sitemap: https://www.praktijk-tielo.nl/sitemap.xml

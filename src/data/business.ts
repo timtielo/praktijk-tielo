@@ -1,12 +1,12 @@
 export const businessInfo = {
   name: "Praktijk Tielo",
   contact: {
-    phone: "030 - 123 4567",
+    phone: "030 - 000 0000",
     email: "info@praktijk-tielo.nl",
     address: {
-      street: "Binnenkort",
-      postalCode: "0000",
-      city: "Utrecht"
+      street: "",
+      postalCode: "",
+      city: "Regio Utrecht"
     }
   },
   openingHours: {

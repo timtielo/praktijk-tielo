@@ -12,7 +12,7 @@ export function HomePage() {
     <>
       <SEO 
         title="Herstel van je fysieke en mentale klachten"
-        description="Praktijk Tielo: Ervaren fysiotherapeuten gespecialiseerd in het behandelen van rugklachten. ✓ Binnen 24 uur terecht ✓ Ook 's avonds open ✓ Persoonlijke aanpak"
+        description="Praktijk Tielo ✓ Binnen 24 uur terecht ✓ Ook 's avonds open ✓ Persoonlijke aanpak"
         canonicalPath="/"
       />
       <Hero />

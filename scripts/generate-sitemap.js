@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const baseUrl = 'https://praktijktielo.nl';
+const baseUrl = 'https://www.praktijk-tielo.nl';
 const today = new Date().toISOString().split('T')[0];
 
 // Define your routes and their metadata

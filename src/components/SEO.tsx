@@ -43,7 +43,7 @@ export function SEO({
       <meta property="twitter:image" content="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80" />
 
       {/* Additional SEO */}
-      <meta name="keywords" content="praktijk tielo, fysiotherapie, rugklachten, utrecht, manuele therapie, rugpijn, fysio" />
+      <meta name="keywords" content="praktijk tielo, rugklachten, utrecht, rugpijn, fysieke therapie, hoofdpijn" />
       <meta name="author" content="Praktijk Tielo" />
       <meta name="robots" content="index, follow" />
       

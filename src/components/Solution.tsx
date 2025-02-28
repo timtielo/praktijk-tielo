@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, Clock, Repeat, Heart } from 'lucide-react';
+import { ChevronRight, Clock, Repeat, Heart, Euro } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function Solution() {
@@ -41,7 +41,7 @@ export function Solution() {
                 </li>
                 <li className="flex items-center gap-2">
                   <ChevronRight className="w-5 h-5 text-blue-600" />
-                  <span>ADD/ADHD</span>
+                  <span>Spierkrampen</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <ChevronRight className="w-5 h-5 text-blue-600" />
@@ -78,7 +78,7 @@ export function Solution() {
                     <Heart className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Tweede behandeling (90 min)</h4>
+                    <h4 className="font-semibold">Tweede behandeling (60 min)</h4>
                     <p className="text-blue-100">
                       Herhaling eerste behandeling plus warmtebehandeling voor betere doorbloeding en verankering.
                     </p>
@@ -96,6 +96,21 @@ export function Solution() {
                     </p>
                   </div>
                 </div>
+                
+                <div className="mt-4 pt-4 border-t border-blue-500">
+                  <div className="flex gap-4 items-center">
+                    <div className="flex-shrink-0">
+                      <Euro className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">Tarieven</h4>
+                      <p className="text-blue-100">
+                        <span className="line-through">€130,-</span> <span className="font-bold">€100,-</span> per afspraak
+                        <span className="block text-xs mt-1">Prijs geldig t/m april 2025</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -105,6 +120,10 @@ export function Solution() {
                 <li className="flex items-start gap-2">
                   <ChevronRight className="w-5 h-5 mt-1 text-blue-600 flex-shrink-0" />
                   <span>De eerste twee behandelingen vinden binnen enkele dagen na elkaar plaats.</span>
+                </li>
+                 <li className="flex items-start gap-2">
+                  <ChevronRight className="w-5 h-5 mt-1 text-blue-600 flex-shrink-0" />
+                  <span>Je krijgt zelfhulpoefeningen mee. Zo blijf je soepel.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <ChevronRight className="w-5 h-5 mt-1 text-blue-600 flex-shrink-0" />
