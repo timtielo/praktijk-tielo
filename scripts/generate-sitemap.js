@@ -29,18 +29,61 @@ const routes = [
     path: '/reviews',
     changefreq: 'weekly',
     priority: 0.9
+  },
+  // English routes
+  {
+    path: '/en',
+    changefreq: 'weekly',
+    priority: 1.0
+  },
+  {
+    path: '/en/contact',
+    changefreq: 'weekly',
+    priority: 0.8
+  },
+  {
+    path: '/en/disclaimer',
+    changefreq: 'weekly',
+    priority: 0.5
+  },
+  {
+    path: '/en/reviews',
+    changefreq: 'weekly',
+    priority: 0.9
   }
 ];
 
 // Generate sitemap XML
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${routes.map(route => `  <url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${routes.map(route => {
+  // Determine alternate URLs
+  const isEnglish = route.path.startsWith('/en');
+  const dutchPath = isEnglish ? route.path.replace('/en', '') || '/' : route.path;
+  const englishPath = isEnglish ? route.path : `/en${route.path === '/' ? '' : route.path}`;
+  
+  return `  <url>
     <loc>${baseUrl}${route.path}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
-  </url>`).join('\n')}
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="nl" 
+      href="${baseUrl}${dutchPath}" 
+    />
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="en" 
+      href="${baseUrl}${englishPath}" 
+    />
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="x-default" 
+      href="${baseUrl}${dutchPath}" 
+    />
+  </url>`}).join('\n')}
 </urlset>`;
 
 // Write sitemap to public directory

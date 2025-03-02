@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Star, ExternalLink, Loader2 } from 'lucide-react';
 import { cn } from '../lib/utils';
+import { useTranslation } from 'react-i18next';
 
 interface GoogleReview {
   author_name: string;
   rating: number;
   text: string;
+  text_en?: string; // English translation
   time: number;
   profile_photo_url: string;
 }
@@ -23,22 +25,56 @@ export function GoogleReviews({
   className,
   limit = 5
 }: GoogleReviewsProps) {
+  const { t, i18n } = useTranslation();
   const [reviews, setReviews] = useState<GoogleReview[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [averageRating, setAverageRating] = useState(0);
   const [totalReviews, setTotalReviews] = useState(0);
+  const currentLanguage = i18n.language;
 
   // For demo purposes, we'll use mock data since we don't have a real API key
   const mockReviews: GoogleReview[] = [
     {
-      author_name: "Lisa",
+      author_name: "Thijs",
       rating: 5,
-      text: "Top",
+      text: "Was echt top, ik heb geen last meer van mijn knie en enkel door Tim. Alle gewrichten zitten weer los en daardoor kost bewegen bijna geen energie meer. Ik kan iedereen aanraden om naar Tim te gaan.",
+      text_en: "It was really great, I no longer have any problems with my knee and ankle thanks to Tim. All joints are loose again and therefore moving takes almost no energy. I can recommend everyone to go to Tim.",
       time: new Date().getTime() / 1000 - 86400 * 7, // 7 days ago
-      profile_photo_url: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150"
+      profile_photo_url: "https://lh3.googleusercontent.com/a/ACg8ocJGrhTmDSdGYh0dEAkNS7tGE7JEVFL5vYy0VxQiaMz0debENw=w60-h60-p-rp-mo-br100"
+    },
+    {
+      author_name: "Placeholder",
+      rating: 5,
+      text: "Placeholder review",
+      text_en: "Placeholder review",
+      time: new Date().getTime() / 1000 - 86400 * 14, // 14 days ago
+      profile_photo_url: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150"
+    },
+    {
+      author_name: "Placeholder",
+      rating: 5,
+      text: "Placeholder review",
+      text_en: "Placeholder review",
+      time: new Date().getTime() / 1000 - 86400 * 21, // 21 days ago
+      profile_photo_url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150"
+    },
+    {
+      author_name: "Placeholder",
+      rating: 5,
+      text: "Placeholder review",
+      text_en: "Placeholder review",
+      time: new Date().getTime() / 1000 - 86400 * 28, // 28 days ago
+      profile_photo_url: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150"
+    },
+    {
+      author_name: "Placeholder",
+      rating: 5,
+      text: "Placeholder review",
+      text_en: "Placeholder review",
+      time: new Date().getTime() / 1000 - 86400 * 35, // 35 days ago
+      profile_photo_url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150"
     }
-    
   ];
 
   useEffect(() => {
@@ -62,21 +98,29 @@ export function GoogleReviews({
         setTotalReviews(data.length);
         setLoading(false);
       } catch (err) {
-        setError('Er is een fout opgetreden bij het ophalen van de reviews.');
+        setError(currentLanguage.startsWith('nl') 
+          ? 'Er is een fout opgetreden bij het ophalen van de reviews.' 
+          : 'An error occurred while fetching the reviews.');
         setLoading(false);
       }
     };
 
     fetchReviews();
-  }, [placeId, apiKey, limit]);
+  }, [placeId, apiKey, limit, currentLanguage]);
 
   const formatDate = (timestamp: number) => {
     const date = new Date(timestamp * 1000);
-    return new Intl.DateTimeFormat('nl-NL', { 
+    const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
+    return new Intl.DateTimeFormat(locale, { 
       year: 'numeric', 
       month: 'long', 
       day: 'numeric' 
     }).format(date);
+  };
+
+  // Get the appropriate review text based on the current language
+  const getReviewText = (review: GoogleReview) => {
+    return currentLanguage.startsWith('nl') ? review.text : (review.text_en || review.text);
   };
 
   if (loading) {
@@ -116,7 +160,9 @@ export function GoogleReviews({
               ))}
             </div>
           </div>
-          <p className="text-gray-600">{totalReviews} reviews op Google</p>
+          <p className="text-gray-600">
+            {totalReviews} {currentLanguage.startsWith('nl') ? 'reviews op Google' : 'reviews on Google'}
+          </p>
         </div>
         <a 
           href={`https://search.google.com/local/reviews?placeid=${placeId}`}
@@ -124,7 +170,7 @@ export function GoogleReviews({
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
         >
-          <span>Bekijk alle reviews op Google</span>
+          <span>{t('reviewsPage.googleReviews.viewAll')}</span>
           <ExternalLink className="w-4 h-4" />
         </a>
       </div>
@@ -160,7 +206,7 @@ export function GoogleReviews({
                     />
                   ))}
                 </div>
-                <p className="text-gray-700">{review.text}</p>
+                <p className="text-gray-700">{getReviewText(review)}</p>
               </div>
             </div>
           </div>
@@ -169,7 +215,7 @@ export function GoogleReviews({
 
       {/* Google attribution */}
       <div className="text-center text-sm text-gray-500">
-        <p>Reviews worden opgehaald via Google. Praktijk Tielo heeft geen invloed op de inhoud van deze reviews.</p>
+        <p>{t('reviewsPage.googleReviews.attribution')}</p>
       </div>
     </div>
   );

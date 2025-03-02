@@ -8,6 +8,7 @@ interface TestimonialsSectionProps {
     author: TestimonialAuthor
     text: string
     href?: string
+    id?: string
   }>
   className?: string
 }
@@ -41,15 +42,23 @@ export function TestimonialsSection({
         )}
 
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-          <div className="group flex overflow-hidden p-2 [--gap:1.5rem] [gap:var(--gap)] flex-row [--duration:80s]">
+          <div className="group flex overflow-hidden p-2 [--gap:1.5rem] [gap:var(--gap)] flex-row [--duration:40s]">
             <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
-              {[...Array(4)].map((_, setIndex) => (
-                testimonials.map((testimonial, i) => (
-                  <TestimonialCard 
-                    key={`${setIndex}-${i}`}
-                    {...testimonial}
-                  />
-                ))
+              {testimonials.map((testimonial, i) => (
+                <TestimonialCard 
+                  key={`original-${testimonial.id || i}`}
+                  {...testimonial}
+                />
+              ))}
+            </div>
+            
+            {/* Duplicate set for seamless looping */}
+            <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+              {testimonials.map((testimonial, i) => (
+                <TestimonialCard 
+                  key={`duplicate-${testimonial.id || i}`}
+                  {...testimonial}
+                />
               ))}
             </div>
           </div>

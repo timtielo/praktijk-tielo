@@ -1,0 +1,302 @@
+{
+  "meta": {
+    "home": {
+      "title": "Herstel van je fysieke en mentale klachten",
+      "description": "Praktijk Tielo ✓ Binnen 24 uur terecht ✓ Ook 's avonds open ✓ Persoonlijke aanpak"
+    },
+    "contact": {
+      "title": "Contact - Maak direct een afspraak",
+      "description": "Plan direct een afspraak bij Praktijk Tielo. ✓ Blijvend resultaat ✓ Ook 's avonds en in het weekend ✓ Persoonlijke aanpak"
+    },
+    "reviews": {
+      "title": "Reviews - Wat onze klanten zeggen",
+      "description": "Lees wat onze klanten zeggen over Praktijk Tielo. Echte ervaringen van tevreden klanten die geholpen zijn met hun klachten."
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "description": "Lees onze disclaimer voor belangrijke informatie over onze diensten en verantwoordelijkheden."
+    }
+  },
+  "header": {
+    "reviews": "Reviews",
+    "makeAppointment": "Maak afspraak",
+    "language": "Taal"
+  },
+  "hero": {
+    "title": "Heb jij fysieke- of mentale klachten?",
+    "subtitle": "Deze klachten maken je dagelijks leven een stuk lastiger. Onnodig. Wij helpen je weer in beweging te komen.",
+    "cta": {
+      "appointment": "Plan een afspraak",
+      "approach": "Bekijk onze aanpak"
+    },
+    "benefits": {
+      "quickResults": "Snel en blijvend resultaat",
+      "personalApproach": "Persoonlijke aanpak",
+      "gentleTreatment": "Zachte behandeling",
+      "flexibleHours": "Ook 's avonds en in het weekend open"
+    }
+  },
+  "symptoms": {
+    "title": "Herken je dit?",
+    "subtitle": "Veel van onze klanten komen bij ons met deze klachten. Herken jij je hierin?",
+    "cards": {
+      "notFeelGood": {
+        "title": "Niet lekker in je vel",
+        "description": "Je voelt je niet energiek en komt maar niet in je normale ritme"
+      },
+      "sleepProblems": {
+        "title": "Slaapproblemen",
+        "description": "Je ligt 's nachts te woelen en kan maar geen comfortabele houding vinden"
+      },
+      "backPain": {
+        "title": "Pijntjes in je rug",
+        "description": "Regelmatig last van rugpijn die je dagelijkse activiteiten beïnvloedt"
+      },
+      "sportsInjuries": {
+        "title": "Sportblessures",
+        "description": "Je hebt last van blessures die je belemmeren tijdens het sporten"
+      }
+    },
+    "conclusion": {
+      "part1": "Deze klachten kunnen je dagelijks leven behoorlijk beïnvloeden.",
+      "part2": "Wij helpen je graag om weer in balans te komen."
+    }
+  },
+  "solution": {
+    "title": "Onze behandelmethode",
+    "subtitle": "Bij Praktijk Tielo werken we met eenvoudige zelfhulpoefeningen die je lichaam helpen terug te keren naar zijn natuurlijke houding.",
+    "howItWorks": {
+      "title": "Hoe het werkt",
+      "description1": "Natuurlijke bewegingen in combinatie met lichte aanrakingen op specifieke plaatsen maken het mogelijk dat de positie van heupen, wervelkolom, heiligbeen en stuitbeen waar nodig wordt gecorrigeerd.",
+      "description2": "Het herstellen van de positie van de wervelkolom en andere gewrichten kan lichaamsfuncties op zowel lichamelijk als geestelijk gebied verbeteren."
+    },
+    "forWhom": {
+      "title": "Voor wie is het geschikt?",
+      "description": "Onze instructie is geschikt voor mensen met uiteenlopende klachten en kan voor jong en oud een groot verschil maken:",
+      "items": {
+        "physicalPain": "Lichamelijke pijnen",
+        "migraines": "Migraines",
+        "muscleCramps": "Spierkrampen",
+        "depression": "Depressie"
+      },
+      "disclaimer": "Lees onze disclaimer"
+    },
+    "treatment": {
+      "title": "Behandeltraject",
+      "first": {
+        "title": "Eerste behandeling (60 min)",
+        "description": "Uitlijnen van de wervelkolom, correctie van het heiligbeen en beenlengte verschil."
+      },
+      "second": {
+        "title": "Tweede behandeling (60 min)",
+        "description": "Herhaling eerste behandeling plus warmtebehandeling voor betere doorbloeding en verankering."
+      },
+      "followUp": {
+        "title": "Vervolgtraject",
+        "description": "Vervolgafspraken na 1, 3 en 6 maanden om je lichaam steeds meer in lijn te krijgen."
+      },
+      "rates": {
+        "title": "Tarieven",
+        "description": "€100,- per afspraak",
+        "validUntil": "Prijs geldig t/m april 2025"
+      }
+    },
+    "important": {
+      "title": "Belangrijk om te weten",
+      "items": {
+        "twoTreatments": "De eerste twee behandelingen vinden binnen enkele dagen na elkaar plaats.",
+        "selfHelp": "Je krijgt zelfhulpoefeningen mee. Zo blijf je soepel.",
+        "afterAccident": "Na een val of ongeluk is het raadzaam om opnieuw twee instructies na elkaar te plannen.",
+        "preventive": "De behandeling past ook uitstekend in een preventieve leefstijl."
+      }
+    },
+    "cta": "Begin je herstel nu"
+  },
+  "testimonials": {
+    "title": "Wat onze klanten zeggen",
+    "viewAll": "Bekijk alle reviews",
+    "satisfiedClient": "Tevreden klant"
+  },
+  "usps": {
+    "title": "Waarom kiezen voor Praktijk Tielo?",
+    "subtitle": "Wij bieden een unieke aanpak die zich richt op jouw persoonlijke situatie",
+    "cards": {
+      "quickResults": {
+        "title": "Snel en blijvend resultaat",
+        "description": "Onze behandelmethode is erop gericht om niet alleen snelle verlichting te bieden, maar ook langdurige resultaten te behalen"
+      },
+      "personalApproach": {
+        "title": "Persoonlijke aanpak",
+        "description": "We kijken naar jouw specifieke situatie en stellen een behandelplan op dat bij jou past"
+      },
+      "flexibleHours": {
+        "title": "Flexibele openingstijden",
+        "description": "Ook 's avonds en in het weekend open op afspraak, zodat je altijd een moment vindt dat past"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "form": {
+      "name": "Je naam *",
+      "email": "Je e-mail *",
+      "phone": "Je telefoonnummer",
+      "message": "Je bericht *",
+      "send": "Stuur bericht",
+      "sending": "Versturen...",
+      "success": "Je bericht is succesvol verzonden!",
+      "error": "Er is iets misgegaan. Probeer het later opnieuw."
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Begin vandaag nog met je herstel",
+      "subtitle": "Plan een afspraak en zie het verschil.",
+      "benefits": {
+        "gentleTreatment": "Zachte behandeling",
+        "personalApproach": "Persoonlijke aanpak",
+        "lastingResults": "Blijvend resultaat"
+      }
+    },
+    "form": {
+      "title": "Plan je afspraak",
+      "subtitle": "Laat je gegevens achter en we nemen binnen 24 uur contact met je op.",
+      "name": "Je naam *",
+      "namePlaceholder": "Bijv. Jan Jansen",
+      "email": "Je e-mailadres *",
+      "emailPlaceholder": "Bijv. jan@email.nl",
+      "phone": "Je telefoonnummer",
+      "phonePlaceholder": "Bijv. +31 6 12345678",
+      "message": "Je bericht *",
+      "messagePlaceholder": "Bijv. Beschikbare data voor een afspraak",
+      "send": "Verstuur",
+      "sending": "Versturen...",
+      "success": {
+        "title": "Je bericht is succesvol verzonden!",
+        "subtitle": "We nemen binnen 24 uur contact met je op."
+      },
+      "error": {
+        "title": "Er is iets misgegaan.",
+        "subtitle": "Probeer het later opnieuw of bel ons direct."
+      }
+    },
+    "directContact": {
+      "title": "Direct contact opnemen?",
+      "call": {
+        "title": "Bel direct",
+        "action": "Bel ons"
+      },
+      "email": {
+        "title": "Mail ons",
+        "action": "Mail ons"
+      },
+      "visit": {
+        "title": "Bezoek ons",
+        "action": "Bezoek ons"
+      }
+    },
+    "openingHours": {
+      "title": "Openingstijden"
+    },
+    "testimonials": {
+      "title": "Wat anderen zeggen over onze behandeling"
+    }
+  },
+  "reviewsPage": {
+    "hero": {
+      "title": "Wat onze klanten zeggen",
+      "subtitle": "Ontdek de ervaringen van mensen die we hebben geholpen met hun klachten."
+    },
+    "clientTestimonials": {
+      "title": "Klantbeoordelingen"
+    },
+    "cta": {
+      "title": "Klaar om je klachten aan te pakken?",
+      "subtitle": "Sluit je aan bij onze tevreden klanten en begin vandaag nog met je herstel. We helpen je graag met een persoonlijke aanpak.",
+      "button": "Maak een afspraak"
+    }
+  },
+  "disclaimer": {
+    "title": "Disclaimer – Praktijk Tielo",
+    "sections": {
+      "general": {
+        "title": "1. Algemeen",
+        "content": "Deze website, www.praktijktielo.nl, en de diensten die Praktijk Tielo aanbiedt, zijn gericht op ontspanning en welzijn. De informatie op deze website is uitsluitend bedoeld voor informatieve doeleinden en mag niet worden opgevat als medisch advies, diagnose of behandeling. Door deze website te bezoeken en gebruik te maken van de diensten van Praktijk Tielo, stemt u in met de voorwaarden zoals hieronder beschreven."
+      },
+      "noMedicalCare": {
+        "title": "2. Geen medische of therapeutische zorg",
+        "items": [
+          "De behandelingen en diensten aangeboden door Praktijk Tielo zijn complementair en gericht op ontspanning en welzijn.",
+          "Wij stellen geen medische diagnoses en behandelen geen medische aandoeningen.",
+          "De behandelingen zijn geen vervanging voor medische of psychologische zorg. Indien u medische of psychische klachten heeft, raden wij u aan contact op te nemen met een gekwalificeerde arts of specialist.",
+          "Praktijk Tielo kan niet aansprakelijk worden gesteld voor beslissingen die u neemt op basis van de aangeboden behandelingen of de informatie op deze website."
+        ]
+      },
+      "resultsLiability": {
+        "title": "3. Resultaten en aansprakelijkheid",
+        "items": [
+          "De resultaten van behandelingen variëren per persoon. Praktijk Tielo kan geen garantie geven over specifieke uitkomsten.",
+          "Behandelingen zijn bedoeld als ondersteuning en ontspanning en niet als oplossing voor medische of psychische aandoeningen.",
+          "Praktijk Tielo is niet aansprakelijk voor enige directe of indirecte schade die voortkomt uit het gebruik van onze diensten of informatie, tenzij sprake is van opzet of grove nalatigheid."
+        ]
+      },
+      "privacy": {
+        "title": "4. Privacy en gegevensbescherming",
+        "items": [
+          "Praktijk Tielo gaat zorgvuldig om met uw persoonsgegevens en houdt zich aan de Algemene Verordening Gegevensbescherming (AVG).",
+          "De informatie die tijdens behandelingen wordt gedeeld, wordt vertrouwelijk behandeld en zal niet worden verstrekt aan derden zonder uw toestemming, tenzij wettelijk verplicht."
+        ]
+      },
+      "clientResponsibility": {
+        "title": "5. Verantwoordelijkheid van de cliënt",
+        "items": [
+          "De cliënt is zelf verantwoordelijk voor het verstrekken van juiste en volledige informatie over hun gezondheidstoestand.",
+          "De cliënt blijft altijd zelf verantwoordelijk voor het nemen van beslissingen omtrent hun gezondheid en welzijn."
+        ]
+      },
+      "changes": {
+        "title": "6. Wijzigingen en aanpassingen",
+        "items": [
+          "Praktijk Tielo behoudt zich het recht voor om deze disclaimer en de inhoud van de website op elk moment te wijzigen zonder voorafgaande kennisgeving.",
+          "Het is uw verantwoordelijkheid om regelmatig deze pagina te controleren op eventuele aanpassingen."
+        ]
+      },
+      "applicableLaw": {
+        "title": "7. Toepasselijk recht en geschillen",
+        "items": [
+          "Op alle diensten en deze disclaimer is het Nederlands recht van toepassing.",
+          "Eventuele geschillen worden voorgelegd aan de bevoegde rechter in Nederland."
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "Mocht u vragen hebben over deze disclaimer, neem dan contact met ons op via:",
+        "items": {
+          "email": "E-mail: info@praktijk-tielo.nl",
+          "phone": "Telefoon: ",
+          "website": "Website: www.praktijktielo.nl"
+        }
+      }
+    }
+  },
+  "footer": {
+    "openingHours": {
+      "title": "Openingstijden",
+      "weekdays": "Maandag - Vrijdag",
+      "saturday": "Zaterdag",
+      "sunday": "Zondag",
+      "byAppointment": "Op afspraak"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "links": {
+      "title": "Links",
+      "reviews": "Reviews",
+      "contact": "Contact",
+      "disclaimer": "Disclaimer"
+    },
+    "copyright": "Alle rechten voorbehouden.",
+    "disclaimer": "Disclaimer"
+  }
+}

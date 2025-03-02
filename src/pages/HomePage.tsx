@@ -11,8 +11,8 @@ export function HomePage() {
   return (
     <>
       <SEO 
-        title="Herstel van je fysieke en mentale klachten"
-        description="Praktijk Tielo ✓ Binnen 24 uur terecht ✓ Ook 's avonds open ✓ Persoonlijke aanpak"
+        titleKey="meta.home.title"
+        descriptionKey="meta.home.description"
         canonicalPath="/"
       />
       <Hero />

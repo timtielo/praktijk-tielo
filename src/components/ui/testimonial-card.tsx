@@ -1,6 +1,7 @@
 import { cn } from "../../lib/utils"
 import { Avatar, AvatarImage } from "./avatar"
 import { Star } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 export interface TestimonialAuthor {
   name: string
@@ -22,6 +23,7 @@ export function TestimonialCard({
   href,
   className
 }: TestimonialCardProps) {
+  const { t } = useTranslation();
   const Card = href ? 'a' : 'div'
   const rating = author.rating || 5;
   
@@ -46,7 +48,7 @@ export function TestimonialCard({
             {author.name}
           </h3>
           <p className="text-sm text-gray-500">
-            {author.handle}
+            {t('testimonials.satisfiedClient')}
           </p>
         </div>
       </div>

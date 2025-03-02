@@ -3,12 +3,15 @@ import { Menu, X, Phone, Mail, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { businessInfo } from '../data/business';
 import { useScrollDirection } from '../hooks/useScrollDirection';
+import { LanguageSwitcher } from './LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const scrollDirection = useScrollDirection();
   const { contact } = businessInfo;
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,8 +54,9 @@ export function Header() {
               className="flex items-center gap-1 text-gray-700 hover:text-blue-600 transition-colors"
             >
               <Star className="w-4 h-4" />
-              <span>Reviews</span>
+              <span>{t('header.reviews')}</span>
             </Link>
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile menu button */}
@@ -89,7 +93,7 @@ export function Header() {
               to="/contact"
               className="btn-cta bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
             >
-              Maak afspraak
+              {t('header.makeAppointment')}
             </Link>
           </div>
         </nav>
@@ -106,8 +110,11 @@ export function Header() {
             onClick={() => setIsMenuOpen(false)}
           >
             <Star className="w-4 h-4" />
-            <span>Reviews</span>
+            <span>{t('header.reviews')}</span>
           </Link>
+          <div className="px-4">
+            <LanguageSwitcher />
+          </div>
           <a
             href={`tel:${contact.phone}`}
             className="flex items-center gap-2 px-4 text-gray-600 hover:text-blue-600"
@@ -130,7 +137,7 @@ export function Header() {
               className="btn-cta block w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors text-center"
               onClick={() => setIsMenuOpen(false)}
             >
-              Maak afspraak
+              {t('header.makeAppointment')}
             </Link>
           </div>
         </div>

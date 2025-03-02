@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import { Phone, Mail, MapPin, MessageSquare, Loader2 } from 'lucide-react';
 import { businessInfo } from '../data/business';
 import { submitContactForm, type ContactFormData } from '../utils/forms';
+import { useTranslation } from 'react-i18next';
 
 export function Contact() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     phone: '',
     message: '',
-    form: 'contact'
+    form: 'contact',
+    submittedAt: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -20,13 +23,16 @@ export function Contact() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    const success = await submitContactForm(formData);
+    const success = await submitContactForm({
+      ...formData,
+      submittedAt: new Date().toISOString()
+    });
 
     setIsSubmitting(false);
     setSubmitStatus(success ? 'success' : 'error');
 
     if (success) {
-      setFormData({ name: '', email: '', phone: '', message: '', form: 'contact' });
+      setFormData({ name: '', email: '', phone: '', message: '', form: 'contact', submittedAt: '' });
       setTimeout(() => setSubmitStatus('idle'), 3000);
     }
   };
@@ -41,7 +47,7 @@ export function Contact() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-3xl font-bold mb-6">Contact</h2>
+            <h2 className="text-3xl font-bold mb-6">{t('contact.title')}</h2>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-blue-600" />
@@ -60,7 +66,7 @@ export function Contact() {
           <div>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Je naam *</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.form.name')}</label>
                 <input
                   type="text"
                   name="name"
@@ -71,7 +77,7 @@ export function Contact() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Je e-mail *</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.form.email')}</label>
                 <input
                   type="email"
                   name="email"
@@ -82,7 +88,7 @@ export function Contact() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Je telefoonnummer</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.form.phone')}</label>
                 <input
                   type="tel"
                   name="phone"
@@ -92,7 +98,7 @@ export function Contact() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Je bericht *</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.form.message')}</label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -112,19 +118,19 @@ export function Contact() {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
-                    Versturen...
+                    {t('contact.form.sending')}
                   </>
                 ) : (
                   <>
-                    Stuur bericht <MessageSquare className="w-5 h-5" />
+                    {t('contact.form.send')} <MessageSquare className="w-5 h-5" />
                   </>
                 )}
               </button>
               {submitStatus === 'success' && (
-                <p className="text-green-600 text-sm">Je bericht is succesvol verzonden!</p>
+                <p className="text-green-600 text-sm">{t('contact.form.success')}</p>
               )}
               {submitStatus === 'error' && (
-                <p className="text-red-600 text-sm">Er is iets misgegaan. Probeer het later opnieuw.</p>
+                <p className="text-red-600 text-sm">{t('contact.form.error')}</p>
               )}
             </form>
           </div>

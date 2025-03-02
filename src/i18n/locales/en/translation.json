@@ -1,0 +1,302 @@
+{
+  "meta": {
+    "home": {
+      "title": "Recovery from your physical and mental complaints",
+      "description": "Praktijk Tielo ✓ Available within 24 hours ✓ Also open in the evening ✓ Personal approach"
+    },
+    "contact": {
+      "title": "Contact - Make an appointment directly",
+      "description": "Schedule an appointment directly at Praktijk Tielo. ✓ Lasting results ✓ Also open evenings and weekends ✓ Personal approach"
+    },
+    "reviews": {
+      "title": "Reviews - What our clients say",
+      "description": "Read what our clients say about Praktijk Tielo. Real experiences from satisfied clients who have been helped with their complaints."
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "description": "Read our disclaimer for important information about our services and responsibilities."
+    }
+  },
+  "header": {
+    "reviews": "Reviews",
+    "makeAppointment": "Make appointment",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Do you have physical or mental complaints?",
+    "subtitle": "These complaints make your daily life much more difficult. Unnecessarily. We help you get moving again.",
+    "cta": {
+      "appointment": "Schedule an appointment",
+      "approach": "View our approach"
+    },
+    "benefits": {
+      "quickResults": "Quick and lasting results",
+      "personalApproach": "Personal approach",
+      "gentleTreatment": "Gentle treatment",
+      "flexibleHours": "Also open in the evenings and on weekends"
+    }
+  },
+  "symptoms": {
+    "title": "Do you recognize this?",
+    "subtitle": "Many of our clients come to us with these complaints. Do you recognize yourself in this?",
+    "cards": {
+      "notFeelGood": {
+        "title": "Not feeling well",
+        "description": "You don't feel energetic and can't get into your normal rhythm"
+      },
+      "sleepProblems": {
+        "title": "Sleep problems",
+        "description": "You toss and turn at night and can't find a comfortable position"
+      },
+      "backPain": {
+        "title": "Back pain",
+        "description": "Regular back pain that affects your daily activities"
+      },
+      "sportsInjuries": {
+        "title": "Sports injuries",
+        "description": "You have injuries that hinder you during sports"
+      }
+    },
+    "conclusion": {
+      "part1": "These complaints can significantly affect your daily life.",
+      "part2": "We are happy to help you get back in balance."
+    }
+  },
+  "solution": {
+    "title": "Our treatment method",
+    "subtitle": "At Praktijk Tielo, we work with simple self-help exercises that help your body return to its natural posture.",
+    "howItWorks": {
+      "title": "How it works",
+      "description1": "Natural movements combined with light touches at specific places make it possible to correct the position of hips, spine, sacrum, and coccyx where necessary.",
+      "description2": "Restoring the position of the spine and other joints can improve bodily functions in both physical and mental areas."
+    },
+    "forWhom": {
+      "title": "Who is it suitable for?",
+      "description": "Our instruction is suitable for people with various complaints and can make a big difference for young and old:",
+      "items": {
+        "physicalPain": "Physical pain",
+        "migraines": "Migraines",
+        "muscleCramps": "Muscle cramps",
+        "depression": "Depression"
+      },
+      "disclaimer": "Read our disclaimer"
+    },
+    "treatment": {
+      "title": "Treatment process",
+      "first": {
+        "title": "First treatment (60 min)",
+        "description": "Alignment of the spine, correction of the sacrum and leg length difference."
+      },
+      "second": {
+        "title": "Second treatment (60 min)",
+        "description": "Repetition of first treatment plus heat treatment for better blood circulation and anchoring."
+      },
+      "followUp": {
+        "title": "Follow-up process",
+        "description": "Follow-up appointments after 1, 3, and 6 months to get your body more and more in line."
+      },
+      "rates": {
+        "title": "Rates",
+        "description": "€100,- per appointment",
+        "validUntil": "Price valid until April 2025"
+      }
+    },
+    "important": {
+      "title": "Important to know",
+      "items": {
+        "twoTreatments": "The first two treatments take place within a few days of each other.",
+        "selfHelp": "You will receive self-help exercises. This keeps you flexible.",
+        "afterAccident": "After a fall or accident, it is advisable to plan two instructions in a row again.",
+        "preventive": "The treatment also fits perfectly into a preventive lifestyle."
+      }
+    },
+    "cta": "Start your recovery now"
+  },
+  "testimonials": {
+    "title": "What our clients say",
+    "viewAll": "View all reviews",
+    "satisfiedClient": "Satisfied client"
+  },
+  "usps": {
+    "title": "Why choose Praktijk Tielo?",
+    "subtitle": "We offer a unique approach that focuses on your personal situation",
+    "cards": {
+      "quickResults": {
+        "title": "Quick and lasting results",
+        "description": "Our treatment method is designed to not only provide quick relief but also achieve long-lasting results"
+      },
+      "personalApproach": {
+        "title": "Personal approach",
+        "description": "We look at your specific situation and create a treatment plan that suits you"
+      },
+      "flexibleHours": {
+        "title": "Flexible opening hours",
+        "description": "Also open in the evenings and on weekends by appointment, so you always find a time that fits"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "form": {
+      "name": "Your name *",
+      "email": "Your email *",
+      "phone": "Your phone number",
+      "message": "Your message *",
+      "send": "Send message",
+      "sending": "Sending...",
+      "success": "Your message has been sent successfully!",
+      "error": "Something went wrong. Please try again later."
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Start your recovery today",
+      "subtitle": "Schedule an appointment and see the difference.",
+      "benefits": {
+        "gentleTreatment": "Gentle treatment",
+        "personalApproach": "Personal approach",
+        "lastingResults": "Lasting results"
+      }
+    },
+    "form": {
+      "title": "Schedule your appointment",
+      "subtitle": "Leave your details and we will contact you within 24 hours.",
+      "name": "Your name *",
+      "namePlaceholder": "E.g., John Smith",
+      "email": "Your email address *",
+      "emailPlaceholder": "E.g., john@email.com",
+      "phone": "Your phone number",
+      "phonePlaceholder": "E.g., +31 6 12345678",
+      "message": "Your message *",
+      "messagePlaceholder": "E.g., Available dates for an appointment",
+      "send": "Send",
+      "sending": "Sending...",
+      "success": {
+        "title": "Your message has been sent successfully!",
+        "subtitle": "We will contact you within 24 hours."
+      },
+      "error": {
+        "title": "Something went wrong.",
+        "subtitle": "Please try again later or call us directly."
+      }
+    },
+    "directContact": {
+      "title": "Want to contact us directly?",
+      "call": {
+        "title": "Call directly",
+        "action": "Call us"
+      },
+      "email": {
+        "title": "Email us",
+        "action": "Email us"
+      },
+      "visit": {
+        "title": "Visit us",
+        "action": "Visit us"
+      }
+    },
+    "openingHours": {
+      "title": "Opening Hours"
+    },
+    "testimonials": {
+      "title": "What others say about our treatment"
+    }
+  },
+  "reviewsPage": {
+    "hero": {
+      "title": "What our clients say",
+      "subtitle": "Discover the experiences of people we have helped with their complaints."
+    },
+    "clientTestimonials": {
+      "title": "Client Testimonials"
+    },
+    "cta": {
+      "title": "Ready to address your complaints?",
+      "subtitle": "Join our satisfied clients and start your recovery today. We are happy to help you with a personal approach.",
+      "button": "Make an appointment"
+    }
+  },
+  "disclaimer": {
+    "title": "Disclaimer – Praktijk Tielo",
+    "sections": {
+      "general": {
+        "title": "1. General",
+        "content": "This website, www.praktijktielo.nl, and the services offered by Praktijk Tielo, are focused on relaxation and well-being. The information on this website is intended for informational purposes only and should not be construed as medical advice, diagnosis, or treatment. By visiting this website and using the services of Praktijk Tielo, you agree to the terms as described below."
+      },
+      "noMedicalCare": {
+        "title": "2. No medical or therapeutic care",
+        "items": [
+          "The treatments and services offered by Praktijk Tielo are complementary and focused on relaxation and well-being.",
+          "We do not make medical diagnoses and do not treat medical conditions.",
+          "The treatments are not a replacement for medical or psychological care. If you have medical or psychological complaints, we advise you to contact a qualified doctor or specialist.",
+          "Praktijk Tielo cannot be held liable for decisions you make based on the treatments offered or the information on this website."
+        ]
+      },
+      "resultsLiability": {
+        "title": "3. Results and liability",
+        "items": [
+          "The results of treatments vary per person. Praktijk Tielo cannot guarantee specific outcomes.",
+          "Treatments are intended as support and relaxation and not as a solution for medical or psychological conditions.",
+          "Praktijk Tielo is not liable for any direct or indirect damage resulting from the use of our services or information, unless there is intent or gross negligence."
+        ]
+      },
+      "privacy": {
+        "title": "4. Privacy and data protection",
+        "items": [
+          "Praktijk Tielo handles your personal data with care and complies with the General Data Protection Regulation (GDPR).",
+          "The information shared during treatments is treated confidentially and will not be provided to third parties without your consent, unless legally required."
+        ]
+      },
+      "clientResponsibility": {
+        "title": "5. Responsibility of the client",
+        "items": [
+          "The client is responsible for providing correct and complete information about their health condition.",
+          "The client always remains responsible for making decisions regarding their health and well-being."
+        ]
+      },
+      "changes": {
+        "title": "6. Changes and adjustments",
+        "items": [
+          "Praktijk Tielo reserves the right to change this disclaimer and the content of the website at any time without prior notice.",
+          "It is your responsibility to regularly check this page for any adjustments."
+        ]
+      },
+      "applicableLaw": {
+        "title": "7. Applicable law and disputes",
+        "items": [
+          "Dutch law applies to all services and this disclaimer.",
+          "Any disputes will be submitted to the competent court in the Netherlands."
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "If you have questions about this disclaimer, please contact us via:",
+        "items": {
+          "email": "Email: info@praktijk-tielo.nl",
+          "phone": "Phone: ",
+          "website": "Website: www.praktijktielo.nl"
+        }
+      }
+    }
+  },
+  "footer": {
+    "openingHours": {
+      "title": "Opening Hours",
+      "weekdays": "Monday - Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday",
+      "byAppointment": "By appointment"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "links": {
+      "title": "Links",
+      "reviews": "Reviews",
+      "contact": "Contact",
+      "disclaimer": "Disclaimer"
+    },
+    "copyright": "All rights reserved.",
+    "disclaimer": "Disclaimer"
+  }
+}

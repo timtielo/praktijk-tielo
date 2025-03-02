@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Send, MapPin, Phone, Mail, Star, Loader2, Clock, Shield, BadgeCheck, MessageSquare } from 'lucide-react';
 import { businessInfo } from '../data/business';
-import { testimonials } from '../data/testimonials';
 import { SEO } from '../components/SEO';
 import { submitContactForm, type ContactFormData } from '../utils/forms';
 import { TestimonialsSection } from '../components/blocks/testimonials-with-marquee';
 import { extendedTestimonialsShadcn } from '../data/testimonials';
+import { useTranslation } from 'react-i18next';
 
 export function ContactPage() {
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -46,8 +49,8 @@ export function ContactPage() {
   return (
     <>
       <SEO 
-        title="Contact - Maak direct een afspraak"
-        description="Plan direct een afspraak bij Praktijk Tielo. ✓ Blijvend resultaat ✓ Ook 's avonds en in het weekend ✓ Persoonlijke aanpak"
+        titleKey="meta.contact.title"
+        descriptionKey="meta.contact.description"
         canonicalPath="/contact"
       />
       
@@ -55,22 +58,22 @@ export function ContactPage() {
       <section className="min-h-[400px] bg-gradient-to-br from-blue-50 to-white flex items-center">
         <div className="container mx-auto px-4 pt-32 pb-12">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Begin vandaag nog met je herstel</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('contactPage.hero.title')}</h1>
             <p className="text-gray-600 text-xl mb-8">
-              Plan een afspraak en <span className="text-blue-600 font-semibold">zie het verschil</span>.
+              {t('contactPage.hero.subtitle')}
             </p>
             <div className="flex flex-wrap justify-center gap-8 text-gray-600">
               <div className="flex items-center gap-2">
                 <Shield className="w-5 h-5 text-green-500" />
-                <span>Zachte behandeling</span>
+                <span>{t('contactPage.hero.benefits.gentleTreatment')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-green-500" />
-                <span>Persoonlijke aanpak</span>
+                <span>{t('contactPage.hero.benefits.personalApproach')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <BadgeCheck className="w-5 h-5 text-green-500" />
-                <span>Blijvend resultaat</span>
+                <span>{t('contactPage.hero.benefits.lastingResults')}</span>
               </div>
             </div>
           </div>
@@ -82,16 +85,16 @@ export function ContactPage() {
           {/* Contact Form */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <div className="mb-6">
-              <h2 className="text-2xl font-bold mb-4">Plan je afspraak</h2>
+              <h2 className="text-2xl font-bold mb-4">{t('contactPage.form.title')}</h2>
               <p className="text-gray-600">
-                Laat je gegevens achter en we nemen binnen 24 uur contact met je op.
+                {t('contactPage.form.subtitle')}
               </p>
             </div>
             
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Je naam *
+                  {t('contactPage.form.name')}
                 </label>
                 <input
                   type="text"
@@ -101,12 +104,12 @@ export function ContactPage() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   required
-                  placeholder="Bijv. Jan Jansen"
+                  placeholder={t('contactPage.form.namePlaceholder')}
                 />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                  Je e-mailadres *
+                  {t('contactPage.form.email')}
                 </label>
                 <input
                   type="email"
@@ -116,12 +119,12 @@ export function ContactPage() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   required
-                  placeholder="Bijv. jan@email.nl"
+                  placeholder={t('contactPage.form.emailPlaceholder')}
                 />
               </div>
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                  Je telefoonnummer
+                  {t('contactPage.form.phone')}
                 </label>
                 <input
                   type="tel"
@@ -130,12 +133,12 @@ export function ContactPage() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  placeholder="Bijv. 06 12345678"
+                  placeholder={currentLanguage.startsWith('nl') ? "Bijv. +31 6 12345678" : "E.g., +31 6 12345678"}
                 />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Je bericht *
+                  {t('contactPage.form.message')}
                 </label>
                 <textarea
                   id="message"
@@ -145,7 +148,7 @@ export function ContactPage() {
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   required
-                  placeholder="Bijv. Beschikbare data voor een afspraak"
+                  placeholder={t('contactPage.form.messagePlaceholder')}
                 />
               </div>
               <button
@@ -158,24 +161,24 @@ export function ContactPage() {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
-                    Versturen...
+                    {t('contactPage.form.sending')}
                   </>
                 ) : (
                   <>
-                    Verstuur <MessageSquare className="w-5 h-5" />
+                    {t('contactPage.form.send')} <MessageSquare className="w-5 h-5" />
                   </>
                 )}
               </button>
               {submitStatus === 'success' && (
                 <div className="bg-green-50 text-green-700 p-4 rounded-lg">
-                  <p className="font-medium">Je bericht is succesvol verzonden!</p>
-                  <p className="text-sm">We nemen binnen 24 uur contact met je op.</p>
+                  <p className="font-medium">{t('contactPage.form.success.title')}</p>
+                  <p className="text-sm">{t('contactPage.form.success.subtitle')}</p>
                 </div>
               )}
               {submitStatus === 'error' && (
                 <div className="bg-red-50 text-red-700 p-4 rounded-lg">
-                  <p className="font-medium">Er is iets misgegaan.</p>
-                  <p className="text-sm">Probeer het later opnieuw of bel ons direct.</p>
+                  <p className="font-medium">{t('contactPage.form.error.title')}</p>
+                  <p className="text-sm">{t('contactPage.form.error.subtitle')}</p>
                 </div>
               )}
             </form>
@@ -184,7 +187,7 @@ export function ContactPage() {
           {/* Contact Information */}
           <div className="space-y-6">
             <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold mb-6">Direct contact opnemen?</h2>
+              <h2 className="text-2xl font-bold mb-6">{t('contactPage.directContact.title')}</h2>
               <div className="space-y-6">
                 <a
                   href={`tel:${businessInfo.contact.phone}`}
@@ -194,7 +197,7 @@ export function ContactPage() {
                     <Phone className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <p className="font-medium">Bel direct</p>
+                    <p className="font-medium">{t('contactPage.directContact.call.title')}</p>
                     <p className="text-lg">{businessInfo.contact.phone}</p>
                   </div>
                 </a>
@@ -206,7 +209,7 @@ export function ContactPage() {
                     <Mail className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <p className="font-medium">Mail ons</p>
+                    <p className="font-medium">{t('contactPage.directContact.email.title')}</p>
                     <p className="text-lg">{businessInfo.contact.email}</p>
                   </div>
                 </a>
@@ -220,7 +223,7 @@ export function ContactPage() {
                     <MapPin className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <p className="font-medium">Bezoek ons</p>
+                    <p className="font-medium">{t('contactPage.directContact.visit.title')}</p>
                     <p>{businessInfo.contact.address.street}</p>
                     <p>{businessInfo.contact.address.postalCode} {businessInfo.contact.address.city}</p>
                   </div>
@@ -230,19 +233,19 @@ export function ContactPage() {
 
             {/* Opening Hours */}
             <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold mb-6">Openingstijden</h2>
+              <h2 className="text-2xl font-bold mb-6">{t('contactPage.openingHours.title')}</h2>
               <div className="space-y-4">
                 <div className="flex justify-between items-center p-3 rounded-lg hover:bg-blue-50">
-                  <span className="text-gray-600">{businessInfo.openingHours.weekdays.days}</span>
-                  <span className="font-medium">{businessInfo.openingHours.weekdays.hours}</span>
+                  <span className="text-gray-600">{t('footer.openingHours.weekdays')}</span>
+                  <span className="font-medium">{t('footer.openingHours.byAppointment')}</span>
                 </div>
                 <div className="flex justify-between items-center p-3 rounded-lg hover:bg-blue-50">
-                  <span className="text-gray-600">{businessInfo.openingHours.saturday.days}</span>
-                  <span className="font-medium">{businessInfo.openingHours.saturday.hours}</span>
+                  <span className="text-gray-600">{t('footer.openingHours.saturday')}</span>
+                  <span className="font-medium">{t('footer.openingHours.byAppointment')}</span>
                 </div>
                 <div className="flex justify-between items-center p-3 rounded-lg hover:bg-blue-50">
-                  <span className="text-gray-600">{businessInfo.openingHours.sunday.days}</span>
-                  <span className="font-medium">{businessInfo.openingHours.sunday.hours}</span>
+                  <span className="text-gray-600">{t('footer.openingHours.sunday')}</span>
+                  <span className="font-medium">{t('footer.openingHours.byAppointment')}</span>
                 </div>
               </div>
             </div>
@@ -251,7 +254,7 @@ export function ContactPage() {
 
         {/* Testimonials Marquee Section */}
         <div className="mt-10 -mx-4">
-          <h2 className="text-2xl font-bold mb-4 px-4">Wat anderen zeggen over onze behandeling</h2>
+          <h2 className="text-2xl font-bold mb-4 px-4">{t('contactPage.testimonials.title')}</h2>
           <TestimonialsSection
             title=""
             description=""

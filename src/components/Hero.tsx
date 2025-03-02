@@ -2,13 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { ChevronRight, Star, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { testimonials, type Testimonial } from '../data/testimonials';
+import { useTranslation } from 'react-i18next';
 
 function TestimonialCard({ testimonial, isActive }: { testimonial: Testimonial, isActive: boolean }) {
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  
+  // Get the appropriate text based on the current language
+  const testimonialText = currentLanguage.startsWith('nl') 
+    ? testimonial.text 
+    : (testimonial.textEn || testimonial.text);
+  
   return (
     <div className={`absolute inset-0 transition-all duration-500 ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
       <div className="bg-white rounded-2xl p-8 shadow-xl h-full flex flex-col">
         <Quote className="w-12 h-12 text-blue-600/20 mb-6" />
-        <p className="text-lg text-gray-700 flex-grow">{testimonial.text}</p>
+        <p className="text-lg text-gray-700 flex-grow">{testimonialText}</p>
         <div className="mt-6 pt-6 border-t border-gray-100">
           <div className="flex gap-1 mb-3">
             {[...Array(testimonial.rating)].map((_, i) => (
@@ -23,7 +32,7 @@ function TestimonialCard({ testimonial, isActive }: { testimonial: Testimonial, 
             />
             <div>
               <p className="font-semibold text-gray-900">{testimonial.name}</p>
-              <p className="text-sm text-gray-500">Tevreden klant</p>
+              <p className="text-sm text-gray-500">{t('testimonials.satisfiedClient')}</p>
             </div>
           </div>
         </div>
@@ -34,6 +43,8 @@ function TestimonialCard({ testimonial, isActive }: { testimonial: Testimonial, 
 
 function TestimonialCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -46,15 +57,15 @@ function TestimonialCarousel() {
     <div className="relative w-full h-full">
       {testimonials.map((testimonial, index) => (
         <TestimonialCard 
-          key={testimonial.name} 
+          key={testimonial.id || index} 
           testimonial={testimonial} 
           isActive={index === currentIndex} 
         />
       ))}
       <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-        {testimonials.map((_, index) => (
+        {testimonials.map((testimonial, index) => (
           <button
-            key={index}
+            key={testimonial.id || index}
             className={`w-2 h-2 rounded-full transition-all ${
               index === currentIndex ? 'bg-blue-600 w-4' : 'bg-gray-300'
             }`}
@@ -67,6 +78,9 @@ function TestimonialCarousel() {
 }
 
 export function Hero() {
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  
   const scrollToTreatment = () => {
     const element = document.getElementById('behandelmethode');
     if (element) {
@@ -81,23 +95,31 @@ export function Hero() {
           {/* Left side content */}
           <div className="flex-1 space-y-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Heb jij fysieke- of mentale <span className="text-blue-600">klachten</span>?
+              {currentLanguage.startsWith('nl') ? (
+                <>
+                  {t('hero.title').split('klachten')[0]}<span className="text-blue-600">klachten</span>?
+                </>
+              ) : (
+                <>
+                  Do you have physical or mental <span className="text-blue-600">complaints</span>?
+                </>
+              )}
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl">
-              Deze klachten maken je dagelijks leven een stuk lastiger. Onnodig. Wij helpen je weer in beweging te komen.
+              {t('hero.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 to="/contact"
                 className="btn-cta btn-cta-pulse bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-colors shadow-lg shadow-blue-600/20 hover:shadow-blue-600/30"
               >
-                Plan een afspraak <ChevronRight className="w-5 h-5" />
+                {t('hero.cta.appointment')} <ChevronRight className="w-5 h-5" />
               </Link>
               <button
                 onClick={scrollToTreatment}
                 className="btn-cta bg-white hover:bg-gray-50 text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-colors border border-gray-200"
               >
-                Bekijk onze aanpak
+                {t('hero.cta.approach')}
               </button>
             </div>
             
@@ -106,19 +128,19 @@ export function Hero() {
               <div className="flex flex-wrap gap-8 items-center text-gray-600">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-green-500" />
-                  <span>Snel en blijvend resultaat</span>
+                  <span>{t('hero.benefits.quickResults')}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-green-500" />
-                  <span>Persoonlijke aanpak</span>
-                </div>
-                  <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-green-500" />
-                  <span>Zachte behandeling</span>
+                  <span>{t('hero.benefits.personalApproach')}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-green-500" />
-                  <span>Ook 's avonds en in het weekend open</span>
+                  <span>{t('hero.benefits.gentleTreatment')}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500" />
+                  <span>{t('hero.benefits.flexibleHours')}</span>
                 </div>
               </div>
             </div>
