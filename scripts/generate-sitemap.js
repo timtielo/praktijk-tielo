@@ -6,50 +6,58 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const baseUrl = 'https://www.praktijk-tielo.nl';
-const today = new Date().toISOString().split('T')[0];
+const today = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
 
 // Define your routes and their metadata
 const routes = [
   {
     path: '/',
     changefreq: 'weekly',
-    priority: 1.0
+    priority: 1.0,
+    lastmod: '2025-03-03' // Use fixed date for consistency
   },
   {
     path: '/contact',
     changefreq: 'weekly',
-    priority: 0.8
+    priority: 0.8,
+    lastmod: '2025-03-03'
   },
   {
     path: '/disclaimer',
     changefreq: 'weekly',
-    priority: 0.5
+    priority: 0.5,
+    lastmod: '2025-03-03'
   },
   {
     path: '/reviews',
     changefreq: 'weekly',
-    priority: 0.9
+    priority: 0.9,
+    lastmod: '2025-03-03'
   },
   // English routes
   {
     path: '/en',
     changefreq: 'weekly',
-    priority: 1.0
+    priority: 1.0,
+    lastmod: '2025-03-03'
   },
   {
     path: '/en/contact',
     changefreq: 'weekly',
-    priority: 0.8
+    priority: 0.8,
+    lastmod: '2025-03-03'
   },
   {
     path: '/en/disclaimer',
     changefreq: 'weekly',
-    priority: 0.5
+    priority: 0.5,
+    lastmod: '2025-03-03'
   },
   {
     path: '/en/reviews',
     changefreq: 'weekly',
-    priority: 0.9
+    priority: 0.9,
+    lastmod: '2025-03-03'
   }
 ];
 
@@ -71,7 +79,7 @@ ${routes.map(route => {
   
   return `  <url>
     <loc>${baseUrl}${route.path}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${route.lastmod}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
     <xhtml:link 
@@ -92,7 +100,7 @@ ${routes.map(route => {
   </url>`}).join('\n')}
 </urlset>`;
 
-// Write sitemap to public directory
+// Write sitemap to dist directory
 fs.writeFileSync(
   path.join(__dirname, '../dist/sitemap.xml'),
   sitemap
