@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Clock, Star } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { businessInfo } from '../data/business';
 import { useTranslation } from 'react-i18next';
 
@@ -8,6 +8,13 @@ export function Footer() {
   const { openingHours, contact, socialMedia } = businessInfo;
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+  
+  // Helper function to get language-aware paths
+  const getLocalizedPath = (path: string) => {
+    return isEnglish ? `/en${path === '/' ? '' : path}` : path;
+  };
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -83,7 +90,7 @@ export function Footer() {
               <ul className="space-y-3">
                 <li>
                   <Link 
-                    to="/reviews"
+                    to={getLocalizedPath('/reviews')}
                     className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
                   >
                     <Star className="w-4 h-4 text-blue-400" />
@@ -92,7 +99,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link 
-                    to="/contact"
+                    to={getLocalizedPath('/contact')}
                     className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
                   >
                     <Mail className="w-4 h-4 text-blue-400" />
@@ -101,7 +108,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link 
-                    to="/disclaimer"
+                    to={getLocalizedPath('/disclaimer')}
                     className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
                   >
                     <MapPin className="w-4 h-4 text-blue-400" />
@@ -119,7 +126,7 @@ export function Footer() {
             <div className="text-gray-400 text-sm flex items-center gap-2">
               <span>&copy; {currentYear} {businessInfo.name}.</span>
               <span>{t('footer.copyright')}</span>
-              <Link to="/disclaimer" className="text-gray-400 hover:text-white transition-colors">
+              <Link to={getLocalizedPath('/disclaimer')} className="text-gray-400 hover:text-white transition-colors">
                 {t('footer.disclaimer')}
               </Link>
             </div>

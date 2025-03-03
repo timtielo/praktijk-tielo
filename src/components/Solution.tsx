@@ -1,10 +1,17 @@
 import React from 'react';
 import { ChevronRight, Clock, Repeat, Heart, Euro } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 export function Solution() {
   const { t } = useTranslation();
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+  
+  // Helper function to get language-aware paths
+  const getLocalizedPath = (path: string) => {
+    return isEnglish ? `/en${path === '/' ? '' : path}` : path;
+  };
   
   return (
     <section id="behandelmethode" className="py-16 bg-gradient-to-b from-white to-blue-50">
@@ -52,7 +59,7 @@ export function Solution() {
                 </li>
               </ul>
               <div className="mt-4 text-xs text-gray-400">
-                <Link to="/disclaimer" className="hover:text-blue-600 transition-colors">
+                <Link to={getLocalizedPath('/disclaimer')} className="hover:text-blue-600 transition-colors">
                   {t('solution.forWhom.disclaimer')}
                 </Link>
               </div>
@@ -143,7 +150,7 @@ export function Solution() {
 
         <div className="mt-12 text-center">
           <Link
-            to="/contact"
+            to={getLocalizedPath('/contact')}
             className="btn-cta btn-cta-shine bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold inline-flex items-center gap-2 transition-colors shadow-lg shadow-blue-600/20"
           >
             {t('solution.cta')} <ChevronRight className="w-5 h-5" />

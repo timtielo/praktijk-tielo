@@ -3,12 +3,19 @@ import { Star, ChevronRight } from 'lucide-react';
 import { testimonials } from '../data/testimonials';
 import { TestimonialsSection } from './blocks/testimonials-with-marquee';
 import { extendedTestimonialsShadcn } from '../data/testimonials';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 export function Testimonials() {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+  
+  // Helper function to get language-aware paths
+  const getLocalizedPath = (path: string) => {
+    return isEnglish ? `/en${path === '/' ? '' : path}` : path;
+  };
   
   // Get localized testimonials
   const localizedTestimonials = testimonials.map(testimonial => ({
@@ -49,7 +56,7 @@ export function Testimonials() {
         <div className="flex flex-col md:flex-row justify-between items-center mb-6">
           <h2 className="text-3xl font-bold text-center md:text-left">{t('testimonials.title')}</h2>
           <Link 
-            to="/reviews"
+            to={getLocalizedPath('/reviews')}
             className="mt-4 md:mt-0 flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
           >
             <span>{t('testimonials.viewAll')}</span>

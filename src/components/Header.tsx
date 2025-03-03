@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, Star } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { businessInfo } from '../data/business';
 import { useScrollDirection } from '../hooks/useScrollDirection';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -11,7 +11,14 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const scrollDirection = useScrollDirection();
   const { contact } = businessInfo;
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+  
+  // Helper function to get language-aware paths
+  const getLocalizedPath = (path: string) => {
+    return isEnglish ? `/en${path === '/' ? '' : path}` : path;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +44,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-20">
           <Link 
-            to="/" 
+            to={getLocalizedPath('/')} 
             className="flex items-center py-2"
           >
             <img 
@@ -50,7 +57,7 @@ export function Header() {
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-6">
             <Link 
-              to="/reviews" 
+              to={getLocalizedPath('/reviews')} 
               className="flex items-center gap-1 text-gray-700 hover:text-blue-600 transition-colors"
             >
               <Star className="w-4 h-4" />
@@ -90,7 +97,7 @@ export function Header() {
               </a>
             </div>
             <Link 
-              to="/contact"
+              to={getLocalizedPath('/contact')}
               className="btn-cta bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
             >
               {t('header.makeAppointment')}
@@ -105,7 +112,7 @@ export function Header() {
           } py-4 space-y-4 bg-white rounded-lg shadow-lg mt-2`}
         >
           <Link
-            to="/reviews"
+            to={getLocalizedPath('/reviews')}
             className="flex items-center gap-2 px-4 text-gray-600 hover:text-blue-600"
             onClick={() => setIsMenuOpen(false)}
           >
@@ -133,7 +140,7 @@ export function Header() {
           </a>
           <div className="px-4 pb-2">
             <Link
-              to="/contact"
+              to={getLocalizedPath('/contact')}
               className="btn-cta block w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors text-center"
               onClick={() => setIsMenuOpen(false)}
             >

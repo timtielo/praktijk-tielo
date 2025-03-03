@@ -3,9 +3,18 @@ import { Phone, Mail, MapPin, MessageSquare, Loader2 } from 'lucide-react';
 import { businessInfo } from '../data/business';
 import { submitContactForm, type ContactFormData } from '../utils/forms';
 import { useTranslation } from 'react-i18next';
+import { Link, useLocation } from 'react-router-dom';
 
 export function Contact() {
   const { t } = useTranslation();
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+  
+  // Helper function to get language-aware paths
+  const getLocalizedPath = (path: string) => {
+    return isEnglish ? `/en${path === '/' ? '' : path}` : path;
+  };
+  
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',

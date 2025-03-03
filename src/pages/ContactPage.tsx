@@ -6,10 +6,13 @@ import { submitContactForm, type ContactFormData } from '../utils/forms';
 import { TestimonialsSection } from '../components/blocks/testimonials-with-marquee';
 import { extendedTestimonialsShadcn } from '../data/testimonials';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 export function ContactPage() {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
   
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
@@ -51,7 +54,7 @@ export function ContactPage() {
       <SEO 
         titleKey="meta.contact.title"
         descriptionKey="meta.contact.description"
-        canonicalPath="/contact"
+        canonicalPath={isEnglish ? "/en/contact" : "/contact"}
       />
       
       {/* Contact Hero */}

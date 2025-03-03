@@ -1,6 +1,6 @@
 import React from 'react';
 import { SEO } from '../components/SEO';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, Star, Quote } from 'lucide-react';
 import { testimonials } from '../data/testimonials';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +8,13 @@ import { useTranslation } from 'react-i18next';
 export function ReviewsPage() {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+  
+  // Helper function to get language-aware paths
+  const getLocalizedPath = (path: string) => {
+    return isEnglish ? `/en${path === '/' ? '' : path}` : path;
+  };
   
   // Get localized testimonials
   const localizedTestimonials = testimonials.map(testimonial => ({
@@ -30,7 +37,7 @@ export function ReviewsPage() {
       <SEO 
         titleKey="meta.reviews.title"
         descriptionKey="meta.reviews.description"
-        canonicalPath="/reviews"
+        canonicalPath={isEnglish ? "/en/reviews" : "/reviews"}
       />
       
       {/* Reviews Hero */}
@@ -104,7 +111,7 @@ export function ReviewsPage() {
             {t('reviewsPage.cta.subtitle')}
           </p>
           <Link 
-            to="/contact"
+            to={getLocalizedPath('/contact')}
             className="inline-flex items-center gap-2 bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
           >
             {t('reviewsPage.cta.button')} <ChevronRight className="w-5 h-5" />

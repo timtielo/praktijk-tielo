@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, Star, Quote } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { testimonials, type Testimonial } from '../data/testimonials';
 import { useTranslation } from 'react-i18next';
 
@@ -80,6 +80,13 @@ function TestimonialCarousel() {
 export function Hero() {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+  
+  // Helper function to get language-aware paths
+  const getLocalizedPath = (path: string) => {
+    return isEnglish ? `/en${path === '/' ? '' : path}` : path;
+  };
   
   const scrollToTreatment = () => {
     const element = document.getElementById('behandelmethode');
@@ -110,7 +117,7 @@ export function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
-                to="/contact"
+                to={getLocalizedPath('/contact')}
                 className="btn-cta btn-cta-pulse bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-colors shadow-lg shadow-blue-600/20 hover:shadow-blue-600/30"
               >
                 {t('hero.cta.appointment')} <ChevronRight className="w-5 h-5" />

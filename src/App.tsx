@@ -18,8 +18,10 @@ function App() {
     const pathSegments = location.pathname.split('/').filter(Boolean);
     const firstSegment = pathSegments[0];
     
-    if (firstSegment === 'en' || firstSegment === 'nl') {
-      i18n.changeLanguage(firstSegment);
+    if (firstSegment === 'en') {
+      i18n.changeLanguage('en');
+    } else {
+      i18n.changeLanguage('nl');
     }
   }, [location.pathname, i18n]);
 

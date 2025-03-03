@@ -34,13 +34,15 @@ export function SEO({
   
   // Get the alternate URLs for language versions
   const getAlternateUrls = () => {
-    const baseUrl = getBaseUrl();
+    const baseUrl = 'https://www.praktijk-tielo.nl';
     const basePath = canonicalPath || location.pathname;
     
     // Remove language prefix if present
     let pathWithoutLang = basePath;
     if (basePath.startsWith('/en/')) {
       pathWithoutLang = basePath.replace('/en', '');
+    } else if (basePath.startsWith('/en')) {
+      pathWithoutLang = '/';
     } else if (basePath.startsWith('/nl/')) {
       pathWithoutLang = basePath.replace('/nl', '');
     }

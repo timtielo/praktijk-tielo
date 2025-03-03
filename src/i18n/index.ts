@@ -22,7 +22,7 @@ i18n
   .use(initReactI18next) // Pass i18n down to react-i18next
   .init({
     resources,
-    fallbackLng: 'en', // Default language
+    fallbackLng: 'nl', // Default language is Dutch
     debug: process.env.NODE_ENV === 'development',
     
     interpolation: {
@@ -33,6 +33,7 @@ i18n
       order: ['path', 'cookie', 'navigator'],
       lookupCookie: 'i18nextLng',
       caches: ['cookie'],
+      lookupFromPathIndex: 0,
       cookieExpirationDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365), // 1 year
     }
   });

@@ -6,14 +6,18 @@ import { Testimonials } from '../components/Testimonials';
 import { USPs } from '../components/USPs';
 import { Contact } from '../components/Contact';
 import { SEO } from '../components/SEO';
+import { useLocation } from 'react-router-dom';
 
 export function HomePage() {
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+  
   return (
     <>
       <SEO 
         titleKey="meta.home.title"
         descriptionKey="meta.home.description"
-        canonicalPath="/"
+        canonicalPath={isEnglish ? "/en" : "/"}
       />
       <Hero />
       <Symptoms />

@@ -2,16 +2,19 @@ import React from 'react';
 import { SEO } from '../components/SEO';
 import { businessInfo } from '../data/business';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 export function DisclaimerPage() {
   const { t } = useTranslation();
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
   
   return (
     <>
       <SEO 
         titleKey="meta.disclaimer.title"
         descriptionKey="meta.disclaimer.description"
-        canonicalPath="/disclaimer"
+        canonicalPath={isEnglish ? "/en/disclaimer" : "/disclaimer"}
       />
       <div className="container mx-auto px-4 py-32">
         <div className="max-w-3xl mx-auto">
