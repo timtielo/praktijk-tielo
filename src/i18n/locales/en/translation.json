@@ -9,8 +9,8 @@
       "description": "Schedule an appointment directly at Praktijk Tielo. ✓ Lasting results ✓ Also open evenings and weekends ✓ Personal approach"
     },
     "reviews": {
-      "title": "Reviews - What our clients say",
-      "description": "Read what our clients say about Praktijk Tielo. Real experiences from satisfied clients who have been helped with their complaints."
+      "title": "Reviews - What our customers say",
+      "description": "Read what our customers say about Praktijk Tielo. Real experiences from satisfied customers who have been helped with their complaints."
     },
     "disclaimer": {
       "title": "Disclaimer",
@@ -38,7 +38,7 @@
   },
   "symptoms": {
     "title": "Do you recognize this?",
-    "subtitle": "Many of our clients come to us with these complaints. Do you recognize yourself in this?",
+    "subtitle": "Many of our customers come to us with these complaints. Do you recognize yourself in this?",
     "cards": {
       "notFeelGood": {
         "title": "Not feeling well",
@@ -113,9 +113,9 @@
     "cta": "Start your recovery now"
   },
   "testimonials": {
-    "title": "What our clients say",
+    "title": "What our customers say",
     "viewAll": "View all reviews",
-    "satisfiedClient": "Satisfied client"
+    "satisfiedClient": "Satisfied customer"
   },
   "usps": {
     "title": "Why choose Praktijk Tielo?",
@@ -204,15 +204,19 @@
   },
   "reviewsPage": {
     "hero": {
-      "title": "What our clients say",
+      "title": "What our customers say",
       "subtitle": "Discover the experiences of people we have helped with their complaints."
     },
     "clientTestimonials": {
-      "title": "Client Testimonials"
+      "title": "Customer Testimonials"
+    },
+    "googleReviews": {
+      "viewAll": "View all Google reviews",
+      "attribution": "Reviews from Google"
     },
     "cta": {
       "title": "Ready to address your complaints?",
-      "subtitle": "Join our satisfied clients and start your recovery today. We are happy to help you with a personal approach.",
+      "subtitle": "Join our satisfied customers and start your recovery today. We are happy to help you with a personal approach.",
       "button": "Make an appointment"
     }
   },
@@ -224,7 +228,7 @@
         "content": "This website, www.praktijktielo.nl, and the services offered by Praktijk Tielo, are focused on relaxation and well-being. The information on this website is intended for informational purposes only and should not be construed as medical advice, diagnosis, or treatment. By visiting this website and using the services of Praktijk Tielo, you agree to the terms as described below."
       },
       "noMedicalCare": {
-        "title": "2. No medical or therapeutic care",
+        "title": "2. No medical care",
         "items": [
           "The treatments and services offered by Praktijk Tielo are complementary and focused on relaxation and well-being.",
           "We do not make medical diagnoses and do not treat medical conditions.",
@@ -247,11 +251,11 @@
           "The information shared during treatments is treated confidentially and will not be provided to third parties without your consent, unless legally required."
         ]
       },
-      "clientResponsibility": {
-        "title": "5. Responsibility of the client",
+      "customerResponsibility": {
+        "title": "5. Responsibility of the customer",
         "items": [
-          "The client is responsible for providing correct and complete information about their health condition.",
-          "The client always remains responsible for making decisions regarding their health and well-being."
+          "The customer is responsible for providing correct and complete information about their health condition.",
+          "The customer always remains responsible for making decisions regarding their health and well-being."
         ]
       },
       "changes": {

@@ -210,6 +210,10 @@
     "clientTestimonials": {
       "title": "Klantbeoordelingen"
     },
+    "googleReviews": {
+      "viewAll": "Bekijk alle Google reviews",
+      "attribution": "Reviews van Google"
+    },
     "cta": {
       "title": "Klaar om je klachten aan te pakken?",
       "subtitle": "Sluit je aan bij onze tevreden klanten en begin vandaag nog met je herstel. We helpen je graag met een persoonlijke aanpak.",
@@ -224,7 +228,7 @@
         "content": "Deze website, www.praktijktielo.nl, en de diensten die Praktijk Tielo aanbiedt, zijn gericht op ontspanning en welzijn. De informatie op deze website is uitsluitend bedoeld voor informatieve doeleinden en mag niet worden opgevat als medisch advies, diagnose of behandeling. Door deze website te bezoeken en gebruik te maken van de diensten van Praktijk Tielo, stemt u in met de voorwaarden zoals hieronder beschreven."
       },
       "noMedicalCare": {
-        "title": "2. Geen medische of therapeutische zorg",
+        "title": "2. Geen medische zorg",
         "items": [
           "De behandelingen en diensten aangeboden door Praktijk Tielo zijn complementair en gericht op ontspanning en welzijn.",
           "Wij stellen geen medische diagnoses en behandelen geen medische aandoeningen.",
@@ -248,10 +252,10 @@
         ]
       },
       "clientResponsibility": {
-        "title": "5. Verantwoordelijkheid van de cliënt",
+        "title": "5. Verantwoordelijkheid van de klant",
         "items": [
-          "De cliënt is zelf verantwoordelijk voor het verstrekken van juiste en volledige informatie over hun gezondheidstoestand.",
-          "De cliënt blijft altijd zelf verantwoordelijk voor het nemen van beslissingen omtrent hun gezondheid en welzijn."
+          "De klant is zelf verantwoordelijk voor het verstrekken van juiste en volledige informatie over hun gezondheidstoestand.",
+          "De klant blijft altijd zelf verantwoordelijk voor het nemen van beslissingen omtrent hun gezondheid en welzijn."
         ]
       },
       "changes": {

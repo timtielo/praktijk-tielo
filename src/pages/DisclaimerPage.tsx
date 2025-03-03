@@ -56,7 +56,7 @@ export function DisclaimerPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">{t('disclaimer.sections.clientResponsibility.title')}</h2>
+              <h2 className="text-2xl font-semibold mb-4">{t('disclaimer.sections.customerResponsibility.title')}</h2>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
                 {t('disclaimer.sections.clientResponsibility.items', { returnObjects: true }).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
