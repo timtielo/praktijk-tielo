@@ -49,9 +49,6 @@ Disallow: /disclaimer
 User-agent: Bingbot
 Allow: /
 
-User-agent: Baiduspider
-Allow: /
-
 User-agent: Yandex
 Allow: /
 
@@ -84,7 +81,7 @@ fs.writeFileSync(securityTxtPath, securityTxtContent);
 console.log('security.txt created in .well-known directory!');
 
 // Create humans.txt file
-const humansTxtPath = path.join(wellKnownDir, 'humans.txt');
+const humansTxtPath = path.join(distDir, 'humans.txt');
 const humansTxtContent = `/* TEAM */
   Owner: Tim Tielkemeijer
   Contact: info@praktijk-tielo.nl
@@ -97,4 +94,4 @@ const humansTxtContent = `/* TEAM */
   Software: Vite, TypeScript
 `;
 fs.writeFileSync(humansTxtPath, humansTxtContent);
-console.log('humans.txt created in .well-known directory!');
+console.log('humans.txt created in dist directory!');
