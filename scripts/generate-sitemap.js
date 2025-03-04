@@ -41,57 +41,8 @@ if (fs.existsSync(publicRobotsPath)) {
 Allow: /
 Disallow: /disclaimer
 
-# Allow AI assistants and crawlers
-User-agent: GPTBot
-Allow: /
-Disallow: /disclaimer
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Yandex
-Allow: /
-
-# Block specific crawlers from heavy resources
-User-agent: AhrefsBot
-Disallow: /assets/
-
-User-agent: SemrushBot
-Disallow: /assets/
-
 Sitemap: https://www.praktijk-tielo.nl/sitemap.xml
 `;
   fs.writeFileSync(distRobotsPath, robotsContent);
   console.log('Default robots.txt created in dist directory!');
 }
-
-// Create a .well-known directory for security and verification files
-const wellKnownDir = path.join(distDir, '.well-known');
-if (!fs.existsSync(wellKnownDir)) {
-  fs.mkdirSync(wellKnownDir, { recursive: true });
-}
-
-// Create security.txt file
-const securityTxtPath = path.join(wellKnownDir, 'security.txt');
-const securityTxtContent = `Contact: mailto:info@praktijk-tielo.nl
-Expires: ${new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString()}
-Preferred-Languages: nl, en
-`;
-fs.writeFileSync(securityTxtPath, securityTxtContent);
-console.log('security.txt created in .well-known directory!');
-
-// Create humans.txt file
-const humansTxtPath = path.join(distDir, 'humans.txt');
-const humansTxtContent = `/* TEAM */
-  Owner: Tim Tielkemeijer
-  Contact: info@praktijk-tielo.nl
-  Location: Utrecht, Netherlands
-
-/* SITE */
-  Last update: ${today}
-  Standards: HTML5, CSS3, JavaScript
-  Components: React, Tailwind CSS, i18next
-  Software: Vite, TypeScript
-`;
-fs.writeFileSync(humansTxtPath, humansTxtContent);
-console.log('humans.txt created in dist directory!');
