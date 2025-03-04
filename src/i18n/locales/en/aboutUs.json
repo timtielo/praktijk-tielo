@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "title": "About Praktijk Tielo",
+    "subtitle": "Learn more about our practice, our mission, and our approach."
+  },
+  "tim": {
+    "title": "About Tim Tielkemeijer",
+    "paragraph1": "Competitive swimming, rowing, boxing, and fitness. Definitely sporty. Because of this, I have always been concerned with health.",
+    "paragraph2": "But in 2019, something suddenly changed. Unexplainable fatigue: I slept, went to school, and slept. I was forgetful and had no emotion, it was as if I wasn't present. From blood tests to heart examinations, and then ending up at the Medical Training Center to learn to live with the complaints. No solution, simply learning to live with it.",
+    "paragraph3": "I wasn't satisfied with that, which didn't always make it easy. After a few months, I heard through the grapevine about an alternative treatment method. I was extremely skeptical: 'this can never work'. And I still don't completely understand it, but that's not necessary. It worked.",
+    "paragraph4": "From this piece of powerlessness, dissatisfaction, hope, and ultimately a solution, my dream grew to be able to mean the same for people. That's why I started Praktijk Tielo, hoping to help you further as well.",
+    "credentials": {
+      "passion": "Passion for health",
+      "experience": "Personal experience with complaints",
+      "personalExperience": "Completed own recovery journey"
+    }
+  },
+  "ourMission": {
+    "title": "Our Mission",
+    "subtitle": "At Praktijk Tielo, we strive to help people achieve their optimal health and well-being.",
+    "cards": {
+      "holistic": {
+        "title": "Holistic Approach",
+        "description": "We don't just treat the symptoms, but look at the whole body and the underlying causes of complaints."
+      },
+      "personal": {
+        "title": "Personal Approach",
+        "description": "Every person is unique, which is why we tailor our treatments to your specific situation and needs."
+      },
+      "quality": {
+        "title": "Quality First",
+        "description": "We strive for the highest quality in our treatments and continuously develop ourselves."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to address your complaints?",
+    "subtitle": "Make an appointment today and experience the difference of our unique approach.",
+    "button": "Make an appointment"
+  }
+}

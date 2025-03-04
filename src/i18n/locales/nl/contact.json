@@ -1,0 +1,13 @@
+{
+  "title": "Contact",
+  "form": {
+    "name": "Je naam *",
+    "email": "Je e-mail *",
+    "phone": "Je telefoonnummer",
+    "message": "Je bericht *",
+    "send": "Stuur bericht",
+    "sending": "Versturen...",
+    "success": "Je bericht is succesvol verzonden!",
+    "error": "Er is iets misgegaan. Probeer het later opnieuw."
+  }
+}

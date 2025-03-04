@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "title": "Wat onze klanten zeggen",
+    "subtitle": "Ontdek de ervaringen van mensen die we hebben geholpen met hun klachten."
+  },
+  "clientTestimonials": {
+    "title": "Klantbeoordelingen"
+  },
+  "googleReviews": {
+    "viewAll": "Bekijk alle Google reviews",
+    "attribution": "Reviews van Google",
+    "reviewsOnGoogle": "reviews op Google"
+  },
+  "cta": {
+    "title": "Klaar om je klachten aan te pakken?",
+    "subtitle": "Sluit je aan bij onze tevreden klanten en begin vandaag nog met je herstel. We helpen je graag met een persoonlijke aanpak.",
+    "button": "Maak een afspraak"
+  }
+}

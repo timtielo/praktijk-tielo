@@ -19,29 +19,21 @@ export const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a/ACg8ocJGrhTmDSdGYh0dEAkNS7tGE7JEVFL5vYy0VxQiaMz0debENw=w60-h60-p-rp-mo-br100"
   },
   {
-    id: "placeholder-1",
-    name: "Placeholder 1",
-    text: "Placeholder review",
-    textEn: "Placeholder review",
+    id: "symelle-1",
+    name: "Symelle",
+    text: "Ik ben naar praktijk Tielo toe gegaan voor mijn scoliose en andere klachten die ik had m.b.t. sporten. Het heeft me heel erg geholpen. Mijn rugklachten zijn een stuk minder, mijn houding is beter en andere klachten zijn ook verminderd!! Tim is ook erg vriendelijk en helpt je echt gericht op jouw klachten. Ik kom hier zeker terug:)",
+    textEn: "I went to Tielo practice for my scoliosis and other complaints I had related to sports. It helped me a lot. My back problems are a lot less, my posture is better and other complaints have also reduced!! Tim is also very friendly and really helps you with your complaints. I will definitely come back here :)",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150"
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjVdZF7fHLGIS8i0hV5YeUFmowuC7eGEQ7XwILY961CuEDCqT55O=w60-h60-p-rp-mo-br100"
   },
   {
-    id: "placeholder-2",
-    name: "Placeholder 2",
-    text: "Placeholder review",
-    textEn: "Placeholder review",
+    id: "karin-1",
+    name: "Karin",
+    text: "Enorm veel baat bij de behandeling door Tim. In 2x voel ik zoveel verbetering van mijn rug en heupen, sta ik rechterop en heb ik een diepere ademhaling. Daarnaast heeft hij ook onze hond Bako behandeld die wat mank liep en daarna niet meer. De oefeningen die ik heb ontvangen, kan ik nu zelf doen, maar ik kijk ook uit naar de volgende behandeling over een maand.",
+    textEn: "Huge benefit from Tim's treatment. In 2x I feel so much improvement in my back and hips, I stand up straighter and I breathe deeper. He also treated our dog Bako, who was limping slightly and then stopped. I can now do the exercises I received myself, but I am also looking forward to the next treatment in a month.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150"
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjVJuu9S6ioKB-8a1zEOmCvQZC7ALiLDQKOsUB--dyGFComy3rCg=s36-c-rp-mo-br100"
   },
-  {
-    id: "placeholder-3",
-    name: "Placeholder 3",
-    text: "Placeholder review",
-    textEn: "Placeholder review",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150"
-  }
 ];
 
 // Format testimonials for the marquee component
@@ -63,40 +55,10 @@ export const extendedTestimonialsShadcn = [
     author: {
       name: "Placeholder 4",
       handle: "Tevreden klant",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150",
+      avatar: "",
       rating: 5
     },
     text: "Placeholder review",
     id: "placeholder-4"
-  },
-  {
-    author: {
-      name: "Placeholder 5",
-      handle: "Tevreden klant",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150",
-      rating: 5
-    },
-    text: "Placeholder review",
-    id: "placeholder-5"
-  },
-  {
-    author: {
-      name: "Placeholder 6",
-      handle: "Tevreden klant",
-      avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150&h=150",
-      rating: 5
-    },
-    text: "Placeholder review",
-    id: "placeholder-6"
-  },
-  {
-    author: {
-      name: "Placeholder 7",
-      handle: "Tevreden klant",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150",
-      rating: 5
-    },
-    text: "Placeholder review",
-    id: "placeholder-7"
   }
 ];

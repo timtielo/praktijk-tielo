@@ -25,6 +25,19 @@ export function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
+  // Define keywords specific to the contact page
+  const contactPageKeywords = [
+    'contact praktijk tielo',
+    'afspraak maken',
+    'contact formulier',
+    'praktijk tielo contact',
+    'alternatieve behandeling afspraak',
+    'gezondheidsklachten afspraak',
+    'contact informatie',
+    'openingstijden',
+    'locatie praktijk tielo'
+  ];
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -55,6 +68,7 @@ export function ContactPage() {
         titleKey="meta.contact.title"
         descriptionKey="meta.contact.description"
         canonicalPath={isEnglish ? "/en/contact" : "/contact"}
+        keywords={contactPageKeywords}
       />
       
       {/* Contact Hero */}

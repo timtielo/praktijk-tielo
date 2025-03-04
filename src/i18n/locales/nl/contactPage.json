@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "title": "Begin vandaag nog met je herstel",
+    "subtitle": "Plan een afspraak en zie het verschil.",
+    "benefits": {
+      "gentleTreatment": "Zachte behandeling",
+      "personalApproach": "Persoonlijke aanpak",
+      "lastingResults": "Blijvend resultaat"
+    }
+  },
+  "form": {
+    "title": "Plan je afspraak",
+    "subtitle": "Laat je gegevens achter en we nemen binnen 24 uur contact met je op.",
+    "name": "Je naam *",
+    "namePlaceholder": "Bijv. Jan Jansen",
+    "email": "Je e-mailadres *",
+    "emailPlaceholder": "Bijv. jan@email.nl",
+    "phone": "Je telefoonnummer",
+    "phonePlaceholder": "Bijv. +31 6 12345678",
+    "message": "Je bericht *",
+    "messagePlaceholder": "Bijv. Beschikbare data voor een afspraak",
+    "send": "Verstuur",
+    "sending": "Versturen...",
+    "success": {
+      "title": "Je bericht is succesvol verzonden!",
+      "subtitle": "We nemen binnen 24 uur contact met je op."
+    },
+    "error": {
+      "title": "Er is iets misgegaan.",
+      "subtitle": "Probeer het later opnieuw of bel ons direct."
+    }
+  },
+  "directContact": {
+    "title": "Direct contact opnemen?",
+    "call": {
+      "title": "Bel direct",
+      "action": "Bel ons"
+    },
+    "email": {
+      "title": "Mail ons",
+      "action": "Mail ons"
+    },
+    "visit": {
+      "title": "Bezoek ons",
+      "action": "Bezoek ons"
+    }
+  },
+  "openingHours": {
+    "title": "Openingstijden"
+  },
+  "testimonials": {
+    "title": "Wat anderen zeggen over onze behandeling"
+  }
+}

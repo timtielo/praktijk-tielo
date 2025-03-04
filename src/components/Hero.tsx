@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, Star, Quote } from 'lucide-react';
+import { ChevronRight, Star, Quote, CheckCircle } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { testimonials, type Testimonial } from '../data/testimonials';
 import { useTranslation } from 'react-i18next';
+import { PeopleCounter } from './PeopleCounter';
+import { GoogleReviewsCounter } from './GoogleReviewsCounter';
+import { statistics } from '../data/statistics';
+import { googleReviewsData } from '../data/googleReviews';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 
 function TestimonialCard({ testimonial, isActive }: { testimonial: Testimonial, isActive: boolean }) {
   const { t, i18n } = useTranslation();
@@ -77,6 +88,62 @@ function TestimonialCarousel() {
   );
 }
 
+function MobileTestimonialCarousel() {
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  
+  // Get localized testimonials
+  const localizedTestimonials = testimonials.map(testimonial => ({
+    ...testimonial,
+    text: currentLanguage.startsWith('nl') ? testimonial.text : (testimonial.textEn || testimonial.text)
+  }));
+  
+  return (
+    <Swiper
+      modules={[Pagination, Autoplay]}
+      spaceBetween={16}
+      slidesPerView={1}
+      pagination={{ 
+        clickable: true,
+        bulletActiveClass: 'swiper-pagination-bullet-active bg-blue-600',
+        bulletClass: 'swiper-pagination-bullet bg-gray-300 inline-block rounded-full w-2 h-2 mx-1 cursor-pointer transition-all duration-300'
+      }}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+      }}
+      className="pb-10"
+    >
+      {localizedTestimonials.map((testimonial, index) => (
+        <SwiperSlide key={testimonial.id || index}>
+          <div className="bg-white rounded-2xl p-6 shadow-xl">
+            <Quote className="w-10 h-10 text-blue-600/20 mb-4" />
+            <p className="text-gray-700 mb-4">{testimonial.text}</p>
+            <div className="pt-4 border-t border-gray-100">
+              <div className="flex gap-1 mb-2">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <div className="flex items-center gap-3">
+                <img 
+                  src={testimonial.image} 
+                  alt={testimonial.name}
+                  className="w-10 h-10 rounded-full object-cover"
+                />
+                <div>
+                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                  <p className="text-xs text-gray-500">{t('testimonials.satisfiedClient')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+}
+
 export function Hero() {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -112,6 +179,7 @@ export function Hero() {
                 </>
               )}
             </h1>
+            
             <p className="text-xl text-gray-600 max-w-2xl">
               {t('hero.subtitle')}
             </p>
@@ -130,24 +198,43 @@ export function Hero() {
               </button>
             </div>
             
-            {/* Trust indicators */}
-            <div className="pt-8 border-t border-gray-200">
-              <div className="flex flex-wrap gap-8 items-center text-gray-600">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-green-500" />
-                  <span>{t('hero.benefits.quickResults')}</span>
+            {/* Trust indicators and stats section */}
+            <div className="pt-6 border-t border-gray-200">
+              {/* Two-column layout for USPs and counters */}
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Left column: People counter and Google reviews */}
+                <div className="flex flex-col gap-4">
+                  {/* People Counter */}
+                  <PeopleCounter 
+                    peopleCount={statistics.peopleHelped} 
+                    animalsCount={statistics.animalsHelped}
+                  />
+                  
+                  {/* Google Reviews Counter */}
+                  <GoogleReviewsCounter 
+                    rating={googleReviewsData.averageRating} 
+                    reviewCount={googleReviewsData.totalReviews}
+                  />
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-green-500" />
-                  <span>{t('hero.benefits.personalApproach')}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-green-500" />
-                  <span>{t('hero.benefits.gentleTreatment')}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-green-500" />
-                  <span>{t('hero.benefits.flexibleHours')}</span>
+                
+                {/* Right column: USPs with green dots */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700">{t('hero.benefits.quickResults')}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700">{t('hero.benefits.personalApproach')}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700">{t('hero.benefits.gentleTreatment')}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700">{t('hero.benefits.flexibleHours')}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -155,7 +242,15 @@ export function Hero() {
           
           {/* Right side testimonials */}
           <div className="w-full lg:w-[40%] aspect-square max-w-lg">
-            <TestimonialCarousel />
+            {/* Desktop testimonial carousel */}
+            <div className="hidden md:block h-full">
+              <TestimonialCarousel />
+            </div>
+            
+            {/* Mobile swipeable testimonials */}
+            <div className="md:hidden">
+              <MobileTestimonialCarousel />
+            </div>
           </div>
         </div>
       </div>

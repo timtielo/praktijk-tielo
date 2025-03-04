@@ -1,0 +1,63 @@
+{
+  "title": "Disclaimer – Praktijk Tielo",
+  "sections": {
+    "general": {
+      "title": "1. Algemeen",
+      "content": "Deze website, www.praktijktielo.nl, en de diensten die Praktijk Tielo aanbiedt, zijn gericht op ontspanning en welzijn. De informatie op deze website is uitsluitend bedoeld voor informatieve doeleinden en mag niet worden opgevat als medisch advies, diagnose of behandeling. Door deze website te bezoeken en gebruik te maken van de diensten van Praktijk Tielo, stemt u in met de voorwaarden zoals hieronder beschreven."
+    },
+    "noMedicalCare": {
+      "title": "2. Geen medische zorg",
+      "items": [
+        "De behandelingen en diensten aangeboden door Praktijk Tielo zijn complementair en gericht op ontspanning en welzijn.",
+        "Wij stellen geen medische diagnoses en behandelen geen medische aandoeningen.",
+        "De behandelingen zijn geen vervanging voor medische of psychologische zorg. Indien u medische of psychische klachten heeft, raden wij u aan contact op te nemen met een gekwalificeerde arts of specialist.",
+        "Praktijk Tielo kan niet aansprakelijk worden gesteld voor beslissingen die u neemt op basis van de aangeboden behandelingen of de informatie op deze website."
+      ]
+    },
+    "resultsLiability": {
+      "title": "3. Resultaten en aansprakelijkheid",
+      "items": [
+        "De resultaten van behandelingen variëren per persoon. Praktijk Tielo kan geen garantie geven over specifieke uitkomsten.",
+        "Behandelingen zijn bedoeld als ondersteuning en ontspanning en niet als oplossing voor medische of psychische aandoeningen.",
+        "Praktijk Tielo is niet aansprakelijk voor enige directe of indirecte schade die voortkomt uit het gebruik van onze diensten of informatie, tenzij sprake is van opzet of grove nalatigheid."
+      ]
+    },
+    "privacy": {
+      "title": "4. Privacy en gegevensbescherming",
+      "items": [
+        "Praktijk Tielo gaat zorgvuldig om met uw persoonsgegevens en houdt zich aan de Algemene Verordening Gegevensbescherming (AVG).",
+        "De informatie die tijdens behandelingen wordt gedeeld, wordt vertrouwelijk behandeld en zal niet worden verstrekt aan derden zonder uw toestemming, tenzij wettelijk verplicht."
+      ]
+    },
+    "clientResponsibility": {
+      "title": "5. Verantwoordelijkheid van de klant",
+      "items": [
+        "De klant is zelf verantwoordelijk voor het verstrekken van juiste en volledige informatie over hun gezondheidstoestand.",
+        "De klant blijft altijd zelf verantwoordelijk voor het nemen van beslissingen omtrent hun gezondheid en welzijn."
+      ]
+    },
+    "changes": {
+      "title": "6. Wijzigingen en aanpassingen",
+      "items": [
+        "Praktijk Tielo behoudt zich het recht voor om deze disclaimer en de inhoud van de website op elk moment te wijzigen zonder voorafgaande kennisgeving.",
+        "Het is uw verantwoordelijkheid om regelmatig deze pagina te controleren op eventuele aanpassingen."
+      ]
+    },
+    "applicableLaw": {
+      "title": "7. Toepasselijk recht en geschillen",
+      "items": [
+        "Op alle diensten en deze disclaimer is het Nederlands recht van toepassing.",
+        "Eventuele geschillen worden voorgelegd aan de bevoegde rechter in Nederland."
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "content": "Mocht u vragen hebben over deze disclaimer, neem dan contact met ons op via:",
+      "items": { 
+        "email": "E-mail: info@praktijk-tielo.nl",
+        "phone": "Telefoon: ",
+        "website": "Website: www.praktijktielo.nl"
+      }
+    }
+  }
+}

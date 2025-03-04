@@ -40,24 +40,63 @@ export function Solution() {
               <p className="text-gray-600 mb-4">
                 {t('solution.forWhom.description')}
               </p>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex items-center gap-2">
-                  <ChevronRight className="w-5 h-5 text-blue-600" />
-                  <span>{t('solution.forWhom.items.physicalPain')}</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <ChevronRight className="w-5 h-5 text-blue-600" />
-                  <span>{t('solution.forWhom.items.migraines')}</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <ChevronRight className="w-5 h-5 text-blue-600" />
-                  <span>{t('solution.forWhom.items.muscleCramps')}</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <ChevronRight className="w-5 h-5 text-blue-600" />
-                  <span>{t('solution.forWhom.items.depression')}</span>
-                </li>
-              </ul>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
+                <div className="flex items-center gap-2">
+                  <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-gray-600">{t('solution.forWhom.items.physicalPain')}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-gray-600">{t('solution.forWhom.items.migraines')}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-gray-600">{t('solution.forWhom.items.muscleCramps')}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-gray-600">{t('solution.forWhom.items.depression')}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-gray-600">{t('solution.forWhom.items.backPain')}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-gray-600">{t('solution.forWhom.items.jointPain')}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-gray-600">{t('solution.forWhom.items.weightIssues')}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-gray-600">{t('solution.forWhom.items.fertility')}</span>
+                </div>
+              </div>
+              
+              <div className="mt-6 pt-4 border-t border-gray-100">
+                <h4 className="font-semibold mb-3">{t('solution.forWhom.expandedTitle')}</h4>
+                <div className="grid grid-cols-1 gap-y-2">
+                  <div className="flex items-start gap-2">
+                    <ChevronRight className="w-5 h-5 mt-1 text-blue-600 flex-shrink-0" />
+                    <span className="text-gray-600">{t('solution.forWhom.expandedItems.healthy')}</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <ChevronRight className="w-5 h-5 mt-1 text-blue-600 flex-shrink-0" />
+                    <span className="text-gray-600">{t('solution.forWhom.expandedItems.children')}</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <ChevronRight className="w-5 h-5 mt-1 text-blue-600 flex-shrink-0" />
+                    <span className="text-gray-600">{t('solution.forWhom.expandedItems.autoimmune')}</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <ChevronRight className="w-5 h-5 mt-1 text-blue-600 flex-shrink-0" />
+                    <span className="text-gray-600">{t('solution.forWhom.expandedItems.unexplained')}</span>
+                  </div>
+                </div>
+              </div>
+              
               <div className="mt-4 text-xs text-gray-400">
                 <Link to={getLocalizedPath('/disclaimer')} className="hover:text-blue-600 transition-colors">
                   {t('solution.forWhom.disclaimer')}

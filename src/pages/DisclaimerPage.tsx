@@ -9,12 +9,26 @@ export function DisclaimerPage() {
   const location = useLocation();
   const isEnglish = location.pathname.startsWith('/en');
   
+  // Define keywords specific to the disclaimer page
+  const disclaimerPageKeywords = [
+    'praktijk tielo disclaimer',
+    'juridische informatie',
+    'aansprakelijkheid',
+    'voorwaarden',
+    'privacy',
+    'gegevensbescherming',
+    'verantwoordelijkheid',
+    'behandelvoorwaarden',
+    'wettelijke informatie'
+  ];
+  
   return (
     <>
       <SEO 
         titleKey="meta.disclaimer.title"
         descriptionKey="meta.disclaimer.description"
         canonicalPath={isEnglish ? "/en/disclaimer" : "/disclaimer"}
+        keywords={disclaimerPageKeywords}
       />
       <div className="container mx-auto px-4 py-32">
         <div className="max-w-3xl mx-auto">

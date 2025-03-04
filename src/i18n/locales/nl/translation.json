@@ -15,12 +15,17 @@
     "disclaimer": {
       "title": "Disclaimer",
       "description": "Lees onze disclaimer voor belangrijke informatie over onze diensten en verantwoordelijkheden."
+    },
+    "aboutUs": {
+      "title": "Over Ons - Praktijk Tielo",
+      "description": "Leer meer over Praktijk Tielo, onze missie en onze aanpak. Ontdek hoe we mensen helpen met hun fysieke en mentale klachten."
     }
   },
   "header": {
     "reviews": "Reviews",
     "makeAppointment": "Maak afspraak",
-    "language": "Taal"
+    "language": "Taal",
+    "aboutUs": "Over ons"
   },
   "hero": {
     "title": "Heb jij fysieke- of mentale klachten?",
@@ -35,6 +40,10 @@
       "gentleTreatment": "Zachte behandeling",
       "flexibleHours": "Ook 's avonds en in het weekend open"
     }
+  },
+  "statistics": {
+    "peopleHelped": "mensen geholpen",
+    "animalsHelped": "dieren geholpen"
   },
   "symptoms": {
     "title": "Herken je dit?",
@@ -77,7 +86,18 @@
         "physicalPain": "Lichamelijke pijnen",
         "migraines": "Migraines",
         "muscleCramps": "Spierkrampen",
-        "depression": "Depressie"
+        "depression": "Depressie",
+        "backPain": "Rugpijn",
+        "jointPain": "Gewrichtspijn",
+        "weightIssues": "Gewichtsproblemen",
+        "fertility": "Vruchtbaarheidsproblemen"
+      },
+      "expandedTitle": "Onze behandeling kan ook helpen bij:",
+      "expandedItems": {
+        "healthy": "Mensen die zich gezond voelen en hun functionaliteit willen optimaliseren",
+        "children": "Kinderen met groei- en gedragsproblemen",
+        "autoimmune": "Mensen met auto-immuunziekten zoals diabetes, MS, astma, eczeem, chronische vermoeidheid",
+        "unexplained": "Mensen met onverklaarbare aandoeningen waarbij \"de dokter zegt dat ik OK ben, maar ik voel me gewoon niet goed\""
       },
       "disclaimer": "Lees onze disclaimer"
     },
@@ -220,6 +240,47 @@
       "button": "Maak een afspraak"
     }
   },
+  "aboutUs": {
+    "hero": {
+      "title": "Over Praktijk Tielo",
+      "subtitle": "Leer meer over onze praktijk, onze missie en onze aanpak."
+    },
+    "tim": {
+      "title": "Over Tim Tielkemeijer",
+      "paragraph1": "Wedstrijdzwemmen, roeien, boksen en fitness. Sportief zeker. Hierdoor ben ik altijd bezig geweest met gezondheid.",
+      "paragraph2": "Maar in 2019 veranderde er ineens iets. Onverklaarbare vermoeidheid: ik sliep, ging naar school, en sliep. Ik was vergeetachtig en had geen emotie, het was alsof ik niet aanwezig was. Van bloedtesten naar hartonderzoek, en vervolgens bij het Medisch Trainings Centrum terecht gekomen om te leren leven met de klachten. Geen oplossing, simpelweg ermee leren leven.",
+      "paragraph3": "Daar nam ik geen vrede mee, wat het niet altijd makkelijk maakte. Na een paar maanden hoorde ik via via over een alternatieve behandelwijze. Ik was enorm skeptisch: 'dit kan nooit werken'. En nog steeds snap ik het niet helamaal, maar dat hoeft ook niet. Het werkte.",
+      "paragraph4": "Vanuit dit stukje onmacht, onvrede, hoop en uiteindelijk een oplossing is mijn droom gegroeid om hetzelfde voor mensen te kunnen betekenen. Vandaar dat ik Praktijk Tielo ben gestart, zo hoop ik ook jou verder te kunnen helpen.",
+      "credentials": {
+        "passion": "Passie voor gezondheid",
+        "experience": "Persoonlijke ervaring met klachten",
+        "personalExperience": "Eigen hersteltraject doorlopen"
+      }
+    },
+    "ourMission": {
+      "title": "Onze Missie",
+      "subtitle": "Bij Praktijk Tielo streven we ernaar om mensen te helpen hun optimale gezondheid en welzijn te bereiken.",
+      "cards": {
+        "holistic": {
+          "title": "Holistische Aanpak",
+          "description": "We behandelen niet alleen de symptomen, maar kijken naar het hele lichaam en de onderliggende oorzaken van klachten."
+        },
+        "personal": {
+          "title": "Persoonlijke Benadering",
+          "description": "Ieder mens is uniek, daarom stemmen we onze behandelingen af op jouw specifieke situatie en behoeften."
+        },
+        "quality": {
+          "title": "Kwaliteit Voorop",
+          "description": "We streven naar de hoogste kwaliteit in onze behandelingen en ontwikkelen onszelf continu."
+        }
+      }
+    },
+    "cta": {
+      "title": "Klaar om je klachten aan te pakken?",
+      "subtitle": "Maak vandaag nog een afspraak en ervaar het verschil van onze unieke aanpak.",
+      "button": "Maak een afspraak"
+    }
+  },
   "disclaimer": {
     "title": "Disclaimer – Praktijk Tielo",
     "sections": {
@@ -275,7 +336,7 @@
       "contact": {
         "title": "Contact",
         "content": "Mocht u vragen hebben over deze disclaimer, neem dan contact met ons op via:",
-        "items": {
+        "items": { 
           "email": "E-mail: info@praktijk-tielo.nl",
           "phone": "Telefoon: ",
           "website": "Website: www.praktijktielo.nl"
@@ -298,7 +359,8 @@
       "title": "Links",
       "reviews": "Reviews",
       "contact": "Contact",
-      "disclaimer": "Disclaimer"
+      "disclaimer": "Disclaimer",
+      "aboutUs": "Over ons"
     },
     "copyright": "Alle rechten voorbehouden.",
     "disclaimer": "Disclaimer"

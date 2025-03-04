@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "title": "What our customers say",
+    "subtitle": "Discover the experiences of people we have helped with their complaints."
+  },
+  "clientTestimonials": {
+    "title": "Customer Testimonials"
+  },
+  "googleReviews": {
+    "viewAll": "View all Google reviews",
+    "attribution": "Reviews from Google",
+    "reviewsOnGoogle": "reviews on Google"
+  },
+  "cta": {
+    "title": "Ready to address your complaints?",
+    "subtitle": "Join our satisfied customers and start your recovery today. We are happy to help you with a personal approach.",
+    "button": "Make an appointment"
+  }
+}

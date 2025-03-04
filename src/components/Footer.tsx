@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Clock, Star } from 'lucide-react';
+import { Mail, MapPin, Facebook, Instagram, Linkedin, Clock, Star, Users } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { businessInfo } from '../data/business';
 import { useTranslation } from 'react-i18next';
@@ -14,6 +14,11 @@ export function Footer() {
   // Helper function to get language-aware paths
   const getLocalizedPath = (path: string) => {
     return isEnglish ? `/en${path === '/' ? '' : path}` : path;
+  };
+
+  // Get the correct About Us path based on language
+  const getAboutUsPath = () => {
+    return isEnglish ? '/en/about-us' : '/over-ons';
   };
 
   return (
@@ -50,15 +55,6 @@ export function Footer() {
               <ul className="space-y-3">
                 <li>
                   <a 
-                    href={`tel:${contact.phone}`}
-                    className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
-                  >
-                    <Phone className="w-4 h-4 text-blue-400" />
-                    {contact.phone}
-                  </a>
-                </li>
-                <li>
-                  <a 
                     href={`mailto:${contact.email}`}
                     className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
                   >
@@ -88,6 +84,15 @@ export function Footer() {
             <div>
               <h3 className="text-xl font-bold mb-4">{t('footer.links.title')}</h3>
               <ul className="space-y-3">
+                <li>
+                  <Link 
+                    to={getAboutUsPath()}
+                    className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                  >
+                    <Users className="w-4 h-4 text-blue-400" />
+                    {t('footer.links.aboutUs')}
+                  </Link>
+                </li>
                 <li>
                   <Link 
                     to={getLocalizedPath('/reviews')}

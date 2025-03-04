@@ -1,0 +1,63 @@
+{
+  "title": "Disclaimer – Praktijk Tielo",
+  "sections": {
+    "general": {
+      "title": "1. General",
+      "content": "This website, www.praktijktielo.nl, and the services offered by Praktijk Tielo, are focused on relaxation and well-being. The information on this website is intended for informational purposes only and should not be construed as medical advice, diagnosis, or treatment. By visiting this website and using the services of Praktijk Tielo, you agree to the terms as described below."
+    },
+    "noMedicalCare": {
+      "title": "2. No medical care",
+      "items": [
+        "The treatments and services offered by Praktijk Tielo are complementary and focused on relaxation and well-being.",
+        "We do not make medical diagnoses and do not treat medical conditions.",
+        "The treatments are not a replacement for medical or psychological care. If you have medical or psychological complaints, we advise you to contact a qualified doctor or specialist.",
+        "Praktijk Tielo cannot be held liable for decisions you make based on the treatments offered or the information on this website."
+      ]
+    },
+    "resultsLiability": {
+      "title": "3. Results and liability",
+      "items": [
+        "The results of treatments vary per person. Praktijk Tielo cannot guarantee specific outcomes.",
+        "Treatments are intended as support and relaxation and not as a solution for medical or psychological conditions.",
+        "Praktijk Tielo is not liable for any direct or indirect damage resulting from the use of our services or information, unless there is intent or gross negligence."
+      ]
+    },
+    "privacy": {
+      "title": "4. Privacy and data protection",
+      "items": [
+        "Praktijk Tielo handles your personal data with care and complies with the General Data Protection Regulation (GDPR).",
+        "The information shared during treatments is treated confidentially and will not be provided to third parties without your consent, unless legally required."
+      ]
+    },
+    "clientResponsibility": {
+      "title": "5. Responsibility of the customer",
+      "items": [
+        "The customer is responsible for providing correct and complete information about their health condition.",
+        "The customer always remains responsible for making decisions regarding their health and well-being."
+      ]
+    },
+    "changes": {
+      "title": "6. Changes and adjustments",
+      "items": [
+        "Praktijk Tielo reserves the right to change this disclaimer and the content of the website at any time without prior notice.",
+        "It is your responsibility to regularly check this page for any adjustments."
+      ]
+    },
+    "applicableLaw": {
+      "title": "7. Applicable law and disputes",
+      "items": [
+        "Dutch law applies to all services and this disclaimer.",
+        "Any disputes will be submitted to the competent court in the Netherlands."
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "content": "If you have questions about this disclaimer, please contact us via:",
+      "items": { 
+        "email": "Email: info@praktijk-tielo.nl",
+        "phone": "Phone: ",
+        "website": "Website: www.praktijktielo.nl"
+      }
+    }
+  }
+}

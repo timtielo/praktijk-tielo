@@ -15,12 +15,17 @@
     "disclaimer": {
       "title": "Disclaimer",
       "description": "Read our disclaimer for important information about our services and responsibilities."
+    },
+    "aboutUs": {
+      "title": "About Us - Praktijk Tielo",
+      "description": "Learn more about Praktijk Tielo, our mission and our approach. Discover how we help people with their physical and mental complaints."
     }
   },
   "header": {
     "reviews": "Reviews",
     "makeAppointment": "Make appointment",
-    "language": "Language"
+    "language": "Language",
+    "aboutUs": "About us"
   },
   "hero": {
     "title": "Do you have physical or mental complaints?",
@@ -35,6 +40,10 @@
       "gentleTreatment": "Gentle treatment",
       "flexibleHours": "Also open in the evenings and on weekends"
     }
+  },
+  "statistics": {
+    "peopleHelped": "people helped",
+    "animalsHelped": "animals helped"
   },
   "symptoms": {
     "title": "Do you recognize this?",
@@ -77,7 +86,18 @@
         "physicalPain": "Physical pain",
         "migraines": "Migraines",
         "muscleCramps": "Muscle cramps",
-        "depression": "Depression"
+        "depression": "Depression",
+        "backPain": "Back pain",
+        "jointPain": "Joint pain",
+        "weightIssues": "Weight issues",
+        "fertility": "Fertility issues"
+      },
+      "expandedTitle": "Our treatment can also help with:",
+      "expandedItems": {
+        "healthy": "People who feel healthy and want to optimize their functionality",
+        "children": "Children with growth and behavioral problems",
+        "autoimmune": "People with autoimmune diseases such as diabetes, MS, asthma, eczema, chronic fatigue",
+        "unexplained": "People with any unexplained condition when \"the doctor says I'm OK, but I just don't feel right\""
       },
       "disclaimer": "Read our disclaimer"
     },
@@ -220,6 +240,47 @@
       "button": "Make an appointment"
     }
   },
+  "aboutUs": {
+    "hero": {
+      "title": "About Praktijk Tielo",
+      "subtitle": "Learn more about our practice, our mission, and our approach."
+    },
+    "tim": {
+      "title": "About Tim Tielkemeijer",
+      "paragraph1": "Competitive swimming, rowing, boxing, and fitness. Definitely sporty. Because of this, I have always been concerned with health.",
+      "paragraph2": "But in 2019, something suddenly changed. Unexplainable fatigue: I slept, went to school, and slept. I was forgetful and had no emotion, it was as if I wasn't present. From blood tests to heart examinations, and then ending up at the Medical Training Center to learn to live with the complaints. No solution, simply learning to live with it.",
+      "paragraph3": "I wasn't satisfied with that, which didn't always make it easy. After a few months, I heard through the grapevine about an alternative treatment method. I was extremely skeptical: 'this can never work'. And I still don't completely understand it, but that's not necessary. It worked.",
+      "paragraph4": "From this piece of powerlessness, dissatisfaction, hope, and ultimately a solution, my dream grew to be able to mean the same for people. That's why I started Praktijk Tielo, hoping to help you further as well.",
+      "credentials": {
+        "passion": "Passion for health",
+        "experience": "Personal experience with complaints",
+        "personalExperience": "Completed own recovery journey"
+      }
+    },
+    "ourMission": {
+      "title": "Our Mission",
+      "subtitle": "At Praktijk Tielo, we strive to help people achieve their optimal health and well-being.",
+      "cards": {
+        "holistic": {
+          "title": "Holistic Approach",
+          "description": "We don't just treat the symptoms, but look at the whole body and the underlying causes of complaints."
+        },
+        "personal": {
+          "title": "Personal Approach",
+          "description": "Every person is unique, which is why we tailor our treatments to your specific situation and needs."
+        },
+        "quality": {
+          "title": "Quality First",
+          "description": "We strive for the highest quality in our treatments and continuously develop ourselves."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to address your complaints?",
+      "subtitle": "Make an appointment today and experience the difference of our unique approach.",
+      "button": "Make an appointment"
+    }
+  },
   "disclaimer": {
     "title": "Disclaimer – Praktijk Tielo",
     "sections": {
@@ -275,7 +336,7 @@
       "contact": {
         "title": "Contact",
         "content": "If you have questions about this disclaimer, please contact us via:",
-        "items": {
+        "items": { 
           "email": "Email: info@praktijk-tielo.nl",
           "phone": "Phone: ",
           "website": "Website: www.praktijktielo.nl"
@@ -298,7 +359,8 @@
       "title": "Links",
       "reviews": "Reviews",
       "contact": "Contact",
-      "disclaimer": "Disclaimer"
+      "disclaimer": "Disclaimer",
+      "aboutUs": "About us"
     },
     "copyright": "All rights reserved.",
     "disclaimer": "Disclaimer"

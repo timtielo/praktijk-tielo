@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "title": "Over Praktijk Tielo",
+    "subtitle": "Leer meer over onze praktijk, onze missie en onze aanpak."
+  },
+  "tim": {
+    "title": "Over Tim Tielkemeijer",
+    "paragraph1": "Wedstrijdzwemmen, roeien, boksen en fitness. Sportief zeker. Hierdoor ben ik altijd bezig geweest met gezondheid.",
+    "paragraph2": "Maar in 2019 veranderde er ineens iets. Onverklaarbare vermoeidheid: ik sliep, ging naar school, en sliep. Ik was vergeetachtig en had geen emotie, het was alsof ik niet aanwezig was. Van bloedtesten naar hartonderzoek, en vervolgens bij het Medisch Trainings Centrum terecht gekomen om te leren leven met de klachten. Geen oplossing, simpelweg ermee leren leven.",
+    "paragraph3": "Daar nam ik geen vrede mee, wat het niet altijd makkelijk maakte. Na een paar maanden hoorde ik via via over een alternatieve behandelwijze. Ik was enorm skeptisch: 'dit kan nooit werken'. En nog steeds snap ik het niet helamaal, maar dat hoeft ook niet. Het werkte.",
+    "paragraph4": "Vanuit dit stukje onmacht, onvrede, hoop en uiteindelijk een oplossing is mijn droom gegroeid om hetzelfde voor mensen te kunnen betekenen. Vandaar dat ik Praktijk Tielo ben gestart, zo hoop ik ook jou verder te kunnen helpen.",
+    "credentials": {
+      "passion": "Passie voor gezondheid",
+      "experience": "Persoonlijke ervaring met klachten",
+      "personalExperience": "Eigen hersteltraject doorlopen"
+    }
+  },
+  "ourMission": {
+    "title": "Onze Missie",
+    "subtitle": "Bij Praktijk Tielo streven we ernaar om mensen te helpen hun optimale gezondheid en welzijn te bereiken.",
+    "cards": {
+      "holistic": {
+        "title": "Holistische Aanpak",
+        "description": "We behandelen niet alleen de symptomen, maar kijken naar het hele lichaam en de onderliggende oorzaken van klachten."
+      },
+      "personal": {
+        "title": "Persoonlijke Benadering",
+        "description": "Ieder mens is uniek, daarom stemmen we onze behandelingen af op jouw specifieke situatie en behoeften."
+      },
+      "quality": {
+        "title": "Kwaliteit Voorop",
+        "description": "We streven naar de hoogste kwaliteit in onze behandelingen en ontwikkelen onszelf continu."
+      }
+    }
+  },
+  "cta": {
+    "title": "Klaar om je klachten aan te pakken?",
+    "subtitle": "Maak vandaag nog een afspraak en ervaar het verschil van onze unieke aanpak.",
+    "button": "Maak een afspraak"
+  }
+}

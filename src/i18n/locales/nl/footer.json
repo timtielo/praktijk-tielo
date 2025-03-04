@@ -1,0 +1,21 @@
+{
+  "openingHours": {
+    "title": "Openingstijden",
+    "weekdays": "Maandag - Vrijdag",
+    "saturday": "Zaterdag",
+    "sunday": "Zondag",
+    "byAppointment": "Op afspraak"
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "links": {
+    "title": "Links",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "disclaimer": "Disclaimer",
+    "aboutUs": "Over ons"
+  },
+  "copyright": "Alle rechten voorbehouden.",
+  "disclaimer": "Disclaimer"
+}

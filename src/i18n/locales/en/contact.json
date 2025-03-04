@@ -1,0 +1,13 @@
+{
+  "title": "Contact",
+  "form": {
+    "name": "Your name *",
+    "email": "Your email *",
+    "phone": "Your phone number",
+    "message": "Your message *",
+    "send": "Send message",
+    "sending": "Sending...",
+    "success": "Your message has been sent successfully!",
+    "error": "Something went wrong. Please try again later."
+  }
+}

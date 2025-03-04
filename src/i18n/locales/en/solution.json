@@ -1,0 +1,61 @@
+{
+  "title": "Our treatment method",
+  "subtitle": "At Praktijk Tielo, we work with simple self-help exercises that help your body return to its natural posture.",
+  "howItWorks": {
+    "title": "How it works",
+    "description1": "Natural movements combined with light touches at specific places make it possible to correct the position of hips, spine, sacrum, and coccyx where necessary.",
+    "description2": "Restoring the position of the spine and other joints can improve bodily functions in both physical and mental areas."
+  },
+  "forWhom": {
+    "title": "Who is it suitable for?",
+    "description": "Our instruction is suitable for people with various complaints and can make a big difference for young and old:",
+    "items": {
+      "physicalPain": "Physical pain",
+      "migraines": "Migraines",
+      "muscleCramps": "Muscle cramps",
+      "depression": "Depression",
+      "backPain": "Back pain",
+      "jointPain": "Joint pain",
+      "weightIssues": "Weight issues",
+      "fertility": "Fertility issues"
+    },
+    "expandedTitle": "Our treatment can also help with:",
+    "expandedItems": {
+      "healthy": "People who feel healthy and want to optimize their functionality",
+      "children": "Children with growth and behavioral problems",
+      "autoimmune": "People with autoimmune diseases such as diabetes, MS, asthma, eczema, chronic fatigue",
+      "unexplained": "People with any unexplained condition when \"the doctor says I'm OK, but I just don't feel right\""
+    },
+    "disclaimer": "Read our disclaimer"
+  },
+  "treatment": {
+    "title": "Treatment process",
+    "first": {
+      "title": "First treatment (60 min)",
+      "description": "Alignment of the spine, correction of the sacrum and leg length difference."
+    },
+    "second": {
+      "title": "Second treatment (60 min)",
+      "description": "Repetition of first treatment plus heat treatment for better blood circulation and anchoring."
+    },
+    "followUp": {
+      "title": "Follow-up process",
+      "description": "Follow-up appointments after 1, 3, and 6 months to get your body more and more in line."
+    },
+    "rates": {
+      "title": "Rates",
+      "description": "€100,- per appointment",
+      "validUntil": "Price valid until April 2025"
+    }
+  },
+  "important": {
+    "title": "Important to know",
+    "items": {
+      "twoTreatments": "The first two treatments take place within a few days of each other.",
+      "selfHelp": "You will receive self-help exercises. This keeps you flexible.",
+      "afterAccident": "After a fall or accident, it is advisable to plan two instructions in a row again.",
+      "preventive": "The treatment also fits perfectly into a preventive lifestyle."
+    }
+  },
+  "cta": "Start your recovery now"
+}

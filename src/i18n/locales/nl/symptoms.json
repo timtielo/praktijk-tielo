@@ -1,0 +1,26 @@
+{
+  "title": "Herken je dit?",
+  "subtitle": "Veel van onze klanten komen bij ons met deze klachten. Herken jij je hierin?",
+  "cards": {
+    "notFeelGood": {
+      "title": "Niet lekker in je vel",
+      "description": "Je voelt je niet energiek en komt maar niet in je normale ritme"
+    },
+    "sleepProblems": {
+      "title": "Slaapproblemen",
+      "description": "Je ligt 's nachts te woelen en kan maar geen comfortabele houding vinden"
+    },
+    "backPain": {
+      "title": "Pijntjes in je rug",
+      "description": "Regelmatig last van rugpijn die je dagelijkse activiteiten beïnvloedt"
+    },
+    "sportsInjuries": {
+      "title": "Sportblessures",
+      "description": "Je hebt last van blessures die je belemmeren tijdens het sporten"
+    }
+  },
+  "conclusion": {
+    "part1": "Deze klachten kunnen je dagelijks leven behoorlijk beïnvloeden.",
+    "part2": "Wij helpen je graag om weer in balans te komen."
+  }
+}

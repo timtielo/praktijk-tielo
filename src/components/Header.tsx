@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail, Star } from 'lucide-react';
+import { Menu, X, Mail, Star, Users } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { businessInfo } from '../data/business';
 import { useScrollDirection } from '../hooks/useScrollDirection';
@@ -18,6 +18,11 @@ export function Header() {
   // Helper function to get language-aware paths
   const getLocalizedPath = (path: string) => {
     return isEnglish ? `/en${path === '/' ? '' : path}` : path;
+  };
+
+  // Get the correct About Us path based on language
+  const getAboutUsPath = () => {
+    return isEnglish ? '/en/about-us' : '/over-ons';
   };
 
   useEffect(() => {
@@ -43,19 +48,33 @@ export function Header() {
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-20">
-          <Link 
-            to={getLocalizedPath('/')} 
-            className="flex items-center py-2"
-          >
-            <img 
-              src="/assets/logos/praktijktielotransparent.svg" 
-              alt={businessInfo.name}
-              className="h-16 w-auto"
-            />
-          </Link>
+          <div className="flex items-center">
+            <Link 
+              to={getLocalizedPath('/')} 
+              className="flex items-center py-2"
+            >
+              <img 
+                src="/assets/logos/praktijktielotransparent.svg" 
+                alt={businessInfo.name}
+                className="h-16 w-auto"
+              />
+            </Link>
+            
+            {/* Language switcher moved next to logo */}
+            <div className="ml-4">
+              <LanguageSwitcher />
+            </div>
+          </div>
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-6">
+            <Link 
+              to={getAboutUsPath()}
+              className="flex items-center gap-1 text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              <Users className="w-4 h-4" />
+              <span>{t('header.aboutUs')}</span>
+            </Link>
             <Link 
               to={getLocalizedPath('/reviews')} 
               className="flex items-center gap-1 text-gray-700 hover:text-blue-600 transition-colors"
@@ -63,7 +82,6 @@ export function Header() {
               <Star className="w-4 h-4" />
               <span>{t('header.reviews')}</span>
             </Link>
-            <LanguageSwitcher />
           </div>
 
           {/* Mobile menu button */}
@@ -81,13 +99,6 @@ export function Header() {
           {/* Desktop contact info */}
           <div className="hidden md:flex items-center gap-8">
             <div className="flex items-center gap-6">
-              <a 
-                href={`tel:${contact.phone}`} 
-                className="flex items-center gap-2 hover:text-blue-600 transition-colors duration-300"
-              >
-                <Phone className="w-4 h-4" />
-                <span>{contact.phone}</span>
-              </a>
               <a 
                 href={`mailto:${contact.email}`} 
                 className="flex items-center gap-2 hover:text-blue-600 transition-colors duration-300"
@@ -112,6 +123,14 @@ export function Header() {
           } py-4 space-y-4 bg-white rounded-lg shadow-lg mt-2`}
         >
           <Link
+            to={getAboutUsPath()}
+            className="flex items-center gap-2 px-4 text-gray-600 hover:text-blue-600"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Users className="w-4 h-4" />
+            <span>{t('header.aboutUs')}</span>
+          </Link>
+          <Link
             to={getLocalizedPath('/reviews')}
             className="flex items-center gap-2 px-4 text-gray-600 hover:text-blue-600"
             onClick={() => setIsMenuOpen(false)}
@@ -119,17 +138,6 @@ export function Header() {
             <Star className="w-4 h-4" />
             <span>{t('header.reviews')}</span>
           </Link>
-          <div className="px-4">
-            <LanguageSwitcher />
-          </div>
-          <a
-            href={`tel:${contact.phone}`}
-            className="flex items-center gap-2 px-4 text-gray-600 hover:text-blue-600"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <Phone className="w-4 h-4" />
-            <span>{contact.phone}</span>
-          </a>
           <a
             href={`mailto:${contact.email}`}
             className="flex items-center gap-2 px-4 text-gray-600 hover:text-blue-600"

@@ -1,5 +1,12 @@
 import { cn } from "../../lib/utils"
 import { TestimonialCard, TestimonialAuthor } from "../ui/testimonial-card"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 interface TestimonialsSectionProps {
   title: string
@@ -19,6 +26,9 @@ export function TestimonialsSection({
   testimonials,
   className 
 }: TestimonialsSectionProps) {
+  // Determine if we're on a mobile device
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  
   return (
     <section className={cn(
       "bg-background text-foreground",
@@ -42,7 +52,8 @@ export function TestimonialsSection({
         )}
 
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-          <div className="group flex overflow-hidden p-2 [--gap:1.5rem] [gap:var(--gap)] flex-row [--duration:40s]">
+          {/* Desktop: Marquee */}
+          <div className="hidden md:flex group overflow-hidden p-2 [--gap:1.5rem] [gap:var(--gap)] flex-row [--duration:40s]">
             <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
               {testimonials.map((testimonial, i) => (
                 <TestimonialCard 
@@ -61,6 +72,27 @@ export function TestimonialsSection({
                 />
               ))}
             </div>
+          </div>
+
+          {/* Mobile: Swipeable */}
+          <div className="md:hidden w-full px-4">
+            <Swiper
+              modules={[Pagination, Navigation]}
+              spaceBetween={16}
+              slidesPerView={1}
+              pagination={{ 
+                clickable: true,
+                bulletActiveClass: 'swiper-pagination-bullet-active bg-blue-600',
+                bulletClass: 'swiper-pagination-bullet bg-gray-300 inline-block rounded-full w-2 h-2 mx-1 cursor-pointer transition-all duration-300'
+              }}
+              className="pb-10"
+            >
+              {testimonials.map((testimonial, i) => (
+                <SwiperSlide key={`swiper-${testimonial.id || i}`}>
+                  <TestimonialCard {...testimonial} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
 
           <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/3 bg-gradient-to-r from-background sm:block" />

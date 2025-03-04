@@ -1,0 +1,61 @@
+{
+  "title": "Onze behandelmethode",
+  "subtitle": "Bij Praktijk Tielo werken we met eenvoudige zelfhulpoefeningen die je lichaam helpen terug te keren naar zijn natuurlijke houding.",
+  "howItWorks": {
+    "title": "Hoe het werkt",
+    "description1": "Natuurlijke bewegingen in combinatie met lichte aanrakingen op specifieke plaatsen maken het mogelijk dat de positie van heupen, wervelkolom, heiligbeen en stuitbeen waar nodig wordt gecorrigeerd.",
+    "description2": "Het herstellen van de positie van de wervelkolom en andere gewrichten kan lichaamsfuncties op zowel lichamelijk als geestelijk gebied verbeteren."
+  },
+  "forWhom": {
+    "title": "Voor wie is het geschikt?",
+    "description": "Onze instructie is geschikt voor mensen met uiteenlopende klachten en kan voor jong en oud een groot verschil maken:",
+    "items": {
+      "physicalPain": "Lichamelijke pijnen",
+      "migraines": "Migraines",
+      "muscleCramps": "Spierkrampen",
+      "depression": "Depressie",
+      "backPain": "Rugpijn",
+      "jointPain": "Gewrichtspijn",
+      "weightIssues": "Gewichtsproblemen",
+      "fertility": "Vruchtbaarheidsproblemen"
+    },
+    "expandedTitle": "Onze behandeling kan ook helpen bij:",
+    "expandedItems": {
+      "healthy": "Mensen die zich gezond voelen en hun functionaliteit willen optimaliseren",
+      "children": "Kinderen met groei- en gedragsproblemen",
+      "autoimmune": "Mensen met auto-immuunziekten zoals diabetes, MS, astma, eczeem, chronische vermoeidheid",
+      "unexplained": "Mensen met onverklaarbare aandoeningen waarbij \"de dokter zegt dat ik OK ben, maar ik voel me gewoon niet goed\""
+    },
+    "disclaimer": "Lees onze disclaimer"
+  },
+  "treatment": {
+    "title": "Behandeltraject",
+    "first": {
+      "title": "Eerste behandeling (60 min)",
+      "description": "Uitlijnen van de wervelkolom, correctie van het heiligbeen en beenlengte verschil."
+    },
+    "second": {
+      "title": "Tweede behandeling (60 min)",
+      "description": "Herhaling eerste behandeling plus warmtebehandeling voor betere doorbloeding en verankering."
+    },
+    "followUp": {
+      "title": "Vervolgtraject",
+      "description": "Vervolgafspraken na 1, 3 en 6 maanden om je lichaam steeds meer in lijn te krijgen."
+    },
+    "rates": {
+      "title": "Tarieven",
+      "description": "€100,- per afspraak",
+      "validUntil": "Prijs geldig t/m april 2025"
+    }
+  },
+  "important": {
+    "title": "Belangrijk om te weten",
+    "items": {
+      "twoTreatments": "De eerste twee behandelingen vinden binnen enkele dagen na elkaar plaats.",
+      "selfHelp": "Je krijgt zelfhulpoefeningen mee. Zo blijf je soepel.",
+      "afterAccident": "Na een val of ongeluk is het raadzaam om opnieuw twee instructies na elkaar te plannen.",
+      "preventive": "De behandeling past ook uitstekend in een preventieve leefstijl."
+    }
+  },
+  "cta": "Begin je herstel nu"
+}

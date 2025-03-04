@@ -1,0 +1,26 @@
+{
+  "title": "Do you recognize this?",
+  "subtitle": "Many of our customers come to us with these complaints. Do you recognize yourself in this?",
+  "cards": {
+    "notFeelGood": {
+      "title": "Not feeling well",
+      "description": "You don't feel energetic and can't get into your normal rhythm"
+    },
+    "sleepProblems": {
+      "title": "Sleep problems",
+      "description": "You toss and turn at night and can't find a comfortable position"
+    },
+    "backPain": {
+      "title": "Back pain",
+      "description": "Regular back pain that affects your daily activities"
+    },
+    "sportsInjuries": {
+      "title": "Sports injuries",
+      "description": "You have injuries that hinder you during sports"
+    }
+  },
+  "conclusion": {
+    "part1": "These complaints can significantly affect your daily life.",
+    "part2": "We are happy to help you get back in balance."
+  }
+}

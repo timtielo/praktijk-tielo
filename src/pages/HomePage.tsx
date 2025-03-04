@@ -12,12 +12,27 @@ export function HomePage() {
   const location = useLocation();
   const isEnglish = location.pathname.startsWith('/en');
   
+  // Define keywords specific to the home page
+  const homePageKeywords = [
+    'alternatieve geneeswijze',
+    'holistische behandeling',
+    'natuurlijke behandelmethode',
+    'fysieke klachten behandeling',
+    'mentale klachten behandeling',
+    'gezondheidsklachten',
+    'pijnbestrijding',
+    'gezondheidstherapie',
+    'lichaamshouding correctie',
+    'wervelkolom uitlijning'
+  ];
+  
   return (
     <>
       <SEO 
         titleKey="meta.home.title"
         descriptionKey="meta.home.description"
         canonicalPath={isEnglish ? "/en" : "/"}
+        keywords={homePageKeywords}
       />
       <Hero />
       <Symptoms />

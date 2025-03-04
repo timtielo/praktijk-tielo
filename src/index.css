@@ -87,3 +87,14 @@
     animation: marquee var(--duration) linear infinite;
   }
 }
+
+/* Swiper custom styles */
+.swiper-pagination-bullet-active {
+  width: 16px !important;
+  background-color: #2563eb !important;
+}
+
+.swiper-pagination {
+  position: relative;
+  margin-top: 16px;
+}

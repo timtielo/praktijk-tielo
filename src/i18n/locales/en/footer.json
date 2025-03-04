@@ -1,0 +1,21 @@
+{
+  "openingHours": {
+    "title": "Opening Hours",
+    "weekdays": "Monday - Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "byAppointment": "By appointment"
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "links": {
+    "title": "Links",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "disclaimer": "Disclaimer",
+    "aboutUs": "About us"
+  },
+  "copyright": "All rights reserved.",
+  "disclaimer": "Disclaimer"
+}

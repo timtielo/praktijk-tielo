@@ -9,26 +9,50 @@ export function LanguageSwitcher() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Map of Dutch routes to English routes and vice versa
+  const routeMapping: Record<string, string> = {
+    // Dutch to English
+    '/': '/en',
+    '/contact': '/en/contact',
+    '/reviews': '/en/reviews',
+    '/disclaimer': '/en/disclaimer',
+    '/over-ons': '/en/about-us',
+    
+    // English to Dutch
+    '/en': '/',
+    '/en/contact': '/contact',
+    '/en/reviews': '/reviews',
+    '/en/disclaimer': '/disclaimer',
+    '/en/about-us': '/over-ons'
+  };
+
   const toggleLanguage = () => {
     const newLanguage = currentLanguage.startsWith('nl') ? 'en' : 'nl';
     i18n.changeLanguage(newLanguage);
     
-    // Get current path without language prefix
-    let currentPath = location.pathname;
-    if (currentPath.startsWith('/en/')) {
-      currentPath = currentPath.replace('/en', '');
-    } else if (currentPath === '/en') {
-      currentPath = '/';
+    // Get the corresponding route in the new language
+    const currentPath = location.pathname;
+    
+    // Check if we have a direct mapping for this path
+    if (routeMapping[currentPath]) {
+      navigate(routeMapping[currentPath]);
+      return;
     }
     
-    // Navigate to the appropriate URL based on the new language
+    // If no direct mapping, use the default logic
     if (newLanguage === 'en') {
       // For English, add /en prefix
       const englishPath = currentPath === '/' ? '/en' : `/en${currentPath}`;
       navigate(englishPath);
     } else {
-      // For Dutch, remove /en prefix (already done above)
-      navigate(currentPath);
+      // For Dutch, remove /en prefix
+      let dutchPath = currentPath;
+      if (currentPath.startsWith('/en/')) {
+        dutchPath = currentPath.replace('/en', '');
+      } else if (currentPath === '/en') {
+        dutchPath = '/';
+      }
+      navigate(dutchPath);
     }
   };
 

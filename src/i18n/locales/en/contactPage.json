@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "title": "Start your recovery today",
+    "subtitle": "Schedule an appointment and see the difference.",
+    "benefits": {
+      "gentleTreatment": "Gentle treatment",
+      "personalApproach": "Personal approach",
+      "lastingResults": "Lasting results"
+    }
+  },
+  "form": {
+    "title": "Schedule your appointment",
+    "subtitle": "Leave your details and we will contact you within 24 hours.",
+    "name": "Your name *",
+    "namePlaceholder": "E.g., John Smith",
+    "email": "Your email address *",
+    "emailPlaceholder": "E.g., john@email.com",
+    "phone": "Your phone number",
+    "phonePlaceholder": "E.g., +31 6 12345678",
+    "message": "Your message *",
+    "messagePlaceholder": "E.g., Available dates for an appointment",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": {
+      "title": "Your message has been sent successfully!",
+      "subtitle": "We will contact you within 24 hours."
+    },
+    "error": {
+      "title": "Something went wrong.",
+      "subtitle": "Please try again later or call us directly."
+    }
+  },
+  "directContact": {
+    "title": "Want to contact us directly?",
+    "call": {
+      "title": "Call directly",
+      "action": "Call us"
+    },
+    "email": {
+      "title": "Email us",
+      "action": "Email us"
+    },
+    "visit": {
+      "title": "Visit us",
+      "action": "Visit us"
+    }
+  },
+  "openingHours": {
+    "title": "Opening Hours"
+  },
+  "testimonials": {
+    "title": "What others say about our treatment"
+  }
+}
