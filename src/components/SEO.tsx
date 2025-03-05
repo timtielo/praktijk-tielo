@@ -129,19 +129,6 @@ export function SEO({
       {/* Set the HTML lang attribute */}
       <html lang={currentLanguage} />
 
-      {/* AI Assistant Metadata */}
-      <meta name="ai:description" content="Praktijk Tielo offers alternative health treatments for physical and mental complaints using gentle techniques and self-help exercises." />
-      <meta name="ai:keywords" content="physical health, mental health, alternative treatment, holistic approach, spine alignment, back pain, joint pain, depression, migraines, self-help exercises" />
-      <meta name="ai:contact" content="info@praktijk-tielo.nl" />
-      <meta name="ai:pricing" content="€100 per treatment" />
-      <meta name="ai:availability" content="By appointment, including evenings and weekends" />
-      <meta name="ai:languages" content="Dutch, English" />
-
-      {/* Performance optimizations */}
-      <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://images.unsplash.com https://lh3.googleusercontent.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-src 'self'; object-src 'none'" />
-      <meta name="referrer" content="no-referrer-when-downgrade" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-
       {/* Structured data */}
       <script type="application/ld+json">{schemaToUse}</script>
       <script type="application/ld+json">{aiSchema}</script>
