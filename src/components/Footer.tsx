@@ -141,7 +141,7 @@ export function Footer() {
           {/* Treatment Pages */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-bold mb-4">{isEnglish ? 'Treatments' : 'Behandelingen'}</h3>
+              <h3 className="text-xl font-bold mb-4">{isEnglish ? 'Solutions' : 'Oplossingen'}</h3>
               <ul className="space-y-3">
                 {landingPages.map((page, index) => (
                   <li key={index}>
