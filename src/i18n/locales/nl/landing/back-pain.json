@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "title": "Rugpijn en Lage Rugklachten Behandeling | Praktijk Tielo",
+    "description": "Last van rugpijn of lage rugklachten? ✓ Natuurlijke behandelmethode ✓ Snel resultaat ✓ Persoonlijke aanpak ✓ Ook 's avonds en in het weekend"
+  },
+  "hero": {
+    "title": "Last van rugpijn of lage rugklachten?",
+    "subtitle": "Onze natuurlijke behandelmethode helpt je snel en effectief van je rugklachten af. Met persoonlijke aandacht en blijvend resultaat.",
+    "schedule": "Plan een afspraak"
+  },
+  "benefits": {
+    "natural": "Natuurlijke behandelmethode",
+    "lasting": "Blijvend resultaat",
+    "quick": "Snel effect",
+    "personal": "Persoonlijke aanpak"
+  },
+  "problem": {
+    "title": "Herken je dit?",
+    "symptoms": {
+      "title": "Veel voorkomende klachten",
+      "list": [
+        "Aanhoudende pijn in de onderrug",
+        "Stijfheid bij het opstaan",
+        "Uitstralende pijn naar benen",
+        "Moeite met lang zitten of staan",
+        "Beperkte bewegingsvrijheid",
+        "Spierspanning in de rug"
+      ]
+    }
+  },
+  "solution": {
+    "title": "Onze aanpak",
+    "description": "Bij Praktijk Tielo behandelen we rugklachten op een natuurlijke manier. Door het corrigeren van de wervelkolom en het aanpakken van de onderliggende oorzaak, zorgen we voor blijvende verbetering.",
+    "benefits": [
+      "Direct merkbaar effect na eerste behandeling",
+      "Zachte en veilige behandelmethode",
+      "Persoonlijke zelfhulpoefeningen",
+      "Gericht op langdurig herstel",
+      "Geen medicatie nodig"
+    ]
+  },
+  "testimonials": {
+    "title": "Wat anderen zeggen"
+  },
+  "cta": {
+    "title": "Begin vandaag nog met je herstel",
+    "subtitle": "Maak direct een afspraak voor een behandeling",
+    "schedule": "Plan een afspraak"
+  }
+}

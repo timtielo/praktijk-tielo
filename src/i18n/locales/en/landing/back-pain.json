@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "title": "Back Pain Treatment | Praktijk Tielo",
+    "description": "Suffering from back pain? ✓ Natural treatment method ✓ Quick results ✓ Personal approach ✓ Also open evenings and weekends"
+  },
+  "hero": {
+    "title": "Suffering from back pain?",
+    "subtitle": "Our natural treatment method helps you quickly and effectively get rid of your back pain. With personal attention and lasting results.",
+    "schedule": "Schedule appointment"
+  },
+  "benefits": {
+    "natural": "Natural treatment method",
+    "lasting": "Lasting results",
+    "quick": "Quick effect",
+    "personal": "Personal approach"
+  },
+  "problem": {
+    "title": "Do you recognize this?",
+    "symptoms": {
+      "title": "Common complaints",
+      "list": [
+        "Persistent lower back pain",
+        "Stiffness when getting up",
+        "Radiating pain to legs",
+        "Difficulty with prolonged sitting or standing",
+        "Limited range of motion",
+        "Muscle tension in the back"
+      ]
+    }
+  },
+  "solution": {
+    "title": "Our approach",
+    "description": "At Praktijk Tielo, we treat back pain naturally. By correcting the spine and addressing the underlying cause, we ensure lasting improvement.",
+    "benefits": [
+      "Immediate noticeable effect after first treatment",
+      "Gentle and safe treatment method",
+      "Personal self-help exercises",
+      "Focused on long-term recovery",
+      "No medication needed"
+    ]
+  },
+  "testimonials": {
+    "title": "What others say"
+  },
+  "cta": {
+    "title": "Start your recovery today",
+    "subtitle": "Schedule a treatment appointment right away",
+    "schedule": "Schedule appointment"
+  }
+}

@@ -21,11 +21,23 @@ export function Footer() {
     return isEnglish ? '/en/about-us' : '/over-ons';
   };
 
+  // Landing page paths
+  const landingPages = isEnglish ? [
+    { path: '/en/back-pain-treatment', label: 'Back Pain Treatment' },
+    { path: '/en/alternative-to-chiropractic', label: 'Alternative to Chiropractic' },
+    { path: '/en/sports-injury-treatment', label: 'Sports Injury Treatment' }
+  ] : [
+    { path: '/rugpijn-en-lage-rugklachten', label: 'Rugpijn behandeling' },
+    { path: '/alternatief-voor-chiropractor', label: 'Alternatief voor chiropractor' },
+    { path: '/sportblessures-behandeling', label: 'Sportblessures behandeling' }
+  ];
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4">
         {/* Main footer content */}
-        <div className="py-12 grid md:grid-cols-3 gap-12">
+        <div className="py-12 grid md:grid-cols-4 gap-12">
+          {/* Opening Hours */}
           <div className="space-y-6">
             <div>
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
@@ -49,6 +61,7 @@ export function Footer() {
             </div>
           </div>
 
+          {/* Contact Information */}
           <div className="space-y-6">
             <div>
               <h3 className="text-xl font-bold mb-4">{t('footer.contact.title')}</h3>
@@ -80,6 +93,7 @@ export function Footer() {
             </div>
           </div>
 
+          {/* Main Links */}
           <div className="space-y-6">
             <div>
               <h3 className="text-xl font-bold mb-4">{t('footer.links.title')}</h3>
@@ -120,6 +134,25 @@ export function Footer() {
                     {t('footer.links.disclaimer')}
                   </Link>
                 </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Treatment Pages */}
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-xl font-bold mb-4">{isEnglish ? 'Treatments' : 'Behandelingen'}</h3>
+              <ul className="space-y-3">
+                {landingPages.map((page, index) => (
+                  <li key={index}>
+                    <Link 
+                      to={page.path}
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      {page.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

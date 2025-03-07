@@ -13,6 +13,11 @@ const DisclaimerPage = lazy(() => import('./pages/DisclaimerPage').then(module =
 const ReviewsPage = lazy(() => import('./pages/ReviewsPage').then(module => ({ default: module.ReviewsPage })));
 const AboutUsPage = lazy(() => import('./pages/AboutUsPage').then(module => ({ default: module.AboutUsPage })));
 
+// Lazy load landing pages
+const BackPainPage = lazy(() => import('./pages/landing/BackPainPage').then(module => ({ default: module.BackPainPage })));
+const ChiropractorPage = lazy(() => import('./pages/landing/ChiropractorPage').then(module => ({ default: module.ChiropractorPage })));
+const SportsInjuriesPage = lazy(() => import('./pages/landing/SportsInjuriesPage').then(module => ({ default: module.SportsInjuriesPage })));
+
 function App() {
   const { i18n } = useTranslation();
   const location = useLocation();
@@ -43,12 +48,22 @@ function App() {
             <Route path="/reviews" element={<ReviewsPage />} />
             <Route path="/over-ons" element={<AboutUsPage />} />
             
+            {/* Dutch Landing Pages */}
+            <Route path="/rugpijn-en-lage-rugklachten" element={<BackPainPage />} />
+            <Route path="/alternatief-voor-chiropractor" element={<ChiropractorPage />} />
+            <Route path="/sportblessures-behandeling" element={<SportsInjuriesPage />} />
+            
             {/* English routes */}
             <Route path="/en" element={<HomePage />} />
             <Route path="/en/contact" element={<ContactPage />} />
             <Route path="/en/disclaimer" element={<DisclaimerPage />} />
             <Route path="/en/reviews" element={<ReviewsPage />} />
             <Route path="/en/about-us" element={<AboutUsPage />} />
+            
+            {/* English Landing Pages */}
+            <Route path="/en/back-pain-treatment" element={<BackPainPage />} />
+            <Route path="/en/alternative-to-chiropractic" element={<ChiropractorPage />} />
+            <Route path="/en/sports-injury-treatment" element={<SportsInjuriesPage />} />
             
             {/* Fallback for any other route */}
             <Route path="*" element={<Navigate to="/" replace />} />

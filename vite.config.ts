@@ -4,11 +4,17 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import viteCompression from 'vite-plugin-compression';
 import viteImagemin from 'vite-plugin-imagemin';
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return {
     plugins: [
-      react(),
+      react({
+        jsxRuntime: 'automatic',
+        babel: {
+          plugins: [
+            ['@babel/plugin-transform-react-jsx', { runtime: 'automatic' }]
+          ]
+        }
+      }),
       viteCompression({
         algorithm: 'gzip',
         ext: '.gz',
@@ -64,6 +70,7 @@ export default defineConfig(({ mode }) => {
       },
       target: 'esnext',
       minify: 'terser',
+      sourcemap: true,
       terserOptions: {
         compress: {
           drop_console: true,
@@ -75,5 +82,18 @@ export default defineConfig(({ mode }) => {
       open: true,
       host: true,
     },
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react-router-dom', 'i18next', 'react-i18next'],
+      force: true
+    },
+    esbuild: {
+      jsx: 'automatic',
+      jsxImportSource: 'react'
+    },
+    resolve: {
+      alias: {
+        '@': '/src'
+      }
+    }
   };
 });

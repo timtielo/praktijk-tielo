@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Sportblessures Behandeling | Snel en Effectief Herstel",
+    "description": "Blessure? ✓ Snel herstel zonder medicatie ✓ Natuurlijke behandelmethode ✓ Voorkom terugkerende blessures ✓ Ook 's avonds en in het weekend"
+  },
+  "hero": {
+    "title": "Blessure? Herstel snel en kom sterker terug",
+    "subtitle": "Onze natuurlijke behandelmethode helpt je snel weer in beweging te komen. Met persoonlijke aandacht en blijvend resultaat.",
+    "schedule": "Plan een afspraak"
+  },
+  "benefits": {
+    "quick": "Snel weer in beweging",
+    "natural": "Natuurlijke behandelmethode",
+    "prevention": "Voorkom terugkerende blessures",
+    "personal": "Persoonlijke aanpak"
+  },
+  "injuries": {
+    "title": "Voor welke sportblessures helpen wij?",
+    "list": [
+      {
+        "title": "Knieblessures",
+        "description": "Knieklachten kunnen je enorm beperken tijdens het sporten. Wij helpen je weer pijnvrij te bewegen.",
+        "symptoms": [
+          "Overbelasting van de knie",
+          "Peesontstekingen",
+          "Gescheurde meniscus",
+          "Lopersknie"
+        ]
+      },
+      {
+        "title": "Enkelblessures",
+        "description": "Een stabiele enkel is essentieel voor elke sport. Onze behandeling richt zich op volledig herstel.",
+        "symptoms": [
+          "Verzwikking",
+          "Instabiliteit",
+          "Ontsteking",
+          "Shinsplints"
+        ]
+      },
+      {
+        "title": "Spierblessures",
+        "description": "Spierblessures kunnen hardnekkig zijn. Wij pakken niet alleen de pijn aan, maar ook de oorzaak.",
+        "symptoms": [
+          "Hamstringblessures",
+          "Spierscheuren",
+          "Spierknopen",
+          "Overbelasting"
+        ]
+      }
+    ]
+  },
+  "approach": {
+    "title": "Onze aanpak",
+    "quick": {
+      "title": "Snel weer in beweging",
+      "description": "Direct merkbaar effect na de eerste behandeling. We richten ons op snelle maar duurzame verbetering."
+    },
+    "natural": {
+      "title": "Natuurlijke behandelmethode",
+      "description": "Geen medicatie of injecties, maar een zachte en effectieve behandeling die je lichaam helpt zichzelf te herstellen."
+    },
+    "prevention": {
+      "title": "Voorkom herhaling",
+      "description": "We pakken niet alleen je huidige blessure aan, maar leren je ook hoe je nieuwe blessures kunt voorkomen."
+    }
+  },
+  "testimonials": {
+    "title": "Wat sporters over ons zeggen"
+  },
+  "cta": {
+    "title": "Klaar om weer pijnvrij te sporten?",
+    "subtitle": "Maak vandaag nog een afspraak en begin met je herstel",
+    "schedule": "Plan een afspraak"
+  }
+}

@@ -19,6 +19,11 @@ import enAboutUs from './locales/en/aboutUs.json';
 import enDisclaimer from './locales/en/disclaimer.json';
 import enFooter from './locales/en/footer.json';
 
+// Import English landing page translations
+import enBackPain from './locales/en/landing/back-pain.json';
+import enChiropractor from './locales/en/landing/chiropractor.json';
+import enSportsInjuries from './locales/en/landing/sports-injuries.json';
+
 // Import Dutch translations
 import nlMeta from './locales/nl/meta.json';
 import nlHeader from './locales/nl/header.json';
@@ -35,6 +40,11 @@ import nlAboutUs from './locales/nl/aboutUs.json';
 import nlDisclaimer from './locales/nl/disclaimer.json';
 import nlFooter from './locales/nl/footer.json';
 
+// Import Dutch landing page translations
+import nlBackPain from './locales/nl/landing/back-pain.json';
+import nlChiropractor from './locales/nl/landing/chiropractor.json';
+import nlSportsInjuries from './locales/nl/landing/sports-injuries.json';
+
 // Merge all English translations
 const enTranslation = {
   meta: enMeta,
@@ -50,7 +60,12 @@ const enTranslation = {
   reviewsPage: enReviewsPage,
   aboutUs: enAboutUs,
   disclaimer: enDisclaimer,
-  footer: enFooter
+  footer: enFooter,
+  landing: {
+    backPain: enBackPain,
+    chiropractor: enChiropractor,
+    sportsInjuries: enSportsInjuries
+  }
 };
 
 // Merge all Dutch translations
@@ -68,7 +83,12 @@ const nlTranslation = {
   reviewsPage: nlReviewsPage,
   aboutUs: nlAboutUs,
   disclaimer: nlDisclaimer,
-  footer: nlFooter
+  footer: nlFooter,
+  landing: {
+    backPain: nlBackPain,
+    chiropractor: nlChiropractor,
+    sportsInjuries: nlSportsInjuries
+  }
 };
 
 // Language resources
