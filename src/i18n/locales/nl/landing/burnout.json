@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "title": "Burn-out en Stress Behandeling | Natuurlijke Aanpak",
+    "description": "Last van burn-out of stress? ✓ Natuurlijke behandelmethode ✓ Lichaamsuitlijning en ontspanning ✓ Snel resultaat ✓ Ook 's avonds en in het weekend"
+  },
+  "hero": {
+    "title": "Burn-out? Stress? Vind rust en herstel met onze natuurlijke aanpak",
+    "subtitle": "Stress en spanning blijven zich opstapelen in je lichaam. Met onze uitlijningstechniek en ontspanningsoefeningen help je je lichaam om los te laten en opnieuw in balans te komen.",
+    "schedule": "Plan een afspraak"
+  },
+  "benefits": {
+    "bodyAlignment": "Lichaamsuitlijning voor balans",
+    "relaxation": "Effectieve ontspanningstechnieken",
+    "selfHelp": "Praktische zelfhulpoefeningen",
+    "natural": "100% natuurlijke aanpak"
+  },
+  "whyStress": {
+    "title": "Waarom burn-out en stress lichamelijke klachten veroorzaken",
+    "mental": {
+      "title": "Mentale overbelasting",
+      "description": "Chronische stress put je mentaal uit en verstoort je natuurlijke balans. Dit leidt tot concentratieproblemen en emotionele uitputting."
+    },
+    "physical": {
+      "title": "Lichamelijke spanning",
+      "description": "Stress zet zich vast in je spieren en gewrichten, wat leidt tot pijn en stijfheid. Je lichaam raakt steeds verder uit balans."
+    },
+    "emotional": {
+      "title": "Emotionele impact",
+      "description": "Burn-out beïnvloedt je hele systeem. Je voelt je overweldigd, moe en kunt niet meer ontspannen."
+    }
+  },
+  "method": {
+    "title": "Onze methode - Lichaamsuitlijning & Ontspanning",
+    "steps": [
+      {
+        "title": "1. Uitlijning en correctie van lichaamshouding",
+        "description": "We herstellen de natuurlijke balans in je lichaam door zachte correcties.",
+        "benefits": [
+          "Verlicht fysieke spanning",
+          "Verbetert energiestroming",
+          "Herstelt natuurlijke houding"
+        ]
+      },
+      {
+        "title": "2. Mobilisatie en ontspanningstechnieken",
+        "description": "Specifieke technieken helpen bij het loslaten van opgebouwde stress.",
+        "benefits": [
+          "Diepe ontspanning",
+          "Vermindert spierspanning",
+          "Bevordert herstel"
+        ]
+      },
+      {
+        "title": "3. Zelfhulp en ademhalingsoefeningen",
+        "description": "Je leert technieken voor blijvende ontspanning in het dagelijks leven.",
+        "benefits": [
+          "Direct toepasbaar",
+          "Voorkomt nieuwe spanning",
+          "Versterkt eigen herstel"
+        ]
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Wat zeggen onze cliënten?"
+  },
+  "cta": {
+    "title": "Klaar om stress los te laten?",
+    "subtitle": "Start vandaag nog met je herstel. Maak een afspraak voor een kennismaking.",
+    "schedule": "Plan je afspraak"
+  }
+}

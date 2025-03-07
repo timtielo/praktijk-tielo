@@ -8,68 +8,79 @@ import './index.css';
 import './i18n';
 import { LoadingScreen } from './components/LoadingScreen';
 import { setupLazyLoading, setupResponsiveImages } from './utils/lazyLoadImages';
+import { setupGlobalErrorHandling } from './utils/errors';
+import { ErrorFallback } from './components/ErrorFallback';
 
 // Lazy load the App component
 const App = lazy(() => import('./App'));
 
-// Error Fallback Component
-function ErrorFallback({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
-        <h2 className="text-2xl font-bold text-red-600 mb-4">Something went wrong</h2>
-        <p className="text-gray-600 mb-4">
-          We're sorry, but an error occurred while rendering this page.
-        </p>
-        <p className="text-sm text-gray-500 mb-6">
-          Error: {error.message}
-        </p>
-        <button
-          onClick={resetErrorBoundary}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
-        >
-          Try again
-        </button>
-      </div>
-    </div>
-  );
-}
-
 // Component to initialize performance optimizations
 function AppInitializer({ children }: { children: React.ReactNode }) {
   React.useEffect(() => {
-    setupLazyLoading();
-    setupResponsiveImages();
-    
-    // Preconnect to external domains
-    const preconnectDomains = [
-      'https://fonts.googleapis.com',
-      'https://fonts.gstatic.com',
-      'https://images.unsplash.com'
-    ];
-    
-    preconnectDomains.forEach(domain => {
-      const link = document.createElement('link');
-      link.rel = 'preconnect';
-      link.href = domain;
-      if (domain.includes('gstatic')) {
-        link.crossOrigin = 'anonymous';
+    // Setup error handling first
+    setupGlobalErrorHandling();
+
+    // Wrap initialization in try-catch
+    try {
+      // Initialize performance monitoring
+      if (window.performance && window.performance.mark) {
+        window.performance.mark('app-init-start');
       }
-      document.head.appendChild(link);
-    });
-    
-    // Add event listener for print media
-    const handleBeforePrint = () => {
-      const deferredImages = document.querySelectorAll('img[loading="lazy"]');
-      deferredImages.forEach((img: HTMLImageElement) => {
-        img.loading = 'eager';
+
+      // Initialize app features
+      setupLazyLoading();
+      setupResponsiveImages();
+      
+      // Preconnect to external domains
+      const preconnectDomains = [
+        'https://fonts.googleapis.com',
+        'https://fonts.gstatic.com',
+        'https://images.unsplash.com',
+        'https://consent.cookiebot.com',
+        'https://www.googletagmanager.com',
+        'https://www.google-analytics.com'
+      ];
+      
+      preconnectDomains.forEach(domain => {
+        try {
+          const link = document.createElement('link');
+          link.rel = 'preconnect';
+          link.href = domain;
+          if (domain.includes('gstatic') || domain.includes('cookiebot')) {
+            link.crossOrigin = 'anonymous';
+          }
+          document.head.appendChild(link);
+        } catch (error) {
+          console.error(`Failed to preconnect to ${domain}:`, error);
+        }
       });
-    };
-    
-    window.addEventListener('beforeprint', handleBeforePrint);
-    return () => {
-      window.removeEventListener('beforeprint', handleBeforePrint);
-    };
+      
+      // Add event listener for print media
+      const handleBeforePrint = () => {
+        try {
+          const deferredImages = document.querySelectorAll('img[loading="lazy"]');
+          deferredImages.forEach((img: HTMLImageElement) => {
+            img.loading = 'eager';
+          });
+        } catch (error) {
+          console.error('Error in print handler:', error);
+        }
+      };
+      
+      window.addEventListener('beforeprint', handleBeforePrint);
+
+      // Mark initialization complete
+      if (window.performance && window.performance.mark) {
+        window.performance.mark('app-init-end');
+        window.performance.measure('app-initialization', 'app-init-start', 'app-init-end');
+      }
+      
+      return () => {
+        window.removeEventListener('beforeprint', handleBeforePrint);
+      };
+    } catch (error) {
+      console.error('Error during app initialization:', error);
+    }
   }, []);
   
   return <>{children}</>;
@@ -79,7 +90,16 @@ const container = document.getElementById('root');
 if (container) {
   createRoot(container).render(
     <StrictMode>
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <ErrorBoundary 
+        FallbackComponent={ErrorFallback}
+        onReset={() => {
+          // Reset the app state here
+          window.location.reload();
+        }}
+        onError={(error) => {
+          console.error('Error caught by ErrorBoundary:', error);
+        }}
+      >
         <HelmetProvider>
           <BrowserRouter>
             <AppInitializer>

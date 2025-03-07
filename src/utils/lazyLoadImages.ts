@@ -1,9 +1,25 @@
+// Image loading error handler
+function handleImageError(img: HTMLImageElement) {
+  console.error(`Failed to load image: ${img.src}`);
+  img.src = '/assets/logos/praktijktielotransparent.svg';
+  img.classList.add('image-load-error');
+  
+  // Report error to analytics if available
+  if (window.gtag) {
+    window.gtag('event', 'image_load_error', {
+      image_src: img.src,
+      page_url: window.location.href
+    });
+  }
+}
+
 export function setupLazyLoading() {
   if ('loading' in HTMLImageElement.prototype) {
     // Browser supports native lazy loading
     const images = document.querySelectorAll('img:not([loading])');
     images.forEach(img => {
       img.setAttribute('loading', 'lazy');
+      img.addEventListener('error', () => handleImageError(img as HTMLImageElement));
     });
   } else {
     // Fallback for browsers that don't support native lazy loading
@@ -12,7 +28,6 @@ export function setupLazyLoading() {
 }
 
 export function setupIntersectionObserver() {
-  // This is a simple implementation of lazy loading using Intersection Observer
   if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -22,6 +37,7 @@ export function setupIntersectionObserver() {
           
           if (dataSrc) {
             image.src = dataSrc;
+            image.addEventListener('error', () => handleImageError(image));
             image.removeAttribute('data-src');
           }
           
@@ -52,6 +68,7 @@ export function setupResponsiveImages() {
           
           if (dataSrcset) {
             image.srcset = dataSrcset;
+            image.addEventListener('error', () => handleImageError(image));
             image.removeAttribute('data-srcset');
           }
           

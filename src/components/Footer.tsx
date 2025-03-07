@@ -25,11 +25,13 @@ export function Footer() {
   const landingPages = isEnglish ? [
     { path: '/en/back-pain-treatment', label: 'Back Pain Treatment' },
     { path: '/en/alternative-to-chiropractic', label: 'Alternative to Chiropractic' },
-    { path: '/en/sports-injury-treatment', label: 'Sports Injury Treatment' }
+    { path: '/en/sports-injury-treatment', label: 'Sports Injury Treatment' },
+    { path: '/en/burnout-stress-treatment', label: 'Burnout & Stress Treatment' }
   ] : [
     { path: '/rugpijn-en-lage-rugklachten', label: 'Rugpijn behandeling' },
     { path: '/alternatief-voor-chiropractor', label: 'Alternatief voor chiropractor' },
-    { path: '/sportblessures-behandeling', label: 'Sportblessures behandeling' }
+    { path: '/sportblessures-behandeling', label: 'Sportblessures behandeling' },
+    { path: '/burnout-stress-behandeling', label: 'Burn-out & stress behandeling' }
   ];
 
   return (
@@ -109,7 +111,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link 
-                    to={getLocalizedPath('/reviews')}
+                    to={getLocalizedPath('/reviews')} 
                     className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
                   >
                     <Star className="w-4 h-4 text-blue-400" />

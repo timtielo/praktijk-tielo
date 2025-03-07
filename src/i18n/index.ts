@@ -1,7 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import Cookies from 'js-cookie';
 
 // Import English translations
 import enMeta from './locales/en/meta.json';
@@ -23,6 +22,7 @@ import enFooter from './locales/en/footer.json';
 import enBackPain from './locales/en/landing/back-pain.json';
 import enChiropractor from './locales/en/landing/chiropractor.json';
 import enSportsInjuries from './locales/en/landing/sports-injuries.json';
+import enBurnout from './locales/en/landing/burnout.json';
 
 // Import Dutch translations
 import nlMeta from './locales/nl/meta.json';
@@ -44,6 +44,7 @@ import nlFooter from './locales/nl/footer.json';
 import nlBackPain from './locales/nl/landing/back-pain.json';
 import nlChiropractor from './locales/nl/landing/chiropractor.json';
 import nlSportsInjuries from './locales/nl/landing/sports-injuries.json';
+import nlBurnout from './locales/nl/landing/burnout.json';
 
 // Merge all English translations
 const enTranslation = {
@@ -64,7 +65,8 @@ const enTranslation = {
   landing: {
     backPain: enBackPain,
     chiropractor: enChiropractor,
-    sportsInjuries: enSportsInjuries
+    sportsInjuries: enSportsInjuries,
+    burnout: enBurnout
   }
 };
 
@@ -87,7 +89,8 @@ const nlTranslation = {
   landing: {
     backPain: nlBackPain,
     chiropractor: nlChiropractor,
-    sportsInjuries: nlSportsInjuries
+    sportsInjuries: nlSportsInjuries,
+    burnout: nlBurnout
   }
 };
 
@@ -115,18 +118,20 @@ i18n
     },
     
     detection: {
-      order: ['path', 'cookie', 'navigator'],
-      lookupCookie: 'i18nextLng',
-      caches: ['cookie'],
-      lookupFromPathIndex: 0,
-      cookieExpirationDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365), // 1 year
+      order: ['path', 'navigator'],
+      lookupFromPathIndex: 0
+    },
+
+    // Add missing key handling
+    saveMissing: true,
+    missingKeyHandler: (lng, ns, key) => {
+      console.warn(`Missing translation key: ${key} for language: ${lng} in namespace: ${ns}`);
     }
   });
 
-// Function to change language and save preference
+// Function to change language
 export const changeLanguage = (language: string) => {
   i18n.changeLanguage(language);
-  Cookies.set('i18nextLng', language, { expires: 365 });
 };
 
 export default i18n;

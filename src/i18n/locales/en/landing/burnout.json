@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "title": "Burnout and Stress Treatment | Natural Approach",
+    "description": "Suffering from burnout or stress? ✓ Natural treatment method ✓ Body alignment and relaxation ✓ Quick results ✓ Also open evenings and weekends"
+  },
+  "hero": {
+    "title": "Burnout? Stress? Find peace and recovery with our natural approach",
+    "subtitle": "Stress and tension continue to build up in your body. With our alignment technique and relaxation exercises, we help your body release and regain balance.",
+    "schedule": "Schedule appointment"
+  },
+  "benefits": {
+    "bodyAlignment": "Body alignment for balance",
+    "relaxation": "Effective relaxation techniques",
+    "selfHelp": "Practical self-help exercises",
+    "natural": "100% natural approach"
+  },
+  "whyStress": {
+    "title": "Why burnout and stress cause physical complaints",
+    "mental": {
+      "title": "Mental overload",
+      "description": "Chronic stress mentally exhausts you and disrupts your natural balance. This leads to concentration problems and emotional exhaustion."
+    },
+    "physical": {
+      "title": "Physical tension",
+      "description": "Stress gets stuck in your muscles and joints, leading to pain and stiffness. Your body becomes increasingly unbalanced."
+    },
+    "emotional": {
+      "title": "Emotional impact",
+      "description": "Burnout affects your entire system. You feel overwhelmed, tired, and unable to relax."
+    }
+  },
+  "method": {
+    "title": "Our method - Body Alignment & Relaxation",
+    "steps": [
+      {
+        "title": "1. Alignment and posture correction",
+        "description": "We restore the natural balance in your body through gentle corrections.",
+        "benefits": [
+          "Relieves physical tension",
+          "Improves energy flow",
+          "Restores natural posture"
+        ]
+      },
+      {
+        "title": "2. Mobilization and relaxation techniques",
+        "description": "Specific techniques help release built-up stress.",
+        "benefits": [
+          "Deep relaxation",
+          "Reduces muscle tension",
+          "Promotes recovery"
+        ]
+      },
+      {
+        "title": "3. Self-help and breathing exercises",
+        "description": "You learn techniques for lasting relaxation in daily life.",
+        "benefits": [
+          "Immediately applicable",
+          "Prevents new tension",
+          "Strengthens self-recovery"
+        ]
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What our clients say"
+  },
+  "cta": {
+    "title": "Ready to release stress?",
+    "subtitle": "Start your recovery today. Schedule an introductory appointment.",
+    "schedule": "Schedule appointment"
+  }
+}

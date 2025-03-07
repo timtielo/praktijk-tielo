@@ -1,16 +1,28 @@
-// Utility functions for performance monitoring and optimization
-
 /**
  * Measures and logs the time it takes to execute a function
  */
 export function measurePerformance<T>(fn: () => T, label: string): T {
   const start = performance.now();
-  const result = fn();
-  const end = performance.now();
-  
-  console.log(`${label} took ${end - start}ms`);
-  
-  return result;
+  try {
+    const result = fn();
+    const end = performance.now();
+    const duration = end - start;
+    
+    if (duration > 100) {
+      console.warn(`Performance warning: ${label} took ${duration}ms`);
+    }
+    
+    // Report to analytics if available
+    if (window.performance && window.performance.mark) {
+      window.performance.mark(label);
+    }
+    
+    return result;
+  } catch (error) {
+    const end = performance.now();
+    console.error(`Error in ${label} after ${end - start}ms:`, error);
+    throw error;
+  }
 }
 
 /**

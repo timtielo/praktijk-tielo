@@ -17,13 +17,21 @@ export function LanguageSwitcher() {
     '/reviews': '/en/reviews',
     '/disclaimer': '/en/disclaimer',
     '/over-ons': '/en/about-us',
+    '/rugpijn-en-lage-rugklachten': '/en/back-pain-treatment',
+    '/alternatief-voor-chiropractor': '/en/alternative-to-chiropractic',
+    '/sportblessures-behandeling': '/en/sports-injury-treatment',
+    '/burnout-stress-behandeling': '/en/burnout-stress-treatment',
     
     // English to Dutch
     '/en': '/',
     '/en/contact': '/contact',
     '/en/reviews': '/reviews',
     '/en/disclaimer': '/disclaimer',
-    '/en/about-us': '/over-ons'
+    '/en/about-us': '/over-ons',
+    '/en/back-pain-treatment': '/rugpijn-en-lage-rugklachten',
+    '/en/alternative-to-chiropractic': '/alternatief-voor-chiropractor',
+    '/en/sports-injury-treatment': '/sportblessures-behandeling',
+    '/en/burnout-stress-treatment': '/burnout-stress-behandeling'
   };
 
   const toggleLanguage = () => {

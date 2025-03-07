@@ -17,6 +17,7 @@ const AboutUsPage = lazy(() => import('./pages/AboutUsPage').then(module => ({ d
 const BackPainPage = lazy(() => import('./pages/landing/BackPainPage').then(module => ({ default: module.BackPainPage })));
 const ChiropractorPage = lazy(() => import('./pages/landing/ChiropractorPage').then(module => ({ default: module.ChiropractorPage })));
 const SportsInjuriesPage = lazy(() => import('./pages/landing/SportsInjuriesPage').then(module => ({ default: module.SportsInjuriesPage })));
+const BurnoutPage = lazy(() => import('./pages/landing/BurnoutPage').then(module => ({ default: module.BurnoutPage })));
 
 function App() {
   const { i18n } = useTranslation();
@@ -52,6 +53,7 @@ function App() {
             <Route path="/rugpijn-en-lage-rugklachten" element={<BackPainPage />} />
             <Route path="/alternatief-voor-chiropractor" element={<ChiropractorPage />} />
             <Route path="/sportblessures-behandeling" element={<SportsInjuriesPage />} />
+            <Route path="/burnout-stress-behandeling" element={<BurnoutPage />} />
             
             {/* English routes */}
             <Route path="/en" element={<HomePage />} />
@@ -64,6 +66,7 @@ function App() {
             <Route path="/en/back-pain-treatment" element={<BackPainPage />} />
             <Route path="/en/alternative-to-chiropractic" element={<ChiropractorPage />} />
             <Route path="/en/sports-injury-treatment" element={<SportsInjuriesPage />} />
+            <Route path="/en/burnout-stress-treatment" element={<BurnoutPage />} />
             
             {/* Fallback for any other route */}
             <Route path="*" element={<Navigate to="/" replace />} />
