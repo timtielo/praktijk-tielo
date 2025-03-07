@@ -98,36 +98,3 @@
   position: relative;
   margin-top: 16px;
 }
-
-/* Cookie Consent Custom Styles */
-#cc-main {
-  @apply font-sans;
-}
-
-#cc-main .cc_div {
-  @apply bg-white shadow-lg rounded-lg;
-}
-
-#cc-main .cc_div .b-btn {
-  @apply rounded-lg font-semibold;
-}
-
-#cc-main .cc_div .b-btn.b-ok {
-  @apply bg-blue-600 hover:bg-blue-700 transition-colors;
-}
-
-#cc-main .cc_div .b-btn.b-cat {
-  @apply bg-gray-100 hover:bg-gray-200 text-gray-800 transition-colors;
-}
-
-#cc-main #c-ttl {
-  @apply text-xl font-bold;
-}
-
-#cc-main .cc_div .p-c {
-  @apply border-t border-gray-200;
-}
-
-#cc-main .cc_div .b-tl {
-  @apply font-semibold;
-}

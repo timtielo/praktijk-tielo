@@ -60,10 +60,8 @@ export function generateLocalBusinessSchema(businessInfo: any) {
       "geoRadius": "50000"
     },
     "knowsAbout": [
-      "Physical health treatment",
-      "Mental health treatment",
-      "Alternative health",
-      "Holistic approach",
+      "Alternative health treatment",
+      "Natural health approach",
       "Self-help exercises",
       "Spine alignment",
       "Joint pain",
@@ -135,7 +133,7 @@ export function generateServiceSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalTherapy",
-    "name": "Physical and Mental Health Treatment",
+    "name": "Alternative Health Treatment",
     "description": "Natural treatment method for physical and mental complaints using gentle techniques and self-help exercises.",
     "medicineSystem": "Alternative Medicine",
     "recognizingAuthority": "Praktijk Tielo",
@@ -204,9 +202,8 @@ export function generateAIAssistantSchema() {
     },
     "description": "Praktijk Tielo offers alternative health treatments for physical and mental complaints using gentle techniques and self-help exercises.",
     "keywords": [
-      "physical health",
-      "mental health",
-      "alternative treatment",
+      "alternative health",
+      "natural treatment",
       "holistic approach",
       "spine alignment",
       "back pain",

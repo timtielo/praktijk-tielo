@@ -6,7 +6,6 @@ import './index.css';
 import './i18n';
 import { LoadingScreen } from './components/LoadingScreen';
 import { setupLazyLoading, setupResponsiveImages } from './utils/lazyLoadImages';
-import { initCookieConsent } from './utils/cookieConsent';
 
 // Lazy load the App component
 const App = lazy(() => import('./App'));
@@ -14,9 +13,6 @@ const App = lazy(() => import('./App'));
 // Component to initialize performance optimizations
 function AppInitializer({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    // Initialize cookie consent
-    initCookieConsent();
-    
     // Setup lazy loading for images
     setupLazyLoading();
     setupResponsiveImages();
