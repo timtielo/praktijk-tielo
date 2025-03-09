@@ -7,8 +7,8 @@ import { ErrorBoundary } from 'react-error-boundary';
 import './index.css';
 import './i18n';
 import { LoadingScreen } from './components/LoadingScreen';
-import { setupLazyLoading, setupResponsiveImages } from './utils/lazyLoadImages';
-import { setupGlobalErrorHandling } from './utils/errors';
+import { setupLazyLoading, setupResponsiveImages, preloadCriticalImages } from './utils/lazyLoadImages';
+import { setupGlobalErrorHandling } from './utils/errorHandling';
 import { ErrorFallback } from './components/ErrorFallback';
 
 // Lazy load the App component
@@ -30,6 +30,7 @@ function AppInitializer({ children }: { children: React.ReactNode }) {
       // Initialize app features
       setupLazyLoading();
       setupResponsiveImages();
+      preloadCriticalImages();
       
       // Preconnect to external domains
       const preconnectDomains = [
@@ -38,7 +39,8 @@ function AppInitializer({ children }: { children: React.ReactNode }) {
         'https://images.unsplash.com',
         'https://consent.cookiebot.com',
         'https://www.googletagmanager.com',
-        'https://www.google-analytics.com'
+        'https://www.google-analytics.com',
+        'https://hook.eu2.make.com'
       ];
       
       preconnectDomains.forEach(domain => {
@@ -46,7 +48,7 @@ function AppInitializer({ children }: { children: React.ReactNode }) {
           const link = document.createElement('link');
           link.rel = 'preconnect';
           link.href = domain;
-          if (domain.includes('gstatic') || domain.includes('cookiebot')) {
+          if (domain.includes('gstatic') || domain.includes('cookiebot') || domain.includes('hook.eu2.make.com')) {
             link.crossOrigin = 'anonymous';
           }
           document.head.appendChild(link);
@@ -93,7 +95,6 @@ if (container) {
       <ErrorBoundary 
         FallbackComponent={ErrorFallback}
         onReset={() => {
-          // Reset the app state here
           window.location.reload();
         }}
         onError={(error) => {

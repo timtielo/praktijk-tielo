@@ -1,8 +1,8 @@
 import React from 'react';
-import { Star } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
-import { Testimonial } from '../data/testimonials';
+import { testimonials } from '../data/testimonials';
 import { useTranslation } from 'react-i18next';
 
 // Import Swiper styles
@@ -11,11 +11,20 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 interface SwipeableTestimonialsProps {
-  testimonials: Testimonial[];
+  limit?: number;
 }
 
-export function SwipeableTestimonials({ testimonials }: SwipeableTestimonialsProps) {
-  const { t } = useTranslation();
+export function SwipeableTestimonials({ limit }: SwipeableTestimonialsProps) {
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  
+  // Get localized testimonials
+  const localizedTestimonials = testimonials
+    .slice(0, limit)
+    .map(testimonial => ({
+      ...testimonial,
+      text: currentLanguage.startsWith('nl') ? testimonial.text : (testimonial.textEn || testimonial.text)
+    }));
   
   return (
     <div className="swipeable-testimonials">
@@ -30,24 +39,36 @@ export function SwipeableTestimonials({ testimonials }: SwipeableTestimonialsPro
         }}
         className="pb-10"
       >
-        {testimonials.map((testimonial, index) => (
+        {localizedTestimonials.map((testimonial, index) => (
           <SwiperSlide key={testimonial.id || index}>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              <p className="text-gray-600 mb-4">"{testimonial.text}"</p>
-              <div className="flex items-center gap-4">
+            <div className="bg-white rounded-xl p-6 shadow-sm">
+              <div className="flex items-start gap-4">
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.name}
                   className="w-12 h-12 rounded-full object-cover"
+                  loading="lazy"
+                  onError={(e) => {
+                    const img = e.target as HTMLImageElement;
+                    img.src = '/assets/logos/praktijktielotransparent.svg';
+                    img.classList.add('error-fallback');
+                  }}
                 />
-                <div>
-                  <p className="font-semibold">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{t('testimonials.satisfiedClient')}</p>
+                <div className="flex-1">
+                  <h3 className="font-semibold mb-2">{testimonial.name}</h3>
+                  <div className="flex mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star 
+                        key={i} 
+                        className="w-4 h-4 text-yellow-400 fill-current"
+                      />
+                    ))}
+                  </div>
+                  <div className="relative">
+                    <Quote className="absolute -left-1 -top-2 w-6 h-6 text-blue-100 rotate-180" />
+                    <p className="text-gray-700 pl-6">{testimonial.text}</p>
+                  </div>
+                  <p className="text-sm text-gray-500 mt-4">{t('testimonials.satisfiedClient')}</p>
                 </div>
               </div>
             </div>

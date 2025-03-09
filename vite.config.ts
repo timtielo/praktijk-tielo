@@ -73,17 +73,27 @@ export default defineConfig(({ mode }) => {
       sourcemap: true,
       terserOptions: {
         compress: {
-          drop_console: true,
+          drop_console: mode === 'production',
           drop_debugger: true,
         },
       },
+      assetsInlineLimit: 4096,
+      chunkSizeWarningLimit: 1000,
     },
     server: {
       open: true,
       host: true,
+      cors: true,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Cross-Origin-Opener-Policy': 'same-origin',
+        'Cross-Origin-Embedder-Policy': 'require-corp',
+        'Cross-Origin-Resource-Policy': 'cross-origin'
+      }
     },
     optimizeDeps: {
       include: ['react', 'react-dom', 'react-router-dom', 'i18next', 'react-i18next'],
+      exclude: ['vite-plugin-imagemin'],
       force: true
     },
     esbuild: {

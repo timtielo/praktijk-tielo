@@ -1,6 +1,6 @@
 import { cn } from "../../lib/utils"
 import { Avatar, AvatarImage } from "./avatar"
-import { Star } from "lucide-react"
+import { Star, Quote } from "lucide-react"
 import { useTranslation } from "react-i18next"
 
 export interface TestimonialAuthor {
@@ -41,7 +41,15 @@ export function TestimonialCard({
     >
       <div className="flex items-center gap-3">
         <Avatar className="h-12 w-12 border border-gray-100 shadow-sm">
-          <AvatarImage src={author.avatar} alt={author.name} />
+          <AvatarImage 
+            src={author.avatar} 
+            alt={author.name}
+            onError={(e) => {
+              const img = e.target as HTMLImageElement;
+              img.src = '/assets/logos/praktijktielotransparent.svg';
+              img.classList.add('error-fallback');
+            }}
+          />
         </Avatar>
         <div className="flex flex-col items-start">
           <h3 className="text-md font-semibold leading-none text-gray-800">
@@ -59,9 +67,12 @@ export function TestimonialCard({
         ))}
       </div>
       
-      <p className="sm:text-md text-sm text-gray-600">
-        {text}
-      </p>
+      <div className="relative">
+        <Quote className="absolute -left-1 -top-2 w-6 h-6 text-blue-100 rotate-180" />
+        <p className="sm:text-md text-sm text-gray-600 pl-6">
+          {text}
+        </p>
+      </div>
     </Card>
   )
 }

@@ -1,5 +1,3 @@
-import { TestimonialAuthor } from "../components/ui/testimonial-card";
-
 export interface Testimonial {
   name: string;
   text: string;
@@ -55,7 +53,7 @@ export const extendedTestimonialsShadcn = [
     author: {
       name: "Placeholder 4",
       handle: "Tevreden klant",
-      avatar: "",
+      avatar: "/assets/logos/praktijktielotransparent.svg",
       rating: 5
     },
     text: "Placeholder review",

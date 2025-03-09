@@ -29,20 +29,28 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    const success = await submitContactForm({
-      ...formData,
-      submittedAt: new Date().toISOString()
-    });
+    try {
+      const success = await submitContactForm({
+        ...formData,
+        submittedAt: new Date().toISOString()
+      });
 
-    setIsSubmitting(false);
-    setSubmitStatus(success ? 'success' : 'error');
+      setSubmitStatus(success ? 'success' : 'error');
 
-    if (success) {
-      setFormData({ name: '', email: '', phone: '', message: '', form: 'contact', submittedAt: '' });
-      setTimeout(() => setSubmitStatus('idle'), 3000);
+      if (success) {
+        setFormData({ name: '', email: '', phone: '', message: '', form: 'contact', submittedAt: '' });
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -83,6 +91,7 @@ export function Contact() {
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -94,6 +103,7 @@ export function Contact() {
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -104,6 +114,7 @@ export function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -115,6 +126,7 @@ export function Contact() {
                   rows={4}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <button

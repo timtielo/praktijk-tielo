@@ -1,16 +1,9 @@
 // Image loading error handler
 function handleImageError(img: HTMLImageElement) {
-  console.error(`Failed to load image: ${img.src}`);
+  console.warn(`Failed to load image: ${img.src}`);
   img.src = '/assets/logos/praktijktielotransparent.svg';
   img.classList.add('image-load-error');
-  
-  // Report error to analytics if available
-  if (window.gtag) {
-    window.gtag('event', 'image_load_error', {
-      image_src: img.src,
-      page_url: window.location.href
-    });
-  }
+  img.setAttribute('alt', 'Fallback image');
 }
 
 export function setupLazyLoading() {
@@ -87,4 +80,19 @@ export function setupResponsiveImages() {
     
     images.forEach(image => imageObserver.observe(image));
   }
+}
+
+// Preload critical images
+export function preloadCriticalImages() {
+  const criticalImages = [
+    '/assets/logos/praktijktielotransparent.svg'
+  ];
+
+  criticalImages.forEach(src => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = src;
+    document.head.appendChild(link);
+  });
 }
