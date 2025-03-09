@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, MessageSquare, Loader2 } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageSquare, Loader2, CheckCircle } from 'lucide-react';
 import { businessInfo } from '../data/business';
 import { submitContactForm, type ContactFormData } from '../utils/forms';
 import { useTranslation } from 'react-i18next';
@@ -44,7 +44,8 @@ export function Contact() {
 
       if (success) {
         setFormData({ name: '', email: '', phone: '', message: '', form: 'contact', submittedAt: '' });
-        setTimeout(() => setSubmitStatus('idle'), 5000);
+        // Increased timeout for success message visibility
+        setTimeout(() => setSubmitStatus('idle'), 8000);
       }
     } catch (error) {
       setSubmitStatus('error');
@@ -81,79 +82,107 @@ export function Contact() {
             </div>
           </div>
           <div>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.form.name')}</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  required
-                  disabled={isSubmitting}
-                />
+            {submitStatus === 'success' ? (
+              <div className="bg-green-50 border-2 border-green-200 rounded-xl p-8 text-center animate-fade-in">
+                <div className="flex justify-center mb-6">
+                  <div className="bg-green-100 rounded-full p-3">
+                    <CheckCircle className="w-12 h-12 text-green-600" />
+                  </div>
+                </div>
+                <h3 className="text-3xl font-bold text-green-800 mb-4">
+                  {isEnglish ? "Thank you!" : "Bedankt!"}
+                </h3>
+                <p className="text-xl text-green-700 mb-6">
+                  {isEnglish 
+                    ? "Your message has been sent successfully. We'll get back to you within 24 hours."
+                    : "Je bericht is succesvol verzonden. We nemen binnen 24 uur contact met je op."}
+                </p>
+                <div className="bg-white text-green-800 px-6 py-3 rounded-lg inline-flex items-center gap-2 shadow-sm">
+                  <CheckCircle className="w-5 h-5" />
+                  <span className="font-semibold">
+                    {isEnglish ? "Message sent successfully!" : "Bericht succesvol verzonden!"}
+                  </span>
+                </div>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.form.email')}</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  required
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.form.name')}</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    required
+                    disabled={isSubmitting}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.form.email')}</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    required
+                    disabled={isSubmitting}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.form.phone')}</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    disabled={isSubmitting}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.form.message')}</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={4}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    required
+                    disabled={isSubmitting}
+                  />
+                </div>
+                <button
+                  type="submit"
                   disabled={isSubmitting}
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.form.phone')}</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  disabled={isSubmitting}
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.form.message')}</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  required
-                  disabled={isSubmitting}
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`btn-cta w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors ${
-                  isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
-                }`}
-              >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    {t('contact.form.sending')}
-                  </>
-                ) : (
-                  <>
-                    {t('contact.form.send')} <MessageSquare className="w-5 h-5" />
-                  </>
+                  className={`btn-cta w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors ${
+                    isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+                  }`}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      {t('contact.form.sending')}
+                    </>
+                  ) : (
+                    <>
+                      {t('contact.form.send')} <MessageSquare className="w-5 h-5" />
+                    </>
+                  )}
+                </button>
+                {submitStatus === 'error' && (
+                  <div className="bg-red-50 border-2 border-red-200 text-red-700 p-6 rounded-lg text-center">
+                    <p className="text-lg font-semibold mb-2">{t('contact.form.error')}</p>
+                    <p className="text-sm">
+                      {isEnglish 
+                        ? "Please try again or contact us directly."
+                        : "Probeer het opnieuw of neem direct contact met ons op."}
+                    </p>
+                  </div>
                 )}
-              </button>
-              {submitStatus === 'success' && (
-                <p className="text-green-600 text-sm">{t('contact.form.success')}</p>
-              )}
-              {submitStatus === 'error' && (
-                <p className="text-red-600 text-sm">{t('contact.form.error')}</p>
-              )}
-            </form>
+              </form>
+            )}
           </div>
         </div>
       </div>
