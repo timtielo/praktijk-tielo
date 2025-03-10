@@ -55,7 +55,7 @@ export function TestimonialsSection({
           {/* Desktop: Marquee */}
           <div className="hidden md:flex group overflow-hidden p-2 [--gap:1.5rem] [gap:var(--gap)] flex-row [--duration:40s]">
             <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
-              {testimonials.map((testimonial, i) => (
+              {testimonials.slice(0, testimonials.length / 2).map((testimonial, i) => (
                 <TestimonialCard 
                   key={`original-${testimonial.id || i}`}
                   {...testimonial}
@@ -65,9 +65,9 @@ export function TestimonialsSection({
             
             {/* Duplicate set for seamless looping */}
             <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
-              {testimonials.map((testimonial, i) => (
+              {testimonials.slice(testimonials.length / 2).map((testimonial, i) => (
                 <TestimonialCard 
-                  key={`duplicate-${testimonial.id || i}`}
+                  key={`duplicate-${testimonial.id || i}-${Date.now()}`}
                   {...testimonial}
                 />
               ))}
@@ -87,7 +87,7 @@ export function TestimonialsSection({
               }}
               className="pb-10"
             >
-              {testimonials.map((testimonial, i) => (
+              {testimonials.slice(0, testimonials.length / 2).map((testimonial, i) => (
                 <SwiperSlide key={`swiper-${testimonial.id || i}`}>
                   <TestimonialCard {...testimonial} />
                 </SwiperSlide>

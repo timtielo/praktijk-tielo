@@ -32,6 +32,22 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     image: "https://lh3.googleusercontent.com/a-/ALV-UjVJuu9S6ioKB-8a1zEOmCvQZC7ALiLDQKOsUB--dyGFComy3rCg=s36-c-rp-mo-br100"
   },
+  {
+    id: "kuba-1",
+    name: "Kuba",
+    text: "Een zeer positief en behulpzaam persoon. De behandeling hielp me bij het verlichten van enkele sportblessures en had een ontspannend effect. Ik zou het aanraden aan mensen die op zoek zijn naar hulp bij herstel.",
+    textEn: "A very positive and helpful person. The procedure helped me relieve some sports-related injuries and had a relaxing effect. I would recommend it to people looking for recovery aid.",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjUBPK_ycMzXCOtWWcjZVgsHXoyXF8pYjMhAVHX2wHLBeTd2aHOsyg=w60-h60-p-rp-mo-ba3-br100"
+  },
+  {
+    id: "nane-1",
+    name: "Nané",
+    text: "De behandelingen zijn zeer ontspannend en comfortabel. Tim is zeer professioneel en kent de techniek goed. Absoluut aan te raden.",
+    textEn: "The treatment sessions are very relaxing and comfortable. Tim is very professional and knows well the technique. Totally recommended.",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjVEtWoY9XrSHXj2ko4oiWilfHMdcKu1m5FMj8qOt34FCYEtox6-=w60-h60-p-rp-mo-br100"
+  }
 ];
 
 // Format testimonials for the marquee component
@@ -46,17 +62,5 @@ export const testimonialsShadcn = testimonials.map(testimonial => ({
   id: testimonial.id
 }));
 
-// Add more testimonials for the marquee to have a better flow
-export const extendedTestimonialsShadcn = [
-  ...testimonialsShadcn,
-  {
-    author: {
-      name: "Placeholder 4",
-      handle: "Tevreden klant",
-      avatar: "/assets/logos/praktijktielotransparent.svg",
-      rating: 5
-    },
-    text: "Placeholder review",
-    id: "placeholder-4"
-  }
-];
+// Add duplicates of real testimonials for the marquee to have a better flow
+export const extendedTestimonialsShadcn = [...testimonialsShadcn, ...testimonialsShadcn];

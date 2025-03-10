@@ -18,5 +18,23 @@
   "aboutUs": {
     "title": "Over Ons - Natuurlijke behandelmethode | Praktijk Tielo",
     "description": "Ontdek onze unieke behandelmethode met natuurlijke bewegingen en zelfhulpoefeningen. Effectief bij zowel fysieke als mentale klachten, met blijvende resultaten."
+  },
+  "landing": {
+    "backPain": {
+      "title": "Rugpijn en Lage Rugklachten Behandeling | Praktijk Tielo",
+      "description": "Last van rugpijn of lage rugklachten? ✓ Natuurlijke behandelmethode ✓ Snel resultaat ✓ Persoonlijke aanpak ✓ Ook 's avonds en in het weekend"
+    },
+    "chiropractor": {
+      "title": "Zachte Wervelkolom Behandeling | Alternatief voor Chiropractor",
+      "description": "Op zoek naar een alternatief voor de chiropractor? ✓ Zachte behandeling zonder kraken ✓ Blijvend resultaat ✓ Focus op fascie ✓ Natuurlijke aanpak"
+    },
+    "sportsInjuries": {
+      "title": "Sportblessures Behandeling | Snel en Effectief Herstel",
+      "description": "Blessure? ✓ Snel herstel zonder medicatie ✓ Natuurlijke behandelmethode ✓ Voorkom terugkerende blessures ✓ Ook 's avonds en in het weekend"
+    },
+    "burnout": {
+      "title": "Burn-out en Stress Behandeling | Natuurlijke Aanpak",
+      "description": "Last van burn-out of stress? ✓ Natuurlijke behandelmethode ✓ Lichaamsuitlijning en ontspanning ✓ Snel resultaat ✓ Ook 's avonds en in het weekend"
+    }
   }
 }
