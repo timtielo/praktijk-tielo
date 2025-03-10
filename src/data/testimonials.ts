@@ -9,14 +9,6 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    id: "thijs-1",
-    name: "Thijs",
-    text: "Was echt top, ik heb geen last meer van mijn knie en enkel door Tim. Alle gewrichten zitten weer los en daardoor kost bewegen bijna geen energie meer. Ik kan iedereen aanraden om naar Tim te gaan.",
-    textEn: "It was really great, I no longer have any problems with my knee and ankle thanks to Tim. All joints are loose again and therefore moving takes almost no energy. I can recommend everyone to go to Tim.",
-    rating: 5,
-    image: "https://lh3.googleusercontent.com/a/ACg8ocJGrhTmDSdGYh0dEAkNS7tGE7JEVFL5vYy0VxQiaMz0debENw=w60-h60-p-rp-mo-br100"
-  },
-  {
     id: "symelle-1",
     name: "Symelle",
     text: "Ik ben naar praktijk Tielo toe gegaan voor mijn scoliose en andere klachten die ik had m.b.t. sporten. Het heeft me heel erg geholpen. Mijn rugklachten zijn een stuk minder, mijn houding is beter en andere klachten zijn ook verminderd!! Tim is ook erg vriendelijk en helpt je echt gericht op jouw klachten. Ik kom hier zeker terug:)",
@@ -39,6 +31,14 @@ export const testimonials: Testimonial[] = [
     textEn: "A very positive and helpful person. The procedure helped me relieve some sports-related injuries and had a relaxing effect. I would recommend it to people looking for recovery aid.",
     rating: 5,
     image: "https://lh3.googleusercontent.com/a-/ALV-UjUBPK_ycMzXCOtWWcjZVgsHXoyXF8pYjMhAVHX2wHLBeTd2aHOsyg=w60-h60-p-rp-mo-ba3-br100"
+  },
+  {
+    id: "thijs-1",
+    name: "Thijs",
+    text: "Was echt top, ik heb geen last meer van mijn knie en enkel door Tim. Alle gewrichten zitten weer los en daardoor kost bewegen bijna geen energie meer. Ik kan iedereen aanraden om naar Tim te gaan.",
+    textEn: "It was really great, I no longer have any problems with my knee and ankle thanks to Tim. All joints are loose again and therefore moving takes almost no energy. I can recommend everyone to go to Tim.",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocJGrhTmDSdGYh0dEAkNS7tGE7JEVFL5vYy0VxQiaMz0debENw=w60-h60-p-rp-mo-br100"
   },
   {
     id: "nane-1",

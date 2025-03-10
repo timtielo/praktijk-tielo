@@ -15,6 +15,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
+// Get only the first three testimonials for the hero section
+const heroTestimonials = testimonials.slice(0, 3);
+
 function TestimonialCard({ testimonial, isActive }: { testimonial: Testimonial, isActive: boolean }) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -59,14 +62,14 @@ function TestimonialCarousel() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((current) => (current + 1) % testimonials.length);
+      setCurrentIndex((current) => (current + 1) % heroTestimonials.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <div className="relative w-full h-full">
-      {testimonials.map((testimonial, index) => (
+      {heroTestimonials.map((testimonial, index) => (
         <TestimonialCard 
           key={testimonial.id || index} 
           testimonial={testimonial} 
@@ -74,7 +77,7 @@ function TestimonialCarousel() {
         />
       ))}
       <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-        {testimonials.map((testimonial, index) => (
+        {heroTestimonials.map((testimonial, index) => (
           <button
             key={testimonial.id || index}
             className={`w-2 h-2 rounded-full transition-all ${
@@ -93,7 +96,7 @@ function MobileTestimonialCarousel() {
   const currentLanguage = i18n.language;
   
   // Get localized testimonials
-  const localizedTestimonials = testimonials.map(testimonial => ({
+  const localizedTestimonials = heroTestimonials.map(testimonial => ({
     ...testimonial,
     text: currentLanguage.startsWith('nl') ? testimonial.text : (testimonial.textEn || testimonial.text)
   }));

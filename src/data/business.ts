@@ -4,9 +4,9 @@ export const businessInfo = {
     phone: "+31 6 11223766",
     email: "info@praktijk-tielo.nl",
     address: {
-      street: "Op locatie",
-      postalCode: "",
-      city: "Regio Utrecht"
+      street: "Jura 7",
+      postalCode: "3524 HK",
+      city: "Utrecht"
     }
   },
   openingHours: {
