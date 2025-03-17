@@ -21,6 +21,7 @@ export function LanguageSwitcher() {
     '/alternatief-voor-chiropractor': '/en/alternative-to-chiropractic',
     '/sportblessures-behandeling': '/en/sports-injury-treatment',
     '/burnout-stress-behandeling': '/en/burnout-stress-treatment',
+    '/bloedgroepen-dieet': '/en/blood-type-diet',
     
     // English to Dutch
     '/en': '/',
@@ -31,7 +32,8 @@ export function LanguageSwitcher() {
     '/en/back-pain-treatment': '/rugpijn-en-lage-rugklachten',
     '/en/alternative-to-chiropractic': '/alternatief-voor-chiropractor',
     '/en/sports-injury-treatment': '/sportblessures-behandeling',
-    '/en/burnout-stress-treatment': '/burnout-stress-behandeling'
+    '/en/burnout-stress-treatment': '/burnout-stress-behandeling',
+    '/en/blood-type-diet': '/bloedgroepen-dieet'
   };
 
   const toggleLanguage = () => {

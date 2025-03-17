@@ -26,12 +26,14 @@ export function Footer() {
     { path: '/en/back-pain-treatment', label: 'Back Pain Treatment' },
     { path: '/en/alternative-to-chiropractic', label: 'Alternative to Chiropractic' },
     { path: '/en/sports-injury-treatment', label: 'Sports Injury Treatment' },
-    { path: '/en/burnout-stress-treatment', label: 'Burnout & Stress Treatment' }
+    { path: '/en/burnout-stress-treatment', label: 'Burnout & Stress Treatment' },
+    { path: '/en/blood-type-diet', label: 'Blood Type Diet & Lifestyle' }
   ] : [
     { path: '/rugpijn-en-lage-rugklachten', label: 'Rugpijn behandeling' },
     { path: '/alternatief-voor-chiropractor', label: 'Alternatief voor chiropractor' },
     { path: '/sportblessures-behandeling', label: 'Sportblessures behandeling' },
-    { path: '/burnout-stress-behandeling', label: 'Burn-out & stress behandeling' }
+    { path: '/burnout-stress-behandeling', label: 'Burn-out & stress behandeling' },
+    { path: '/bloedgroepen-dieet', label: 'Bloedgroepen dieet & lifestyle' }
   ];
 
   return (
