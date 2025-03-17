@@ -25,22 +25,22 @@ export interface Article {
 const mockArticles: Article[] = [
   {
     id: '1',
-    title: 'Natuurlijke manieren om je immuunsysteem te versterken',
-    slug: 'natuurlijke-manieren-immuunsysteem-versterken',
-    content: '# Natuurlijke manieren om je immuunsysteem te versterken\n\nJe immuunsysteem is je natuurlijke verdediging tegen ziekten en infecties...',
-    excerpt: 'Ontdek natuurlijke manieren om je immuunsysteem te versterken. Tips voor een betere weerstand door voeding, beweging en leefstijl.',
+    title: 'Binnenkort meer',
+    slug: 'binnenkort-meer',
+    content: '# Even geduld ...',
+    excerpt: 'Binnenkort meer.',
     category: 'health',
     image_url: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c',
     author: {
       name: 'Tim Tielkemeijer',
       avatar_url: '/assets/photos/Profielfoto.jpg',
-      bio: 'Oprichter van Praktijk Tielo'
+      bio: 'Oprichter'
     },
     published_at: '2025-03-17T12:00:00Z',
     tags: ['immuunsysteem', 'weerstand', 'gezondheid', 'natuurlijk'],
     meta: {
-      title: 'Versterk je immuunsysteem natuurlijk | Praktijk Tielo',
-      description: 'Ontdek natuurlijke manieren om je immuunsysteem te versterken. Tips voor een betere weerstand door voeding, beweging en leefstijl.',
+      title: 'VBinnenkort meer | Praktijk Tielo',
+      description: 'Even geduld aub.',
       keywords: ['immuunsysteem', 'weerstand', 'gezondheid', 'natuurlijk']
     }
   }
