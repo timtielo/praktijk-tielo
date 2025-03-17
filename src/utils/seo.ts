@@ -3,9 +3,45 @@
  */
 export function generateLocalBusinessSchema(businessInfo: any) {
   // Convert business hours to schema format
-  const weekdayHours = businessInfo.openingHours.weekdays;
-  const saturdayHours = businessInfo.openingHours.saturday;
-  const sundayHours = businessInfo.openingHours.sunday;
+  const openingHoursSpecification = [
+    // Weekdays
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Monday",
+      "description": businessInfo.openingHours.weekdays.monday.hours
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Tuesday",
+      "description": businessInfo.openingHours.weekdays.tuesday.hours
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Wednesday",
+      "description": businessInfo.openingHours.weekdays.wednesday.hours
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Thursday",
+      "description": businessInfo.openingHours.weekdays.thursday.hours
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "description": businessInfo.openingHours.weekdays.friday.hours
+    },
+    // Weekend
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "description": businessInfo.openingHours.weekend.saturday.hours
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "description": businessInfo.openingHours.weekend.sunday.hours
+    }
+  ];
 
   const schema = {
     "@context": "https://schema.org",
@@ -28,23 +64,7 @@ export function generateLocalBusinessSchema(businessInfo: any) {
       "addressCountry": "Netherlands",
       "addressRegion": "Utrecht"
     },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "description": weekdayHours.hours || "By appointment"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "description": saturdayHours.hours || "By appointment"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Sunday",
-        "description": sundayHours.hours || "By appointment"
-      }
-    ],
+    "openingHoursSpecification": openingHoursSpecification,
     "sameAs": [
       businessInfo.socialMedia.facebook,
       businessInfo.socialMedia.instagram,

@@ -12,6 +12,8 @@ const ContactPage = lazy(() => import('./pages/ContactPage').then(module => ({ d
 const DisclaimerPage = lazy(() => import('./pages/DisclaimerPage').then(module => ({ default: module.DisclaimerPage })));
 const ReviewsPage = lazy(() => import('./pages/ReviewsPage').then(module => ({ default: module.ReviewsPage })));
 const AboutUsPage = lazy(() => import('./pages/AboutUsPage').then(module => ({ default: module.AboutUsPage })));
+const BlogPage = lazy(() => import('./pages/BlogPage').then(module => ({ default: module.BlogPage })));
+const BlogPostPage = lazy(() => import('./pages/BlogPostPage').then(module => ({ default: module.BlogPostPage })));
 
 // Lazy load landing pages
 const BackPainPage = lazy(() => import('./pages/landing/BackPainPage').then(module => ({ default: module.BackPainPage })));
@@ -48,6 +50,8 @@ function App() {
             <Route path="/disclaimer" element={<DisclaimerPage />} />
             <Route path="/reviews" element={<ReviewsPage />} />
             <Route path="/over-ons" element={<AboutUsPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
             
             {/* Dutch Landing Pages */}
             <Route path="/rugpijn-en-lage-rugklachten" element={<BackPainPage />} />
@@ -61,6 +65,8 @@ function App() {
             <Route path="/en/disclaimer" element={<DisclaimerPage />} />
             <Route path="/en/reviews" element={<ReviewsPage />} />
             <Route path="/en/about-us" element={<AboutUsPage />} />
+            <Route path="/en/blog" element={<BlogPage />} />
+            <Route path="/en/blog/:slug" element={<BlogPostPage />} />
             
             {/* English Landing Pages */}
             <Route path="/en/back-pain-treatment" element={<BackPainPage />} />

@@ -182,7 +182,7 @@ export function ContactPage() {
                   </>
                 ) : (
                   <>
-                    {t('contactPage.form.send')} <MessageSquare className="w-5 h-5" />
+                    {t('contactPage.form.send')} <Send className="w-5 h-5" />
                   </>
                 )}
               </button>
@@ -231,6 +231,20 @@ export function ContactPage() {
                   </div>
                 </a>
                 <a
+                  href="https://wa.me/message/YGHG6MZEMBOIM1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-gray-600 hover:text-blue-600 transition-colors p-4 rounded-lg hover:bg-blue-50 group"
+                >
+                  <div className="bg-blue-50 p-3 rounded-full group-hover:bg-white transition-colors">
+                    <MessageSquare className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium">WhatsApp</p>
+                    <p className="text-lg">{isEnglish ? "Send a message" : "Stuur een bericht"}</p>
+                  </div>
+                </a>
+                <a
                   href={`https://maps.google.com/?q=${businessInfo.contact.address.street},${businessInfo.contact.address.postalCode},${businessInfo.contact.address.city}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -240,7 +254,7 @@ export function ContactPage() {
                     <MapPin className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <p className="font-medium">{t('contactPage.directContact.visit.title')}</p>
+                    <p className="font-medium">{t('contactPage.directContact.visit.title')} (op afspraak)</p>
                     <p>{businessInfo.contact.address.street}</p>
                     <p>{businessInfo.contact.address.postalCode} {businessInfo.contact.address.city}</p>
                   </div>
@@ -252,17 +266,35 @@ export function ContactPage() {
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <h2 className="text-2xl font-bold mb-6">{t('contactPage.openingHours.title')}</h2>
               <div className="space-y-4">
+                {/* Weekdays */}
                 <div className="flex justify-between items-center p-3 rounded-lg hover:bg-blue-50">
-                  <span className="text-gray-600">{t('footer.openingHours.weekdays')}</span>
-                  <span className="font-medium">{t('footer.openingHours.byAppointment')}</span>
+                  <span className="text-gray-600">{businessInfo.openingHours.weekdays.monday.days}</span>
+                  <span className="font-medium">{businessInfo.openingHours.weekdays.monday.hours}</span>
                 </div>
                 <div className="flex justify-between items-center p-3 rounded-lg hover:bg-blue-50">
-                  <span className="text-gray-600">{t('footer.openingHours.saturday')}</span>
-                  <span className="font-medium">{t('footer.openingHours.byAppointment')}</span>
+                  <span className="text-gray-600">{businessInfo.openingHours.weekdays.tuesday.days}</span>
+                  <span className="font-medium">{businessInfo.openingHours.weekdays.tuesday.hours}</span>
                 </div>
                 <div className="flex justify-between items-center p-3 rounded-lg hover:bg-blue-50">
-                  <span className="text-gray-600">{t('footer.openingHours.sunday')}</span>
-                  <span className="font-medium">{t('footer.openingHours.byAppointment')}</span>
+                  <span className="text-gray-600">{businessInfo.openingHours.weekdays.wednesday.days}</span>
+                  <span className="font-medium">{businessInfo.openingHours.weekdays.wednesday.hours}</span>
+                </div>
+                <div className="flex justify-between items-center p-3 rounded-lg hover:bg-blue-50">
+                  <span className="text-gray-600">{businessInfo.openingHours.weekdays.thursday.days}</span>
+                  <span className="font-medium">{businessInfo.openingHours.weekdays.thursday.hours}</span>
+                </div>
+                <div className="flex justify-between items-center p-3 rounded-lg hover:bg-blue-50">
+                  <span className="text-gray-600">{businessInfo.openingHours.weekdays.friday.days}</span>
+                  <span className="font-medium">{businessInfo.openingHours.weekdays.friday.hours}</span>
+                </div>
+                {/* Weekend */}
+                <div className="flex justify-between items-center p-3 rounded-lg hover:bg-blue-50">
+                  <span className="text-gray-600">{businessInfo.openingHours.weekend.saturday.days}</span>
+                  <span className="font-medium">{businessInfo.openingHours.weekend.saturday.hours}</span>
+                </div>
+                <div className="flex justify-between items-center p-3 rounded-lg hover:bg-blue-50">
+                  <span className="text-gray-600">{businessInfo.openingHours.weekend.sunday.days}</span>
+                  <span className="font-medium">{businessInfo.openingHours.weekend.sunday.hours}</span>
                 </div>
               </div>
             </div>

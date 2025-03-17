@@ -11,16 +11,36 @@ export const businessInfo = {
   },
   openingHours: {
     weekdays: {
-      days: "Maandag - Vrijdag",
-      hours: "Op afspraak"
+      monday: {
+        days: "Maandag",
+        hours: "Op afspraak"
+      },
+      tuesday: {
+        days: "Dinsdag",
+        hours: "Op afspraak"
+      },
+      wednesday: {
+        days: "Woensdag",
+        hours: "9:00-18:00"
+      },
+      thursday: {
+        days: "Donderdag",
+        hours: "Op afspraak"
+      },
+      friday: {
+        days: "Vrijdag",
+        hours: "Op afspraak"
+      }
     },
-    saturday: {
-      days: "Zaterdag",
-      hours: "Op afspraak"
-    },
-    sunday: {
-      days: "Zondag",
-      hours: "Op afspraak"
+    weekend: {
+      saturday: {
+        days: "Zaterdag",
+        hours: "9:00-18:00"
+      },
+      sunday: {
+        days: "Zondag",
+        hours: "9:00-18:00"
+      }
     }
   },
   socialMedia: {

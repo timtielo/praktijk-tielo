@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Mail, Star, Users } from 'lucide-react';
+import { Menu, X, Mail, Star, Users, BookOpen } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { businessInfo } from '../data/business';
 import { useScrollDirection } from '../hooks/useScrollDirection';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
+import { NavBar } from './ui/tubelight-navbar';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,11 +35,30 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Navigation items for the tubelight navbar
+  const navItems = [
+    { 
+      name: t('header.aboutUs'), 
+      url: getAboutUsPath(), 
+      icon: Users 
+    },
+    { 
+      name: t('header.reviews'), 
+      url: getLocalizedPath('/reviews'), 
+      icon: Star 
+    },
+    { 
+      name: isEnglish ? "Knowledge Base" : "Kennisbank", 
+      url: getLocalizedPath('/blog'), 
+      icon: BookOpen 
+    }
+  ];
+
   return (
     <header 
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white shadow-md' 
+          ? 'bg-white/80 backdrop-blur-md shadow-sm' 
           : 'bg-transparent'
       } ${
         scrollDirection === 'down' && isScrolled
@@ -66,22 +86,9 @@ export function Header() {
             </div>
           </div>
 
-          {/* Desktop navigation */}
-          <div className="hidden md:flex items-center gap-6">
-            <Link 
-              to={getAboutUsPath()}
-              className="flex items-center gap-1 text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              <Users className="w-4 h-4" />
-              <span>{t('header.aboutUs')}</span>
-            </Link>
-            <Link 
-              to={getLocalizedPath('/reviews')} 
-              className="flex items-center gap-1 text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              <Star className="w-4 h-4" />
-              <span>{t('header.reviews')}</span>
-            </Link>
+          {/* Desktop navigation using tubelight navbar */}
+          <div className="hidden md:block">
+            <NavBar items={navItems} className="relative !fixed:none !bottom-auto !top-auto !mb-0 !pt-0" />
           </div>
 
           {/* Mobile menu button */}
@@ -137,6 +144,14 @@ export function Header() {
           >
             <Star className="w-4 h-4" />
             <span>{t('header.reviews')}</span>
+          </Link>
+          <Link
+            to={getLocalizedPath('/blog')}
+            className="flex items-center gap-2 px-4 text-gray-600 hover:text-blue-600"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <BookOpen className="w-4 h-4" />
+            <span>{isEnglish ? "Knowledge Base" : "Kennisbank"}</span>
           </Link>
           <a
             href={`mailto:${contact.email}`}

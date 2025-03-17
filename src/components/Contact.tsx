@@ -79,8 +79,20 @@ export function Contact() {
                 <MapPin className="w-5 h-5 text-blue-600" />
                 <span>{`${contact.address.street}, ${contact.address.postalCode} ${contact.address.city}`}</span>
               </div>
+              <div className="flex items-center gap-3">
+                <MessageSquare className="w-5 h-5 text-blue-600" />
+                <a 
+                  href="https://wa.me/message/YGHG6MZEMBOIM1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 transition-colors"
+                >
+                  WhatsApp
+                </a>
+              </div>
             </div>
           </div>
+
           <div>
             {submitStatus === 'success' ? (
               <div className="bg-green-50 border-2 border-green-200 rounded-xl p-8 text-center animate-fade-in">

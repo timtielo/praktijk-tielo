@@ -40,10 +40,10 @@ export function ReviewsPage() {
     ...testimonial,
     text: currentLanguage.startsWith('nl') ? testimonial.text : (testimonial.textEn || testimonial.text)
   }));
-  
-  const formatDate = () => {
-    const date = new Date('2025-03-02'); // March 2, 2025
-    const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    const locale = currentLanguage.startsWith('nl') ? 'nl-NL' : 'en-US';
     return new Intl.DateTimeFormat(locale, { 
       year: 'numeric', 
       month: 'long', 
@@ -97,11 +97,16 @@ export function ReviewsPage() {
                     alt={testimonial.name}
                     className="w-16 h-16 rounded-full object-cover"
                     loading="lazy"
+                    onError={(e) => {
+                      const img = e.target as HTMLImageElement;
+                      img.src = '/assets/logos/praktijktielotransparent.svg';
+                      img.classList.add('error-fallback');
+                    }}
                   />
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                       <h3 className="font-semibold text-lg">{testimonial.name}</h3>
-                      <span className="text-gray-500 text-sm">{formatDate()}</span>
+                      <span className="text-gray-500 text-sm">{formatDate(testimonial.date)}</span>
                     </div>
                     <div className="flex mb-3">
                       {[...Array(5)].map((_, i) => (
@@ -147,11 +152,16 @@ export function ReviewsPage() {
                         alt={testimonial.name}
                         className="w-16 h-16 rounded-full object-cover"
                         loading="lazy"
+                        onError={(e) => {
+                          const img = e.target as HTMLImageElement;
+                          img.src = '/assets/logos/praktijktielotransparent.svg';
+                          img.classList.add('error-fallback');
+                        }}
                       />
                       <div className="flex-1">
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                           <h3 className="font-semibold text-lg">{testimonial.name}</h3>
-                          <span className="text-gray-500 text-sm">{formatDate()}</span>
+                          <span className="text-gray-500 text-sm">{formatDate(testimonial.date)}</span>
                         </div>
                         <div className="flex mb-3">
                           {[...Array(5)].map((_, i) => (

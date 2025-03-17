@@ -2,6 +2,7 @@ import { cn } from "../../lib/utils"
 import { TestimonialCard, TestimonialAuthor } from "../ui/testimonial-card"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
+import { useTranslation } from 'react-i18next';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -14,6 +15,7 @@ interface TestimonialsSectionProps {
   testimonials: Array<{
     author: TestimonialAuthor
     text: string
+    textEn?: string
     href?: string
     id?: string
   }>
@@ -26,16 +28,22 @@ export function TestimonialsSection({
   testimonials,
   className 
 }: TestimonialsSectionProps) {
-  // Determine if we're on a mobile device
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  
+  // Get localized testimonials
+  const localizedTestimonials = testimonials.map(testimonial => ({
+    ...testimonial,
+    text: currentLanguage.startsWith('nl') ? testimonial.text : (testimonial.textEn || testimonial.text)
+  }));
   
   return (
     <section className={cn(
       "bg-background text-foreground",
-      "py-6 sm:py-12 md:py-16 px-0", // Reduced vertical padding
+      "py-4 sm:py-8 px-0", // Reduced padding
       className
     )}>
-      <div className="mx-auto flex max-w-container flex-col items-center gap-2 text-center sm:gap-8"> {/* Reduced gap */}
+      <div className="mx-auto flex max-w-container flex-col items-center gap-2 text-center sm:gap-4"> {/* Reduced gap */}
         {(title || description) && (
           <div className="flex flex-col items-center gap-2 px-4 sm:gap-4"> {/* Reduced gap */}
             {title && (
@@ -53,9 +61,9 @@ export function TestimonialsSection({
 
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
           {/* Desktop: Marquee */}
-          <div className="hidden md:flex group overflow-hidden p-2 [--gap:1.5rem] [gap:var(--gap)] flex-row [--duration:40s]">
+          <div className="hidden md:flex group overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:60s] h-[240px]"> {/* Increased duration to 60s */}
             <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
-              {testimonials.slice(0, testimonials.length / 2).map((testimonial, i) => (
+              {localizedTestimonials.slice(0, localizedTestimonials.length / 2).map((testimonial, i) => (
                 <TestimonialCard 
                   key={`original-${testimonial.id || i}`}
                   {...testimonial}
@@ -65,7 +73,7 @@ export function TestimonialsSection({
             
             {/* Duplicate set for seamless looping */}
             <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
-              {testimonials.slice(testimonials.length / 2).map((testimonial, i) => (
+              {localizedTestimonials.slice(localizedTestimonials.length / 2).map((testimonial, i) => (
                 <TestimonialCard 
                   key={`duplicate-${testimonial.id || i}-${Date.now()}`}
                   {...testimonial}
@@ -87,7 +95,7 @@ export function TestimonialsSection({
               }}
               className="pb-10"
             >
-              {testimonials.slice(0, testimonials.length / 2).map((testimonial, i) => (
+              {localizedTestimonials.slice(0, localizedTestimonials.length / 2).map((testimonial, i) => (
                 <SwiperSlide key={`swiper-${testimonial.id || i}`}>
                   <TestimonialCard {...testimonial} />
                 </SwiperSlide>

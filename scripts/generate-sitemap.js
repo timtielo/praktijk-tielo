@@ -11,38 +11,63 @@ if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });
 }
 
-// Copy the static sitemap from public to dist
-const publicSitemapPath = path.join(__dirname, '../public/sitemap.xml');
-const distSitemapPath = path.join(__dirname, '../dist/sitemap.xml');
+// Define all routes with their priorities and change frequencies
+const routes = [
+  // Main pages
+  { path: '/', priority: '1.0', changefreq: 'weekly' },
+  { path: '/contact', priority: '0.8', changefreq: 'weekly' },
+  { path: '/reviews', priority: '0.9', changefreq: 'weekly' },
+  { path: '/over-ons', priority: '0.8', changefreq: 'weekly' },
+  { path: '/disclaimer', priority: '0.5', changefreq: 'monthly' },
+  
+  // Dutch landing pages
+  { path: '/rugpijn-en-lage-rugklachten', priority: '0.9', changefreq: 'weekly' },
+  { path: '/alternatief-voor-chiropractor', priority: '0.9', changefreq: 'weekly' },
+  { path: '/sportblessures-behandeling', priority: '0.9', changefreq: 'weekly' },
+  { path: '/burnout-stress-behandeling', priority: '0.9', changefreq: 'weekly' },
+  
+  // English pages
+  { path: '/en', priority: '1.0', changefreq: 'weekly' },
+  { path: '/en/contact', priority: '0.8', changefreq: 'weekly' },
+  { path: '/en/reviews', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/about-us', priority: '0.8', changefreq: 'weekly' },
+  { path: '/en/disclaimer', priority: '0.5', changefreq: 'monthly' },
+  
+  // English landing pages
+  { path: '/en/back-pain-treatment', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/alternative-to-chiropractic', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/sports-injury-treatment', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/burnout-stress-treatment', priority: '0.9', changefreq: 'weekly' }
+];
 
-// Read the sitemap file
-const sitemapContent = fs.readFileSync(publicSitemapPath, 'utf8');
+// Generate sitemap content
+const generateSitemap = () => {
+  const today = new Date().toISOString().split('T')[0];
+  const baseUrl = 'https://www.praktijk-tielo.nl';
+  
+  const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  ${routes.map(route => `
+  <url>
+    <loc>${baseUrl}${route.path}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${route.changefreq}</changefreq>
+    <priority>${route.priority}</priority>
+    ${route.path.startsWith('/en') ? 
+      `<xhtml:link rel="alternate" hreflang="en" href="${baseUrl}${route.path}" />
+       <xhtml:link rel="alternate" hreflang="nl" href="${baseUrl}${route.path.replace('/en', '')}" />` :
+      `<xhtml:link rel="alternate" hreflang="nl" href="${baseUrl}${route.path}" />
+       <xhtml:link rel="alternate" hreflang="en" href="${baseUrl}/en${route.path}" />`
+    }
+    <xhtml:link rel="alternate" hreflang="x-default" href="${baseUrl}${route.path.startsWith('/en') ? route.path.replace('/en', '') : route.path}" />
+  </url>`).join('')}
+</urlset>`.trim();
 
-// Update the lastmod date to today
-const today = new Date().toISOString().split('T')[0];
-const updatedSitemapContent = sitemapContent.replace(/<lastmod>.*?<\/lastmod>/g, `<lastmod>${today}</lastmod>`);
+  // Write sitemap to dist directory
+  fs.writeFileSync(path.join(distDir, 'sitemap.xml'), xmlContent);
+  console.log('Sitemap generated successfully!');
+};
 
-// Write the updated sitemap to the dist directory
-fs.writeFileSync(distSitemapPath, updatedSitemapContent);
-
-console.log('Sitemap updated and copied successfully to dist directory!');
-
-// Generate a robots.txt file if it doesn't exist in public
-const publicRobotsPath = path.join(__dirname, '../public/robots.txt');
-const distRobotsPath = path.join(__dirname, '../dist/robots.txt');
-
-if (fs.existsSync(publicRobotsPath)) {
-  // Copy the existing robots.txt
-  fs.copyFileSync(publicRobotsPath, distRobotsPath);
-  console.log('Robots.txt copied to dist directory!');
-} else {
-  // Create a default robots.txt
-  const robotsContent = `User-agent: *
-Allow: /
-Disallow: /disclaimer
-
-Sitemap: https://www.praktijk-tielo.nl/sitemap.xml
-`;
-  fs.writeFileSync(distRobotsPath, robotsContent);
-  console.log('Default robots.txt created in dist directory!');
-}
+// Generate sitemap
+generateSitemap();

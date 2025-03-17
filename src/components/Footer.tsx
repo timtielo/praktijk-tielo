@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, MapPin, Facebook, Instagram, Linkedin, Clock, Star, Users } from 'lucide-react';
+import { Mail, MapPin, Facebook, Instagram, Linkedin, Clock, Star, Users, MessageSquare } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { businessInfo } from '../data/business';
 import { useTranslation } from 'react-i18next';
@@ -47,17 +47,35 @@ export function Footer() {
                 {t('footer.openingHours.title')}
               </h3>
               <ul className="space-y-3">
+                {/* Weekdays */}
                 <li className="flex justify-between">
-                  <span className="text-gray-400">{t('footer.openingHours.weekdays')}</span>
-                  <span>{t('footer.openingHours.byAppointment')}</span>
+                  <span className="text-gray-400">{openingHours.weekdays.monday.days}</span>
+                  <span>{openingHours.weekdays.monday.hours}</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-gray-400">{t('footer.openingHours.saturday')}</span>
-                  <span>{t('footer.openingHours.byAppointment')}</span>
+                  <span className="text-gray-400">{openingHours.weekdays.tuesday.days}</span>
+                  <span>{openingHours.weekdays.tuesday.hours}</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-gray-400">{t('footer.openingHours.sunday')}</span>
-                  <span>{t('footer.openingHours.byAppointment')}</span>
+                  <span className="text-gray-400">{openingHours.weekdays.wednesday.days}</span>
+                  <span>{openingHours.weekdays.wednesday.hours}</span>
+                </li>
+                <li className="flex justify-between">
+                  <span className="text-gray-400">{openingHours.weekdays.thursday.days}</span>
+                  <span>{openingHours.weekdays.thursday.hours}</span>
+                </li>
+                <li className="flex justify-between">
+                  <span className="text-gray-400">{openingHours.weekdays.friday.days}</span>
+                  <span>{openingHours.weekdays.friday.hours}</span>
+                </li>
+                {/* Weekend */}
+                <li className="flex justify-between">
+                  <span className="text-gray-400">{openingHours.weekend.saturday.days}</span>
+                  <span>{openingHours.weekend.saturday.hours}</span>
+                </li>
+                <li className="flex justify-between">
+                  <span className="text-gray-400">{openingHours.weekend.sunday.days}</span>
+                  <span>{openingHours.weekend.sunday.hours}</span>
                 </li>
               </ul>
             </div>
@@ -89,6 +107,17 @@ export function Footer() {
                       {contact.address.street}<br />
                       {contact.address.postalCode} {contact.address.city}
                     </span>
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://wa.me/message/YGHG6MZEMBOIM1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                  >
+                    <MessageSquare className="w-4 h-4 text-blue-400" />
+                    WhatsApp
                   </a>
                 </li>
               </ul>

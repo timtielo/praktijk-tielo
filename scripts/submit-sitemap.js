@@ -1,10 +1,7 @@
 import fetch from 'node-fetch';
 
 const SITE_URL = 'https://www.praktijk-tielo.nl';
-const SITEMAPS = [
-  '/sitemap.xml',
-  '/sitemap-images.xml'
-];
+const SITEMAPS = ['/sitemap.xml'];
 
 async function submitSitemapToSearchEngines() {
   const searchEngines = [
@@ -15,6 +12,10 @@ async function submitSitemapToSearchEngines() {
     {
       name: 'Bing',
       url: (sitemap) => `https://www.bing.com/ping?sitemap=${SITE_URL}${sitemap}`
+    },
+    {
+      name: 'Yandex',
+      url: (sitemap) => `https://webmaster.yandex.com/ping?sitemap=${SITE_URL}${sitemap}`
     }
   ];
 

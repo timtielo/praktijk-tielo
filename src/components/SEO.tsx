@@ -10,7 +10,11 @@ interface SEOProps {
   descriptionKey: string;
   type?: string;
   name?: string;
-  canonicalPath?: string;
+  canonicalUrl?: string;
+  alternateUrls?: {
+    nl: string;
+    en: string;
+  };
   image?: string;
   schema?: string;
   keywords?: string[];
@@ -21,7 +25,8 @@ export function SEO({
   descriptionKey, 
   type = 'website', 
   name = 'Praktijk Tielo',
-  canonicalPath,
+  canonicalUrl,
+  alternateUrls,
   image = '/assets/logos/praktijktielotransparent.svg',
   schema,
   keywords = []
@@ -30,53 +35,20 @@ export function SEO({
   const currentLanguage = i18n.language;
   const location = useLocation();
   
-  // Determine if we're on a language-specific path
-  const isLanguagePath = location.pathname.startsWith('/en') || location.pathname.startsWith('/nl');
+  // Get the base URL
+  const baseUrl = 'https://www.praktijk-tielo.nl';
   
-  // Get the base URL without language prefix
-  const getBaseUrl = () => {
-    const baseUrl = 'https://www.praktijk-tielo.nl';
-    if (!canonicalPath) return baseUrl;
-    return `${baseUrl}${canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`}`;
+  // Get the canonical URL
+  const getCanonicalUrl = () => {
+    if (canonicalUrl) return canonicalUrl;
+    
+    // If no canonical URL is provided, generate one based on current path
+    const path = location.pathname;
+    return `${baseUrl}${path}`;
   };
-  
-  // Get the alternate URLs for language versions
-  const getAlternateUrls = () => {
-    const baseUrl = 'https://www.praktijk-tielo.nl';
-    const basePath = canonicalPath || location.pathname;
-    
-    // Remove language prefix if present
-    let pathWithoutLang = basePath;
-    if (basePath.startsWith('/en/')) {
-      pathWithoutLang = basePath.replace('/en', '');
-    } else if (basePath.startsWith('/en')) {
-      pathWithoutLang = '/';
-    } else if (basePath.startsWith('/nl/')) {
-      pathWithoutLang = basePath.replace('/nl', '');
-    }
-    
-    // Ensure path starts with /
-    if (!pathWithoutLang.startsWith('/')) {
-      pathWithoutLang = `/${pathWithoutLang}`;
-    }
-    
-    // If path is just /, don't duplicate it
-    const dutchPath = pathWithoutLang === '/' ? '' : pathWithoutLang;
-    const englishPath = `/en${pathWithoutLang === '/' ? '' : pathWithoutLang}`;
-    
-    return {
-      nl: `${baseUrl}${dutchPath}`,
-      en: `${baseUrl}${englishPath}`,
-      default: `${baseUrl}${dutchPath}`
-    };
-  };
-  
-  const alternateUrls = getAlternateUrls();
-  const canonicalUrl = currentLanguage === 'nl' ? alternateUrls.nl : alternateUrls.en;
   
   // Get the full image URL
   const getFullImageUrl = () => {
-    const baseUrl = 'https://www.praktijk-tielo.nl';
     return `${baseUrl}${image}`;
   };
   
@@ -106,7 +78,7 @@ export function SEO({
       <meta property="og:type" content={type} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:url" content={getCanonicalUrl()} />
       <meta property="og:site_name" content={name} />
       <meta property="og:image" content={fullImageUrl} />
       <meta property="og:locale" content={currentLanguage === 'nl' ? 'nl_NL' : 'en_US'} />
@@ -119,12 +91,16 @@ export function SEO({
       <meta name="twitter:image" content={fullImageUrl} />
       
       {/* Language alternates */}
-      <link rel="alternate" hreflang="nl" href={alternateUrls.nl} />
-      <link rel="alternate" hreflang="en" href={alternateUrls.en} />
-      <link rel="alternate" hreflang="x-default" href={alternateUrls.default} />
+      {alternateUrls && (
+        <>
+          <link rel="alternate" hreflang="nl" href={alternateUrls.nl} />
+          <link rel="alternate" hreflang="en" href={alternateUrls.en} />
+          <link rel="alternate" hreflang="x-default" href={alternateUrls.nl} />
+        </>
+      )}
       
       {/* Canonical URL */}
-      <link rel="canonical" href={canonicalUrl} />
+      <link rel="canonical" href={getCanonicalUrl()} />
       
       {/* Set the HTML lang attribute */}
       <html lang={currentLanguage} />

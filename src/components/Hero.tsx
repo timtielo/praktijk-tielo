@@ -24,15 +24,15 @@ function TestimonialCard({ testimonial, isActive }: { testimonial: Testimonial, 
   
   // Get the appropriate text based on the current language
   const testimonialText = currentLanguage.startsWith('nl') 
-    ? testimonial.text 
-    : (testimonial.textEn || testimonial.text);
+    ? (testimonial.shortText || testimonial.text)
+    : (testimonial.shortTextEn || testimonial.textEn || testimonial.text);
   
   return (
-    <div className={`absolute inset-0 transition-all duration-500 ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
+    <div className={`absolute inset-0 transition-all duration-1000 ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
       <div className="bg-white rounded-2xl p-8 shadow-xl h-full flex flex-col">
         <Quote className="w-12 h-12 text-blue-600/20 mb-6" />
-        <p className="text-lg text-gray-700 flex-grow">{testimonialText}</p>
-        <div className="mt-6 pt-6 border-t border-gray-100">
+        <p className="text-lg text-gray-700 flex-grow mb-6">{testimonialText}</p>
+        <div className="mt-auto pt-6 border-t border-gray-100">
           <div className="flex gap-1 mb-3">
             {[...Array(testimonial.rating)].map((_, i) => (
               <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
@@ -43,9 +43,14 @@ function TestimonialCard({ testimonial, isActive }: { testimonial: Testimonial, 
               src={testimonial.image} 
               alt={testimonial.name}
               className="w-12 h-12 rounded-full object-cover"
+              onError={(e) => {
+                const img = e.target as HTMLImageElement;
+                img.src = '/assets/logos/praktijktielotransparent.svg';
+                img.classList.add('error-fallback');
+              }}
             />
             <div>
-              <p className="font-semibold text-gray-900">{testimonial.name}</p>
+              <p className="font-semibold">{testimonial.name}</p>
               <p className="text-sm text-gray-500">{t('testimonials.satisfiedClient')}</p>
             </div>
           </div>
@@ -63,7 +68,7 @@ function TestimonialCarousel() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((current) => (current + 1) % heroTestimonials.length);
-    }, 5000);
+    }, 8000); // Increased to 8 seconds
     return () => clearInterval(timer);
   }, []);
 
@@ -98,7 +103,9 @@ function MobileTestimonialCarousel() {
   // Get localized testimonials
   const localizedTestimonials = heroTestimonials.map(testimonial => ({
     ...testimonial,
-    text: currentLanguage.startsWith('nl') ? testimonial.text : (testimonial.textEn || testimonial.text)
+    text: currentLanguage.startsWith('nl') 
+      ? (testimonial.shortText || testimonial.text)
+      : (testimonial.shortTextEn || testimonial.textEn || testimonial.text)
   }));
   
   return (
@@ -121,7 +128,7 @@ function MobileTestimonialCarousel() {
         <SwiperSlide key={testimonial.id || index}>
           <div className="bg-white rounded-2xl p-6 shadow-xl">
             <Quote className="w-10 h-10 text-blue-600/20 mb-4" />
-            <p className="text-gray-700 mb-4">{testimonial.text}</p>
+            <p className="text-gray-700 mb-6">{testimonial.text}</p>
             <div className="pt-4 border-t border-gray-100">
               <div className="flex gap-1 mb-2">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -133,10 +140,15 @@ function MobileTestimonialCarousel() {
                   src={testimonial.image} 
                   alt={testimonial.name}
                   className="w-10 h-10 rounded-full object-cover"
+                  onError={(e) => {
+                    const img = e.target as HTMLImageElement;
+                    img.src = '/assets/logos/praktijktielotransparent.svg';
+                    img.classList.add('error-fallback');
+                  }}
                 />
                 <div>
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-xs text-gray-500">{t('testimonials.satisfiedClient')}</p>
+                  <p className="font-semibold">{testimonial.name}</p>
+                  <p className="text-sm text-gray-500">{t('testimonials.satisfiedClient')}</p>
                 </div>
               </div>
             </div>
@@ -244,7 +256,7 @@ export function Hero() {
           </div>
           
           {/* Right side testimonials */}
-          <div className="w-full lg:w-[40%] aspect-square max-w-lg">
+          <div className="w-full lg:w-[45%] aspect-[4/5] max-w-lg">
             {/* Desktop testimonial carousel */}
             <div className="hidden md:block h-full">
               <TestimonialCarousel />
