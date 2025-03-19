@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { contentfulApi } from '../src/lib/contentful.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,7 +12,7 @@ if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });
 }
 
-// Define all routes with their priorities and change frequencies
+// Define all static routes with their priorities and change frequencies
 const routes = [
   // Main pages
   { path: '/', priority: '1.0', changefreq: 'weekly' },
@@ -43,17 +44,41 @@ const routes = [
 ];
 
 // Generate sitemap content
-const generateSitemap = () => {
+const generateSitemap = async () => {
   const today = new Date().toISOString().split('T')[0];
   const baseUrl = 'https://www.praktijk-tielo.nl';
+  
+  // Fetch blog posts from Contentful
+  const [dutchPosts, englishPosts] = await Promise.all([
+    contentfulApi.fetchPosts('nl', { limit: 100 }),
+    contentfulApi.fetchPosts('en', { limit: 100 })
+  ]);
+  
+  // Add blog post routes
+  const blogRoutes = [
+    ...dutchPosts.items.map(post => ({
+      path: `/blog/${post.fields.slug}`,
+      priority: '0.8',
+      changefreq: 'weekly',
+      lastmod: post.sys.updatedAt.split('T')[0]
+    })),
+    ...englishPosts.items.map(post => ({
+      path: `/en/blog/${post.fields.slug}`,
+      priority: '0.8',
+      changefreq: 'weekly',
+      lastmod: post.sys.updatedAt.split('T')[0]
+    }))
+  ];
+  
+  const allRoutes = [...routes, ...blogRoutes];
   
   const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  ${routes.map(route => `
+  ${allRoutes.map(route => `
   <url>
     <loc>${baseUrl}${route.path}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${route.lastmod || today}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
     ${route.path.startsWith('/en') ? 

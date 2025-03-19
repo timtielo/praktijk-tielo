@@ -1,29 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { supabaseApi } from '../lib/supabase';
+import { contentfulApi, type BlogPost } from '../lib/contentful';
 import { SEO } from '../components/SEO';
 import { Calendar, User, Tag, ChevronLeft, Loader2 } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
-
-interface Article {
-  id: string;
-  title: string;
-  content: string;
-  category: string;
-  image_url: string;
-  author: {
-    name: string;
-    avatar_url: string;
-    bio: string;
-  };
-  published_at: string;
-  tags: string[];
-  metadata: {
-    readingTime?: number;
-    references?: string[];
-  };
-}
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
+import { RichImage } from '../components/RichImage';
 
 export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -33,35 +16,36 @@ export function BlogPostPage() {
   const currentLanguage = i18n.language;
   const isEnglish = location.pathname.startsWith('/en');
   
-  const [article, setArticle] = useState<Article | null>(null);
+  const [post, setPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchArticle = async () => {
+    const fetchPost = async () => {
       try {
         setLoading(true);
         setError(null);
         
-        const data = await supabaseApi.fetchArticleBySlug(slug!, currentLanguage);
+        const locale = isEnglish ? 'en-US' : 'nl-NL';
+        const data = await contentfulApi.fetchPostBySlug(slug!, locale);
         
         if (!data) {
-          throw new Error('Article not found');
+          throw new Error('Post not found');
         }
         
-        setArticle(data);
+        setPost(data);
       } catch (error) {
-        console.error('Error fetching article:', error);
-        setError(error instanceof Error ? error.message : 'Failed to load article');
+        console.error('Error fetching post:', error);
+        setError(error instanceof Error ? error.message : 'Failed to load post');
       } finally {
         setLoading(false);
       }
     };
 
     if (slug) {
-      fetchArticle();
+      fetchPost();
     }
-  }, [slug, currentLanguage]);
+  }, [slug, isEnglish]);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -72,10 +56,87 @@ export function BlogPostPage() {
     }).format(date);
   };
 
-  const getCanonicalUrl = () => {
-    const baseUrl = 'https://www.praktijk-tielo.nl';
-    const path = isEnglish ? `/en/blog/${slug}` : `/blog/${slug}`;
-    return `${baseUrl}${path}`;
+  // Rich text renderer options
+  const options = {
+    renderMark: {
+      [MARKS.BOLD]: (text: React.ReactNode) => <strong>{text}</strong>,
+      [MARKS.ITALIC]: (text: React.ReactNode) => <em>{text}</em>,
+      [MARKS.UNDERLINE]: (text: React.ReactNode) => <u>{text}</u>,
+      [MARKS.CODE]: (text: React.ReactNode) => <code className="bg-gray-100 rounded px-1 py-0.5">{text}</code>,
+    },
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node: any, children: React.ReactNode) => <p className="mb-4">{children}</p>,
+      [BLOCKS.HEADING_1]: (node: any, children: React.ReactNode) => <h1 className="text-4xl font-bold mb-6">{children}</h1>,
+      [BLOCKS.HEADING_2]: (node: any, children: React.ReactNode) => <h2 className="text-3xl font-bold mb-4">{children}</h2>,
+      [BLOCKS.HEADING_3]: (node: any, children: React.ReactNode) => <h3 className="text-2xl font-bold mb-3">{children}</h3>,
+      [BLOCKS.HEADING_4]: (node: any, children: React.ReactNode) => <h4 className="text-xl font-bold mb-2">{children}</h4>,
+      [BLOCKS.HEADING_5]: (node: any, children: React.ReactNode) => <h5 className="text-lg font-bold mb-2">{children}</h5>,
+      [BLOCKS.HEADING_6]: (node: any, children: React.ReactNode) => <h6 className="text-base font-bold mb-2">{children}</h6>,
+      [BLOCKS.UL_LIST]: (node: any, children: React.ReactNode) => <ul className="list-disc pl-6 mb-4">{children}</ul>,
+      [BLOCKS.OL_LIST]: (node: any, children: React.ReactNode) => <ol className="list-decimal pl-6 mb-4">{children}</ol>,
+      [BLOCKS.LIST_ITEM]: (node: any, children: React.ReactNode) => <li className="mb-2">{children}</li>,
+      [BLOCKS.QUOTE]: (node: any, children: React.ReactNode) => (
+        <blockquote className="border-l-4 border-blue-600 pl-4 italic my-4">{children}</blockquote>
+      ),
+      [BLOCKS.HR]: () => <hr className="my-8 border-t border-gray-200" />,
+      [BLOCKS.TABLE]: (node: any, children: React.ReactNode) => (
+        <div className="overflow-x-auto my-8">
+          <table className="min-w-full divide-y divide-gray-200">
+            {children}
+          </table>
+        </div>
+      ),
+      [BLOCKS.TABLE_ROW]: (node: any, children: React.ReactNode) => (
+        <tr className="bg-white even:bg-gray-50">{children}</tr>
+      ),
+      [BLOCKS.TABLE_CELL]: (node: any, children: React.ReactNode) => (
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{children}</td>
+      ),
+      [BLOCKS.TABLE_HEADER_CELL]: (node: any, children: React.ReactNode) => (
+        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{children}</th>
+      ),
+      [BLOCKS.EMBEDDED_ENTRY]: (node: any) => {
+        if (node.data.target.sys.contentType.sys.id === 'componentRichImage') {
+          return (
+            <RichImage
+              image={node.data.target.fields.image}
+              caption={node.data.target.fields.caption}
+              fullWidth={node.data.target.fields.fullWidth}
+            />
+          );
+        }
+        return null;
+      },
+      [BLOCKS.EMBEDDED_ASSET]: (node: any) => (
+        <RichImage
+          image={node.data.target}
+          className="my-8"
+        />
+      ),
+      [INLINES.HYPERLINK]: (node: any, children: React.ReactNode) => (
+        <a 
+          href={node.data.uri}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:text-blue-800 underline"
+        >
+          {children}
+        </a>
+      ),
+      [INLINES.ENTRY_HYPERLINK]: (node: any, children: React.ReactNode) => {
+        if (node.data.target.sys.contentType.sys.id === 'pageBlogPost') {
+          return (
+            <Link
+              to={`/blog/${node.data.target.fields.slug}`}
+              className="text-blue-600 hover:text-blue-800 underline"
+            >
+              {children}
+            </Link>
+          );
+        }
+        return null;
+      },
+    },
   };
 
   if (loading) {
@@ -86,7 +147,7 @@ export function BlogPostPage() {
     );
   }
 
-  if (error || !article) {
+  if (error || !post) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -109,15 +170,15 @@ export function BlogPostPage() {
   return (
     <>
       <SEO 
-        titleKey={article?.title || 'Blog Post'}
-        descriptionKey={article?.meta?.description || ''}
+        contentfulSeo={post.fields.seoFields?.fields}
+        title={post.fields.title}
+        description={post.fields.shortDescription}
         type="article"
-        canonicalUrl={getCanonicalUrl()}
         alternateUrls={{
           nl: `https://www.praktijk-tielo.nl/blog/${slug}`,
           en: `https://www.praktijk-tielo.nl/en/blog/${slug}`
         }}
-        keywords={article?.meta?.keywords || []}
+        image={`https:${post.fields.featuredImage.fields.file.url}`}
       />
       
       <article className="pt-32 pb-16">
@@ -136,51 +197,43 @@ export function BlogPostPage() {
             <div className="flex items-center gap-4 text-sm text-gray-500 mb-6">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <time dateTime={article.published_at}>
-                  {formatDate(article.published_at)}
+                <time dateTime={post.fields.publishedDate}>
+                  {formatDate(post.fields.publishedDate)}
                 </time>
               </div>
-              <span className="text-gray-300">•</span>
-              <div className="flex items-center gap-2">
-                <Tag className="w-4 h-4" />
-                <span>{article.category}</span>
-              </div>
-              {article.metadata?.readingTime && (
-                <>
-                  <span className="text-gray-300">•</span>
-                  <span>{article.metadata.readingTime} min read</span>
-                </>
-              )}
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {article.title}
+              {post.fields.title}
             </h1>
 
             {/* Author info */}
-            <div className="flex items-center gap-4">
-              <img
-                src={article.author.avatar_url}
-                alt={article.author.name}
-                className="w-12 h-12 rounded-full object-cover"
-                onError={(e) => {
-                  const img = e.target as HTMLImageElement;
-                  img.src = '/assets/logos/praktijktielotransparent.svg';
-                }}
-              />
-              <div>
-                <p className="font-semibold">{article.author.name}</p>
-                <p className="text-sm text-gray-500">{article.author.bio}</p>
+            {post.fields.author && (
+              <div className="flex items-center gap-4">
+                {post.fields.author.fields.avatar && (
+                  <img
+                    src={`https:${post.fields.author.fields.avatar.fields.file.url}`}
+                    alt={post.fields.author.fields.name}
+                    className="w-12 h-12 rounded-full object-cover"
+                    onError={(e) => {
+                      const img = e.target as HTMLImageElement;
+                      img.src = '/assets/logos/praktijktielotransparent.svg';
+                    }}
+                  />
+                )}
+                <div>
+                  <p className="font-semibold">{post.fields.author.fields.name}</p>
+                  <p className="text-sm text-gray-500">{post.fields.author.fields.bio}</p>
+                </div>
               </div>
-            </div>
+            )}
           </header>
 
           {/* Featured image */}
-          {article.image_url && (
+          {post.fields.featuredImage && (
             <div className="max-w-4xl mx-auto mb-12">
-              <img
-                src={article.image_url}
-                alt={article.title}
+              <RichImage
+                image={post.fields.featuredImage}
                 className="w-full h-[400px] object-cover rounded-xl"
               />
             </div>
@@ -188,36 +241,31 @@ export function BlogPostPage() {
 
           {/* Article content */}
           <div className="max-w-3xl mx-auto prose prose-lg">
-            <ReactMarkdown>{article.content}</ReactMarkdown>
+            {documentToReactComponents(post.fields.content, options)}
           </div>
 
-          {/* Tags */}
-          {article.tags && article.tags.length > 0 && (
+          {/* Related posts */}
+          {post.fields.relatedBlogPosts && post.fields.relatedBlogPosts.length > 0 && (
             <div className="max-w-3xl mx-auto mt-12 pt-8 border-t">
-              <div className="flex flex-wrap gap-2">
-                {article.tags.map(tag => (
-                  <span
-                    key={tag}
-                    className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-sm"
+              <h2 className="text-2xl font-bold mb-6">
+                {isEnglish ? "Related Articles" : "Gerelateerde Artikelen"}
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {post.fields.relatedBlogPosts.map(relatedPost => (
+                  <Link
+                    key={relatedPost.sys.id}
+                    to={`/blog/${relatedPost.fields.slug}`}
+                    className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
                   >
-                    {tag}
-                  </span>
+                    <h3 className="font-semibold mb-2">{relatedPost.fields.title}</h3>
+                    {relatedPost.fields.shortDescription && (
+                      <p className="text-gray-600 text-sm line-clamp-2">
+                        {relatedPost.fields.shortDescription}
+                      </p>
+                    )}
+                  </Link>
                 ))}
               </div>
-            </div>
-          )}
-
-          {/* References */}
-          {article.metadata?.references && article.metadata.references.length > 0 && (
-            <div className="max-w-3xl mx-auto mt-12 pt-8 border-t">
-              <h2 className="text-2xl font-bold mb-4">
-                {currentLanguage.startsWith('nl') ? 'Bronnen' : 'References'}
-              </h2>
-              <ul className="space-y-2 text-gray-600">
-                {article.metadata.references.map((reference, index) => (
-                  <li key={index}>{reference}</li>
-                ))}
-              </ul>
             </div>
           )}
         </div>

@@ -68,6 +68,7 @@ export function Header() {
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-20">
+          {/* Left section: Logo and Language Switcher */}
           <div className="flex items-center">
             <Link 
               to={getLocalizedPath('/')} 
@@ -80,30 +81,17 @@ export function Header() {
               />
             </Link>
             
-            {/* Language switcher moved next to logo */}
             <div className="ml-4">
               <LanguageSwitcher />
             </div>
           </div>
 
-          {/* Desktop navigation using tubelight navbar */}
-          <div className="hidden md:block">
+          {/* Center section: Navigation */}
+          <div className="hidden md:block absolute left-1/2 -translate-x-1/2">
             <NavBar items={navItems} className="relative !fixed:none !bottom-auto !top-auto !mb-0 !pt-0" />
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className={`w-6 h-6 ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`} />
-            ) : (
-              <Menu className={`w-6 h-6 ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`} />
-            )}
-          </button>
-
-          {/* Desktop contact info */}
+          {/* Right section: Contact info and CTA */}
           <div className="hidden md:flex items-center gap-8">
             <div className="flex items-center gap-6">
               <a 
@@ -121,6 +109,18 @@ export function Header() {
               {t('header.makeAppointment')}
             </Link>
           </div>
+
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? (
+              <X className={`w-6 h-6 ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`} />
+            ) : (
+              <Menu className={`w-6 h-6 ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`} />
+            )}
+          </button>
         </nav>
 
         {/* Mobile menu */}

@@ -36,6 +36,7 @@ export default defineConfig(({ mode }) => {
             'react-vendor': ['react', 'react-dom', 'react-router-dom'],
             'i18n-vendor': ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
             'ui-vendor': ['@radix-ui/react-avatar', 'lucide-react', 'swiper'],
+            'contentful-vendor': ['contentful', '@contentful/rich-text-react-renderer']
           },
         },
       },
@@ -63,7 +64,15 @@ export default defineConfig(({ mode }) => {
       }
     },
     optimizeDeps: {
-      include: ['react', 'react-dom', 'react-router-dom', 'i18next', 'react-i18next'],
+      include: [
+        'react', 
+        'react-dom', 
+        'react-router-dom', 
+        'i18next', 
+        'react-i18next',
+        'contentful',
+        '@contentful/rich-text-react-renderer'
+      ],
       force: true
     },
     esbuild: {
