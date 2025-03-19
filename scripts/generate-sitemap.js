@@ -25,6 +25,7 @@ const routes = [
   { path: '/alternatief-voor-chiropractor', priority: '0.9', changefreq: 'weekly' },
   { path: '/sportblessures-behandeling', priority: '0.9', changefreq: 'weekly' },
   { path: '/burnout-stress-behandeling', priority: '0.9', changefreq: 'weekly' },
+  { path: '/bloedgroepen-dieet', priority: '0.9', changefreq: 'weekly' },
   
   // English pages
   { path: '/en', priority: '1.0', changefreq: 'weekly' },
@@ -37,7 +38,8 @@ const routes = [
   { path: '/en/back-pain-treatment', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/alternative-to-chiropractic', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/sports-injury-treatment', priority: '0.9', changefreq: 'weekly' },
-  { path: '/en/burnout-stress-treatment', priority: '0.9', changefreq: 'weekly' }
+  { path: '/en/burnout-stress-treatment', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/blood-type-diet', priority: '0.9', changefreq: 'weekly' }
 ];
 
 // Generate sitemap content
