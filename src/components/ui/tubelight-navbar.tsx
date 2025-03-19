@@ -49,11 +49,11 @@ export function NavBar({ items, className }: NavBarProps) {
   return (
     <div
       className={cn(
-        "fixed bottom-0 sm:top-0 z-50 mb-6 sm:pt-6",
+        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
         className,
       )}
     >
-      <div className="flex items-center justify-center gap-3 bg-white/5 border-[0.5px] border-gray-100/10 backdrop-blur-sm py-1 px-1 rounded-full shadow-sm">
+      <div className="flex items-center gap-3 bg-white/5 border-[0.5px] border-gray-100/10 backdrop-blur-sm py-1 px-1 rounded-full shadow-sm">
         {items.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.name;
@@ -63,7 +63,7 @@ export function NavBar({ items, className }: NavBarProps) {
               key={item.name}
               to={item.url}
               className={cn(
-                "relative cursor-pointer text-sm font-medium px-6 py-2 rounded-full transition-colors whitespace-nowrap",
+                "relative cursor-pointer text-sm font-medium px-6 py-2 rounded-full transition-colors",
                 "text-gray-600 hover:text-blue-600",
                 isActive && "bg-blue-50/50 text-blue-600",
               )}
@@ -91,7 +91,7 @@ export function NavBar({ items, className }: NavBarProps) {
                 </motion.div>
               )}
             </Link>
-          );
+          )
         })}
       </div>
     </div>

@@ -4,11 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import { generateLocalBusinessSchema, generateAIAssistantSchema } from '../utils/seo';
 import { businessInfo } from '../data/business';
-import type { SEOFields } from '../lib/contentful';
 
 interface SEOProps {
-  title?: string;
-  description?: string;
+  titleKey: string;
+  descriptionKey: string;
   type?: string;
   name?: string;
   canonicalUrl?: string;
@@ -19,20 +18,18 @@ interface SEOProps {
   image?: string;
   schema?: string;
   keywords?: string[];
-  contentfulSeo?: SEOFields;
 }
 
 export function SEO({ 
-  title,
-  description,
-  type = 'website',
+  titleKey, 
+  descriptionKey, 
+  type = 'website', 
   name = 'Praktijk Tielo',
   canonicalUrl,
   alternateUrls,
   image = '/assets/logos/praktijktielotransparent.svg',
   schema,
-  keywords = [],
-  contentfulSeo
+  keywords = []
 }: SEOProps) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -43,7 +40,6 @@ export function SEO({
   
   // Get the canonical URL
   const getCanonicalUrl = () => {
-    if (contentfulSeo?.canonicalUrl) return contentfulSeo.canonicalUrl;
     if (canonicalUrl) return canonicalUrl;
     
     // If no canonical URL is provided, generate one based on current path
@@ -53,55 +49,46 @@ export function SEO({
   
   // Get the full image URL
   const getFullImageUrl = () => {
-    if (contentfulSeo?.shareImages?.[0]) {
-      return `https:${contentfulSeo.shareImages[0].fields.file.url}`;
-    }
     return `${baseUrl}${image}`;
   };
-
-  // Get title and description
-  const pageTitle = contentfulSeo?.pageTitle || title || t('meta.home.title');
-  const pageDescription = contentfulSeo?.pageDescription || description || t('meta.home.description');
   
+  const fullImageUrl = getFullImageUrl();
+  
+  // Get localized title and description
+  const title = t(titleKey);
+  const description = t(descriptionKey);
+
   // Default schema is LocalBusiness
   const defaultSchema = generateLocalBusinessSchema(businessInfo);
   const aiSchema = generateAIAssistantSchema();
   const schemaToUse = schema || defaultSchema;
-
+  
   return (
     <Helmet>
       {/* Basic meta tags */}
-      <title>{pageTitle}</title>
-      <meta name="description" content={pageDescription} />
+      <title>{title}</title>
+      <meta name="description" content={description} />
       
       {/* Keywords */}
       {keywords.length > 0 && (
         <meta name="keywords" content={keywords.join(', ')} />
       )}
       
-      {/* Robots meta tags */}
-      {contentfulSeo && (
-        <meta 
-          name="robots" 
-          content={`${contentfulSeo.noindex ? 'noindex' : 'index'},${contentfulSeo.nofollow ? 'nofollow' : 'follow'}`} 
-        />
-      )}
-      
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
-      <meta property="og:title" content={pageTitle} />
-      <meta property="og:description" content={pageDescription} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
       <meta property="og:url" content={getCanonicalUrl()} />
       <meta property="og:site_name" content={name} />
-      <meta property="og:image" content={getFullImageUrl()} />
+      <meta property="og:image" content={fullImageUrl} />
       <meta property="og:locale" content={currentLanguage === 'nl' ? 'nl_NL' : 'en_US'} />
       <meta property="og:locale:alternate" content={currentLanguage === 'nl' ? 'en_US' : 'nl_NL'} />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={pageTitle} />
-      <meta name="twitter:description" content={pageDescription} />
-      <meta name="twitter:image" content={getFullImageUrl()} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={fullImageUrl} />
       
       {/* Language alternates */}
       {alternateUrls && (
