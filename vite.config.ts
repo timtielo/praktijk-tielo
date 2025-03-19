@@ -64,11 +64,16 @@ export default defineConfig(({ mode }) => {
     },
     optimizeDeps: {
       include: ['react', 'react-dom', 'react-router-dom', 'i18next', 'react-i18next'],
+      exclude: ['data:'], // Prevent data URL imports
       force: true
     },
     esbuild: {
       jsx: 'automatic',
-      jsxImportSource: 'react'
+      jsxImportSource: 'react',
+      supported: {
+        'dynamic-import': true
+      },
+      legalComments: 'none'
     },
     resolve: {
       alias: {
