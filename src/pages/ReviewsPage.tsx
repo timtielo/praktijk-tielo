@@ -70,13 +70,15 @@ export function ReviewsPage() {
     'knee',
     'posture',
     'sports',
-    'flexibility'
+    'flexibility',
+    'scoliosis'
   ] : [
     'rug',
     'knie',
     'houding',
     'sport',
-    'flexibiliteit'
+    'flexibiliteit',
+    'scoliose'
   ];
 
   // Clear search function

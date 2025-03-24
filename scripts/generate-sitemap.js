@@ -31,6 +31,9 @@ const routes = [
   { path: '/rugpijn', priority: '0.9', changefreq: 'weekly' },
   { path: '/bindweefselbehandeling', priority: '0.9', changefreq: 'weekly' },
   { path: '/scoliose', priority: '0.9', changefreq: 'weekly' },
+  { path: '/verlichting-zonder-kraken', priority: '0.9', changefreq: 'weekly' },
+  { path: '/slaapproblemen', priority: '0.9', changefreq: 'weekly' },
+  { path: '/migraine-behandeling', priority: '0.9', changefreq: 'weekly' },
   
   // English pages
   { path: '/en', priority: '1.0', changefreq: 'weekly' },
@@ -49,46 +52,73 @@ const routes = [
   { path: '/en/injury', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/back-pain', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/connective-tissue-treatment', priority: '0.9', changefreq: 'weekly' },
-  { path: '/en/scoliosis', priority: '0.9', changefreq: 'weekly' }
+  { path: '/en/scoliosis', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/relief-without-cracking', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/sleep-problems', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/migraine-treatment', priority: '0.9', changefreq: 'weekly' }
 ];
 
 // Generate sitemap content
 const generateSitemap = () => {
   const today = new Date().toISOString().split('T')[0];
   const baseUrl = 'https://www.praktijk-tielo.nl';
-  
+
+  // Helper function to get alternate language path
+  const getAlternatePath = (path) => {
+    const pathMap = {
+      // Main pages
+      '/': '/en',
+      '/en': '/',
+      '/contact': '/en/contact',
+      '/en/contact': '/contact',
+      '/reviews': '/en/reviews',
+      '/en/reviews': '/reviews',
+      '/over-ons': '/en/about-us',
+      '/en/about-us': '/over-ons',
+      '/disclaimer': '/en/disclaimer',
+      '/en/disclaimer': '/disclaimer',
+      '/oplossingen': '/en/solutions',
+      '/en/solutions': '/oplossingen',
+      
+      // Landing pages
+      '/rugpijn-en-lage-rugklachten': '/en/back-pain-treatment',
+      '/en/back-pain-treatment': '/rugpijn-en-lage-rugklachten',
+      '/alternatief-voor-chiropractor': '/en/alternative-to-chiropractic',
+      '/en/alternative-to-chiropractic': '/alternatief-voor-chiropractor',
+      '/sportblessures-behandeling': '/en/sports-injury-treatment',
+      '/en/sports-injury-treatment': '/sportblessures-behandeling',
+      '/burnout-stress-behandeling': '/en/burnout-stress-treatment',
+      '/en/burnout-stress-treatment': '/burnout-stress-behandeling',
+      '/bloedgroepen-dieet': '/en/blood-type-diet',
+      '/en/blood-type-diet': '/bloedgroepen-dieet',
+      '/blessure': '/en/injury',
+      '/en/injury': '/blessure',
+      '/rugpijn': '/en/back-pain',
+      '/en/back-pain': '/rugpijn',
+      '/bindweefselbehandeling': '/en/connective-tissue-treatment',
+      '/en/connective-tissue-treatment': '/bindweefselbehandeling',
+      '/scoliose': '/en/scoliosis',
+      '/en/scoliosis': '/scoliose',
+      '/verlichting-zonder-kraken': '/en/relief-without-cracking',
+      '/en/relief-without-cracking': '/verlichting-zonder-kraken',
+      '/slaapproblemen': '/en/sleep-problems',
+      '/en/sleep-problems': '/slaapproblemen',
+      '/migraine-behandeling': '/en/migraine-treatment',
+      '/en/migraine-treatment': '/migraine-behandeling'
+    };
+    
+    return pathMap[path] || path;
+  };
+
+  // Helper function to get default language path (Dutch)
+  const getDefaultPath = (path) => {
+    return path.startsWith('/en') ? path.replace('/en', '') : path;
+  };
+
   const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  ${routes.map(route => {
-    // Helper function to get alternate language path
-    const getAlternatePath = (path) => {
-      if (path.startsWith('/en/')) {
-        return path.replace('/en', '');
-      } else if (path === '/en') {
-        return '/';
-      } else {
-        return `/en${path === '/' ? '' : path}`;
-      }
-    };
-
-    // Helper function to get default language path
-    const getDefaultPath = (path) => {
-      return path.startsWith('/en') ? path.replace('/en', '') : path;
-    };
-
-    // Special handling for about-us/over-ons paths
-    const getAboutUsPath = (isEnglish) => {
-      return isEnglish ? '/en/about-us' : '/over-ons';
-    };
-
-    // Handle special cases for about us pages
-    const isAboutUs = route.path === '/over-ons' || route.path === '/en/about-us';
-    const alternatePath = isAboutUs 
-      ? getAboutUsPath(!route.path.startsWith('/en'))
-      : getAlternatePath(route.path);
-
-    return `
+  ${routes.map(route => `
   <url>
     <loc>${baseUrl}${route.path}</loc>
     <lastmod>${today}</lastmod>
@@ -96,12 +126,12 @@ const generateSitemap = () => {
     <priority>${route.priority}</priority>
     ${route.path.startsWith('/en') ? 
       `<xhtml:link rel="alternate" hreflang="en" href="${baseUrl}${route.path}" />
-       <xhtml:link rel="alternate" hreflang="nl" href="${baseUrl}${alternatePath}" />` :
+       <xhtml:link rel="alternate" hreflang="nl" href="${baseUrl}${getAlternatePath(route.path)}" />` :
       `<xhtml:link rel="alternate" hreflang="nl" href="${baseUrl}${route.path}" />
-       <xhtml:link rel="alternate" hreflang="en" href="${baseUrl}${alternatePath}" />`
+       <xhtml:link rel="alternate" hreflang="en" href="${baseUrl}${getAlternatePath(route.path)}" />`
     }
     <xhtml:link rel="alternate" hreflang="x-default" href="${baseUrl}${getDefaultPath(route.path)}" />
-  </url>`}).join('')}
+  </url>`).join('')}
 </urlset>`.trim();
 
   // Write sitemap to dist directory
