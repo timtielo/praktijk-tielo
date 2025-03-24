@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "title": "Oplossingen | Praktijk Tielo",
+    "description": "Ontdek onze oplossingen voor fysieke en mentale klachten. Natuurlijke behandelmethoden met blijvend resultaat."
+  },
+  "hero": {
+    "title": "Onze oplossingen",
+    "description": "Vind de juiste behandeling voor jouw specifieke behoefte"
+  },
+  "categories": {
+    "physical": {
+      "title": "Fysieke klachten",
+      "description": "Behandeling van fysieke klachten met een natuurlijke aanpak"
+    },
+    "mental": {
+      "title": "Mentale klachten",
+      "description": "Ondersteuning bij mentale klachten en stressgerelateerde problemen"
+    },
+    "lifestyle": {
+      "title": "Leefstijl",
+      "description": "Advies en ondersteuning voor een gezonde leefstijl"
+    }
+  }
+}

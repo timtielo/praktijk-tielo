@@ -1,7 +1,7 @@
 import React from 'react';
 import { SEO } from '../components/SEO';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronRight, Activity, Brain, Heart, ArrowRight } from 'lucide-react';
+import { ChevronRight, Activity, Brain, Heart, ArrowRight, Moon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 
@@ -68,6 +68,33 @@ export function SolutionsPage() {
         : "Gespecialiseerde behandeling gericht op bindweefsel. Effectief bij diverse klachten.",
       icon: Activity,
       href: isEnglish ? "/en/connective-tissue-treatment" : "/bindweefselbehandeling",
+      category: "physical"
+    },
+    {
+      title: isEnglish ? "Relief Without Cracking" : "Verlichting zonder kraken",
+      description: isEnglish
+        ? "Natural back pain relief without cracking. Gentle treatment for lasting results."
+        : "Natuurlijke verlichting van rugpijn zonder kraken. Zachte behandeling voor blijvend resultaat.",
+      icon: Activity,
+      href: isEnglish ? "/en/relief-without-cracking" : "/verlichting-zonder-kraken",
+      category: "physical"
+    },
+    {
+      title: isEnglish ? "Sleep Problems" : "Slaapproblemen",
+      description: isEnglish 
+        ? "Natural treatment for sleep problems. Improve your sleep quality without medication."
+        : "Natuurlijke behandeling voor slaapproblemen. Verbeter je slaapkwaliteit zonder medicatie.",
+      icon: Moon,
+      href: isEnglish ? "/en/sleep-problems" : "/slaapproblemen",
+      category: "physical"
+    },
+    {
+      title: isEnglish ? "Migraine Treatment" : "Migraine behandeling",
+      description: isEnglish
+        ? "Natural treatment for migraine and headaches. Gentle approach without medication."
+        : "Natuurlijke behandeling voor migraine en hoofdpijn. Zachte aanpak zonder medicatie.",
+      icon: Brain,
+      href: isEnglish ? "/en/migraine-treatment" : "/migraine-behandeling",
       category: "physical"
     },
     {

@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Natural Sleep Problems Treatment - Praktijk Tielo Utrecht",
+    "description": "Having trouble sleeping or waking up often at night? Praktijk Tielo offers natural treatment for sleep problems without medication or manipulation. Restore your balance and rest."
+  },
+  "hero": {
+    "title": "Natural treatment for sleep problems",
+    "subtitle": "Do you have trouble falling asleep, wake up often at night, or feel tired during the day despite getting enough hours of sleep? Sleep problems can seriously affect your daily functioning. At Praktijk Tielo, I offer a natural and effective treatment that helps you sleep deeply and relaxed again – without medication, massage, or manipulation.",
+    "schedule": "Schedule appointment"
+  },
+  "benefits": {
+    "betterSleep": "Better sleep",
+    "mentalRest": "Mental rest",
+    "naturalApproach": "Natural approach",
+    "noMedication": "No medication"
+  },
+  "causes": {
+    "title": "How do sleep problems arise?",
+    "description": "Sleep problems often arise from a combination of physical tension, mental overload, and disturbed posture. Tension in the connective tissue, a crooked posture, or stuck joints can prevent the body from finding rest at night. The nerve pathways that regulate sleep can also become unbalanced as a result.",
+    "commonComplaints": {
+      "title": "Common complaints:",
+      "items": [
+        "Difficulty falling or staying asleep",
+        "Restless or shallow sleep",
+        "Nighttime worrying or waking up tense",
+        "Not lying comfortably",
+        "Fatigue, irritability, or concentration problems during the day"
+      ]
+    }
+  },
+  "solution": {
+    "title": "A natural solution without medication",
+    "description": "At Praktijk Tielo, I work with gentle techniques that help body and nervous system relax. Through natural movements and light touches, I bring your body back into balance. This improves blood circulation, reduces tension in the connective tissue, and restores calm in the nervous system – all essential conditions for healthy sleep."
+  },
+  "treatment": {
+    "title": "What does the treatment involve?",
+    "items": [
+      {
+        "title": "Body analysis",
+        "description": "I look at tension areas, posture, and possible blockages that disturb sleep"
+      },
+      {
+        "title": "Gentle corrections",
+        "description": "Natural movements and subtle touches help the body let go"
+      },
+      {
+        "title": "Better relaxation and nerve regulation",
+        "description": "Your nervous system gets space to enter a rest state"
+      },
+      {
+        "title": "Self-help exercises",
+        "description": "Practical tips and exercises to improve your sleep quality at home"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why choose Praktijk Tielo for sleep problems?",
+    "items": [
+      "No medication or heavy manipulations",
+      "Effect on both body and nervous system",
+      "Also suitable for stress-related sleep problems",
+      "Sustainable improvement of your sleep",
+      "Personal guidance and aftercare"
+    ]
+  },
+  "testimonials": {
+    "title": "What others say"
+  },
+  "finalCta": {
+    "title": "Experience what a good night's sleep does",
+    "description": "Want to wake up refreshed and start your day with energy? Choose a natural and safe approach to your sleep problems. Schedule your appointment at Praktijk Tielo in Utrecht today or contact me for personal advice. Together we'll bring rest back to your body – and to your nights.",
+    "schedule": "Schedule appointment"
+  }
+}

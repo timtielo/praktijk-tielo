@@ -26,9 +26,14 @@ export function LanguageSwitcher() {
     '/rugpijn': '/en/back-pain',
     '/oplossingen': '/en/solutions',
     '/bindweefselbehandeling': '/en/connective-tissue-treatment',
+    '/scoliose': '/en/scoliosis',
+    '/verlichting-zonder-kraken': '/en/relief-without-cracking',
+    '/slaapproblemen': '/en/sleep-problems',
+    '/migraine-behandeling': '/en/migraine-treatment',
     
     // English to Dutch
     '/en': '/',
+    
     '/en/contact': '/contact',
     '/en/reviews': '/reviews',
     '/en/disclaimer': '/disclaimer',
@@ -41,7 +46,11 @@ export function LanguageSwitcher() {
     '/en/injury': '/blessure',
     '/en/back-pain': '/rugpijn',
     '/en/solutions': '/oplossingen',
-    '/en/connective-tissue-treatment': '/bindweefselbehandeling'
+    '/en/connective-tissue-treatment': '/bindweefselbehandeling',
+    '/en/scoliosis': '/scoliose',
+    '/en/relief-without-cracking': '/verlichting-zonder-kraken',
+    '/en/sleep-problems': '/slaapproblemen',
+    '/en/migraine-treatment': '/migraine-behandeling'
   };
 
   const toggleLanguage = () => {

@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "title": "Solutions | Praktijk Tielo",
+    "description": "Discover our solutions for physical and mental complaints. Natural treatment methods with lasting results."
+  },
+  "hero": {
+    "title": "Our Solutions",
+    "description": "Find the right treatment for your specific needs"
+  },
+  "categories": {
+    "physical": {
+      "title": "Physical Complaints",
+      "description": "Treatment of physical complaints with a natural approach"
+    },
+    "mental": {
+      "title": "Mental Complaints",
+      "description": "Support for mental complaints and stress-related issues"
+    },
+    "lifestyle": {
+      "title": "Lifestyle",
+      "description": "Advice and support for a healthy lifestyle"
+    }
+  }
+}

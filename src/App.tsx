@@ -26,6 +26,9 @@ const KneeInjuryPage = lazy(() => import('./pages/landing/KneeInjuryPage').then(
 const BackPainTreatmentPage = lazy(() => import('./pages/landing/BackPainTreatmentPage').then(module => ({ default: module.BackPainTreatmentPage })));
 const ConnectiveTissuePage = lazy(() => import('./pages/landing/ConnectiveTissuePage').then(module => ({ default: module.ConnectiveTissuePage })));
 const ScoliosisPage = lazy(() => import('./pages/landing/ScoliosisPage').then(module => ({ default: module.ScoliosisPage })));
+const NoBackCrackingPage = lazy(() => import('./pages/landing/NoBackCrackingPage').then(module => ({ default: module.NoBackCrackingPage })));
+const SleepProblemsPage = lazy(() => import('./pages/landing/SleepProblemsPage').then(module => ({ default: module.SleepProblemsPage })));
+const MigrainePage = lazy(() => import('./pages/landing/MigrainePage').then(module => ({ default: module.MigrainePage })));
 
 function App() {
   const { i18n } = useTranslation();
@@ -63,6 +66,9 @@ function App() {
             <Route path="/rugpijn" element={<BackPainTreatmentPage />} />
             <Route path="/bindweefselbehandeling" element={<ConnectiveTissuePage />} />
             <Route path="/scoliose" element={<ScoliosisPage />} />
+            <Route path="/verlichting-zonder-kraken" element={<NoBackCrackingPage />} />
+            <Route path="/slaapproblemen" element={<SleepProblemsPage />} />
+            <Route path="/migraine-behandeling" element={<MigrainePage />} />
             
             {/* Dutch Landing Pages */}
             <Route path="/rugpijn-en-lage-rugklachten" element={<BackPainPage />} />
@@ -84,6 +90,9 @@ function App() {
             <Route path="/en/back-pain" element={<BackPainTreatmentPage />} />
             <Route path="/en/connective-tissue-treatment" element={<ConnectiveTissuePage />} />
             <Route path="/en/scoliosis" element={<ScoliosisPage />} />
+            <Route path="/en/relief-without-cracking" element={<NoBackCrackingPage />} />
+            <Route path="/en/sleep-problems" element={<SleepProblemsPage />} />
+            <Route path="/en/migraine-treatment" element={<MigrainePage />} />
             
             {/* English Landing Pages */}
             <Route path="/en/back-pain-treatment" element={<BackPainPage />} />
