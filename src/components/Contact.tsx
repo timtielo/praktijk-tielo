@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 
 export function Contact() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const location = useLocation();
   const isEnglish = location.pathname.startsWith('/en');
   
@@ -21,7 +21,9 @@ export function Contact() {
     phone: '',
     message: '',
     form: 'contact',
-    submittedAt: ''
+    submittedAt: '',
+    language: isEnglish ? 'en' : 'nl',
+    newsletter: true
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -43,7 +45,16 @@ export function Contact() {
       setSubmitStatus(success ? 'success' : 'error');
 
       if (success) {
-        setFormData({ name: '', email: '', phone: '', message: '', form: 'contact', submittedAt: '' });
+        setFormData({ 
+          name: '', 
+          email: '', 
+          phone: '', 
+          message: '', 
+          form: 'contact', 
+          submittedAt: '',
+          language: isEnglish ? 'en' : 'nl',
+          newsletter: true
+        });
         // Increased timeout for success message visibility
         setTimeout(() => setSubmitStatus('idle'), 8000);
       }
@@ -56,8 +67,11 @@ export function Contact() {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const { name, value, type } = e.target as HTMLInputElement;
+    setFormData(prev => ({ 
+      ...prev, 
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value 
+    }));
   };
 
   return (
@@ -67,29 +81,54 @@ export function Contact() {
           <div>
             <h2 className="text-3xl font-bold mb-6">{t('contact.title')}</h2>
             <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-blue-600" />
+              <a 
+                href={`tel:${contact.phone}`}
+                className="flex items-center gap-3 hover:text-blue-600 transition-colors p-3 rounded-lg hover:bg-blue-50 group"
+              >
+                <div className="bg-blue-50 p-3 rounded-full group-hover:bg-white transition-colors">
+                  <Phone className="w-5 h-5 text-blue-600" />
+                </div>
                 <span>{contact.phone}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-blue-600" />
+              </a>
+              
+              <a 
+                href={`mailto:${contact.email}`}
+                className="flex items-center gap-3 hover:text-blue-600 transition-colors p-3 rounded-lg hover:bg-blue-50 group"
+              >
+                <div className="bg-blue-50 p-3 rounded-full group-hover:bg-white transition-colors">
+                  <Mail className="w-5 h-5 text-blue-600" />
+                </div>
                 <span>{contact.email}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-blue-600" />
-                <span>{`${contact.address.street}, ${contact.address.postalCode} ${contact.address.city}`}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <MessageSquare className="w-5 h-5 text-blue-600" />
-                <a 
-                  href="https://wa.me/message/YGHG6MZEMBOIM1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 transition-colors"
-                >
-                  WhatsApp
-                </a>
-              </div>
+              </a>
+              
+              <a 
+                href={`https://maps.google.com/?q=${contact.address.street},${contact.address.postalCode},${contact.address.city}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 hover:text-blue-600 transition-colors p-3 rounded-lg hover:bg-blue-50 group"
+              >
+                <div className="bg-blue-50 p-3 rounded-full group-hover:bg-white transition-colors mt-1">
+                  <MapPin className="w-5 h-5 text-blue-600" />
+                </div>
+                <div>
+                  <span className="block">{`${contact.address.street}, ${contact.address.postalCode} ${contact.address.city}`}</span>
+                  <span className="block text-sm text-gray-600 mt-1">
+                    {isEnglish ? "(By appointment)" : "(Op afspraak)"}
+                  </span>
+                </div>
+              </a>
+              
+              <a 
+                href="https://wa.me/message/YGHG6MZEMBOIM1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:text-blue-600 transition-colors p-3 rounded-lg hover:bg-blue-50 group"
+              >
+                <div className="bg-blue-50 p-3 rounded-full group-hover:bg-white transition-colors">
+                  <MessageSquare className="w-5 h-5 text-blue-600" />
+                </div>
+                <span>WhatsApp</span>
+              </a>
             </div>
           </div>
 
@@ -164,6 +203,19 @@ export function Contact() {
                     required
                     disabled={isSubmitting}
                   />
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    name="newsletter"
+                    id="newsletter"
+                    checked={formData.newsletter}
+                    onChange={handleChange}
+                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <label htmlFor="newsletter" className="text-sm text-gray-700">
+                    {isEnglish ? "Subscribe to newsletter" : "Aanmelden voor nieuwsbrief"}
+                  </label>
                 </div>
                 <button
                   type="submit"

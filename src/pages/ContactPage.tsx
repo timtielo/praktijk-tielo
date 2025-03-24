@@ -20,7 +20,9 @@ export function ContactPage() {
     phone: '',
     message: '',
     form: 'contact',
-    submittedAt: ''
+    submittedAt: '',
+    language: isEnglish ? 'en' : 'nl',
+    newsletter: true
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -52,14 +54,26 @@ export function ContactPage() {
     setSubmitStatus(success ? 'success' : 'error');
 
     if (success) {
-      setFormData({ name: '', email: '', phone: '', message: '', form: 'contact', submittedAt: '' });
+      setFormData({ 
+        name: '', 
+        email: '', 
+        phone: '', 
+        message: '', 
+        form: 'contact', 
+        submittedAt: '',
+        language: isEnglish ? 'en' : 'nl',
+        newsletter: true
+      });
       setTimeout(() => setSubmitStatus('idle'), 3000);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const { name, value, type } = e.target as HTMLInputElement;
+    setFormData(prev => ({ 
+      ...prev, 
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value 
+    }));
   };
 
   return (
@@ -108,97 +122,114 @@ export function ContactPage() {
               </p>
             </div>
             
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  {t('contactPage.form.name')}
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  required
-                  placeholder={t('contactPage.form.namePlaceholder')}
-                />
+            {submitStatus === 'success' ? (
+              <div className="bg-green-50 text-green-700 p-8 rounded-lg text-center">
+                <div className="flex justify-center mb-4">
+                  <BadgeCheck className="w-12 h-12 text-green-500" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">{t('contactPage.form.success.title')}</h3>
+                <p>{t('contactPage.form.success.subtitle')}</p>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                  {t('contactPage.form.email')}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  required
-                  placeholder={t('contactPage.form.emailPlaceholder')}
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                  {t('contactPage.form.phone')}
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  placeholder={currentLanguage.startsWith('nl') ? "Bijv. +31 6 12345678" : "E.g., +31 6 12345678"}
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  {t('contactPage.form.message')}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  required
-                  placeholder={t('contactPage.form.messagePlaceholder')}
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`btn-cta btn-cta-shine w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-colors ${
-                  isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
-                }`}
-              >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    {t('contactPage.form.sending')}
-                  </>
-                ) : (
-                  <>
-                    {t('contactPage.form.send')} <Send className="w-5 h-5" />
-                  </>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    {t('contactPage.form.name')}
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    required
+                    placeholder={t('contactPage.form.namePlaceholder')}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    {t('contactPage.form.email')}
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    required
+                    placeholder={t('contactPage.form.emailPlaceholder')}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    {t('contactPage.form.phone')}
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    placeholder={t('contactPage.form.phonePlaceholder')}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    {t('contactPage.form.message')}
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    required
+                    placeholder={t('contactPage.form.messagePlaceholder')}
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    name="newsletter"
+                    id="newsletter"
+                    checked={formData.newsletter}
+                    onChange={handleChange}
+                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <label htmlFor="newsletter" className="text-sm text-gray-700">
+                    {isEnglish ? "Subscribe to newsletter" : "Aanmelden voor nieuwsbrief"}
+                  </label>
+                </div>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`btn-cta w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-colors ${
+                    isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+                  }`}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      {t('contactPage.form.sending')}
+                    </>
+                  ) : (
+                    <>
+                      {t('contactPage.form.send')} <Send className="w-5 h-5" />
+                    </>
+                  )}
+                </button>
+                {submitStatus === 'error' && (
+                  <div className="bg-red-50 text-red-700 p-6 rounded-lg text-center">
+                    <p className="font-medium">{t('contactPage.form.error.title')}</p>
+                    <p className="text-sm">{t('contactPage.form.error.subtitle')}</p>
+                  </div>
                 )}
-              </button>
-              {submitStatus === 'success' && (
-                <div className="bg-green-50 text-green-700 p-4 rounded-lg">
-                  <p className="font-medium">{t('contactPage.form.success.title')}</p>
-                  <p className="text-sm">{t('contactPage.form.success.subtitle')}</p>
-                </div>
-              )}
-              {submitStatus === 'error' && (
-                <div className="bg-red-50 text-red-700 p-4 rounded-lg">
-                  <p className="font-medium">{t('contactPage.form.error.title')}</p>
-                  <p className="text-sm">{t('contactPage.form.error.subtitle')}</p>
-                </div>
-              )}
-            </form>
+              </form>
+            )}
           </div>
 
           {/* Contact Information */}
@@ -254,7 +285,7 @@ export function ContactPage() {
                     <MapPin className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <p className="font-medium">{t('contactPage.directContact.visit.title')} (op afspraak)</p>
+                    <p className="font-medium">{t('contactPage.directContact.visit.title')}</p>
                     <p>{businessInfo.contact.address.street}</p>
                     <p>{businessInfo.contact.address.postalCode} {businessInfo.contact.address.city}</p>
                   </div>

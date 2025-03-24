@@ -21,6 +21,11 @@ export function Footer() {
     return isEnglish ? '/en/about-us' : '/over-ons';
   };
 
+  // Get the correct Solutions path based on language
+  const getSolutionsPath = () => {
+    return isEnglish ? '/en/solutions' : '/oplossingen';
+  };
+
   // Landing page paths
   const landingPages = isEnglish ? [
     { path: '/en/back-pain-treatment', label: 'Back Pain Treatment' },
@@ -131,6 +136,15 @@ export function Footer() {
             <div>
               <h3 className="text-xl font-bold mb-4">{t('footer.links.title')}</h3>
               <ul className="space-y-3">
+                <li>
+                  <Link 
+                    to={getSolutionsPath()}
+                    className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                  >
+                    <Star className="w-4 h-4 text-blue-400" />
+                    {t('footer.links.allSolutions')}
+                  </Link>
+                </li>
                 <li>
                   <Link 
                     to={getAboutUsPath()}

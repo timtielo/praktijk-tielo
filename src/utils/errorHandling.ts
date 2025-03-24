@@ -94,20 +94,28 @@ export function setupGlobalErrorHandling() {
     event.preventDefault();
   });
 
-  // Add CORS error detection
+  // Add CORS error detection with data URL handling
   const originalFetch = window.fetch;
   window.fetch = async function(...args) {
     try {
+      // Skip CORS logging for data URLs
+      if (typeof args[0] === 'string' && args[0].startsWith('data:')) {
+        return originalFetch.apply(this, args);
+      }
+
       const response = await originalFetch.apply(this, args);
       return response;
     } catch (error) {
       if (error instanceof TypeError && error.message === 'Failed to fetch') {
-        console.error('CORS or network error:', {
-          url: args[0],
-          timestamp: new Date().toISOString(),
-          userAgent: navigator.userAgent,
-          error: error.message
-        });
+        // Only log CORS errors for non-data URLs
+        if (typeof args[0] === 'string' && !args[0].startsWith('data:')) {
+          console.error('CORS or network error:', {
+            url: args[0],
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent,
+            error: error.message
+          });
+        }
       }
       throw error;
     }

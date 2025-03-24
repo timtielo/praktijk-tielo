@@ -216,33 +216,33 @@ export function BloodTypeDietPage() {
         name: isEnglish ? "Name *" : "Naam *",
         email: isEnglish ? "Email *" : "E-mail *",
         bloodgroup: isEnglish ? "Blood Type *" : "Bloedgroep *",
-        select: isEnglish ? "Select your blood type" : "Selecteer je bloedgroep"
+        select: isEnglish ? "Select your blood type" : "Selecteer je bloedgroep",
+        unknown: isEnglish ? "I don't know my blood type" : "Ik weet mijn bloedgroep niet"
       },
       submit: isEnglish
         ? "Start eating and living according to what your body really needs!"
         : "Begin vandaag nog met eten en leven volgens wat jouw lichaam écht nodig heeft!",
-      sending: isEnglish ? "Sending..." : "Verzenden..."
+      sending: isEnglish ? "Sending..." : "Versturen..."
     }
   };
 
   return (
     <>
       <SEO 
-        titleKey="landing.bloodTypeDiet.meta.title"
-        descriptionKey="landing.bloodTypeDiet.meta.description"
+        titleKey={isEnglish ? "Blood Type Diet & Lifestyle | Personalized Nutrition Advice" : "Bloedgroepdieet & Lifestyle | Persoonlijk Voedingsadvies"}
+        descriptionKey={isEnglish 
+          ? "Discover how eating according to your blood type can improve your health. Based on Dr. D'Adamo's research. Get personalized nutrition advice!"
+          : "Ontdek hoe eten volgens jouw bloedgroep je gezondheid kan verbeteren. Gebaseerd op onderzoek van Dr. D'Adamo. Krijg persoonlijk voedingsadvies!"}
         canonicalPath={isEnglish ? "/en/blood-type-diet" : "/bloedgroepen-dieet"}
         keywords={[
-          'blood type diet',
-          'blood type lifestyle',
-          'eating by blood type',
-          'natural diet',
-          'personalized nutrition advice',
-          'healthy lifestyle',
-          'tailored nutrition',
-          'blood type A diet',
-          'blood type B diet',
-          'blood type O diet',
-          'blood type AB diet'
+          'bloedgroepdieet',
+          'voeding op maat',
+          'persoonlijk voedingsadvies',
+          'gezonde leefstijl',
+          'natuurlijke gezondheid',
+          'bloedgroep dieet',
+          'voedingsadvies utrecht',
+          'gezond eten'
         ]}
       />
       
@@ -458,6 +458,7 @@ export function BloodTypeDietPage() {
                     <option value="B">B</option>
                     <option value="AB">AB</option>
                     <option value="O">O</option>
+                    <option value="unknown">{content.form.fields.unknown}</option>
                   </select>
                 </div>
 

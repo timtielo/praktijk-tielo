@@ -14,6 +14,7 @@ const ReviewsPage = lazy(() => import('./pages/ReviewsPage').then(module => ({ d
 const AboutUsPage = lazy(() => import('./pages/AboutUsPage').then(module => ({ default: module.AboutUsPage })));
 const BlogPage = lazy(() => import('./pages/BlogPage').then(module => ({ default: module.BlogPage })));
 const BlogPostPage = lazy(() => import('./pages/BlogPostPage').then(module => ({ default: module.BlogPostPage })));
+const SolutionsPage = lazy(() => import('./pages/SolutionsPage').then(module => ({ default: module.SolutionsPage })));
 
 // Lazy load landing pages
 const BackPainPage = lazy(() => import('./pages/landing/BackPainPage').then(module => ({ default: module.BackPainPage })));
@@ -21,6 +22,10 @@ const ChiropractorPage = lazy(() => import('./pages/landing/ChiropractorPage').t
 const SportsInjuriesPage = lazy(() => import('./pages/landing/SportsInjuriesPage').then(module => ({ default: module.SportsInjuriesPage })));
 const BurnoutPage = lazy(() => import('./pages/landing/BurnoutPage').then(module => ({ default: module.BurnoutPage })));
 const BloodTypeDietPage = lazy(() => import('./pages/landing/BloodTypeDietPage').then(module => ({ default: module.BloodTypeDietPage })));
+const KneeInjuryPage = lazy(() => import('./pages/landing/KneeInjuryPage').then(module => ({ default: module.KneeInjuryPage })));
+const BackPainTreatmentPage = lazy(() => import('./pages/landing/BackPainTreatmentPage').then(module => ({ default: module.BackPainTreatmentPage })));
+const ConnectiveTissuePage = lazy(() => import('./pages/landing/ConnectiveTissuePage').then(module => ({ default: module.ConnectiveTissuePage })));
+const ScoliosisPage = lazy(() => import('./pages/landing/ScoliosisPage').then(module => ({ default: module.ScoliosisPage })));
 
 function App() {
   const { i18n } = useTranslation();
@@ -53,6 +58,11 @@ function App() {
             <Route path="/over-ons" element={<AboutUsPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/oplossingen" element={<SolutionsPage />} />
+            <Route path="/blessure" element={<KneeInjuryPage />} />
+            <Route path="/rugpijn" element={<BackPainTreatmentPage />} />
+            <Route path="/bindweefselbehandeling" element={<ConnectiveTissuePage />} />
+            <Route path="/scoliose" element={<ScoliosisPage />} />
             
             {/* Dutch Landing Pages */}
             <Route path="/rugpijn-en-lage-rugklachten" element={<BackPainPage />} />
@@ -69,6 +79,11 @@ function App() {
             <Route path="/en/about-us" element={<AboutUsPage />} />
             <Route path="/en/blog" element={<BlogPage />} />
             <Route path="/en/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/en/solutions" element={<SolutionsPage />} />
+            <Route path="/en/injury" element={<KneeInjuryPage />} />
+            <Route path="/en/back-pain" element={<BackPainTreatmentPage />} />
+            <Route path="/en/connective-tissue-treatment" element={<ConnectiveTissuePage />} />
+            <Route path="/en/scoliosis" element={<ScoliosisPage />} />
             
             {/* English Landing Pages */}
             <Route path="/en/back-pain-treatment" element={<BackPainPage />} />

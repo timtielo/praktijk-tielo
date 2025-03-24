@@ -95,6 +95,24 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     image: "https://lh3.googleusercontent.com/a-/ALV-UjXJp2vlCJ63V4VbSNb1PUk_G9k7NyxVbFXchrx4k_n-pvUlqIELSQ=s36-c-rp-mo-br100",
     date: "2025-03-17"
+  },
+  {
+    id: "gijs-1",
+    name: "Gijs",
+    text: "Fijne behandeling gehad bij Tim! Ik kijk nu al uit naar de volgende. Tim is erg relaxed en legt uit wat hij doet en helpt met specifieke problemen.",
+    textEn: "Had a great treatment with Tim! Already looking forward to the next one. Tim is very relaxed and explains what he does and helps with specific problems.",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocJBI1SM-tqFuGiSts4loI4u0LwVTbaeRE5zfcomclAuM5b5AQ=s36-c-rp-mo-br100",
+    date: "2025-03-20"
+  },
+  {
+    id: "janou-1",
+    name: "Janou",
+    text: "Tim heeft niet alleen een professionele houding, maar ook een enorme hoeveelheid parate kennis over zijn behandeling. Zeer aangename sessies gehad met een verrassend goed resultaat.",
+    textEn: "Tim not only has a professional attitude but also an enormous amount of ready knowledge about his treatment. Had very pleasant sessions with surprisingly good results.",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocJ6mOHk8C9txRlQnmd6xbUQ4ZR_RDNrREDuQ7cCK7FxgLHW8T4=s36-c-rp-mo-br100",
+    date: "2025-03-21"
   }
 ];
 

@@ -5,6 +5,8 @@ export interface ContactFormData {
   message: string;
   form: string;
   submittedAt: string;
+  language: string;
+  newsletter: boolean;
 }
 
 interface FormError extends Error {
@@ -58,7 +60,9 @@ export async function submitContactForm(formData: ContactFormData, retryCount = 
           message: formData.message.trim(),
           form: formData.form || 'contact',
           submittedAt: new Date().toISOString(),
-          source: window.location.href
+          source: window.location.href,
+          language: formData.language || 'nl',
+          newsletter: formData.newsletter || false
         }),
       });
 

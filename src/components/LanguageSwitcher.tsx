@@ -22,6 +22,10 @@ export function LanguageSwitcher() {
     '/sportblessures-behandeling': '/en/sports-injury-treatment',
     '/burnout-stress-behandeling': '/en/burnout-stress-treatment',
     '/bloedgroepen-dieet': '/en/blood-type-diet',
+    '/blessure': '/en/injury',
+    '/rugpijn': '/en/back-pain',
+    '/oplossingen': '/en/solutions',
+    '/bindweefselbehandeling': '/en/connective-tissue-treatment',
     
     // English to Dutch
     '/en': '/',
@@ -33,7 +37,11 @@ export function LanguageSwitcher() {
     '/en/alternative-to-chiropractic': '/alternatief-voor-chiropractor',
     '/en/sports-injury-treatment': '/sportblessures-behandeling',
     '/en/burnout-stress-treatment': '/burnout-stress-behandeling',
-    '/en/blood-type-diet': '/bloedgroepen-dieet'
+    '/en/blood-type-diet': '/bloedgroepen-dieet',
+    '/en/injury': '/blessure',
+    '/en/back-pain': '/rugpijn',
+    '/en/solutions': '/oplossingen',
+    '/en/connective-tissue-treatment': '/bindweefselbehandeling'
   };
 
   const toggleLanguage = () => {

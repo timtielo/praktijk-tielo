@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Mail, Star, Users, BookOpen } from 'lucide-react';
+import { Menu, X, Mail, Star, Users, Activity } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { businessInfo } from '../data/business';
 import { useScrollDirection } from '../hooks/useScrollDirection';
@@ -38,6 +38,11 @@ export function Header() {
   // Navigation items for the tubelight navbar
   const navItems = [
     { 
+      name: t('header.solutions'), 
+      url: getLocalizedPath('/oplossingen'), 
+      icon: Activity 
+    },
+    { 
       name: t('header.aboutUs'), 
       url: getAboutUsPath(), 
       icon: Users 
@@ -46,11 +51,6 @@ export function Header() {
       name: t('header.reviews'), 
       url: getLocalizedPath('/reviews'), 
       icon: Star 
-    },
-    { 
-      name: isEnglish ? "Knowledge Base" : "Kennisbank", 
-      url: getLocalizedPath('/blog'), 
-      icon: BookOpen 
     }
   ];
 
@@ -130,6 +130,14 @@ export function Header() {
           } py-4 space-y-4 bg-white rounded-lg shadow-lg mt-2`}
         >
           <Link
+            to={getLocalizedPath('/oplossingen')}
+            className="flex items-center gap-2 px-4 text-gray-600 hover:text-blue-600"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Activity className="w-4 h-4" />
+            <span>{t('header.solutions')}</span>
+          </Link>
+          <Link
             to={getAboutUsPath()}
             className="flex items-center gap-2 px-4 text-gray-600 hover:text-blue-600"
             onClick={() => setIsMenuOpen(false)}
@@ -144,14 +152,6 @@ export function Header() {
           >
             <Star className="w-4 h-4" />
             <span>{t('header.reviews')}</span>
-          </Link>
-          <Link
-            to={getLocalizedPath('/blog')}
-            className="flex items-center gap-2 px-4 text-gray-600 hover:text-blue-600"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <BookOpen className="w-4 h-4" />
-            <span>{isEnglish ? "Knowledge Base" : "Kennisbank"}</span>
           </Link>
           <a
             href={`mailto:${contact.email}`}
