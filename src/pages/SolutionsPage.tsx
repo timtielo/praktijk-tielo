@@ -98,6 +98,15 @@ export function SolutionsPage() {
       category: "physical"
     },
     {
+      title: isEnglish ? "Depression Treatment" : "Depressie behandeling",
+      description: isEnglish
+        ? "Natural approach to depression through body-oriented treatment. Gentle method without medication."
+        : "Natuurlijke aanpak van depressie via lichaamsgerichte behandeling. Zachte methode zonder medicatie.",
+      icon: Brain,
+      href: isEnglish ? "/en/depression-treatment" : "/depressie-behandeling",
+      category: "mental"
+    },
+    {
       title: isEnglish ? "Burnout & Stress" : "Burn-out & stress",
       description: isEnglish
         ? "Natural approach to burnout and stress. Body alignment and relaxation techniques."

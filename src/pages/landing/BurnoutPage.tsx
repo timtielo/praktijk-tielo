@@ -39,7 +39,7 @@ export function BurnoutPage() {
         ? "Burnout and Stress Treatment Utrecht | Praktijk Tielo"
         : "Stress- en burn-outbehandeling Utrecht | Praktijk Tielo",
       description: isEnglish
-        ? "At Praktijk Tielo in Utrecht, you can get treatment for stress and burnout, based on a natural approach. Read more about it here!"
+        ? "Suffering from burnout or stress? At Praktijk Tielo in Utrecht, we offer natural treatment focused on body alignment and relaxation. Experience our gentle approach!"
         : "Bij Praktijk Tielo in Utrecht kun je terecht voor een stress- en burn-outbehandeling, gebaseerd op een natuurlijke aanpak. Lees er hier meer over!"
     },
     hero: {

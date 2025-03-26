@@ -29,9 +29,9 @@ export function BackPainTreatmentPage() {
     meta: {
       title: isEnglish 
         ? "Back Pain Treatment Utrecht | Praktijk Tielo"
-        : "Rugpijnbehandeling Utrecht | Praktijk Tielo",
+        : "Rugpijn behandelen Utrecht | Praktijk Tielo",
       description: isEnglish
-        ? "Do you suffer from back pain and are you looking for effective treatment in Utrecht? Experience what my combination of natural movements and back pain treatment can do!"
+        ? "Looking for effective back pain treatment in Utrecht? Experience what our combination of natural movements and gentle treatment can do for your back pain. Schedule now!"
         : "Heb jij last van rugpijn en zoek je een effectieve behandeling in Utrecht? Ervaar wat mijn combinatie van natuurlijke bewegingen en rugpijnbehandeling kan doen!"
     },
     hero: {
@@ -100,7 +100,7 @@ export function BackPainTreatmentPage() {
       <SEO 
         titleKey={content.meta.title}
         descriptionKey={content.meta.description}
-        canonicalPath="/rugpijn"
+        canonicalPath={isEnglish ? "/en/back-pain" : "/rugpijn"}
         keywords={[
           'rugpijn behandeling',
           'rugklachten utrecht',

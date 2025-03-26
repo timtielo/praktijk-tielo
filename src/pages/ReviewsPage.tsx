@@ -68,6 +68,7 @@ export function ReviewsPage() {
   const searchSuggestions = isEnglish ? [
     'back',
     'knee',
+    'ankle',
     'posture',
     'sports',
     'flexibility',
@@ -75,6 +76,7 @@ export function ReviewsPage() {
   ] : [
     'rug',
     'knie',
+    'enkel',
     'houding',
     'sport',
     'flexibiliteit',

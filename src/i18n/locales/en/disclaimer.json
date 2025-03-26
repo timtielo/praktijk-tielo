@@ -29,8 +29,8 @@
         "The information shared during treatments is treated confidentially and will not be provided to third parties without your consent, unless legally required."
       ]
     },
-    "clientResponsibility": {
-      "title": "5. Responsibility of the customer",
+    "customerResponsibility": {
+      "title": "5. Customer responsibility",
       "items": [
         "The customer is responsible for providing correct and complete information about their health condition.",
         "The customer always remains responsible for making decisions regarding their health and well-being."

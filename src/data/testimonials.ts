@@ -113,6 +113,24 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     image: "https://lh3.googleusercontent.com/a/ACg8ocJ6mOHk8C9txRlQnmd6xbUQ4ZR_RDNrREDuQ7cCK7FxgLHW8T4=s36-c-rp-mo-br100",
     date: "2025-03-21"
+  },
+  {
+    id: "bo-1",
+    name: "Bo",
+    text: "Intressante alternatieve geneesmanier!, ik was eerst nogal skeptisch maar merkte na de eerste behandeling al verandering. Tim zelf was ook erg duidelijk met de oefeningen en legde alles goed uit. Als je nog nooit van PIDDDS hebt gehoord raad ik het zeker aan om eens te proberen bij Tim",
+    textEn: "Interesting alternative medicine method! I was quite skeptical at first but noticed a change after the first treatment. Tim himself was also very clear with the exercises and explained everything well. If you've never heard of PIDDDS, I definitely recommend trying it with Tim",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjUxfPj74kaLXZPprEubeQsLDZTQeQFve8BsYan0PXh_K9ZDmMKi=s36-c-rp-mo-br100",
+    date: "2025-03-25"
+  },
+  {
+    id: "rene-1",
+    name: "René",
+    text: "Op zijn eigen rustige wijze heeft Tim mij behandeld. Flexibiliteit in gewrichten vergroot waar mijn linker enkel weer meer beweegbaar is geworden.",
+    textEn: "Tim treated me in his own calm way. Increased flexibility in joints where my left ankle has become more mobile again.",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjVsfJlH5MA8KAT_gcwZNKQjk9RgQhpw7IvR-36fu8wNH-MX2ygMzw=s36-c-rp-mo-br100",
+    date: "2025-03-25"
   }
 ];
 

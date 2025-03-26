@@ -45,7 +45,7 @@ export function DisclaimerPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">{t('disclaimer.sections.noMedicalCare.title')}</h2>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                {t('disclaimer.sections.noMedicalCare.items', { returnObjects: true }).map((item: string, index: number) => (
+                {t('disclaimer.sections.noMedicalCare.items', { returnObjects: true })?.map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -54,7 +54,7 @@ export function DisclaimerPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">{t('disclaimer.sections.resultsLiability.title')}</h2>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                {t('disclaimer.sections.resultsLiability.items', { returnObjects: true }).map((item: string, index: number) => (
+                {t('disclaimer.sections.resultsLiability.items', { returnObjects: true })?.map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -63,7 +63,7 @@ export function DisclaimerPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">{t('disclaimer.sections.privacy.title')}</h2>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                {t('disclaimer.sections.privacy.items', { returnObjects: true }).map((item: string, index: number) => (
+                {t('disclaimer.sections.privacy.items', { returnObjects: true })?.map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -72,7 +72,7 @@ export function DisclaimerPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">{t('disclaimer.sections.customerResponsibility.title')}</h2>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                {t('disclaimer.sections.clientResponsibility.items', { returnObjects: true }).map((item: string, index: number) => (
+                {t('disclaimer.sections.customerResponsibility.items', { returnObjects: true })?.map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -81,7 +81,7 @@ export function DisclaimerPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">{t('disclaimer.sections.changes.title')}</h2>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                {t('disclaimer.sections.changes.items', { returnObjects: true }).map((item: string, index: number) => (
+                {t('disclaimer.sections.changes.items', { returnObjects: true })?.map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -90,7 +90,7 @@ export function DisclaimerPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">{t('disclaimer.sections.applicableLaw.title')}</h2>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                {t('disclaimer.sections.applicableLaw.items', { returnObjects: true }).map((item: string, index: number) => (
+                {t('disclaimer.sections.applicableLaw.items', { returnObjects: true })?.map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>

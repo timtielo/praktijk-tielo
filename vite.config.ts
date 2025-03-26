@@ -64,7 +64,7 @@ export default defineConfig(({ mode }) => {
     },
     optimizeDeps: {
       include: ['react', 'react-dom', 'react-router-dom', 'i18next', 'react-i18next'],
-      exclude: ['data:'], // Prevent data URL imports
+      exclude: [], // Remove data: from exclude
       force: true
     },
     esbuild: {

@@ -38,12 +38,12 @@ export function KneeInjuryPage() {
 
   const content = {
     meta: {
-      title: isEnglish ? 
-        "Knee Injury Treatment Utrecht | Praktijk Tielo" :
-        "Knieblessure behandelen Utrecht | Praktijk Tielo",
-      description: isEnglish ?
-        "Do you have a sports injury, such as a knee injury, that you want to treat? I offer an effective and sustainable approach, read on for more information!" :
-        "Heb jij een sportblessure, zoals een knieblessure, die je wilt behandelen? Ik bied een effectieve en duurzame aanpak, lees snel verder voor meer informatie!"
+      title: isEnglish 
+        ? "Knee Injury Treatment Utrecht | Praktijk Tielo"
+        : "Knieblessure behandelen Utrecht | Praktijk Tielo",
+      description: isEnglish
+        ? "Looking for effective treatment for your knee injury or sports injury in Utrecht? Experience our natural approach for quick recovery. Schedule your appointment now!"
+        : "Heb jij een sportblessure, zoals een knieblessure, die je wilt behandelen? Ik bied een effectieve en duurzame aanpak, lees snel verder voor meer informatie!"
     },
     hero: {
       title: isEnglish ? 

@@ -41,8 +41,8 @@ export function ConnectiveTissuePage() {
         ? "Connective Tissue Treatment Utrecht | Praktijk Tielo"
         : "Bindweefselbehandeling Utrecht | Praktijk Tielo",
       description: isEnglish
-        ? "Do you suffer from complaints like neck or back pain? I offer a unique treatment consisting of natural movements using connective tissue treatment, read more!"
-        : "Heb jij last van klachten als nek- of rugpijn? Ik bied een unieke behandeling die bestaat uit natuurlijke bewegingen m.b.v. een bindweefselbehandeling, lees meer!"
+        ? "Looking for effective treatment of connective tissue? At Praktijk Tielo in Utrecht, we offer gentle treatment without cracking or massage. Experience our natural approach!"
+        : "Heb jij last van klachten als nek- of rugpijn? Ik bied een unieke behandeling die bestaat uit natuurlijke bewegingen i.c.m. een bindweefselmassage, lees meer!"
     },
     hero: {
       title: isEnglish

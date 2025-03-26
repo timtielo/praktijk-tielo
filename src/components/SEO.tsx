@@ -27,7 +27,7 @@ export function SEO({
   name = 'Praktijk Tielo',
   canonicalUrl,
   alternateUrls,
-  image = '/assets/logos/praktijktielotransparent.svg',
+  image = '/assets/logos/praktijktielo.png',
   schema,
   keywords = []
 }: SEOProps) {
@@ -49,6 +49,9 @@ export function SEO({
   
   // Get the full image URL
   const getFullImageUrl = () => {
+    if (image.startsWith('http')) {
+      return image;
+    }
     return `${baseUrl}${image}`;
   };
   
@@ -81,6 +84,8 @@ export function SEO({
       <meta property="og:url" content={getCanonicalUrl()} />
       <meta property="og:site_name" content={name} />
       <meta property="og:image" content={fullImageUrl} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:locale" content={currentLanguage === 'nl' ? 'nl_NL' : 'en_US'} />
       <meta property="og:locale:alternate" content={currentLanguage === 'nl' ? 'en_US' : 'nl_NL'} />
       
