@@ -6,11 +6,14 @@ import { generateLocalBusinessSchema, generateAIAssistantSchema } from '../utils
 import { businessInfo } from '../data/business';
 
 interface SEOProps {
-  titleKey: string;
-  descriptionKey: string;
+  titleKey?: string;
+  descriptionKey?: string;
+  title?: string;
+  description?: string;
   type?: string;
   name?: string;
   canonicalUrl?: string;
+  canonicalPath?: string;
   alternateUrls?: {
     nl: string;
     en: string;
@@ -21,11 +24,14 @@ interface SEOProps {
 }
 
 export function SEO({ 
-  titleKey, 
-  descriptionKey, 
+  titleKey,
+  descriptionKey,
+  title: directTitle,
+  description: directDescription,
   type = 'website', 
   name = 'Praktijk Tielo',
   canonicalUrl,
+  canonicalPath,
   alternateUrls,
   image = '/assets/logos/praktijktielo.png',
   schema,
@@ -41,6 +47,7 @@ export function SEO({
   // Get the canonical URL
   const getCanonicalUrl = () => {
     if (canonicalUrl) return canonicalUrl;
+    if (canonicalPath) return `${baseUrl}${canonicalPath}`;
     
     // If no canonical URL is provided, generate one based on current path
     const path = location.pathname;
@@ -58,13 +65,31 @@ export function SEO({
   const fullImageUrl = getFullImageUrl();
   
   // Get localized title and description
-  const title = t(titleKey);
-  const description = t(descriptionKey);
+  const title = directTitle || (titleKey ? t(titleKey) : name);
+  const description = directDescription || (descriptionKey ? t(descriptionKey) : '');
 
   // Default schema is LocalBusiness
   const defaultSchema = generateLocalBusinessSchema(businessInfo);
   const aiSchema = generateAIAssistantSchema();
   const schemaToUse = schema || defaultSchema;
+
+  // Get alternate URLs based on current path
+  const getAlternateUrls = () => {
+    if (alternateUrls) return alternateUrls;
+
+    const path = location.pathname;
+    const isEnglish = path.startsWith('/en');
+    const basePath = isEnglish ? path.replace('/en', '') : path;
+    const englishPath = isEnglish ? path : `/en${path === '/' ? '' : path}`;
+    const dutchPath = isEnglish ? basePath : path;
+
+    return {
+      nl: `${baseUrl}${dutchPath}`,
+      en: `${baseUrl}${englishPath}`
+    };
+  };
+
+  const alternates = getAlternateUrls();
   
   return (
     <Helmet>
@@ -96,13 +121,9 @@ export function SEO({
       <meta name="twitter:image" content={fullImageUrl} />
       
       {/* Language alternates */}
-      {alternateUrls && (
-        <>
-          <link rel="alternate" hreflang="nl" href={alternateUrls.nl} />
-          <link rel="alternate" hreflang="en" href={alternateUrls.en} />
-          <link rel="alternate" hreflang="x-default" href={alternateUrls.nl} />
-        </>
-      )}
+      <link rel="alternate" hreflang="nl" href={alternates.nl} />
+      <link rel="alternate" hreflang="en" href={alternates.en} />
+      <link rel="alternate" hreflang="x-default" href={alternates.nl} />
       
       {/* Canonical URL */}
       <link rel="canonical" href={getCanonicalUrl()} />
