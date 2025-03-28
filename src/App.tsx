@@ -15,6 +15,8 @@ const AboutUsPage = lazy(() => import('./pages/AboutUsPage').then(module => ({ d
 const BlogPage = lazy(() => import('./pages/BlogPage').then(module => ({ default: module.BlogPage })));
 const BlogPostPage = lazy(() => import('./pages/BlogPostPage').then(module => ({ default: module.BlogPostPage })));
 const SolutionsPage = lazy(() => import('./pages/SolutionsPage').then(module => ({ default: module.SolutionsPage })));
+const BeforeTreatmentPage = lazy(() => import('./pages/BeforeTreatmentPage').then(module => ({ default: module.BeforeTreatmentPage })));
+const AfterTreatmentPage = lazy(() => import('./pages/AfterTreatmentPage').then(module => ({ default: module.AfterTreatmentPage })));
 
 // Lazy load landing pages
 const BackPainPage = lazy(() => import('./pages/landing/BackPainPage').then(module => ({ default: module.BackPainPage })));
@@ -63,6 +65,8 @@ function App() {
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/oplossingen" element={<SolutionsPage />} />
+            <Route path="/voor-de-behandeling" element={<BeforeTreatmentPage />} />
+            <Route path="/na-de-behandeling" element={<AfterTreatmentPage />} />
             <Route path="/blessure" element={<KneeInjuryPage />} />
             <Route path="/rugpijn" element={<BackPainTreatmentPage />} />
             <Route path="/bindweefselbehandeling" element={<ConnectiveTissuePage />} />
@@ -88,6 +92,8 @@ function App() {
             <Route path="/en/blog" element={<BlogPage />} />
             <Route path="/en/blog/:slug" element={<BlogPostPage />} />
             <Route path="/en/solutions" element={<SolutionsPage />} />
+            <Route path="/en/before-treatment" element={<BeforeTreatmentPage />} />
+            <Route path="/en/after-treatment" element={<AfterTreatmentPage />} />
             <Route path="/en/injury" element={<KneeInjuryPage />} />
             <Route path="/en/back-pain" element={<BackPainTreatmentPage />} />
             <Route path="/en/connective-tissue-treatment" element={<ConnectiveTissuePage />} />
