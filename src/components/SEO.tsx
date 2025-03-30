@@ -65,8 +65,9 @@ export function SEO({
   const fullImageUrl = getFullImageUrl();
   
   // Get localized title and description
-  const title = directTitle || (titleKey ? t(titleKey) : name);
-  const description = directDescription || (descriptionKey ? t(descriptionKey) : '');
+  const pageTitle = directTitle || (titleKey ? t(titleKey) : name);
+  const fullTitle = `${pageTitle} | Praktijk Tielo`;
+  const pageDescription = directDescription || (descriptionKey ? t(descriptionKey) : '');
 
   // Default schema is LocalBusiness
   const defaultSchema = generateLocalBusinessSchema(businessInfo);
@@ -94,8 +95,10 @@ export function SEO({
   return (
     <Helmet>
       {/* Basic meta tags */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      <title>{fullTitle}</title>
+      <meta name="description" content={pageDescription} />
+      <meta name="robots" content="index, follow" />
+      <meta name="googlebot" content="index, follow" />
       
       {/* Keywords */}
       {keywords.length > 0 && (
@@ -104,8 +107,8 @@ export function SEO({
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={fullTitle} />
+      <meta property="og:description" content={pageDescription} />
       <meta property="og:url" content={getCanonicalUrl()} />
       <meta property="og:site_name" content={name} />
       <meta property="og:image" content={fullImageUrl} />
@@ -116,8 +119,8 @@ export function SEO({
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content={fullImageUrl} />
       
       {/* Language alternates */}
@@ -134,6 +137,24 @@ export function SEO({
       {/* Structured data */}
       <script type="application/ld+json">{schemaToUse}</script>
       <script type="application/ld+json">{aiSchema}</script>
+
+      {/* Additional SEO meta tags */}
+      <meta name="author" content="Tim Tielkemeijer" />
+      <meta name="geo.region" content="NL-UT" />
+      <meta name="geo.placename" content="Utrecht" />
+      <meta name="geo.position" content="52.090736;5.122700" />
+      <meta name="ICBM" content="52.090736, 5.122700" />
+      
+      {/* Mobile meta tags */}
+      <meta name="format-detection" content="telephone=yes" />
+      <meta name="theme-color" content="#ffffff" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="apple-mobile-web-app-title" content="Praktijk Tielo" />
+      
+      {/* Verification meta tags */}
+      <meta name="google-site-verification" content="your-google-verification-code" />
+      <meta name="yandex-verification" content="b53c5c3604310370" />
     </Helmet>
   );
 }
