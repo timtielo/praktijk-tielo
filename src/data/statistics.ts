@@ -4,6 +4,6 @@ export interface Statistics {
 }
 
 export const statistics: Statistics = {
-  peopleHelped: 27,
+  peopleHelped: 31,
   animalsHelped: 2
 };

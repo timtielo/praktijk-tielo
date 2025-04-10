@@ -20,8 +20,10 @@ const AfterTreatmentPage = lazy(() => import('./pages/AfterTreatmentPage').then(
 
 // Lazy load landing pages
 const BackPainPage = lazy(() => import('./pages/landing/BackPainPage').then(module => ({ default: module.BackPainPage })));
+const BackPainPage2 = lazy(() => import('./pages/landing/BackPainPage2').then(module => ({ default: module.BackPainPage2 })));
 const ChiropractorPage = lazy(() => import('./pages/landing/ChiropractorPage').then(module => ({ default: module.ChiropractorPage })));
 const SportsInjuriesPage = lazy(() => import('./pages/landing/SportsInjuriesPage').then(module => ({ default: module.SportsInjuriesPage })));
+const SportsInjuriesPage2 = lazy(() => import('./pages/landing/SportsInjuriesPage2').then(module => ({ default: module.SportsInjuriesPage2 })));
 const BurnoutPage = lazy(() => import('./pages/landing/BurnoutPage').then(module => ({ default: module.BurnoutPage })));
 const BloodTypeDietPage = lazy(() => import('./pages/landing/BloodTypeDietPage').then(module => ({ default: module.BloodTypeDietPage })));
 const KneeInjuryPage = lazy(() => import('./pages/landing/KneeInjuryPage').then(module => ({ default: module.KneeInjuryPage })));
@@ -49,6 +51,33 @@ function App() {
     }
   }, [location.pathname, i18n]);
 
+  // Check if we're on the standalone landing page
+  const isStandalonePage = 
+    location.pathname === '/sportblessures-behandeling2' || 
+    location.pathname === '/en/sports-injury-treatment2' ||
+    location.pathname === '/rugpijn-en-lage-rugklachten2' ||
+    location.pathname === '/en/back-pain-treatment2';
+
+  // If it's the standalone page, render without header/footer
+  if (isStandalonePage) {
+    return (
+      <div className="min-h-screen bg-white flex flex-col">
+        <ScrollToTop />
+        <main className="flex-grow">
+          <Suspense fallback={<LoadingScreen />}>
+            <Routes>
+              <Route path="/sportblessures-behandeling2" element={<SportsInjuriesPage2 />} />
+              <Route path="/en/sports-injury-treatment2" element={<SportsInjuriesPage2 />} />
+              <Route path="/rugpijn-en-lage-rugklachten2" element={<BackPainPage2 />} />
+              <Route path="/en/back-pain-treatment2" element={<BackPainPage2 />} />
+            </Routes>
+          </Suspense>
+        </main>
+      </div>
+    );
+  }
+
+  // Regular layout with header and footer
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <ScrollToTop />
@@ -78,8 +107,10 @@ function App() {
             
             {/* Dutch Landing Pages */}
             <Route path="/rugpijn-en-lage-rugklachten" element={<BackPainPage />} />
+            <Route path="/rugpijn-en-lage-rugklachten2" element={<BackPainPage2 />} />
             <Route path="/alternatief-voor-chiropractor" element={<ChiropractorPage />} />
             <Route path="/sportblessures-behandeling" element={<SportsInjuriesPage />} />
+            <Route path="/sportblessures-behandeling2" element={<SportsInjuriesPage2 />} />
             <Route path="/burnout-stress-behandeling" element={<BurnoutPage />} />
             <Route path="/bloedgroepen-dieet" element={<BloodTypeDietPage />} />
             
@@ -105,8 +136,10 @@ function App() {
             
             {/* English Landing Pages */}
             <Route path="/en/back-pain-treatment" element={<BackPainPage />} />
+            <Route path="/en/back-pain-treatment2" element={<BackPainPage2 />} />
             <Route path="/en/alternative-to-chiropractic" element={<ChiropractorPage />} />
             <Route path="/en/sports-injury-treatment" element={<SportsInjuriesPage />} />
+            <Route path="/en/sports-injury-treatment2" element={<SportsInjuriesPage2 />} />
             <Route path="/en/burnout-stress-treatment" element={<BurnoutPage />} />
             <Route path="/en/blood-type-diet" element={<BloodTypeDietPage />} />
             

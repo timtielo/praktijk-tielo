@@ -123,6 +123,51 @@ export const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a-/ALV-UjUxfPj74kaLXZPprEubeQsLDZTQeQFve8BsYan0PXh_K9ZDmMKi=s36-c-rp-mo-br100",
     date: "2025-03-25"
   },
+    {
+    id: "guust-1",
+    name: "Guust",
+    text: "Had direct na de behandeling een betere houding en postuur. Enorme aanrader!",
+    textEn: "Had better posture and posture immediately after the treatment. Highly recommended!",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocJ1uYsBTvEbewzSXTebBgfbBwA04UvbPGlxcW37ZdrDf04QJw=w60-h60-p-rp-mo-br100",
+    date: "2025-04-08"
+  },
+     {
+    id: "victor-1",
+    name: "Victor",
+    text: "Tim is ontzettend vriendelijk en kundig in z'n vak. Bij andere zorgprofessionals hangt vaak een ongemakkelijke, klinische sfeer. Tim maakt er een punt van om je meteen op je gemak te laten voelen. Hij communiceert duidelijk wat hij doet en zorgt voor een ongedwongen sfeer. Ik kan het iedereen aanraden eens een bezoekje te brengen!",
+    textEn: "Tim is extremely friendly and knowledgeable in his field. Other healthcare professionals often have an uncomfortable, clinical atmosphere. Tim makes it a point to make you feel comfortable right away. He communicates clearly what he does and creates a relaxed atmosphere. I can recommend it to everyone to pay a visit!",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjVz-lG6Qyf2YVl_vKWek9otfGvoq2-1prYUIKKgM2gBzxwifbV6=w60-h60-p-rp-mo-br100",
+    date: "2025-04-07"
+  },
+       {
+    id: "sander-1",
+    name: "Sander",
+    text: "Tim is een toffe gast, super fijne behandeling. Helemaal Zen naderhand. Heb er erg veel baat bij gehad. Ik zou het iedereen aanraden!",
+    textEn: "Tim is a great guy, super nice treatment. Completely Zen afterwards. I have benefited a lot from it. I would recommend it to everyone!",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjXJmGoxhy4lEoEhZl9ymVI2YIbDf342NO5-UictrUZcNrfPTd2r=w60-h60-p-rp-mo-br100",
+    date: "2025-04-04"
+  },
+   {
+    id: "job-1",
+    name: "Job",
+    text: "Ik dacht zelf geen specifieke klachten te hebben maar wilde eens kennis maken met PIDDDS. Tijdens de behandeling werd duidelijk dat mijn ruggenwervel scheef zat. Door middel van lichte en aangename bewegingen heeft Tim ervoor gezorgd dat deze weer in zijn natuurlijke positie kwam.",
+    textEn: "I didn't think I had any specific complaints myself, but I wanted to get acquainted with PIDDDS. During the treatment it became clear that my spine was crooked. By means of light and pleasant movements, Tim ensured that it returned to its natural position.",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocIvsdIw73CsoHr8bkJSrgGkhocctzzgXHCUyQlSfTGzUo7KNA=w60-h60-p-rp-mo-br100",
+    date: "2025-04-05"
+  },
+  {
+    id: "britt-1",
+    name: "Britt",
+    text: "Erg prettige behandeling met een fijn resultaat. Je merkt echt verschil!",
+    textEn: "Very pleasant treatment with a great result. You really notice a difference!",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocIvsdIw73CsoHr8bkJSrgGkhocctzzgXHCUyQlSfTGzUo7KNA=w60-h60-p-rp-mo-br100",
+    date: "2025-04-05"
+  },
   {
     id: "rene-1",
     name: "René",

@@ -154,8 +154,7 @@ export function Solution() {
                     <div>
                       <h4 className="font-semibold">{t('solution.treatment.rates.title')}</h4>
                       <p className="text-blue-100">
-                        <span className="line-through">€130,-</span> <span className="font-bold">{t('solution.treatment.rates.description')}</span>
-                        <span className="block text-xs mt-1">{t('solution.treatment.rates.validUntil')}</span>
+                        <span className="font-bold">{t('solution.treatment.rates.description')}</span>
                       </p>
                     </div>
                   </div>

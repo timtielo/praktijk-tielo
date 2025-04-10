@@ -61,6 +61,8 @@ export function generateLocalBusinessSchema(businessInfo: any) {
     },
     "geo": {
       "@type": "GeoCoordinates",
+      "latitude": 52.090736,
+      "longitude": 5.122700,
       "addressCountry": "Netherlands",
       "addressRegion": "Utrecht"
     },
@@ -74,6 +76,8 @@ export function generateLocalBusinessSchema(businessInfo: any) {
       "@type": "GeoCircle",
       "geoMidpoint": {
         "@type": "GeoCoordinates",
+        "latitude": 52.090736,
+        "longitude": 5.122700,
         "addressCountry": "Netherlands",
         "addressRegion": "Utrecht"
       },
@@ -137,7 +141,7 @@ export function generateLocalBusinessSchema(businessInfo: any) {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "3",
+      "reviewCount": "20",
       "bestRating": "5",
       "worstRating": "1"
     }
@@ -233,6 +237,67 @@ export function generateAIAssistantSchema() {
       "self-help exercises"
     ],
     "inLanguage": ["nl", "en"]
+  };
+
+  return JSON.stringify(schema);
+}
+
+/**
+ * Generates structured data for a breadcrumb trail
+ */
+export function generateBreadcrumbSchema(items: Array<{name: string, url: string}>) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+
+  return JSON.stringify(schema);
+}
+
+/**
+ * Generates structured data for an article
+ */
+export function generateArticleSchema(article: {
+  title: string;
+  description: string;
+  url: string;
+  imageUrl: string;
+  datePublished: string;
+  dateModified: string;
+  authorName: string;
+  publisherName: string;
+  publisherLogo: string;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.title,
+    "description": article.description,
+    "image": article.imageUrl,
+    "datePublished": article.datePublished,
+    "dateModified": article.dateModified,
+    "author": {
+      "@type": "Person",
+      "name": article.authorName
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": article.publisherName,
+      "logo": {
+        "@type": "ImageObject",
+        "url": article.publisherLogo
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": article.url
+    }
   };
 
   return JSON.stringify(schema);

@@ -23,8 +23,10 @@ const routes = [
   
   // Dutch landing pages
   { path: '/rugpijn-en-lage-rugklachten', priority: '0.9', changefreq: 'weekly' },
+  { path: '/rugpijn-en-lage-rugklachten2', priority: '0.9', changefreq: 'weekly' },
   { path: '/alternatief-voor-chiropractor', priority: '0.9', changefreq: 'weekly' },
   { path: '/sportblessures-behandeling', priority: '0.9', changefreq: 'weekly' },
+  { path: '/sportblessures-behandeling2', priority: '0.9', changefreq: 'weekly' },
   { path: '/burnout-stress-behandeling', priority: '0.9', changefreq: 'weekly' },
   { path: '/bloedgroepen-dieet', priority: '0.9', changefreq: 'weekly' },
   { path: '/blessure', priority: '0.9', changefreq: 'weekly' },
@@ -34,6 +36,7 @@ const routes = [
   { path: '/verlichting-zonder-kraken', priority: '0.9', changefreq: 'weekly' },
   { path: '/slaapproblemen', priority: '0.9', changefreq: 'weekly' },
   { path: '/migraine-behandeling', priority: '0.9', changefreq: 'weekly' },
+  { path: '/depressie-behandeling', priority: '0.9', changefreq: 'weekly' },
   
   // English pages
   { path: '/en', priority: '1.0', changefreq: 'weekly' },
@@ -45,8 +48,10 @@ const routes = [
   
   // English landing pages
   { path: '/en/back-pain-treatment', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/back-pain-treatment2', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/alternative-to-chiropractic', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/sports-injury-treatment', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/sports-injury-treatment2', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/burnout-stress-treatment', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/blood-type-diet', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/injury', priority: '0.9', changefreq: 'weekly' },
@@ -55,7 +60,8 @@ const routes = [
   { path: '/en/scoliosis', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/relief-without-cracking', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/sleep-problems', priority: '0.9', changefreq: 'weekly' },
-  { path: '/en/migraine-treatment', priority: '0.9', changefreq: 'weekly' }
+  { path: '/en/migraine-treatment', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/depression-treatment', priority: '0.9', changefreq: 'weekly' }
 ];
 
 // Generate sitemap content
@@ -83,10 +89,14 @@ const generateSitemap = () => {
       // Landing pages
       '/rugpijn-en-lage-rugklachten': '/en/back-pain-treatment',
       '/en/back-pain-treatment': '/rugpijn-en-lage-rugklachten',
+      '/rugpijn-en-lage-rugklachten2': '/en/back-pain-treatment2',
+      '/en/back-pain-treatment2': '/rugpijn-en-lage-rugklachten2',
       '/alternatief-voor-chiropractor': '/en/alternative-to-chiropractic',
       '/en/alternative-to-chiropractic': '/alternatief-voor-chiropractor',
       '/sportblessures-behandeling': '/en/sports-injury-treatment',
       '/en/sports-injury-treatment': '/sportblessures-behandeling',
+      '/sportblessures-behandeling2': '/en/sports-injury-treatment2',
+      '/en/sports-injury-treatment2': '/sportblessures-behandeling2',
       '/burnout-stress-behandeling': '/en/burnout-stress-treatment',
       '/en/burnout-stress-treatment': '/burnout-stress-behandeling',
       '/bloedgroepen-dieet': '/en/blood-type-diet',
@@ -104,7 +114,9 @@ const generateSitemap = () => {
       '/slaapproblemen': '/en/sleep-problems',
       '/en/sleep-problems': '/slaapproblemen',
       '/migraine-behandeling': '/en/migraine-treatment',
-      '/en/migraine-treatment': '/migraine-behandeling'
+      '/en/migraine-treatment': '/migraine-behandeling',
+      '/depressie-behandeling': '/en/depression-treatment',
+      '/en/depression-treatment': '/depressie-behandeling'
     };
     
     return pathMap[path] || path;

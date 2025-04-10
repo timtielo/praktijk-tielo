@@ -6,6 +6,6 @@ export interface GoogleReviewsData {
 
 export const googleReviewsData: GoogleReviewsData = {
   averageRating: 5.0,
-  totalReviews: 15,
+  totalReviews: 20,
   placeId: "ChIJLQBaVdNjxkcRmQnTfcCIwQk"
 };

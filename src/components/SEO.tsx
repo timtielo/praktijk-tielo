@@ -21,6 +21,9 @@ interface SEOProps {
   image?: string;
   schema?: string;
   keywords?: string[];
+  author?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
 export function SEO({ 
@@ -35,7 +38,10 @@ export function SEO({
   alternateUrls,
   image = '/assets/logos/praktijktielo.png',
   schema,
-  keywords = []
+  keywords = [],
+  author = 'Tim Tielkemeijer',
+  publishedTime,
+  modifiedTime
 }: SEOProps) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -117,11 +123,25 @@ export function SEO({
       <meta property="og:locale" content={currentLanguage === 'nl' ? 'nl_NL' : 'en_US'} />
       <meta property="og:locale:alternate" content={currentLanguage === 'nl' ? 'en_US' : 'nl_NL'} />
       
+      {/* Article specific Open Graph tags */}
+      {type === 'article' && author && (
+        <>
+          <meta property="article:author" content={author} />
+          {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+          {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+          {keywords.map((keyword, index) => (
+            <meta key={index} property="article:tag" content={keyword} />
+          ))}
+        </>
+      )}
+      
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content={fullImageUrl} />
+      <meta name="twitter:site" content="@praktijktielo" />
+      <meta name="twitter:creator" content="@praktijktielo" />
       
       {/* Language alternates */}
       <link rel="alternate" hreflang="nl" href={alternates.nl} />
@@ -155,6 +175,13 @@ export function SEO({
       {/* Verification meta tags */}
       <meta name="google-site-verification" content="your-google-verification-code" />
       <meta name="yandex-verification" content="b53c5c3604310370" />
+      
+      {/* Preconnect to important domains */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://images.unsplash.com" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
     </Helmet>
   );
 }

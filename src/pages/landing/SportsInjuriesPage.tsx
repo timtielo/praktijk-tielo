@@ -72,14 +72,6 @@ export function SportsInjuriesPage() {
                 {t('landing.sportsInjuries.hero.subtitle')}
               </p>
               
-              {/* Urgency Banner */}
-              <div className="bg-blue-50 border border-blue-100 p-4 rounded-lg flex items-center gap-3">
-                <Clock className="w-5 h-5 text-blue-600" />
-                <p className="text-blue-800 font-medium">
-                  {t('solution.treatment.rates.validUntil')}
-                </p>
-              </div>
-              
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href={`tel:${businessInfo.contact.phone}`}
@@ -164,12 +156,7 @@ export function SportsInjuriesPage() {
                   <p className="text-blue-100 mb-4">{t('solution.treatment.first.title')}</p>
                   <div className="flex items-center gap-2 mb-4">
                     <span className="text-2xl font-bold">{t('solution.treatment.rates.description')}</span>
-                    <span className="text-blue-200 line-through">€130,-</span>
-                    <span className="bg-white text-blue-600 text-sm font-semibold px-2 py-1 rounded">
-                      {currentLanguage.startsWith('nl') ? 'Actietarief' : 'Special rate'}
-                    </span>
                   </div>
-                  <p className="text-sm text-blue-200">{t('solution.treatment.rates.validUntil')}</p>
                 </div>
               </div>
             </div>

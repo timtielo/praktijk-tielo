@@ -19,6 +19,26 @@
     <!-- Security Headers - Updated CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.cookiebot.com https://*.cookiebot.eu https://connect.facebook.net https://*.doubleclick.net https://analytics.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.cookiebot.com; img-src 'self' data: https://images.unsplash.com https://lh3.googleusercontent.com https://*.google-analytics.com https://*.googletagmanager.com https://*.facebook.com https://*.doubleclick.net https://analytics.google.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.doubleclick.net https://*.cookiebot.com https://hook.eu2.make.com https://formspree.io https://*.google-analytics.com; frame-src 'self' https://*.googletagmanager.com https://*.cookiebot.com https://*.doubleclick.net; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests;">
     
+    <!-- Google Consent Mode Configuration -->
+    <script data-cookieconsent="ignore">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("consent", "default", {
+        ad_personalization: "denied",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        analytics_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+        wait_for_update: 500,
+      });
+      gtag("set", "ads_data_redaction", true);
+      gtag("set", "url_passthrough", false);
+    </script>
+    
     <!-- Cookiebot Cookie Consent -->
     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="2935640d-e73c-4b7d-b5e4-a45bd6ea2b5d" data-blockingmode="auto" type="text/javascript" crossorigin="anonymous"></script>
     
