@@ -166,7 +166,7 @@ export function BackNeckProblemsPage() {
             
             <div className="w-full lg:w-[40%] aspect-square max-w-lg">
               <img
-                src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop"
+                src="/assets/photos/backpain.jpg"
                 alt={isEnglish ? "Back and neck pain relief" : "Rug- en nekpijn verlichting"}
                 className="w-full h-full object-cover rounded-xl shadow-xl"
               />

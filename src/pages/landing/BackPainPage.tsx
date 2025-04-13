@@ -84,7 +84,7 @@ export function BackPainPage() {
             
             <div className="w-full lg:w-[40%] aspect-square max-w-lg">
               <img
-                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1920&h=1080"
+                src="/assets/photos/backpain.jpg"
                 alt="Rugpijn behandeling"
                 className="w-full h-full object-cover rounded-xl shadow-xl"
               />

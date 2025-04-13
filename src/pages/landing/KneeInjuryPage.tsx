@@ -167,10 +167,10 @@ export function KneeInjuryPage() {
               </div>
             </div>
             
-            <div className="w-full lg:w-[40%] aspect-square max-w-lg">
+                 <div className="w-full lg:w-[40%] aspect-square max-w-lg">
               <img
-                src="https://images.unsplash.com/photo-1434973539530-5538b4681aac?auto=format&fit=crop&q=80&w=1920&h=1080"
-                alt={isEnglish ? "Knee injury treatment" : "Knieblessure behandeling"}
+                src="/assets/photos/sportinjury.jpg"
+                alt="Sportblessure behandeling"
                 className="w-full h-full object-cover rounded-xl shadow-xl"
               />
             </div>

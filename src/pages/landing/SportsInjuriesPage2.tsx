@@ -176,10 +176,10 @@ export function SportsInjuriesPage2() {
               </div>
             </div>
             
-            <div className="w-full lg:w-[40%] aspect-square max-w-lg">
+                      <div className="w-full lg:w-[40%] aspect-square max-w-lg">
               <img
-                src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=1920&h=1080"
-                alt={t('landing.sportsInjuries.meta.title')}
+                src="/assets/photos/sportinjury.jpg"
+                alt="Sportblessure behandeling"
                 className="w-full h-full object-cover rounded-xl shadow-xl"
               />
             </div>
