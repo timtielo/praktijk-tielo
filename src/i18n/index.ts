@@ -23,6 +23,7 @@ import enBackPain from './locales/en/landing/back-pain.json';
 import enChiropractor from './locales/en/landing/chiropractor.json';
 import enSportsInjuries from './locales/en/landing/sports-injuries.json';
 import enBurnout from './locales/en/landing/burnout.json';
+import enBackNeckProblems from './locales/en/landing/back-neck-problems.json';
 
 // Import Dutch translations
 import nlMeta from './locales/nl/meta.json';
@@ -45,6 +46,7 @@ import nlBackPain from './locales/nl/landing/back-pain.json';
 import nlChiropractor from './locales/nl/landing/chiropractor.json';
 import nlSportsInjuries from './locales/nl/landing/sports-injuries.json';
 import nlBurnout from './locales/nl/landing/burnout.json';
+import nlBackNeckProblems from './locales/nl/landing/back-neck-problems.json';
 
 // Merge all English translations
 const enTranslation = {
@@ -66,7 +68,8 @@ const enTranslation = {
     backPain: enBackPain,
     chiropractor: enChiropractor,
     sportsInjuries: enSportsInjuries,
-    burnout: enBurnout
+    burnout: enBurnout,
+    backNeckProblems: enBackNeckProblems
   }
 };
 
@@ -90,7 +93,8 @@ const nlTranslation = {
     backPain: nlBackPain,
     chiropractor: nlChiropractor,
     sportsInjuries: nlSportsInjuries,
-    burnout: nlBurnout
+    burnout: nlBurnout,
+    backNeckProblems: nlBackNeckProblems
   }
 };
 

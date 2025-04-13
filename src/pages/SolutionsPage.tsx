@@ -26,6 +26,15 @@ export function SolutionsPage() {
       category: "physical"
     },
     {
+      title: isEnglish ? "Back and Neck Problems" : "Rug- en nekklachten",
+      description: isEnglish
+        ? "Comprehensive treatment for back and neck problems. Gentle approach without cracking."
+        : "Uitgebreide behandeling voor rug- en nekklachten. Zachte aanpak zonder kraken.",
+      icon: Activity,
+      href: isEnglish ? "/en/back-neck-problems" : "/rug-nek-problemen",
+      category: "physical"
+    },
+    {
       title: isEnglish ? "Alternative to Chiropractic" : "Alternatief voor chiropractor",
       description: isEnglish
         ? "Gentle spine treatment without cracking. Focus on fascia for lasting results."

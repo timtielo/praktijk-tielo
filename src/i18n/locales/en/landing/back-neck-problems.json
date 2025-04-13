@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "Back & Neck Pain Treatment | Natural Approach",
+    "description": "Suffering from back or neck pain? Our gentle treatment method helps relieve pain and improve mobility without medication. Experience natural relief today."
+  },
+  "hero": {
+    "title": "Relief from back and neck problems",
+    "description": "Are you dealing with stress, neck pain, limited movement, headaches, or poor sleep? Our gentle treatment method helps you regain mobility and comfort without medication."
+  },
+  "problems": {
+    "title": "Common complaints",
+    "items": [
+      "Stress and tension in neck and shoulders",
+      "Limited movement and stiffness",
+      "Recurring headaches and migraines",
+      "Poor sleep quality",
+      "Pain radiating to arms or hands",
+      "Difficulty maintaining posture"
+    ]
+  },
+  "benefits": {
+    "title": "After treatment",
+    "items": [
+      "Improved mobility and flexibility",
+      "Reduced headaches and tension",
+      "Better sleep quality",
+      "Decreased stress levels",
+      "Natural pain relief",
+      "Improved posture"
+    ]
+  },
+  "approach": {
+    "title": "Our approach",
+    "description": "We use gentle techniques that focus on restoring proper alignment and movement. Through natural movements and light touches, we help your body release tension and find its natural balance again."
+  },
+  "cta": {
+    "title": "Start your recovery today",
+    "description": "Don't let back and neck problems limit your life any longer. Experience our gentle and effective approach."
+  }
+}

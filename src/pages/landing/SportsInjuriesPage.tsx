@@ -55,7 +55,7 @@ export function SportsInjuriesPage() {
                 <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
                   <Star className="w-5 h-5 text-yellow-400 fill-current" />
                   <span className="text-sm font-medium">
-                    {googleReviewsData.averageRating} {t('reviewsPage.googleReviews.reviewsOnGoogle')} ({googleReviewsData.totalReviews})
+                    {googleReviewsData.totalReviews} {isEnglish ? "reviews" : "reviews"} ({googleReviewsData.averageRating.toFixed(1)} {isEnglish ? "stars" : "sterren"})
                   </span>
                 </div>
                 <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
@@ -303,7 +303,7 @@ export function SportsInjuriesPage() {
               </div>
               <div className="bg-blue-500/20 p-4 rounded-lg">
                 <Star className="w-8 h-8 text-white mx-auto mb-2" />
-                <p className="text-sm">{googleReviewsData.averageRating} {t('reviewsPage.googleReviews.reviewsOnGoogle')}</p>
+                <p className="text-sm">{googleReviewsData.averageRating.toFixed(1)} {isEnglish ? "stars" : "sterren"} ({googleReviewsData.totalReviews} {isEnglish ? "reviews" : "reviews"})</p>
               </div>
             </div>
             

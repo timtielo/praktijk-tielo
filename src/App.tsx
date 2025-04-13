@@ -34,6 +34,8 @@ const NoBackCrackingPage = lazy(() => import('./pages/landing/NoBackCrackingPage
 const SleepProblemsPage = lazy(() => import('./pages/landing/SleepProblemsPage').then(module => ({ default: module.SleepProblemsPage })));
 const MigrainePage = lazy(() => import('./pages/landing/MigrainePage').then(module => ({ default: module.MigrainePage })));
 const DepressionPage = lazy(() => import('./pages/landing/DepressionPage').then(module => ({ default: module.DepressionPage })));
+const BackNeckProblemsPage = lazy(() => import('./pages/landing/BackNeckProblemsPage').then(module => ({ default: module.BackNeckProblemsPage })));
+const BackNeckProblemsPage2 = lazy(() => import('./pages/landing/BackNeckProblemsPage2').then(module => ({ default: module.BackNeckProblemsPage2 })));
 
 function App() {
   const { i18n } = useTranslation();
@@ -56,7 +58,9 @@ function App() {
     location.pathname === '/sportblessures-behandeling2' || 
     location.pathname === '/en/sports-injury-treatment2' ||
     location.pathname === '/rugpijn-en-lage-rugklachten2' ||
-    location.pathname === '/en/back-pain-treatment2';
+    location.pathname === '/en/back-pain-treatment2' ||
+    location.pathname === '/rug-nek-problemen2' ||
+    location.pathname === '/en/back-neck-problems2';
 
   // If it's the standalone page, render without header/footer
   if (isStandalonePage) {
@@ -70,6 +74,8 @@ function App() {
               <Route path="/en/sports-injury-treatment2" element={<SportsInjuriesPage2 />} />
               <Route path="/rugpijn-en-lage-rugklachten2" element={<BackPainPage2 />} />
               <Route path="/en/back-pain-treatment2" element={<BackPainPage2 />} />
+              <Route path="/rug-nek-problemen2" element={<BackNeckProblemsPage2 />} />
+              <Route path="/en/back-neck-problems2" element={<BackNeckProblemsPage2 />} />
             </Routes>
           </Suspense>
         </main>
@@ -104,6 +110,9 @@ function App() {
             <Route path="/slaapproblemen" element={<SleepProblemsPage />} />
             <Route path="/migraine-behandeling" element={<MigrainePage />} />
             <Route path="/depressie-behandeling" element={<DepressionPage />} />
+            <Route path="/rug-nek-problemen" element={<BackNeckProblemsPage />} />
+            {/* Redirect from old URL to new URL */}
+            <Route path="/rug-nek-klachten" element={<Navigate to="/rug-nek-problemen" replace />} />
             
             {/* Dutch Landing Pages */}
             <Route path="/rugpijn-en-lage-rugklachten" element={<BackPainPage />} />
@@ -113,6 +122,7 @@ function App() {
             <Route path="/sportblessures-behandeling2" element={<SportsInjuriesPage2 />} />
             <Route path="/burnout-stress-behandeling" element={<BurnoutPage />} />
             <Route path="/bloedgroepen-dieet" element={<BloodTypeDietPage />} />
+            <Route path="/rug-nek-problemen2" element={<BackNeckProblemsPage2 />} />
             
             {/* English routes */}
             <Route path="/en" element={<HomePage />} />
@@ -133,6 +143,7 @@ function App() {
             <Route path="/en/sleep-problems" element={<SleepProblemsPage />} />
             <Route path="/en/migraine-treatment" element={<MigrainePage />} />
             <Route path="/en/depression-treatment" element={<DepressionPage />} />
+            <Route path="/en/back-neck-problems" element={<BackNeckProblemsPage />} />
             
             {/* English Landing Pages */}
             <Route path="/en/back-pain-treatment" element={<BackPainPage />} />
@@ -142,6 +153,7 @@ function App() {
             <Route path="/en/sports-injury-treatment2" element={<SportsInjuriesPage2 />} />
             <Route path="/en/burnout-stress-treatment" element={<BurnoutPage />} />
             <Route path="/en/blood-type-diet" element={<BloodTypeDietPage />} />
+            <Route path="/en/back-neck-problems2" element={<BackNeckProblemsPage2 />} />
             
             {/* Fallback for any other route */}
             <Route path="*" element={<Navigate to="/" replace />} />

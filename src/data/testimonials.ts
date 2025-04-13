@@ -123,7 +123,7 @@ export const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a-/ALV-UjUxfPj74kaLXZPprEubeQsLDZTQeQFve8BsYan0PXh_K9ZDmMKi=s36-c-rp-mo-br100",
     date: "2025-03-25"
   },
-    {
+  {
     id: "guust-1",
     name: "Guust",
     text: "Had direct na de behandeling een betere houding en postuur. Enorme aanrader!",
@@ -132,7 +132,7 @@ export const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a/ACg8ocJ1uYsBTvEbewzSXTebBgfbBwA04UvbPGlxcW37ZdrDf04QJw=w60-h60-p-rp-mo-br100",
     date: "2025-04-08"
   },
-     {
+  {
     id: "victor-1",
     name: "Victor",
     text: "Tim is ontzettend vriendelijk en kundig in z'n vak. Bij andere zorgprofessionals hangt vaak een ongemakkelijke, klinische sfeer. Tim maakt er een punt van om je meteen op je gemak te laten voelen. Hij communiceert duidelijk wat hij doet en zorgt voor een ongedwongen sfeer. Ik kan het iedereen aanraden eens een bezoekje te brengen!",
@@ -141,7 +141,7 @@ export const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a-/ALV-UjVz-lG6Qyf2YVl_vKWek9otfGvoq2-1prYUIKKgM2gBzxwifbV6=w60-h60-p-rp-mo-br100",
     date: "2025-04-07"
   },
-       {
+  {
     id: "sander-1",
     name: "Sander",
     text: "Tim is een toffe gast, super fijne behandeling. Helemaal Zen naderhand. Heb er erg veel baat bij gehad. Ik zou het iedereen aanraden!",
@@ -150,7 +150,7 @@ export const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a-/ALV-UjXJmGoxhy4lEoEhZl9ymVI2YIbDf342NO5-UictrUZcNrfPTd2r=w60-h60-p-rp-mo-br100",
     date: "2025-04-04"
   },
-   {
+  {
     id: "job-1",
     name: "Job",
     text: "Ik dacht zelf geen specifieke klachten te hebben maar wilde eens kennis maken met PIDDDS. Tijdens de behandeling werd duidelijk dat mijn ruggenwervel scheef zat. Door middel van lichte en aangename bewegingen heeft Tim ervoor gezorgd dat deze weer in zijn natuurlijke positie kwam.",
@@ -176,6 +176,24 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     image: "https://lh3.googleusercontent.com/a-/ALV-UjVsfJlH5MA8KAT_gcwZNKQjk9RgQhpw7IvR-36fu8wNH-MX2ygMzw=s36-c-rp-mo-br100",
     date: "2025-03-25"
+  },
+  {
+    id: "rosalie-1",
+    name: "Rosalie",
+    text: "Twee behandelingen van Tim gehad samen met mijn vriend. Deze twee behandelingen heb ik als zeer goed ervaren, ik had last van mijn nek en rug en merkte na de behandelingen een verschil in hoe ik stond (meer rechtop) en ook een groot verschil in soepelheid van je gewrichten. Vind dit zeker een aanrader mocht je van iets dergelijks last hebben.",
+    textEn: "Had two treatments from Tim together with my boyfriend. I experienced these two treatments as very good, I had problems with my neck and back and noticed a difference in how I stood (more upright) after the treatments and also a big difference in flexibility of your joints. I definitely recommend this if you suffer from something similar.",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocIfhqgTpYXU4hdO4WWcZDMxpWSWiu8AjR0znufe5XIXpYrdFw=s36-c-rp-mo-br100",
+    date: "2025-04-10"
+  },
+  {
+    id: "floor-1",
+    name: "Floor",
+    text: "Ik had al lange tijd last van pijn en spanning in de schouders, nek en kaakregio. Na de behandeling heb ik duidelijk minder last! Tim creëert een gezellige sfeer waardoor ik de behandeling zelf als erg prettig ervaren heb. Hij heeft ook een simpele oefening voor thuis meegegeven. De eerste dag na de behandeling wel wat pijntjes, maar sindsdien heb ik merkbaar minder spanning!",
+    textEn: "I had been suffering from pain and tension in the shoulders, neck and jaw region for a long time. After the treatment I have clearly less trouble! Tim creates a pleasant atmosphere which made me experience the treatment itself as very pleasant. He also gave a simple exercise for at home. The first day after the treatment some pain, but since then I have noticeably less tension!",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocLqkbWKqB3qllNBcqpG_CG013qhyBhAykvjzA5pqEx7sKEdLw=s36-c-rp-mo-br100",
+    date: "2025-03-11"
   }
 ];
 

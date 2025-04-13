@@ -30,10 +30,11 @@ export function LanguageSwitcher() {
     '/verlichting-zonder-kraken': '/en/relief-without-cracking',
     '/slaapproblemen': '/en/sleep-problems',
     '/migraine-behandeling': '/en/migraine-treatment',
+    '/depressie-behandeling': '/en/depression-treatment',
+    '/rug-nek-problemen': '/en/back-neck-problems',
     
     // English to Dutch
     '/en': '/',
-    
     '/en/contact': '/contact',
     '/en/reviews': '/reviews',
     '/en/disclaimer': '/disclaimer',
@@ -50,7 +51,9 @@ export function LanguageSwitcher() {
     '/en/scoliosis': '/scoliose',
     '/en/relief-without-cracking': '/verlichting-zonder-kraken',
     '/en/sleep-problems': '/slaapproblemen',
-    '/en/migraine-treatment': '/migraine-behandeling'
+    '/en/migraine-treatment': '/migraine-behandeling',
+    '/en/depression-treatment': '/depressie-behandeling',
+    '/en/back-neck-problems': '/rug-nek-problemen'
   };
 
   const toggleLanguage = () => {

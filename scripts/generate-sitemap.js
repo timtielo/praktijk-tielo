@@ -37,6 +37,8 @@ const routes = [
   { path: '/slaapproblemen', priority: '0.9', changefreq: 'weekly' },
   { path: '/migraine-behandeling', priority: '0.9', changefreq: 'weekly' },
   { path: '/depressie-behandeling', priority: '0.9', changefreq: 'weekly' },
+  { path: '/rug-nek-problemen', priority: '0.9', changefreq: 'weekly' },
+  { path: '/rug-nek-problemen2', priority: '0.9', changefreq: 'weekly' },
   
   // English pages
   { path: '/en', priority: '1.0', changefreq: 'weekly' },
@@ -61,7 +63,9 @@ const routes = [
   { path: '/en/relief-without-cracking', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/sleep-problems', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/migraine-treatment', priority: '0.9', changefreq: 'weekly' },
-  { path: '/en/depression-treatment', priority: '0.9', changefreq: 'weekly' }
+  { path: '/en/depression-treatment', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/back-neck-problems', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/back-neck-problems2', priority: '0.9', changefreq: 'weekly' }
 ];
 
 // Generate sitemap content
@@ -116,7 +120,11 @@ const generateSitemap = () => {
       '/migraine-behandeling': '/en/migraine-treatment',
       '/en/migraine-treatment': '/migraine-behandeling',
       '/depressie-behandeling': '/en/depression-treatment',
-      '/en/depression-treatment': '/depressie-behandeling'
+      '/en/depression-treatment': '/depressie-behandeling',
+      '/rug-nek-problemen': '/en/back-neck-problems',
+      '/en/back-neck-problems': '/rug-nek-problemen',
+      '/rug-nek-problemen2': '/en/back-neck-problems2',
+      '/en/back-neck-problems2': '/rug-nek-problemen2'
     };
     
     return pathMap[path] || path;

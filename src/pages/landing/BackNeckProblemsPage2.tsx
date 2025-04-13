@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { SEO } from '../../components/SEO';
 import { useLocation } from 'react-router-dom';
-import { Star, ChevronRight, CheckCircle, Phone, Calendar, Quote, Activity, Timer, Heart, Shield, Clock, Euro, Loader2, Mail, MessageSquare, MapPin } from 'lucide-react';
+import { Star, ChevronRight, CheckCircle, Phone, Calendar, Quote, Activity, Shield, Heart, Loader2, Mail, MessageSquare, MapPin, Clock, Euro } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { businessInfo } from '../../data/business';
 import { testimonials } from '../../data/testimonials';
 import { googleReviewsData } from '../../data/googleReviews';
 import { submitContactForm, type ContactFormData } from '../../utils/forms';
 
-// Get specific testimonials by ID
-const maimouna = testimonials.find(t => t.id === 'maimouna-1');
-const thijs = testimonials.find(t => t.id === 'thijs-1');
-const kuba = testimonials.find(t => t.id === 'kuba-1');
+// Get specific testimonials for back and neck problems
+const larsTestimonial = testimonials.find(t => t.id === 'lars-1');
+const rosalieTestimonial = testimonials.find(t => t.id === 'rosalie-1');
+const floorTestimonial = testimonials.find(t => t.id === 'floor-1');
 
-export function SportsInjuriesPage2() {
+export function BackNeckProblemsPage2() {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const currentLanguage = i18n.language;
@@ -25,7 +25,7 @@ export function SportsInjuriesPage2() {
     email: '',
     phone: '',
     message: '',
-    form: 'sports-landing',
+    form: 'back-neck-landing',
     submittedAt: '',
     language: isEnglish ? 'en' : 'nl',
     newsletter: true
@@ -39,7 +39,7 @@ export function SportsInjuriesPage2() {
     email: '',
     phone: '',
     message: '',
-    form: 'sports-landing-bottom',
+    form: 'back-neck-landing-bottom',
     submittedAt: '',
     language: isEnglish ? 'en' : 'nl',
     newsletter: true
@@ -75,7 +75,7 @@ export function SportsInjuriesPage2() {
           email: '', 
           phone: '', 
           message: '', 
-          form: isFirstForm ? 'sports-landing' : 'sports-landing-bottom', 
+          form: isFirstForm ? 'back-neck-landing' : 'back-neck-landing-bottom', 
           submittedAt: '',
           language: isEnglish ? 'en' : 'nl',
           newsletter: true
@@ -101,22 +101,116 @@ export function SportsInjuriesPage2() {
     }));
   };
 
+  const content = {
+    meta: {
+      title: isEnglish 
+        ? "Back & Neck Pain Treatment | Natural Approach"
+        : "Rug & Nekpijn Behandeling | Natuurlijke Aanpak",
+      description: isEnglish
+        ? "Suffering from back or neck pain? Our gentle treatment method helps relieve pain and improve mobility without medication. Experience natural relief today."
+        : "Last van rug- of nekpijn? Onze zachte behandelmethode helpt pijn te verlichten en mobiliteit te verbeteren zonder medicatie. Ervaar vandaag nog natuurlijke verlichting."
+    },
+    hero: {
+      title: isEnglish
+        ? "Relief from back and neck problems"
+        : "Verlichting van rug- en nekklachten",
+      description: isEnglish
+        ? "Are you dealing with stress, neck pain, limited movement, headaches, or poor sleep? Our gentle treatment method helps you regain mobility and comfort without medication."
+        : "Heb je last van stress, nekpijn, beperkte beweging, hoofdpijn of slaapproblemen? Onze zachte behandelmethode helpt je om zonder medicatie weer mobiliteit en comfort te krijgen."
+    },
+    problems: {
+      title: isEnglish ? "Common complaints" : "Veelvoorkomende klachten",
+      items: isEnglish ? [
+        "Stress and tension in neck and shoulders",
+        "Limited movement and stiffness",
+        "Recurring headaches and migraines",
+        "Poor sleep quality",
+        "Pain radiating to arms or hands",
+        "Difficulty maintaining posture"
+      ] : [
+        "Stress en spanning in nek en schouders",
+        "Beperkte beweging en stijfheid",
+        "Terugkerende hoofdpijn en migraine",
+        "Slechte slaapkwaliteit",
+        "Uitstralende pijn naar armen of handen",
+        "Moeite met het behouden van houding"
+      ]
+    },
+    benefits: {
+      title: isEnglish ? "After treatment" : "Na de behandeling",
+      items: isEnglish ? [
+        "Improved mobility and flexibility",
+        "Reduced headaches and tension",
+        "Better sleep quality",
+        "Decreased stress levels",
+        "Natural pain relief",
+        "Improved posture"
+      ] : [
+        "Verbeterde mobiliteit en flexibiliteit",
+        "Minder hoofdpijn en spanning",
+        "Betere slaapkwaliteit",
+        "Verminderde stressniveaus",
+        "Natuurlijke pijnverlichting",
+        "Verbeterde houding"
+      ]
+    },
+    approach: {
+      title: isEnglish ? "Our approach" : "Onze aanpak",
+      description: isEnglish
+        ? "We use gentle techniques that focus on restoring proper alignment and movement. Through natural movements and light touches, we help your body release tension and find its natural balance again."
+        : "We gebruiken zachte technieken die zich richten op het herstellen van de juiste uitlijning en beweging. Door middel van natuurlijke bewegingen en lichte aanrakingen helpen we je lichaam om spanning los te laten en zijn natuurlijke balans terug te vinden."
+    },
+    treatment: {
+      title: isEnglish ? "Treatment Process" : "Behandeltraject",
+      first: {
+        title: isEnglish ? "First Treatment (60 min)" : "Eerste behandeling (60 min)",
+        description: isEnglish
+          ? "Alignment of the spine, correction of the sacrum and leg length difference."
+          : "Uitlijnen van de wervelkolom, correctie van het heiligbeen en beenlengte verschil."
+      },
+      second: {
+        title: isEnglish ? "Second Treatment (60 min)" : "Tweede behandeling (60 min)",
+        description: isEnglish
+          ? "Repetition of first treatment plus heat treatment for better blood circulation and anchoring."
+          : "Herhaling eerste behandeling plus warmtebehandeling voor betere doorbloeding en verankering."
+      },
+      followUp: {
+        title: isEnglish ? "Follow-up Process" : "Vervolgtraject",
+        description: isEnglish
+          ? "Follow-up appointments after 1, 3, and 6 months to get your body more and more in line."
+          : "Vervolgafspraken na 1, 3 en 6 maanden om je lichaam steeds meer in lijn te krijgen."
+      },
+      rates: {
+        title: isEnglish ? "Rates" : "Tarieven",
+        description: isEnglish
+          ? "€100,- per appointment"
+          : "€100,- per afspraak"
+      }
+    },
+    cta: {
+      title: isEnglish ? "Start your recovery today" : "Begin vandaag nog met je herstel",
+      description: isEnglish
+        ? "Don't let back and neck problems limit your life any longer. Experience our gentle and effective approach."
+        : "Laat rug- en nekklachten je leven niet langer beperken. Ervaar onze zachte en effectieve aanpak."
+    }
+  };
+
   // This is a standalone page without navigation or footer
   return (
     <>
       <SEO 
-        titleKey="landing.sportsInjuries.meta.title"
-        descriptionKey="landing.sportsInjuries.meta.description"
-        canonicalPath={isEnglish ? "/en/sports-injury-treatment2" : "/sportblessures-behandeling2"}
+        titleKey={content.meta.title}
+        descriptionKey={content.meta.description}
+        canonicalPath={isEnglish ? "/en/back-neck-problems2" : "/rug-nek-problemen2"}
         keywords={[
-          'sportblessure behandeling',
-          'snel herstel sportblessure',
-          'natuurlijke behandeling blessure',
-          'knieblessure behandeling',
-          'enkelblessure herstel',
-          'hamstring blessure',
-          'sportblessures utrecht',
-          'alternatieve blessurebehandeling'
+          'rugpijn behandeling',
+          'nekpijn therapie',
+          'hoofdpijn verminderen',
+          'betere slaap',
+          'natuurlijke behandeling',
+          'zachte technieken',
+          'stress verminderen',
+          'mobiliteit verbeteren'
         ]}
       />
       
@@ -144,42 +238,42 @@ export function SportsInjuriesPage2() {
                 </div>
                 <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
                   <Shield className="w-5 h-5 text-green-500" />
-                  <span className="text-sm font-medium">{t('landing.sportsInjuries.benefits.natural')}</span>
+                  <span className="text-sm font-medium">{isEnglish ? "Natural approach" : "Natuurlijke aanpak"}</span>
                 </div>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                {t('landing.sportsInjuries.hero.title')}
+                {content.hero.title}
               </h1>
               
               <p className="text-xl text-gray-600 max-w-2xl">
-                {t('landing.sportsInjuries.hero.subtitle')}
+                {content.hero.description}
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-8">
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>{t('landing.sportsInjuries.benefits.quick')}</span>
+                  <Shield className="w-5 h-5 text-green-500" />
+                  <span>{isEnglish ? "Gentle treatment" : "Zachte behandeling"}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Activity className="w-5 h-5 text-green-500" />
+                  <span>{isEnglish ? "Natural approach" : "Natuurlijke aanpak"}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Heart className="w-5 h-5 text-green-500" />
+                  <span>{isEnglish ? "Lasting results" : "Blijvend resultaat"}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>{t('landing.sportsInjuries.benefits.natural')}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>{t('landing.sportsInjuries.benefits.prevention')}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>{t('landing.sportsInjuries.benefits.personal')}</span>
+                  <span>{isEnglish ? "No medication" : "Geen medicatie"}</span>
                 </div>
               </div>
             </div>
             
             <div className="w-full lg:w-[40%] aspect-square max-w-lg">
               <img
-                src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=1920&h=1080"
-                alt={t('landing.sportsInjuries.meta.title')}
+                src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop"
+                alt={isEnglish ? "Back and neck pain relief" : "Rug- en nekpijn verlichting"}
                 className="w-full h-full object-cover rounded-xl shadow-xl"
               />
             </div>
@@ -284,8 +378,8 @@ export function SportsInjuriesPage2() {
                       required
                       disabled={isSubmitting}
                       placeholder={isEnglish 
-                        ? "Describe your injury or questions" 
-                        : "Beschrijf je blessure of vragen"}
+                        ? "Describe your back/neck problems or questions" 
+                        : "Beschrijf je rug/nekklachten of vragen"}
                     />
                   </div>
                   <div className="flex items-center gap-2">
@@ -338,220 +432,80 @@ export function SportsInjuriesPage2() {
         </div>
       </section>
 
-      {/* Injuries Section */}
+      {/* Common Complaints Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              {t('landing.sportsInjuries.injuries.title')}
-            </h2>
+            <h2 className="text-3xl font-bold mb-6">{content.problems.title}</h2>
             
-            <div className="grid gap-8">
-              {/* Knee Injuries with Maimouna's testimonial */}
-              <div className="bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-4">
-                  {isEnglish ? "Knee Injuries" : "Knieblessures"}
-                </h3>
-                <p className="mb-4">
-                  {isEnglish 
-                    ? "Knee problems can severely limit you during sports. We help you move pain-free again."
-                    : "Knieklachten kunnen je enorm beperken tijdens het sporten. Wij helpen je weer pijnvrij te bewegen."}
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {(isEnglish 
-                    ? ["Knee overload", "Tendonitis", "Torn meniscus", "Runner's knee"]
-                    : ["Overbelasting van de knie", "Peesontstekingen", "Gescheurde meniscus", "Lopersknie"]
-                  ).map((symptom, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <span>{symptom}</span>
-                    </li>
-                  ))}
-                </ul>
+            <div className="bg-gray-50 p-6 rounded-xl">
+              <ul className="space-y-3">
+                {content.problems.items.map((item, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                {/* Maimouna's testimonial */}
-                {maimouna && (
-                  <div className="bg-white rounded-xl p-6 shadow-sm mt-4">
-                    <div className="flex gap-1 mb-4">
-                      {[...Array(maimouna.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <div className="relative mb-4">
-                      <Quote className="absolute -left-2 -top-2 w-8 h-8 text-blue-100 rotate-180" />
-                      <p className="text-gray-700 pl-6">
-                        {isEnglish ? (maimouna.textEn || maimouna.text) : maimouna.text}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <img 
-                        src={maimouna.image} 
-                        alt={maimouna.name}
-                        className="w-12 h-12 rounded-full object-cover"
-                      />
-                      <div>
-                        <p className="font-semibold">{maimouna.name}</p>
-                        <p className="text-sm text-gray-500">{t('testimonials.satisfiedClient')}</p>
-                      </div>
-                    </div>
+      {/* Treatment Process Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6">{content.treatment.title}</h2>
+            
+            <div className="bg-blue-600 rounded-xl p-6 text-white">
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0">
+                    <Clock className="w-6 h-6" />
                   </div>
-                )}
-              </div>
-
-              {/* Ankle Injuries with Thijs's testimonial */}
-              <div className="bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-4">
-                  {isEnglish ? "Ankle Injuries" : "Enkelblessures"}
-                </h3>
-                <p className="mb-4">
-                  {isEnglish 
-                    ? "A stable ankle is essential for any sport. Our treatment focuses on complete recovery."
-                    : "Een stabiele enkel is essentieel voor elke sport. Onze behandeling richt zich op volledig herstel."}
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {(isEnglish 
-                    ? ["Sprains", "Instability", "Inflammation", "Shin splints"]
-                    : ["Verzwikking", "Instabiliteit", "Ontsteking", "Shinsplints"]
-                  ).map((symptom, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <span>{symptom}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Thijs's testimonial */}
-                {thijs && (
-                  <div className="bg-white rounded-xl p-6 shadow-sm mt-4">
-                    <div className="flex gap-1 mb-4">
-                      {[...Array(thijs.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <div className="relative mb-4">
-                      <Quote className="absolute -left-2 -top-2 w-8 h-8 text-blue-100 rotate-180" />
-                      <p className="text-gray-700 pl-6">
-                        {isEnglish ? (thijs.textEn || thijs.text) : thijs.text}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <img 
-                        src={thijs.image} 
-                        alt={thijs.name}
-                        className="w-12 h-12 rounded-full object-cover"
-                      />
-                      <div>
-                        <p className="font-semibold">{thijs.name}</p>
-                        <p className="text-sm text-gray-500">{t('testimonials.satisfiedClient')}</p>
-                      </div>
-                    </div>
+                  <div>
+                    <h4 className="font-semibold">{content.treatment.first.title}</h4>
+                    <p className="text-blue-100">
+                      {content.treatment.first.description}
+                    </p>
                   </div>
-                )}
-              </div>
+                </div>
 
-              {/* Muscle Injuries with Kuba's testimonial */}
-              <div className="bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-4">
-                  {isEnglish ? "Muscle Injuries" : "Spierblessures"}
-                </h3>
-                <p className="mb-4">
-                  {isEnglish 
-                    ? "Muscle injuries can be persistent. We address not only the pain but also the cause."
-                    : "Spierblessures kunnen hardnekkig zijn. Wij pakken niet alleen de pijn aan, maar ook de oorzaak."}
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {(isEnglish 
-                    ? ["Hamstring injuries", "Muscle tears", "Muscle knots", "Overload"]
-                    : ["Hamstringblessures", "Spierscheuren", "Spierknopen", "Overbelasting"]
-                  ).map((symptom, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <span>{symptom}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Kuba's testimonial */}
-                {kuba && (
-                  <div className="bg-white rounded-xl p-6 shadow-sm mt-4">
-                    <div className="flex gap-1 mb-4">
-                      {[...Array(kuba.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <div className="relative mb-4">
-                      <Quote className="absolute -left-2 -top-2 w-8 h-8 text-blue-100 rotate-180" />
-                      <p className="text-gray-700 pl-6">
-                        {isEnglish ? (kuba.textEn || kuba.text) : kuba.text}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <img 
-                        src={kuba.image} 
-                        alt={kuba.name}
-                        className="w-12 h-12 rounded-full object-cover"
-                      />
-                      <div>
-                        <p className="font-semibold">{kuba.name}</p>
-                        <p className="text-sm text-gray-500">{t('testimonials.satisfiedClient')}</p>
-                      </div>
-                    </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0">
+                    <Heart className="w-6 h-6" />
                   </div>
-                )}
-              </div>
-              
-              {/* Treatment Process Card - Similar to homepage */}
-              <div className="bg-blue-600 rounded-xl p-6 text-white">
-                <h3 className="text-xl font-semibold mb-4">{t('solution.treatment.title')}</h3>
+                  <div>
+                    <h4 className="font-semibold">{content.treatment.second.title}</h4>
+                    <p className="text-blue-100">
+                      {content.treatment.second.description}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0">
+                    <Activity className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">{content.treatment.followUp.title}</h4>
+                    <p className="text-blue-100">
+                      {content.treatment.followUp.description}
+                    </p>
+                  </div>
+                </div>
                 
-                <div className="space-y-4">
-                  <div className="flex gap-4">
+                <div className="pt-4 mt-4 border-t border-blue-500">
+                  <div className="flex gap-4 items-center">
                     <div className="flex-shrink-0">
-                      <Clock className="w-6 h-6" />
+                      <Euro className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="font-semibold">{t('solution.treatment.first.title')}</h4>
+                      <h4 className="font-semibold">{content.treatment.rates.title}</h4>
                       <p className="text-blue-100">
-                        {t('solution.treatment.first.description')}
+                        <span className="font-bold">{content.treatment.rates.description}</span>
                       </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0">
-                      <Heart className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">{t('solution.treatment.second.title')}</h4>
-                      <p className="text-blue-100">
-                        {t('solution.treatment.second.description')}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0">
-                      <Activity className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">{t('solution.treatment.followUp.title')}</h4>
-                      <p className="text-blue-100">
-                        {t('solution.treatment.followUp.description')}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="pt-4 mt-4 border-t border-blue-500">
-                    <div className="flex gap-4 items-center">
-                      <div className="flex-shrink-0">
-                        <Euro className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold">{t('solution.treatment.rates.title')}</h4>
-                        <p className="text-blue-100">
-                          <span className="font-bold">€100,- {isEnglish ? "per appointment" : "per afspraak"}</span>
-                        </p>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -561,14 +515,106 @@ export function SportsInjuriesPage2() {
         </div>
       </section>
 
-      {/* Second Contact Form Section */}
-      <section className="py-12 bg-gray-50">
+      {/* Lars Testimonial Section */}
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="bg-white rounded-xl p-8 shadow-lg">
+            {larsTestimonial && (
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(larsTestimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <div className="relative mb-4">
+                  <Quote className="absolute -left-2 -top-2 w-8 h-8 text-blue-100 rotate-180" />
+                  <p className="text-gray-700 pl-6">
+                    {isEnglish 
+                      ? (larsTestimonial.shortTextEn || larsTestimonial.textEn || larsTestimonial.text) 
+                      : (larsTestimonial.shortText || larsTestimonial.text)}
+                  </p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <img 
+                    src={larsTestimonial.image} 
+                    alt={larsTestimonial.name}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="font-semibold">{larsTestimonial.name}</p>
+                    <p className="text-sm text-gray-500">{t('testimonials.satisfiedClient')}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6">{content.benefits.title}</h2>
+            
+            <div className="bg-blue-600 text-white p-6 rounded-xl">
+              <ul className="space-y-3">
+                {content.benefits.items.map((benefit, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Rosalie Testimonial Section */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            {rosalieTestimonial && (
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(rosalieTestimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <div className="relative mb-4">
+                  <Quote className="absolute -left-2 -top-2 w-8 h-8 text-blue-100 rotate-180" />
+                  <p className="text-gray-700 pl-6">
+                    {isEnglish 
+                      ? (rosalieTestimonial.textEn || rosalieTestimonial.text) 
+                      : rosalieTestimonial.text}
+                  </p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <img 
+                    src={rosalieTestimonial.image} 
+                    alt={rosalieTestimonial.name}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="font-semibold">{rosalieTestimonial.name}</p>
+                    <p className="text-sm text-gray-500">{t('testimonials.satisfiedClient')}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Second Contact Form Section */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-blue-50 rounded-xl p-8 shadow-lg">
               <div className="text-center mb-8">
                 <h2 className="text-2xl font-bold mb-2">
-                  {isEnglish ? "Ready to recover from your sports injury?" : "Klaar om te herstellen van je sportblessure?"}
+                  {isEnglish ? "Ready to get rid of your back and neck pain?" : "Klaar om van je rug- en nekpijn af te komen?"}
                 </h2>
                 <p className="text-gray-600">
                   {isEnglish 
@@ -658,8 +704,8 @@ export function SportsInjuriesPage2() {
                       required
                       disabled={isSubmitting2}
                       placeholder={isEnglish 
-                        ? "Describe your injury or questions" 
-                        : "Beschrijf je blessure of vragen"}
+                        ? "Describe your back/neck problems or questions" 
+                        : "Beschrijf je rug/nekklachten of vragen"}
                     />
                   </div>
                   <div className="flex items-center gap-2">
@@ -726,8 +772,8 @@ export function SportsInjuriesPage2() {
             href={`mailto:${businessInfo.contact.email}`}
             className="flex-1 bg-gray-100 text-gray-900 px-4 py-3 rounded-lg font-semibold flex items-center justify-center gap-2"
           >
-            <Calendar className="w-5 h-5" />
-            <span>{currentLanguage.startsWith('nl') ? 'Afspraak' : 'Schedule'}</span>
+            <Mail className="w-5 h-5" />
+            <span>{currentLanguage.startsWith('nl') ? 'E-mail' : 'Email'}</span>
           </a>
         </div>
       </div>
