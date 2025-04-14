@@ -15,11 +15,9 @@
     
     <!-- Search Engine Verification -->
     <meta name="yandex-verification" content="b53c5c3604310370" />
+    <meta name="google-site-verification" content="your-google-verification-code" />
     
-    <!-- Security Headers - Updated CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.cookiebot.com https://*.cookiebot.eu https://connect.facebook.net https://*.doubleclick.net https://analytics.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.cookiebot.com; img-src 'self' data: https://images.unsplash.com https://lh3.googleusercontent.com https://*.google-analytics.com https://*.googletagmanager.com https://*.facebook.com https://*.doubleclick.net https://analytics.google.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.doubleclick.net https://*.cookiebot.com https://hook.eu2.make.com https://formspree.io https://*.google-analytics.com; frame-src 'self' https://*.googletagmanager.com https://*.cookiebot.com https://*.doubleclick.net; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests;">
-    
-    <!-- Google Consent Mode Configuration -->
+    <!-- Google Consent Mode Configuration - MUST come before Cookiebot and GTM -->
     <script data-cookieconsent="ignore">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -39,8 +37,8 @@
       gtag("set", "url_passthrough", false);
     </script>
     
-    <!-- Cookiebot Cookie Consent -->
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="2935640d-e73c-4b7d-b5e4-a45bd6ea2b5d" data-blockingmode="auto" type="text/javascript" crossorigin="anonymous"></script>
+    <!-- Cookiebot Cookie Consent - MUST come before GTM -->
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="2935640d-e73c-4b7d-b5e4-a45bd6ea2b5d" data-blockingmode="auto" type="text/javascript" async></script>
     
     <!-- Google Tag Manager -->
     <script>
@@ -53,7 +51,7 @@
     </script>
     
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-52P9ESFK7X" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-52P9ESFK7X"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -74,6 +72,18 @@
     fbq('init', '1425072805570049');
     fbq('track', 'PageView');
     </script>
+    
+    <!-- Security Headers - Updated CSP to allow Cookiebot and tracking scripts -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.cookiebot.com https://*.cookiebot.eu https://connect.facebook.net https://*.doubleclick.net https://analytics.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.cookiebot.com; img-src 'self' data: https://images.unsplash.com https://lh3.googleusercontent.com https://*.google-analytics.com https://*.googletagmanager.com https://*.facebook.com https://*.doubleclick.net https://analytics.google.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.doubleclick.net https://*.cookiebot.com https://hook.eu2.make.com https://formspree.io https://*.google-analytics.com; frame-src 'self' https://*.googletagmanager.com https://*.cookiebot.com https://*.doubleclick.net; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests;">
+    
+    <!-- Preconnect to important domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://connect.facebook.net" />
+    <link rel="preconnect" href="https://consent.cookiebot.com" crossorigin />
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->

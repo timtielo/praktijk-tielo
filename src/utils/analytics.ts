@@ -166,3 +166,46 @@ export const verifyGTM = (): boolean => {
     return false;
   }
 };
+
+// Check if Cookiebot is loaded and functioning
+export const isCookiebotLoaded = (): boolean => {
+  return typeof window !== 'undefined' && 
+         typeof window.Cookiebot !== 'undefined';
+};
+
+// Get consent status from Cookiebot
+export const getConsentStatus = (): Record<string, boolean | undefined> => {
+  if (!isCookiebotLoaded()) {
+    return {
+      marketing: undefined,
+      statistics: undefined,
+      preferences: undefined
+    };
+  }
+  
+  return {
+    marketing: window.Cookiebot?.consent.marketing,
+    statistics: window.Cookiebot?.consent.statistics,
+    preferences: window.Cookiebot?.consent.preferences
+  };
+};
+
+// Update Google consent based on Cookiebot consent
+export const updateGoogleConsent = (): void => {
+  if (!isCookiebotLoaded() || !isGTMAvailable()) {
+    return;
+  }
+  
+  const { marketing, statistics, preferences } = getConsentStatus();
+  
+  window.dataLayer.push({
+    event: 'consent_updated',
+    ad_storage: marketing ? 'granted' : 'denied',
+    ad_user_data: marketing ? 'granted' : 'denied',
+    ad_personalization: marketing ? 'granted' : 'denied',
+    analytics_storage: statistics ? 'granted' : 'denied',
+    functionality_storage: preferences ? 'granted' : 'denied',
+    personalization_storage: preferences ? 'granted' : 'denied',
+    security_storage: 'granted'
+  });
+};

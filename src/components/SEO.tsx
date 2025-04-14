@@ -115,7 +115,6 @@ export function SEO({
       <title>{fullTitle}</title>
       <meta name="description" content={pageDescription} />
       <meta name="robots" content="index, follow" />
-      <meta name="googlebot" content="index, follow" />
       
       {/* Keywords */}
       {keywords.length > 0 && (
@@ -129,30 +128,14 @@ export function SEO({
       <meta property="og:url" content={getCanonicalUrl()} />
       <meta property="og:site_name" content={name} />
       <meta property="og:image" content={fullImageUrl} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
       <meta property="og:locale" content={currentLanguage === 'nl' ? 'nl_NL' : 'en_US'} />
       <meta property="og:locale:alternate" content={currentLanguage === 'nl' ? 'en_US' : 'nl_NL'} />
-      
-      {/* Article specific Open Graph tags */}
-      {type === 'article' && author && (
-        <>
-          <meta property="article:author" content={author} />
-          {publishedTime && <meta property="article:published_time" content={publishedTime} />}
-          {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
-          {keywords.map((keyword, index) => (
-            <meta key={index} property="article:tag" content={keyword} />
-          ))}
-        </>
-      )}
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content={fullImageUrl} />
-      <meta name="twitter:site" content="@praktijktielo" />
-      <meta name="twitter:creator" content="@praktijktielo" />
       
       {/* Language alternates */}
       <link rel="alternate" hreflang="nl" href={alternates.nl} />
@@ -168,32 +151,6 @@ export function SEO({
       {/* Structured data */}
       <script type="application/ld+json">{schemaToUse}</script>
       <script type="application/ld+json">{aiSchema}</script>
-
-      {/* Additional SEO meta tags */}
-      <meta name="author" content="Tim Tielkemeijer" />
-      <meta name="geo.region" content="NL-UT" />
-      <meta name="geo.placename" content="Utrecht" />
-      <meta name="geo.position" content="52.090736;5.122700" />
-      <meta name="ICBM" content="52.090736, 5.122700" />
-      
-      {/* Mobile meta tags */}
-      <meta name="format-detection" content="telephone=yes" />
-      <meta name="theme-color" content="#ffffff" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="apple-mobile-web-app-title" content="Praktijk Tielo" />
-      
-      {/* Verification meta tags */}
-      <meta name="google-site-verification" content="your-google-verification-code" />
-      <meta name="yandex-verification" content="b53c5c3604310370" />
-      
-      {/* Preconnect to important domains */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link rel="preconnect" href="https://images.unsplash.com" />
-      <link rel="preconnect" href="https://www.google-analytics.com" />
-      <link rel="preconnect" href="https://www.googletagmanager.com" />
-      <link rel="preconnect" href="https://connect.facebook.net" />
     </Helmet>
   );
 }

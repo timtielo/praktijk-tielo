@@ -10,7 +10,7 @@ import { LoadingScreen } from './components/LoadingScreen';
 import { setupLazyLoading, setupResponsiveImages, preloadCriticalImages } from './utils/lazyLoadImages';
 import { setupGlobalErrorHandling } from './utils/errorHandling';
 import { ErrorFallback } from './components/ErrorFallback';
-import { initAnalytics, verifyGTM } from './utils/analytics';
+import { initAnalytics, verifyGTM, isCookiebotLoaded, updateGoogleConsent } from './utils/analytics';
 
 // Lazy load the App component
 const App = lazy(() => import('./App'));
@@ -35,6 +35,22 @@ function AppInitializer({ children }: { children: React.ReactNode }) {
       setTimeout(() => {
         verifyGTM();
       }, 2000); // Give GTM time to load
+      
+      // Setup Cookiebot event listener to update Google consent
+      if (typeof window !== 'undefined') {
+        window.addEventListener('CookiebotOnAccept', function() {
+          updateGoogleConsent();
+        });
+        
+        window.addEventListener('CookiebotOnDecline', function() {
+          updateGoogleConsent();
+        });
+        
+        // Check if Cookiebot is already loaded
+        if (isCookiebotLoaded()) {
+          updateGoogleConsent();
+        }
+      }
 
       // Initialize app features
       setupLazyLoading();
@@ -90,6 +106,8 @@ function AppInitializer({ children }: { children: React.ReactNode }) {
       
       return () => {
         window.removeEventListener('beforeprint', handleBeforePrint);
+        window.removeEventListener('CookiebotOnAccept', updateGoogleConsent);
+        window.removeEventListener('CookiebotOnDecline', updateGoogleConsent);
       };
     } catch (error) {
       console.error('Error during app initialization:', error);

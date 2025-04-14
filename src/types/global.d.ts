@@ -11,6 +11,9 @@ interface Window {
       preferences: boolean;
     };
     renew: () => void;
+    show: () => void;
+    hide: () => void;
+    withdraw: () => void;
   };
   fbq?: (...args: any[]) => void;
   doNotTrack?: string;
@@ -29,6 +32,9 @@ declare global {
         preferences: boolean;
       };
       renew: () => void;
+      show: () => void;
+      hide: () => void;
+      withdraw: () => void;
     };
     fbq?: (...args: any[]) => void;
     doNotTrack?: string;
