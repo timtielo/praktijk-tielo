@@ -1008,8 +1008,8 @@ export function VertebraTherapyPage() {
                         required
                         disabled={isSubmitting}
                         placeholder={isEnglish 
-                          ? "Describe your symptoms or questions about vertebral therapy" 
-                          : "Beschrijf je klachten of vragen over werveltherapie"}
+                          ? "Describe your symptoms or questions about vertebral therapy, or send your availibility" 
+                          : "Beschrijf je klachten of vragen over werveltherapie, of stuur je beschikbaarheid"}
                       />
                     </div>
                     <div className="flex items-center gap-2">
