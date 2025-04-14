@@ -10,6 +10,7 @@ import { LoadingScreen } from './components/LoadingScreen';
 import { setupLazyLoading, setupResponsiveImages, preloadCriticalImages } from './utils/lazyLoadImages';
 import { setupGlobalErrorHandling } from './utils/errorHandling';
 import { ErrorFallback } from './components/ErrorFallback';
+import { initAnalytics, verifyGTM } from './utils/analytics';
 
 // Lazy load the App component
 const App = lazy(() => import('./App'));
@@ -27,6 +28,14 @@ function AppInitializer({ children }: { children: React.ReactNode }) {
         window.performance.mark('app-init-start');
       }
 
+      // Initialize analytics
+      initAnalytics();
+      
+      // Verify GTM is working properly
+      setTimeout(() => {
+        verifyGTM();
+      }, 2000); // Give GTM time to load
+
       // Initialize app features
       setupLazyLoading();
       setupResponsiveImages();
@@ -40,7 +49,9 @@ function AppInitializer({ children }: { children: React.ReactNode }) {
         'https://consent.cookiebot.com',
         'https://www.googletagmanager.com',
         'https://www.google-analytics.com',
-        'https://hook.eu2.make.com'
+        'https://hook.eu2.make.com',
+        'https://connect.facebook.net',
+        'https://www.facebook.com'
       ];
       
       preconnectDomains.forEach(domain => {

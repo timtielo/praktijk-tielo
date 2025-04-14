@@ -43,35 +43,47 @@ export function Solution() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
                 <div className="flex items-center gap-2">
                   <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-gray-600">{t('solution.forWhom.items.physicalPain')}</span>
+                  <Link to={getLocalizedPath('/rugpijn')} className="text-gray-600 hover:text-blue-600 transition-colors">
+                    {isEnglish ? "Back pain" : "Rugpijn"}
+                  </Link>
                 </div>
                 <div className="flex items-center gap-2">
                   <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-gray-600">{t('solution.forWhom.items.migraines')}</span>
+                  <Link to={getLocalizedPath('/rug-nek-problemen')} className="text-gray-600 hover:text-blue-600 transition-colors">
+                    {isEnglish ? "Neck pain" : "Nekpijn"}
+                  </Link>
                 </div>
                 <div className="flex items-center gap-2">
                   <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-gray-600">{t('solution.forWhom.items.muscleCramps')}</span>
+                  <Link to={getLocalizedPath('/sportblessures-behandeling')} className="text-gray-600 hover:text-blue-600 transition-colors">
+                    {isEnglish ? "Sports injuries" : "Sportblessures"}
+                  </Link>
                 </div>
                 <div className="flex items-center gap-2">
                   <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-gray-600">{t('solution.forWhom.items.depression')}</span>
+                  <Link to={getLocalizedPath('/migraine-behandeling')} className="text-gray-600 hover:text-blue-600 transition-colors">
+                    {isEnglish ? "Migraine" : "Migraine"}
+                  </Link>
                 </div>
                 <div className="flex items-center gap-2">
                   <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-gray-600">{t('solution.forWhom.items.backPain')}</span>
+                  <Link to={getLocalizedPath('/scoliose')} className="text-gray-600 hover:text-blue-600 transition-colors">
+                    {isEnglish ? "Scoliosis" : "Scoliose"}
+                  </Link>
                 </div>
                 <div className="flex items-center gap-2">
                   <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-gray-600">{t('solution.forWhom.items.jointPain')}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-gray-600">{t('solution.forWhom.items.weightIssues')}</span>
+                  <Link to={getLocalizedPath('/slaapproblemen')} className="text-gray-600 hover:text-blue-600 transition-colors">
+                    {isEnglish ? "Sleep problems" : "Slaapproblemen"}
+                  </Link>
                 </div>
                 <div className="flex items-center gap-2">
                   <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
                   <span className="text-gray-600">{t('solution.forWhom.items.fertility')}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-gray-600">{t('solution.forWhom.items.weightIssues')}</span>
                 </div>
               </div>
               

@@ -4,6 +4,7 @@ import { businessInfo } from '../data/business';
 import { submitContactForm, type ContactFormData } from '../utils/forms';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
+import { trackEngagement } from '../utils/analytics';
 
 export function Contact() {
   const { t, i18n } = useTranslation();
@@ -45,6 +46,9 @@ export function Contact() {
       setSubmitStatus(success ? 'success' : 'error');
 
       if (success) {
+        // Track successful form submission
+        trackEngagement('Form Submit', 'Contact Form');
+        
         setFormData({ 
           name: '', 
           email: '', 
@@ -74,6 +78,10 @@ export function Contact() {
     }));
   };
 
+  const handleContactClick = (method: string) => {
+    trackEngagement('Contact Click', method);
+  };
+
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
@@ -84,6 +92,7 @@ export function Contact() {
               <a 
                 href={`tel:${contact.phone}`}
                 className="flex items-center gap-3 hover:text-blue-600 transition-colors p-3 rounded-lg hover:bg-blue-50 group"
+                onClick={() => handleContactClick('Phone')}
               >
                 <div className="bg-blue-50 p-3 rounded-full group-hover:bg-white transition-colors">
                   <Phone className="w-5 h-5 text-blue-600" />
@@ -94,6 +103,7 @@ export function Contact() {
               <a 
                 href={`mailto:${contact.email}`}
                 className="flex items-center gap-3 hover:text-blue-600 transition-colors p-3 rounded-lg hover:bg-blue-50 group"
+                onClick={() => handleContactClick('Email')}
               >
                 <div className="bg-blue-50 p-3 rounded-full group-hover:bg-white transition-colors">
                   <Mail className="w-5 h-5 text-blue-600" />
@@ -106,6 +116,7 @@ export function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 hover:text-blue-600 transition-colors p-3 rounded-lg hover:bg-blue-50 group"
+                onClick={() => handleContactClick('Maps')}
               >
                 <div className="bg-blue-50 p-3 rounded-full group-hover:bg-white transition-colors mt-1">
                   <MapPin className="w-5 h-5 text-blue-600" />
@@ -123,6 +134,7 @@ export function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 hover:text-blue-600 transition-colors p-3 rounded-lg hover:bg-blue-50 group"
+                onClick={() => handleContactClick('WhatsApp')}
               >
                 <div className="bg-blue-50 p-3 rounded-full group-hover:bg-white transition-colors">
                   <MessageSquare className="w-5 h-5 text-blue-600" />

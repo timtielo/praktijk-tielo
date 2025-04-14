@@ -17,6 +17,7 @@ const BlogPostPage = lazy(() => import('./pages/BlogPostPage').then(module => ({
 const SolutionsPage = lazy(() => import('./pages/SolutionsPage').then(module => ({ default: module.SolutionsPage })));
 const BeforeTreatmentPage = lazy(() => import('./pages/BeforeTreatmentPage').then(module => ({ default: module.BeforeTreatmentPage })));
 const AfterTreatmentPage = lazy(() => import('./pages/AfterTreatmentPage').then(module => ({ default: module.AfterTreatmentPage })));
+const VertebraTherapyPage = lazy(() => import('./pages/VertebraTherapyPage').then(module => ({ default: module.VertebraTherapyPage })));
 
 // Lazy load landing pages
 const BackPainPage = lazy(() => import('./pages/landing/BackPainPage').then(module => ({ default: module.BackPainPage })));
@@ -102,6 +103,7 @@ function App() {
             <Route path="/oplossingen" element={<SolutionsPage />} />
             <Route path="/voor-de-behandeling" element={<BeforeTreatmentPage />} />
             <Route path="/na-de-behandeling" element={<AfterTreatmentPage />} />
+            <Route path="/werveltherapie" element={<VertebraTherapyPage />} />
             <Route path="/blessure" element={<KneeInjuryPage />} />
             <Route path="/rugpijn" element={<BackPainTreatmentPage />} />
             <Route path="/bindweefselbehandeling" element={<ConnectiveTissuePage />} />
@@ -135,6 +137,7 @@ function App() {
             <Route path="/en/solutions" element={<SolutionsPage />} />
             <Route path="/en/before-treatment" element={<BeforeTreatmentPage />} />
             <Route path="/en/after-treatment" element={<AfterTreatmentPage />} />
+            <Route path="/en/vertebral-therapy" element={<VertebraTherapyPage />} />
             <Route path="/en/injury" element={<KneeInjuryPage />} />
             <Route path="/en/back-pain" element={<BackPainTreatmentPage />} />
             <Route path="/en/connective-tissue-treatment" element={<ConnectiveTissuePage />} />

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import { generateLocalBusinessSchema, generateAIAssistantSchema } from '../utils/seo';
 import { businessInfo } from '../data/business';
+import { trackPageView } from '../utils/analytics';
 
 interface SEOProps {
   titleKey?: string;
@@ -46,6 +47,16 @@ export function SEO({
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const location = useLocation();
+  
+  // Track page view when SEO component mounts
+  React.useEffect(() => {
+    const pageTitle = directTitle || (titleKey ? t(titleKey) : name);
+    trackPageView({
+      path: location.pathname,
+      title: pageTitle,
+      language: currentLanguage
+    });
+  }, [location.pathname, directTitle, titleKey, name, currentLanguage]);
   
   // Get the base URL
   const baseUrl = 'https://www.praktijk-tielo.nl';
@@ -182,6 +193,7 @@ export function SEO({
       <link rel="preconnect" href="https://images.unsplash.com" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
       <link rel="preconnect" href="https://www.googletagmanager.com" />
+      <link rel="preconnect" href="https://connect.facebook.net" />
     </Helmet>
   );
 }

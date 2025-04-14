@@ -1,7 +1,7 @@
 import React from 'react';
 import { SEO } from '../components/SEO';
 import { Link, useLocation } from 'react-router-dom';
-import { Clock, MapPin, Car, ChevronRight, Calendar, Phone, Shirt, Activity } from 'lucide-react';
+import { Clock, MapPin, Car, ChevronRight, Calendar, Phone, Shirt, Activity, Info } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { businessInfo } from '../data/business';
 import { Breadcrumbs } from '../components/Breadcrumbs';
@@ -91,6 +91,11 @@ export function BeforeTreatmentPage() {
       description: isEnglish
         ? "Schedule your appointment now or contact us for more information."
         : "Plan direct je afspraak of neem contact met ons op voor meer informatie."
+    },
+    readMore: {
+      title: isEnglish
+        ? "Read more about the treatment"
+        : "Lees meer over de behandeling"
     }
   };
 
@@ -244,6 +249,17 @@ export function BeforeTreatmentPage() {
                     </div>
                   </div>
                 </div>
+              </div>
+              
+              {/* Read More About Treatment Button */}
+              <div className="mt-8 text-center">
+                <Link
+                  to={getLocalizedPath('/over-ons')}
+                  className="inline-flex items-center gap-2 bg-blue-100 hover:bg-blue-200 text-blue-700 px-6 py-3 rounded-lg font-semibold transition-colors"
+                >
+                  <Info className="w-5 h-5" />
+                  {content.readMore.title}
+                </Link>
               </div>
             </section>
 

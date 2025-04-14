@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, Activity, Brain, Heart, ArrowRight, Moon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Breadcrumbs } from '../components/Breadcrumbs';
+import { Spine } from '../components/ui/icons';
 
 export function SolutionsPage() {
   const { t } = useTranslation();
@@ -32,6 +33,15 @@ export function SolutionsPage() {
         : "Uitgebreide behandeling voor rug- en nekklachten. Zachte aanpak zonder kraken.",
       icon: Activity,
       href: isEnglish ? "/en/back-neck-problems" : "/rug-nek-problemen",
+      category: "physical"
+    },
+    {
+      title: isEnglish ? "Vertebral Therapy" : "Werveltherapie",
+      description: isEnglish
+        ? "Learn how specific vertebrae relate to physical and psychological issues. Based on the Dorn Method."
+        : "Leer hoe specifieke wervels gerelateerd zijn aan fysieke en psychologische klachten. Gebaseerd op de Dorn Methode.",
+      icon: Spine,
+      href: isEnglish ? "/en/vertebral-therapy" : "/werveltherapie",
       category: "physical"
     },
     {

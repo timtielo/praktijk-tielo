@@ -69,6 +69,14 @@ export async function submitContactForm(formData: ContactFormData, retryCount = 
       clearTimeout(timeoutId);
 
       if (response.ok) {
+        // Track form submission in GTM
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'form_submission',
+            form_name: formData.form,
+            form_success: true
+          });
+        }
         return true;
       }
 
@@ -93,6 +101,16 @@ export async function submitContactForm(formData: ContactFormData, retryCount = 
 
         if (fallbackResponse.ok) {
           console.warn('Used fallback form service due to primary service failure');
+          
+          // Track fallback form submission in GTM
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              event: 'form_submission',
+              form_name: `${formData.form}_fallback`,
+              form_success: true
+            });
+          }
+          
           return true;
         }
 
@@ -120,6 +138,16 @@ export async function submitContactForm(formData: ContactFormData, retryCount = 
       console.error('Form submission error:', error.message);
     } else {
       console.error('Form submission error:', error);
+    }
+    
+    // Track form submission failure in GTM
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'form_submission',
+        form_name: formData.form,
+        form_success: false,
+        form_error: error instanceof Error ? error.message : 'Unknown error'
+      });
     }
     
     return false;

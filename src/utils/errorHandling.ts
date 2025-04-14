@@ -1,4 +1,6 @@
 // Central error handling utility
+import { trackError } from './analytics';
+
 export class AppError extends Error {
   code?: string;
   details?: any;
@@ -43,6 +45,9 @@ export function setupGlobalErrorHandling() {
       url: window.location.href
     });
 
+    // Track error in analytics
+    trackError('JavaScript Error', typeof message === 'string' ? message : 'Unknown error');
+
     return true; // Prevent default handling
   };
 
@@ -63,11 +68,17 @@ export function setupGlobalErrorHandling() {
         stack: error.stack,
         name: error.name
       });
+      
+      // Track error in analytics
+      trackError('Promise Rejection', error.message);
     } else {
       console.error('Unhandled promise rejection:', {
         ...errorInfo,
         error
       });
+      
+      // Track error in analytics
+      trackError('Promise Rejection', 'Unknown error');
     }
 
     event.preventDefault();
@@ -90,6 +101,9 @@ export function setupGlobalErrorHandling() {
       url: window.location.href,
       userAgent: navigator.userAgent
     });
+    
+    // Track error in analytics
+    trackError('Runtime Error', event.message);
 
     event.preventDefault();
   });
@@ -115,6 +129,9 @@ export function setupGlobalErrorHandling() {
             userAgent: navigator.userAgent,
             error: error.message
           });
+          
+          // Track error in analytics
+          trackError('Network Error', `Failed to fetch: ${typeof args[0] === 'string' ? args[0] : 'unknown URL'}`);
         }
       }
       throw error;
