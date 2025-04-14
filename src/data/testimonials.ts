@@ -186,6 +186,15 @@ export const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a/ACg8ocIfhqgTpYXU4hdO4WWcZDMxpWSWiu8AjR0znufe5XIXpYrdFw=s36-c-rp-mo-br100",
     date: "2025-04-10"
   },
+    {
+    id: "joost-1",
+    name: "Joost",
+    text: "2 prettige behandelingen gehad bij Tim. Allereerst mijn complimenten naar Tim, over zijn gastvrijheid, vriendelijkheid en vooral kennis. Hij heeft een rustige stem en legt alles fijn uit. Ook leuk om te horen wat zijn behandelingen allemaal wel niet hebben gedaan bij anderen! Ik heb de behandelingen duidelijk en goed ervaren. Ik merkte erg verschil tussen voor en na de behandeling. Een stuk meer flexibel en leniger. Ook kwam ik door de behandeling er achter dat mijn heupen niet recht staan. Oepsie hahaha. Nu weet ik wel waar mijn pijn tijdens het hardlopen van komt en hoe ik dit kan gaan aanpakken. Ook merk ik al een groot verschil na de behandelingen van Tim. Een grote aanrader!",
+    textEn: "I had two pleasant treatments with Tim. First of all, my compliments to Tim for his hospitality, friendliness, and especially his expertise. He has a calm voice and explains everything clearly and thoroughly. It was also interesting to hear what his treatments have done for others! I experienced the treatments as clear and effective. I noticed a big difference before and after the sessions—feeling much more flexible and limber. During the treatment, I also discovered that my hips are misaligned. Oops, haha. At least now I know where the pain during running is coming from and how to start addressing it. I already notice a significant improvement after Tim's treatments. Highly recommended!",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocLtfvMnev1UFG5_HNLJn-yk8jrSU7L8kBTT0j7LwfGap--Tlw=s36-c-rp-mo-br100",
+    date: "2025-14-10"
+  },
   {
     id: "floor-1",
     name: "Floor",
