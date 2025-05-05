@@ -38,7 +38,7 @@ export function SleepProblemsPage() {
   const content = {
     meta: {
       title: isEnglish 
-        ? "Natural Sleep Problems Treatment - Praktijk Tielo Utrecht"
+        ? "Natural Sleep Problems Treatment - Praktijk Tielo Utrecht",
         : "Natuurlijk van je slaapproblemen af – Praktijk Tielo Utrecht",
       description: isEnglish
         ? "Having trouble sleeping or waking up often at night? Praktijk Tielo offers natural treatment for sleep problems without medication or manipulation. Restore your balance and rest."
@@ -155,8 +155,8 @@ export function SleepProblemsPage() {
   return (
     <>
       <SEO 
-        titleKey={content.meta.title}
-        descriptionKey={content.meta.description}
+        titleKey="landing.sleepProblems.title"
+        descriptionKey="landing.sleepProblems.description"
         canonicalPath={isEnglish ? "/en/sleep-problems" : "/slaapproblemen"}
         keywords={[
           'slaapproblemen behandeling',

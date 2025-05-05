@@ -51,6 +51,34 @@
     "backNeckProblems": {
       "title": "Back and Neck Problems Treatment | Praktijk Tielo",
       "description": "Suffering from back or neck problems? ✓ Gentle treatment without cracking ✓ Natural approach ✓ Lasting results ✓ Personal exercises ✓ Also open evenings and weekends"
+    },
+    "sleepProblems": {
+      "title": "Natural Sleep Problems Treatment | Praktijk Tielo",
+      "description": "Having trouble sleeping? ✓ Natural treatment without medication ✓ Address the root cause ✓ Improve sleep quality ✓ Personal approach ✓ Also open evenings and weekends"
+    },
+    "migraine": {
+      "title": "Migraine Treatment Without Medication | Praktijk Tielo",
+      "description": "Suffering from migraines? ✓ Natural treatment without medication ✓ Address the root cause ✓ Lasting relief ✓ Personal approach ✓ Also open evenings and weekends"
+    },
+    "depression": {
+      "title": "Natural Depression Treatment | Praktijk Tielo",
+      "description": "Feeling down or depressed? ✓ Natural body-oriented approach ✓ No medication ✓ Address physical causes ✓ Personal guidance ✓ Also open evenings and weekends"
+    },
+    "scoliosis": {
+      "title": "Scoliosis Treatment Without Cracking | Praktijk Tielo",
+      "description": "Living with scoliosis? ✓ Gentle treatment without cracking ✓ Improve posture ✓ Reduce pain ✓ Personal approach ✓ Also open evenings and weekends"
+    },
+    "connectiveTissue": {
+      "title": "Connective Tissue Treatment | Praktijk Tielo",
+      "description": "Connective tissue problems? ✓ Gentle treatment without cracking ✓ Improve mobility ✓ Reduce pain ✓ Personal approach ✓ Also open evenings and weekends"
+    },
+    "noBackCracking": {
+      "title": "Back Pain Relief Without Cracking | Praktijk Tielo",
+      "description": "Looking for back pain relief without cracking? ✓ Gentle treatment ✓ Natural approach ✓ Lasting results ✓ Personal exercises ✓ Also open evenings and weekends"
+    },
+    "kneeInjury": {
+      "title": "Knee Injury Treatment | Praktijk Tielo",
+      "description": "Suffering from a knee injury? ✓ Fast recovery without medication ✓ Natural treatment method ✓ Prevent recurring injuries ✓ Personal approach ✓ Also open evenings and weekends"
     }
   }
 }

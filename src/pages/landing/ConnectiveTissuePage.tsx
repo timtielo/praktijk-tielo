@@ -38,7 +38,7 @@ export function ConnectiveTissuePage() {
   const content = {
     meta: {
       title: isEnglish 
-        ? "Connective Tissue Treatment Utrecht | Praktijk Tielo"
+        ? "Connective Tissue Treatment Utrecht | Praktijk Tielo",
         : "Bindweefselbehandeling Utrecht | Praktijk Tielo",
       description: isEnglish
         ? "Looking for effective treatment of connective tissue? At Praktijk Tielo in Utrecht, we offer gentle treatment without cracking or massage. Experience our natural approach!"
@@ -106,8 +106,8 @@ export function ConnectiveTissuePage() {
   return (
     <>
       <SEO 
-        titleKey={content.meta.title}
-        descriptionKey={content.meta.description}
+        titleKey="landing.connectiveTissue.title"
+        descriptionKey="landing.connectiveTissue.description"
         canonicalPath={isEnglish ? "/en/connective-tissue-treatment" : "/bindweefselbehandeling"}
         keywords={[
           'bindweefselbehandeling',

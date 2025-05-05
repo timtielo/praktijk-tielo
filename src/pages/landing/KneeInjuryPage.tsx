@@ -39,7 +39,7 @@ export function KneeInjuryPage() {
   const content = {
     meta: {
       title: isEnglish 
-        ? "Knee Injury Treatment Utrecht | Praktijk Tielo"
+        ? "Knee Injury Treatment Utrecht | Praktijk Tielo",
         : "Knieblessure behandelen Utrecht | Praktijk Tielo",
       description: isEnglish
         ? "Looking for effective treatment for your knee injury or sports injury in Utrecht? Experience our natural approach for quick recovery. Schedule your appointment now!"
@@ -121,8 +121,8 @@ export function KneeInjuryPage() {
   return (
     <>
       <SEO 
-        titleKey={content.meta.title}
-        descriptionKey={content.meta.description}
+        titleKey="landing.kneeInjury.title"
+        descriptionKey="landing.kneeInjury.description"
         canonicalPath={isEnglish ? "/en/injury" : "/blessure"}
         keywords={[
           'knieblessure behandeling',

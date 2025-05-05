@@ -38,7 +38,7 @@ export function DepressionPage() {
   const content = {
     meta: {
       title: isEnglish 
-        ? "Natural Depression Treatment - Praktijk Tielo Utrecht"
+        ? "Natural Depression Treatment - Praktijk Tielo Utrecht",
         : "Natuurlijk herstel bij depressieve klachten – Praktijk Tielo Utrecht",
       description: isEnglish
         ? "Feeling down, tired, or mentally exhausted? Praktijk Tielo helps restore your body and mind through a gentle, physical approach without medication or therapy."
@@ -146,8 +146,8 @@ export function DepressionPage() {
   return (
     <>
       <SEO 
-        titleKey={content.meta.title}
-        descriptionKey={content.meta.description}
+        titleKey="landing.depression.title"
+        descriptionKey="landing.depression.description"
         canonicalPath={isEnglish ? "/en/depression-treatment" : "/depressie-behandeling"}
         image={content.meta.image}
         keywords={[

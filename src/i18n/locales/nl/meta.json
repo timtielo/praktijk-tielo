@@ -30,19 +30,19 @@
   "landing": {
     "backPain": {
       "title": "Rugpijn en Lage Rugklachten Behandeling | Praktijk Tielo",
-      "description": "Last van rugpijn of lage rugklachten? ✓ Natuurlijke behandelmethode ✓ Snel resultaat ✓ Persoonlijke aanpak ✓ Ook 's avonds en in het weekend"
+      "description": "Last van rugpijn of lage rugklachten? ✓ Natuurlijke behandelmethode ✓ Snel resultaat ✓ Persoonlijke aanpak ✓ Ook 's avonds en in het weekend ✓ Zachte behandeling zonder kraken"
     },
     "chiropractor": {
       "title": "Zachte Wervelkolom Behandeling | Alternatief voor Chiropractor",
-      "description": "Op zoek naar een alternatief voor de chiropractor? ✓ Zachte behandeling zonder kraken ✓ Blijvend resultaat ✓ Focus op fascie ✓ Natuurlijke aanpak"
+      "description": "Op zoek naar een alternatief voor de chiropractor? ✓ Zachte behandeling zonder kraken ✓ Blijvend resultaat ✓ Focus op fascie ✓ Natuurlijke aanpak ✓ Persoonlijke oefeningen"
     },
     "sportsInjuries": {
       "title": "Sportblessures Behandeling | Snel en Effectief Herstel",
-      "description": "Blessure? ✓ Snel herstel zonder medicatie ✓ Natuurlijke behandelmethode ✓ Voorkom terugkerende blessures ✓ Ook 's avonds en in het weekend"
+      "description": "Blessure? ✓ Snel herstel zonder medicatie ✓ Natuurlijke behandelmethode ✓ Voorkom terugkerende blessures ✓ Persoonlijke aanpak ✓ Ook 's avonds en in het weekend"
     },
     "burnout": {
       "title": "Burn-out en Stress Behandeling | Natuurlijke Aanpak",
-      "description": "Last van burn-out of stress? ✓ Natuurlijke behandelmethode ✓ Lichaamsuitlijning en ontspanning ✓ Snel resultaat ✓ Ook 's avonds en in het weekend"
+      "description": "Last van burn-out of stress? ✓ Natuurlijke behandelmethode ✓ Lichaamsuitlijning en ontspanning ✓ Snel resultaat ✓ Persoonlijke oefeningen ✓ Ook 's avonds en in het weekend"
     },
     "bloodType": {
       "title": "Bloedgroepdieet & Lifestyle | Persoonlijk Voedingsadvies",
@@ -51,6 +51,34 @@
     "backNeckProblems": {
       "title": "Rug- en Nekklachten Behandeling | Praktijk Tielo",
       "description": "Last van rug- of nekklachten? ✓ Zachte behandeling zonder kraken ✓ Natuurlijke aanpak ✓ Blijvend resultaat ✓ Persoonlijke oefeningen ✓ Ook 's avonds en in het weekend"
+    },
+    "sleepProblems": {
+      "title": "Natuurlijke Slaapproblemen Behandeling | Praktijk Tielo",
+      "description": "Moeite met slapen? ✓ Natuurlijke behandeling zonder medicatie ✓ Aanpak van de onderliggende oorzaak ✓ Verbeter slaapkwaliteit ✓ Persoonlijke aanpak ✓ Ook 's avonds en in het weekend"
+    },
+    "migraine": {
+      "title": "Migraine Behandeling Zonder Medicatie | Praktijk Tielo",
+      "description": "Last van migraine? ✓ Natuurlijke behandeling zonder medicatie ✓ Aanpak van de onderliggende oorzaak ✓ Blijvende verlichting ✓ Persoonlijke aanpak ✓ Ook 's avonds en in het weekend"
+    },
+    "depression": {
+      "title": "Natuurlijke Depressie Behandeling | Praktijk Tielo",
+      "description": "Voel je je somber of depressief? ✓ Natuurlijke lichaamsgerichte aanpak ✓ Geen medicatie ✓ Aanpak van fysieke oorzaken ✓ Persoonlijke begeleiding ✓ Ook 's avonds en in het weekend"
+    },
+    "scoliosis": {
+      "title": "Scoliose Behandeling Zonder Kraken | Praktijk Tielo",
+      "description": "Leven met scoliose? ✓ Zachte behandeling zonder kraken ✓ Verbeter houding ✓ Verminder pijn ✓ Persoonlijke aanpak ✓ Ook 's avonds en in het weekend"
+    },
+    "connectiveTissue": {
+      "title": "Bindweefselbehandeling | Praktijk Tielo",
+      "description": "Bindweefsel problemen? ✓ Zachte behandeling zonder kraken ✓ Verbeter mobiliteit ✓ Verminder pijn ✓ Persoonlijke aanpak ✓ Ook 's avonds en in het weekend"
+    },
+    "noBackCracking": {
+      "title": "Rugpijn Verlichting Zonder Kraken | Praktijk Tielo",
+      "description": "Op zoek naar rugpijn verlichting zonder kraken? ✓ Zachte behandeling ✓ Natuurlijke aanpak ✓ Blijvend resultaat ✓ Persoonlijke oefeningen ✓ Ook 's avonds en in het weekend"
+    },
+    "kneeInjury": {
+      "title": "Knieblessure Behandeling | Praktijk Tielo",
+      "description": "Last van een knieblessure? ✓ Snel herstel zonder medicatie ✓ Natuurlijke behandelmethode ✓ Voorkom terugkerende blessures ✓ Persoonlijke aanpak ✓ Ook 's avonds en in het weekend"
     }
   }
 }

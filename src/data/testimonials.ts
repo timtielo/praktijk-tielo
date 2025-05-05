@@ -64,44 +64,6 @@ export const testimonials: Testimonial[] = [
     text: "Was echt top, ik heb geen last meer van mijn knie en enkel door Tim. Alle gewrichten zitten weer los en daardoor kost bewegen bijna geen energie meer. Ik kan iedereen aanraden om naar Tim te gaan.",
     textEn: "It was really great, I no longer have any problems with my knee and ankle thanks to Tim. All joints are loose again and therefore moving takes almost no energy. I can recommend everyone to go to Tim.",
     rating: 5,
-    image: "https://lh3.googleusercontent.com/a/ACg8ocJGrhTmDSdGYh0dEAkNS7tGE7JEVFL5vYy0VxQiaMz0debENw=w60-h60-p-rp-mo-br100",
-    date: "2025-03-01"
-  },
-  {
-    id: "nane-1",
-    name: "Nané",
-    text: "De behandelingen zijn zeer ontspannend en comfortabel. Tim is zeer professioneel en kent de techniek goed. Absoluut aan te raden.",
-    textEn: "The treatment sessions are very relaxing and comfortable. Tim is very professional and knows well the technique. Totally recommended.",
-    rating: 5,
-    image: "https://lh3.googleusercontent.com/a-/ALV-UjVEtWoY9XrSHXj2ko4oiWilfHMdcKu1m5FMj8qOt34FCYEtox6-=w60-h60-p-rp-mo-br100",
-    date: "2025-03-10"
-  },
-  {
-    id: "eline-1",
-    name: "Eline",
-    text: "Tim is erg gespecialiseerd en weet wat hij doet. Ik had voor de behandelingen geen heftige blessures. Maar Tim heeft toch voor ontspanning en flexibiliteit in mijn lichaam gezorgd. Aanrader!",
-    textEn: "Tim is very specialized and knows what he's doing. I didn't have any severe injuries before the treatments. But Tim still provided relaxation and flexibility in my body. Highly recommended!",
-    rating: 5,
-    image: "https://lh3.googleusercontent.com/a-/ALV-UjWP_nQNOfuBXiP__GCQUapVUvtVLjjSXdMWtSeodI6BdjRjCXct=s36-c-rp-mo-br100",
-    date: "2025-03-17"
-  },
-  {
-    id: "lars-1",
-    name: "Lars",
-    text: "Vorige week heb ik mijn eerste twee behandelingen gehad bij Tim en deze bevielen mij erg goed. Tim stelt tijdens de behandeling regelmatig vragen over wat je voelt en legt steeds duidelijk uit wat hij aan het doen is. Ook geeft hij heldere instructies over wat je moet doen en begeleidt hij je daar goed bij.\n\nVoor de behandelingen had ik last van stijve gewrichten, vooral tijdens het sporten merkte ik dit goed. Na de eerste behandeling voelde ik al duidelijk verschil en na de tweede behandeling waren mijn gewrichten echt een stuk soepeler. Dit merkte ik meteen tijdens het sporten, alles voelde veel losser en lichter aan.\n\nWat ik heel bijzonder vond, is dat Tim ontdekte dat ik twee scheve wervels had. Deze bleken precies overeen te komen met andere lichamelijke klachten die ik had. Het was echt bijzonder om te merken dat Tim dit direct kon zien, zonder dat ik hem hier vooraf iets over had verteld. Na de behandelingen legde Tim goed uit hoe ik het herstelproces het beste kon ondersteunen. Twee dagen later checkte hij zelfs nog even hoe het ging, wat ik erg prettig vond.\nIk ben zeer tevreden over hoe Tim de behandelingen uitvoert en kijk nu al uit naar de volgende afspraak!",
-    textEn: "Last week I had my first two treatments with Tim and I was very pleased with them. During the treatment, Tim regularly asks questions about what you feel and clearly explains what he is doing. He also gives clear instructions about what you need to do and guides you well.\n\nBefore the treatments, I had stiff joints, especially noticeable during sports. After the first treatment, I already felt a clear difference, and after the second treatment, my joints were much more flexible. I noticed this immediately during sports, everything felt much looser and lighter.\n\nWhat I found very special was that Tim discovered I had two crooked vertebrae. These turned out to exactly match other physical complaints I had. It was really remarkable that Tim could see this immediately, without me telling him anything about it beforehand. After the treatments, Tim explained well how I could best support the recovery process. Two days later, he even checked how I was doing, which I really appreciated.\nI am very satisfied with how Tim performs the treatments and am already looking forward to the next appointment!",
-    shortText: "Vorige week mijn eerste twee behandelingen gehad bij Tim. Voor de behandelingen had ik last van stijve gewrichten. Na de eerste behandeling voelde ik al duidelijk verschil en na de tweede behandeling waren mijn gewrichten echt een stuk soepeler. Tim's aanpak is professioneel en persoonlijk!",
-    shortTextEn: "Had my first two treatments with Tim last week. Before treatments, I had stiff joints. After the first treatment, I felt a clear difference, and after the second treatment, my joints were much more flexible. Tim's approach is professional and personal!",
-    rating: 5,
-    image: "https://lh3.googleusercontent.com/a-/ALV-UjXJp2vlCJ63V4VbSNb1PUk_G9k7NyxVbFXchrx4k_n-pvUlqIELSQ=s36-c-rp-mo-br100",
-    date: "2025-03-17"
-  },
-  {
-    id: "gijs-1",
-    name: "Gijs",
-    text: "Fijne behandeling gehad bij Tim! Ik kijk nu al uit naar de volgende. Tim is erg relaxed en legt uit wat hij doet en helpt met specifieke problemen.",
-    textEn: "Had a great treatment with Tim! Already looking forward to the next one. Tim is very relaxed and explains what he does and helps with specific problems.",
-    rating: 5,
     image: "https://lh3.googleusercontent.com/a/ACg8ocJBI1SM-tqFuGiSts4loI4u0LwVTbaeRE5zfcomclAuM5b5AQ=s36-c-rp-mo-br100",
     date: "2025-03-20"
   },
@@ -203,6 +165,60 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     image: "https://lh3.googleusercontent.com/a/ACg8ocLqkbWKqB3qllNBcqpG_CG013qhyBhAykvjzA5pqEx7sKEdLw=s36-c-rp-mo-br100",
     date: "2025-03-11"
+  },
+  {
+    id: "mason-1",
+    name: "Mason",
+    text: "De sessies bij Tim waren heel prettig. Hij neemt echt de tijd om te luisteren en voelt goed aan wat je nodig hebt. Ik voelde me na afloop enorm ontspannen!",
+    textEn: "The sessions with Tim were very pleasant. He really takes the time to listen and has a good sense of what you need. I felt extremely relaxed afterwards!",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocJ8cfxWSnTztU_g63_t8S6i0qyKS77-FlYCKntvnQ4sHWNFHw=s36-c-rp-mo-br100",
+    date: "2025-04-17"
+  },
+  {
+    id: "jorn-1",
+    name: "Jorn",
+    text: "Ik heb zonder specifieke klachten twee behandelingen bij Tim gehad. Ik was vooraf niet bekend met de methode, maar toch heeft het mij geholpen! Tim ontdekte dat er een aantal ruggenwervels van mij scheef stonden. Dit heeft hij met zijn behandeling weer recht kunnen zetten. Verder zijn mijn schouderbladen in een natuurlijkere positie komen te staan. Al met al een aanrader, ook als je niet-specifieke klachten hebt!",
+    textEn: "I had two treatments with Tim without specific complaints. I wasn't familiar with the method beforehand, but it still helped me! Tim discovered that some of my vertebrae were crooked. He was able to correct this with his treatment. Furthermore, my shoulder blades have come into a more natural position. All in all, highly recommended, even if you have non-specific complaints!",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocLSeyd8rxP4jBFFqA8X6wvqKcfPgKdYEIp_8OK2MPKmDT2msx8=s36-c-rp-mo-br100",
+    date: "2025-04-17"
+  },
+  {
+    id: "joep-1",
+    name: "Joep",
+    text: "Mijn behandeling bij Tim heb ik zeer goed ervaren. Tim is vriendelijk en er hangt een fijne sfeer. Na de behandeling kon ik weer een volledige rotatie maken! Daarnaast voelde mijn gewrichten lichter en soepeler.",
+    textEn: "I had a very good experience with my treatment at Tim's. Tim is friendly and there's a pleasant atmosphere. After the treatment, I could make a full rotation again! Additionally, my joints felt lighter and more flexible.",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocIA0E8wWKFSg7GkT4ahDXrcClsGJL2R0FOCB-4VCXg9xZ6CPQ=s36-c-rp-mo-br100",
+    date: "2025-04-20"
+  },
+  {
+    id: "delphin-1",
+    name: "Delphin",
+    text: "Voor de behandeling veel last van mijn rug, maar tijdens de behandelingen werd dat steeds minder. Tim heeft verstand van zaken, en maakt de behandeling op maat naar je lichaam. Na de behandeling nog nooit zo ontspannen geweest, was erg fijn. Tijdens de behandeling leuke gesprekken gehad, en er hing een goede sfeer in de praktijk. Zeker aan te raden!",
+    textEn: "Before the treatment, I had a lot of back pain, but during the treatments it gradually decreased. Tim is knowledgeable and customizes the treatment to your body. After the treatment, I've never been so relaxed, it was very pleasant. Had nice conversations during the treatment, and there was a good atmosphere in the practice. Definitely recommended!",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocKJP_yTtirO1RWcfEcMxOHGsY6BpRnYUU1ijtbPCuNQsILhqsE=s36-c-rp-mo-br100",
+    date: "2025-04-23"
+  },
+  {
+    id: "coen-1",
+    name: "Coen",
+    text: "Enorm fijne ervaring! In tegenstelling tot veel andere behandelingen die ik wel eens gehad heb merkte ik echt dat er iets gebeurd is. Verder was Tim zeer vriendelijk en open. We hebben dan ook hard gelachen! Zeker aanrader ;)",
+    textEn: "Extremely pleasant experience! Unlike many other treatments I've had, I really noticed that something happened. Furthermore, Tim was very friendly and open. We also laughed a lot! Definitely recommended ;)",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjUk5Jm4uNM0DhfIDcrQNsw76TKfokmowDEt6RxuIE92LcS0CACS=s36-c-rp-mo-br100",
+    date: "2025-04-30"
+  },
+  {
+    id: "ilse-1",
+    name: "Ilse",
+    text: "Hele fijne behandelingen! Heeft me erg geholpen en ik vond het heel interessant om te horen wat hij allemaal kon vinden bij mijn lichaam. Ik zou het zeker aanraden!",
+    textEn: "Very pleasant treatments! It helped me a lot and I found it very interesting to hear what he could find in my body. I would definitely recommend it!",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocJCZSfTcDyVzWiHGfqVy25oSQ8bitUZYxdF2WU5-kJYCDSkQQ=s36-c-rp-mo-br100",
+    date: "2025-05-05"
   }
 ];
 

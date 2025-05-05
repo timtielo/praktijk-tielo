@@ -35,7 +35,7 @@ export function ScoliosisPage() {
   const content = {
     meta: {
       title: isEnglish 
-        ? "Scoliosis Treatment Without Cracking - Praktijk Tielo Utrecht"
+        ? "Scoliosis Treatment Without Cracking - Praktijk Tielo Utrecht",
         : "Scoliose behandelen zonder kraken – Praktijk Tielo Utrecht",
       description: isEnglish
         ? "Suffering from scoliosis or digestive issues due to a curved spine? Praktijk Tielo offers gentle treatment without cracking or massage, focused on sustainable balance and recovery."
@@ -148,8 +148,8 @@ export function ScoliosisPage() {
   return (
     <>
       <SEO 
-        titleKey={content.meta.title}
-        descriptionKey={content.meta.description}
+        titleKey="landing.scoliosis.title"
+        descriptionKey="landing.scoliosis.description"
         canonicalPath={isEnglish ? "/en/scoliosis" : "/scoliose"}
         keywords={[
           'scoliose behandeling',

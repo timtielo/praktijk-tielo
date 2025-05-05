@@ -72,7 +72,10 @@ export function ReviewsPage() {
     'posture',
     'sports',
     'flexibility',
-    'scoliosis'
+    'scoliosis',
+    'joint',
+    'difference',
+    'natural'
   ] : [
     'rug',
     'knie',
@@ -80,7 +83,10 @@ export function ReviewsPage() {
     'houding',
     'sport',
     'flexibiliteit',
-    'scoliose'
+    'scoliose',
+    'gewricht',
+    'verschil',
+    'natuurlijk'
   ];
 
   // Clear search function
