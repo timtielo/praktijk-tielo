@@ -28,7 +28,7 @@ export function NoBackCrackingPage() {
   const content = {
     meta: {
       title: isEnglish 
-        ? "No Back Cracker, but Gentle Relief for Back Pain | Praktijk Tielo",
+        ? "No Back Cracker, but Gentle Relief for Back Pain | Praktijk Tielo"
         : "Geen rugkraker, wél verlichting bij rugklachten | Praktijk Tielo",
       description: isEnglish
         ? "Looking for back pain relief without cracking? At Praktijk Tielo in Utrecht, we work without cracking. Discover our gentle, natural method for lasting recovery."

@@ -38,7 +38,7 @@ export function DepressionPage() {
   const content = {
     meta: {
       title: isEnglish 
-        ? "Natural Depression Treatment - Praktijk Tielo Utrecht",
+        ? "Natural Depression Treatment - Praktijk Tielo Utrecht"
         : "Natuurlijk herstel bij depressieve klachten – Praktijk Tielo Utrecht",
       description: isEnglish
         ? "Feeling down, tired, or mentally exhausted? Praktijk Tielo helps restore your body and mind through a gentle, physical approach without medication or therapy."
@@ -136,10 +136,10 @@ export function DepressionPage() {
     finalCta: {
       title: isEnglish
         ? "Take the first step towards lighter living today"
-        : "Zet vandaag de eerste stap naar lichter leven",
+        : "Zet vandaag nog de eerste stap naar lichter leven",
       description: isEnglish
         ? "Ready to regain control of your energy, mood, and inner peace? Give yourself a safe, gentle treatment that supports your natural recovery. Book your appointment through the website or contact me for more information. Together we'll bring your body and mind back into balance – step by step."
-        : "Ben je klaar om weer grip te krijgen op je energie, stemming en innerlijke rust? Gun jezelf een veilige, zachte behandeling die jouw natuurlijke herstel ondersteunt. Boek je afspraak via de website of neem contact met mij op voor meer informatie. Samen brengen we jouw lichaam en geest weer in balans – stap voor stap."
+        : "Ben je klaar om weer grip te krijgen op je energie, stemming en innerlijke rust? Gun jezelf een veilige, zachte behandeling die jouw natuurlijke herstel ondersteunt. Plan direct een afspraak via de website of neem contact met mij op voor meer informatie. Samen zorgen we voor meer ruimte, balans en rust in jouw lichaam."
     }
   };
 

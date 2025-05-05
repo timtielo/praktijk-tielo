@@ -39,7 +39,7 @@ export function KneeInjuryPage() {
   const content = {
     meta: {
       title: isEnglish 
-        ? "Knee Injury Treatment Utrecht | Praktijk Tielo",
+        ? "Knee Injury Treatment Utrecht | Praktijk Tielo"
         : "Knieblessure behandelen Utrecht | Praktijk Tielo",
       description: isEnglish
         ? "Looking for effective treatment for your knee injury or sports injury in Utrecht? Experience our natural approach for quick recovery. Schedule your appointment now!"
@@ -167,7 +167,7 @@ export function KneeInjuryPage() {
               </div>
             </div>
             
-                 <div className="w-full lg:w-[40%] aspect-square max-w-lg">
+            <div className="w-full lg:w-[40%] aspect-square max-w-lg">
               <img
                 src="/assets/photos/sportinjury.jpg"
                 alt="Sportblessure behandeling"

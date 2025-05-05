@@ -49,7 +49,7 @@ export function MigrainePage() {
   const content = {
     meta: {
       title: isEnglish 
-        ? "Migraine Treatment Without Medication - Praktijk Tielo Utrecht",
+        ? "Migraine Treatment Without Medication - Praktijk Tielo Utrecht"
         : "Migraine behandelen zonder medicatie – Praktijk Tielo Utrecht",
       description: isEnglish
         ? "Migraine or headache due to misalignment of your spine? Praktijk Tielo corrects underlying tension through a gentle, natural method without cracking or massage."

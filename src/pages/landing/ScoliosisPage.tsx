@@ -34,9 +34,7 @@ export function ScoliosisPage() {
 
   const content = {
     meta: {
-      title: isEnglish 
-        ? "Scoliosis Treatment Without Cracking - Praktijk Tielo Utrecht",
-        : "Scoliose behandelen zonder kraken – Praktijk Tielo Utrecht",
+      title: isEnglish ? "Scoliosis Treatment Without Cracking - Praktijk Tielo Utrecht" : "Scoliose behandelen zonder kraken – Praktijk Tielo Utrecht",
       description: isEnglish
         ? "Suffering from scoliosis or digestive issues due to a curved spine? Praktijk Tielo offers gentle treatment without cracking or massage, focused on sustainable balance and recovery."
         : "Last van scoliose of spijsverteringsklachten door een scheve wervelkolom? Praktijk Tielo biedt een zachte behandeling zonder kraken of massage, gericht op duurzame balans en herstel."

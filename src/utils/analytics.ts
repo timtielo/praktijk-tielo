@@ -170,29 +170,42 @@ export const verifyGTM = (): boolean => {
 // Check if Cookiebot is loaded and functioning
 export const isCookiebotLoaded = (): boolean => {
   return typeof window !== 'undefined' && 
-         typeof window.Cookiebot !== 'undefined';
+         typeof window.Cookiebot !== 'undefined' &&
+         window.Cookiebot !== null &&
+         typeof window.Cookiebot.consent === 'object';
 };
 
-// Get consent status from Cookiebot
-export const getConsentStatus = (): Record<string, boolean | undefined> => {
+// Get consent status from Cookiebot with safe access
+export const getConsentStatus = (): Record<string, boolean> => {
   if (!isCookiebotLoaded()) {
     return {
-      marketing: undefined,
-      statistics: undefined,
-      preferences: undefined
+      marketing: false,
+      statistics: false,
+      preferences: false
     };
   }
   
   return {
-    marketing: window.Cookiebot?.consent.marketing,
-    statistics: window.Cookiebot?.consent.statistics,
-    preferences: window.Cookiebot?.consent.preferences
+    marketing: window.Cookiebot?.consent?.marketing ?? false,
+    statistics: window.Cookiebot?.consent?.statistics ?? false,
+    preferences: window.Cookiebot?.consent?.preferences ?? false
   };
 };
 
 // Update Google consent based on Cookiebot consent
 export const updateGoogleConsent = (): void => {
   if (!isCookiebotLoaded() || !isGTMAvailable()) {
+    // Set default denied state if Cookiebot is not loaded
+    window.dataLayer?.push({
+      event: 'consent_updated',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'denied',
+      personalization_storage: 'denied',
+      security_storage: 'granted'
+    });
     return;
   }
   
