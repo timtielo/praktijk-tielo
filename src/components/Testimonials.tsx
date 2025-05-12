@@ -26,7 +26,9 @@ export function Testimonials() {
   // Get localized testimonials
   const localizedTestimonials = testimonials.map(testimonial => ({
     ...testimonial,
-    text: currentLanguage.startsWith('nl') ? testimonial.text : (testimonial.textEn || testimonial.text)
+    text: currentLanguage.startsWith('nl') ? 
+      (testimonial.shortText || testimonial.text) : 
+      (testimonial.shortTextEn || testimonial.textEn || testimonial.text)
   }));
   
   // Create localized testimonials for the marquee
@@ -36,8 +38,8 @@ export function Testimonials() {
       return {
         ...item,
         text: currentLanguage.startsWith('nl') ? 
-          testimonials[index].text : 
-          (testimonials[index].textEn || testimonials[index].text),
+          (testimonials[index].shortText || testimonials[index].text) : 
+          (testimonials[index].shortTextEn || testimonials[index].textEn || testimonials[index].text),
         author: {
           ...item.author,
           handle: currentLanguage.startsWith('nl') ? "Tevreden klant" : "Satisfied client"
@@ -93,16 +95,16 @@ export function Testimonials() {
             }}
             className="pb-10"
           >
-            {localizedTestimonials.map((testimonial, index) => (
+            {localizedTestimonials.slice(0, 6).map((testimonial, index) => (
               <SwiperSlide key={testimonial.id || index}>
-                <div className="bg-white p-6 rounded-lg shadow-sm">
+                <div className="bg-white p-6 rounded-lg shadow-sm h-[280px] flex flex-col">
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-4">"{testimonial.text}"</p>
-                  <div className="flex items-center gap-4">
+                  <p className="text-gray-600 mb-4 flex-grow line-clamp-4">"{testimonial.text}"</p>
+                  <div className="flex items-center gap-4 mt-auto">
                     <img 
                       src={testimonial.image} 
                       alt={testimonial.name}

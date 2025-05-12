@@ -226,7 +226,7 @@ export function AboutUsPage() {
               <div className="md:col-span-1">
                 <div className="bg-blue-600 rounded-lg p-1 rotate-2 shadow-xl">
                   <img 
-                    src="/assets/photos/Profielfoto.jpg" 
+                    src="/assets/photos/profielfotopraktijk.jpeg" 
                     alt="Tim Tielkemeijer"
                     className="rounded-lg w-full h-auto transform -rotate-2 transition-transform duration-300 hover:rotate-0"
                     loading="lazy"

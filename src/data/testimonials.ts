@@ -148,7 +148,7 @@ export const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a/ACg8ocIfhqgTpYXU4hdO4WWcZDMxpWSWiu8AjR0znufe5XIXpYrdFw=s36-c-rp-mo-br100",
     date: "2025-04-10"
   },
-    {
+  {
     id: "joost-1",
     name: "Joost",
     text: "2 prettige behandelingen gehad bij Tim. Allereerst mijn complimenten naar Tim, over zijn gastvrijheid, vriendelijkheid en vooral kennis. Hij heeft een rustige stem en legt alles fijn uit. Ook leuk om te horen wat zijn behandelingen allemaal wel niet hebben gedaan bij anderen! Ik heb de behandelingen duidelijk en goed ervaren. Ik merkte erg verschil tussen voor en na de behandeling. Een stuk meer flexibel en leniger. Ook kwam ik door de behandeling er achter dat mijn heupen niet recht staan. Oepsie hahaha. Nu weet ik wel waar mijn pijn tijdens het hardlopen van komt en hoe ik dit kan gaan aanpakken. Ook merk ik al een groot verschil na de behandelingen van Tim. Een grote aanrader!",
@@ -219,6 +219,15 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     image: "https://lh3.googleusercontent.com/a/ACg8ocJCZSfTcDyVzWiHGfqVy25oSQ8bitUZYxdF2WU5-kJYCDSkQQ=s36-c-rp-mo-br100",
     date: "2025-05-05"
+  },
+  {
+    id: "joost-2",
+    name: "Joost",
+    text: "Ik werd gewezen op de praktijk door mijn zoon en ik kan Tim van harte aanraden. Vanaf het begin hebben zijn adviezen en behandeling een zeer positieve invloed gehad. Ik beweeg weer een stuk makkelijker en sta ook veel stabieler. Hartstikke bedankt.",
+    textEn: "I was referred to the practice by my son and I can highly recommend Tim. From the beginning, his advice and treatment have had a very positive influence. I move much more easily again and stand much more stable. Thank you very much.",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjWR_3xz1DaaOrpauE2XOZPMIGTnkUWCyA2IcyEHgYK6X7Ci1FTl=s72-c-rp-mo-br100",
+    date: "2025-05-11"
   }
 ];
 

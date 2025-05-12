@@ -37,6 +37,7 @@ const MigrainePage = lazy(() => import('./pages/landing/MigrainePage').then(modu
 const DepressionPage = lazy(() => import('./pages/landing/DepressionPage').then(module => ({ default: module.DepressionPage })));
 const BackNeckProblemsPage = lazy(() => import('./pages/landing/BackNeckProblemsPage').then(module => ({ default: module.BackNeckProblemsPage })));
 const BackNeckProblemsPage2 = lazy(() => import('./pages/landing/BackNeckProblemsPage2').then(module => ({ default: module.BackNeckProblemsPage2 })));
+const FreeIntakePage = lazy(() => import('./pages/landing/FreeIntakePage').then(module => ({ default: module.FreeIntakePage })));
 
 function App() {
   const { i18n } = useTranslation();
@@ -61,7 +62,9 @@ function App() {
     location.pathname === '/rugpijn-en-lage-rugklachten2' ||
     location.pathname === '/en/back-pain-treatment2' ||
     location.pathname === '/rug-nek-problemen2' ||
-    location.pathname === '/en/back-neck-problems2';
+    location.pathname === '/en/back-neck-problems2' ||
+    location.pathname === '/gratis-intake' ||
+    location.pathname === '/en/free-intake';
 
   // If it's the standalone page, render without header/footer
   if (isStandalonePage) {
@@ -77,6 +80,8 @@ function App() {
               <Route path="/en/back-pain-treatment2" element={<BackPainPage2 />} />
               <Route path="/rug-nek-problemen2" element={<BackNeckProblemsPage2 />} />
               <Route path="/en/back-neck-problems2" element={<BackNeckProblemsPage2 />} />
+              <Route path="/gratis-intake" element={<FreeIntakePage />} />
+              <Route path="/en/free-intake" element={<FreeIntakePage />} />
             </Routes>
           </Suspense>
         </main>
@@ -125,6 +130,7 @@ function App() {
             <Route path="/burnout-stress-behandeling" element={<BurnoutPage />} />
             <Route path="/bloedgroepen-dieet" element={<BloodTypeDietPage />} />
             <Route path="/rug-nek-problemen2" element={<BackNeckProblemsPage2 />} />
+            <Route path="/gratis-intake" element={<FreeIntakePage />} />
             
             {/* English routes */}
             <Route path="/en" element={<HomePage />} />
@@ -157,6 +163,7 @@ function App() {
             <Route path="/en/burnout-stress-treatment" element={<BurnoutPage />} />
             <Route path="/en/blood-type-diet" element={<BloodTypeDietPage />} />
             <Route path="/en/back-neck-problems2" element={<BackNeckProblemsPage2 />} />
+            <Route path="/en/free-intake" element={<FreeIntakePage />} />
             
             {/* Fallback for any other route */}
             <Route path="*" element={<Navigate to="/" replace />} />

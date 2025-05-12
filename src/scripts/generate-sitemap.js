@@ -21,6 +21,7 @@ const routes = [
   { path: '/disclaimer', priority: '0.5', changefreq: 'monthly' },
   { path: '/oplossingen', priority: '0.9', changefreq: 'weekly' },
   { path: '/werveltherapie', priority: '0.9', changefreq: 'weekly' },
+  { path: '/gratis-intake', priority: '0.9', changefreq: 'weekly' },
   
   // Dutch landing pages
   { path: '/rugpijn-en-lage-rugklachten', priority: '0.9', changefreq: 'weekly' },
@@ -49,6 +50,7 @@ const routes = [
   { path: '/en/disclaimer', priority: '0.5', changefreq: 'monthly' },
   { path: '/en/solutions', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/vertebral-therapy', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/free-intake', priority: '0.9', changefreq: 'weekly' },
   
   // English landing pages
   { path: '/en/back-pain-treatment', priority: '0.9', changefreq: 'weekly' },
@@ -93,6 +95,8 @@ const generateSitemap = () => {
       '/en/solutions': '/oplossingen',
       '/werveltherapie': '/en/vertebral-therapy',
       '/en/vertebral-therapy': '/werveltherapie',
+      '/gratis-intake': '/en/free-intake',
+      '/en/free-intake': '/gratis-intake',
       
       // Landing pages
       '/rugpijn-en-lage-rugklachten': '/en/back-pain-treatment',
