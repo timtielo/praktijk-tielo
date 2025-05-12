@@ -172,10 +172,10 @@ export function FreeIntakePage() {
     socialProof: {
       title: isEnglish
         ? "What our clients say"
-        : "Wat onze cliënten zeggen",
+        : "Wat onze klanten zeggen",
       description: isEnglish
         ? "Don't just take our word for it. Read what our clients have to say about their experience with Praktijk Tielo."
-        : "Neem niet zomaar ons woord aan. Lees wat onze cliënten zeggen over hun ervaring met Praktijk Tielo."
+        : "Neem niet zomaar ons woord aan. Lees wat onze klanten zeggen over hun ervaring met Praktijk Tielo."
     }
   };
 
