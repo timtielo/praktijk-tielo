@@ -74,6 +74,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/free-intake" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/gratis-intake" />
   </url>
+  <url>
+    <loc>https://www.praktijk-tielo.nl/bedankt</loc>
+    <lastmod>2025-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/bedankt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/thank-you" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/bedankt" />
+  </url>
+  <url>
+    <loc>https://www.praktijk-tielo.nl/brain-fog-behandeling</loc>
+    <lastmod>2025-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/brain-fog-behandeling" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/brain-fog-treatment" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/brain-fog-behandeling" />
+  </url>
 
   <!-- Dutch Treatment Pages -->
   <url>
@@ -93,6 +111,15 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/alternatief-voor-chiropractor" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/alternative-to-chiropractic" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/alternatief-voor-chiropractor" />
+  </url>
+  <url>
+    <loc>https://www.praktijk-tielo.nl/alternatief-voor-fysiotherapie</loc>
+    <lastmod>2025-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/alternatief-voor-fysiotherapie" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/alternative-to-physiotherapy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/alternatief-voor-fysiotherapie" />
   </url>
   <url>
     <loc>https://www.praktijk-tielo.nl/sportblessures-behandeling</loc>
@@ -185,13 +212,31 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/migraine-behandeling" />
   </url>
   <url>
-    <loc>https://www.praktijk-tielo.nl/gratis-intake</loc>
+    <loc>https://www.praktijk-tielo.nl/depressie-behandeling</loc>
     <lastmod>2025-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/gratis-intake" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/free-intake" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/gratis-intake" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/depressie-behandeling" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/depression-treatment" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/depressie-behandeling" />
+  </url>
+  <url>
+    <loc>https://www.praktijk-tielo.nl/rug-nek-problemen</loc>
+    <lastmod>2025-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/rug-nek-problemen" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/back-neck-problems" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/rug-nek-problemen" />
+  </url>
+  <url>
+    <loc>https://www.praktijk-tielo.nl/hersenbloeding-herstel</loc>
+    <lastmod>2025-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/hersenbloeding-herstel" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/stroke-recovery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/hersenbloeding-herstel" />
   </url>
 
   <!-- English Main Pages -->
@@ -250,22 +295,22 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/oplossingen" />
   </url>
   <url>
-    <loc>https://www.praktijk-tielo.nl/en/vertebral-therapy</loc>
+    <loc>https://www.praktijk-tielo.nl/en/thank-you</loc>
     <lastmod>2025-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/vertebral-therapy" />
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/werveltherapie" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/werveltherapie" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/thank-you" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/bedankt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/bedankt" />
   </url>
   <url>
-    <loc>https://www.praktijk-tielo.nl/en/free-intake</loc>
+    <loc>https://www.praktijk-tielo.nl/en/brain-fog-treatment</loc>
     <lastmod>2025-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/free-intake" />
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/gratis-intake" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/gratis-intake" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/brain-fog-treatment" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/brain-fog-behandeling" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/brain-fog-behandeling" />
   </url>
 
   <!-- English Treatment Pages -->
@@ -286,6 +331,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/alternative-to-chiropractic" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/alternatief-voor-chiropractor" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/alternatief-voor-chiropractor" />
+  </url>
+  <url>
+    <loc>https://www.praktijk-tielo.nl/en/alternative-to-physiotherapy</loc>
+    <lastmod>2025-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/alternative-to-physiotherapy" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/alternatief-voor-fysiotherapie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/alternatief-voor-fysiotherapie" />
   </url>
   <url>
     <loc>https://www.praktijk-tielo.nl/en/sports-injury-treatment</loc>
@@ -378,26 +432,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/migraine-behandeling" />
   </url>
   <url>
-    <loc>https://www.praktijk-tielo.nl/en/free-intake</loc>
-    <lastmod>2025-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/free-intake" />
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/gratis-intake" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/gratis-intake" />
-  </url>
-  
-  <!-- New Depression Treatment Pages -->
-  <url>
-    <loc>https://www.praktijk-tielo.nl/depressie-behandeling</loc>
-    <lastmod>2025-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/depressie-behandeling" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/depression-treatment" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/depressie-behandeling" />
-  </url>
-  <url>
     <loc>https://www.praktijk-tielo.nl/en/depression-treatment</loc>
     <lastmod>2025-03-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -406,24 +440,42 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/depressie-behandeling" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/depressie-behandeling" />
   </url>
-  
-  <!-- Vertebral Therapy Pages -->
   <url>
-    <loc>https://www.praktijk-tielo.nl/werveltherapie</loc>
+    <loc>https://www.praktijk-tielo.nl/en/back-neck-problems</loc>
     <lastmod>2025-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/werveltherapie" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/vertebral-therapy" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/werveltherapie" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/back-neck-problems" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/rug-nek-problemen" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/rug-nek-problemen" />
   </url>
   <url>
-    <loc>https://www.praktijk-tielo.nl/en/vertebral-therapy</loc>
+    <loc>https://www.praktijk-tielo.nl/en/stroke-recovery</loc>
     <lastmod>2025-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/vertebral-therapy" />
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/werveltherapie" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/werveltherapie" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/stroke-recovery" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/hersenbloeding-herstel" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/hersenbloeding-herstel" />
+  </url>
+  
+  <!-- Thank You Pages -->
+  <url>
+    <loc>https://www.praktijk-tielo.nl/bedankt</loc>
+    <lastmod>2025-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/bedankt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/thank-you" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/bedankt" />
+  </url>
+  <url>
+    <loc>https://www.praktijk-tielo.nl/en/thank-you</loc>
+    <lastmod>2025-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/thank-you" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/bedankt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/bedankt" />
   </url>
 </urlset>

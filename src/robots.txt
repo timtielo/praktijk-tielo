@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /disclaimer
+Disallow: /bedankt
+Disallow: /en/thank-you
+Disallow: /hersenbloeding-herstel
+Disallow: /en/stroke-recovery
+
+Sitemap: https://www.praktijk-tielo.nl/sitemap.xml

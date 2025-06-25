@@ -54,6 +54,15 @@ export function SolutionsPage() {
       category: "physical"
     },
     {
+      title: isEnglish ? "Alternative to Physiotherapy" : "Alternatief voor fysiotherapie",
+      description: isEnglish
+        ? "Natural alternative or complement to physiotherapy. Gentle approach for improved mobility."
+        : "Natuurlijk alternatief of aanvulling op fysiotherapie. Zachte aanpak voor verbeterde mobiliteit.",
+      icon: Activity,
+      href: isEnglish ? "/en/alternative-to-physiotherapy" : "/alternatief-voor-fysiotherapie",
+      category: "physical"
+    },
+    {
       title: isEnglish ? "Sports Injury Treatment" : "Sportblessures behandeling",
       description: isEnglish
         ? "Quick recovery from sports injuries. Natural treatment method without medication."
@@ -61,6 +70,24 @@ export function SolutionsPage() {
       icon: Activity,
       href: isEnglish ? "/en/sports-injury-treatment" : "/sportblessures-behandeling",
       category: "physical"
+    },
+    {
+      title: isEnglish ? "Stroke Recovery Support" : "Herstel na hersenbloeding",
+      description: isEnglish
+        ? "Complementary care to support recovery after a stroke. Gentle approach to improve mobility and balance."
+        : "Aanvullende zorg ter ondersteuning van herstel na een hersenbloeding. Zachte aanpak om mobiliteit en balans te verbeteren.",
+      icon: Brain,
+      href: isEnglish ? "/en/stroke-recovery" : "/hersenbloeding-herstel",
+      category: "physical"
+    },
+    {
+      title: isEnglish ? "Brain Fog Treatment" : "Brain Fog behandeling",
+      description: isEnglish
+        ? "Clear mental fog and improve cognitive function. Natural approach without medication."
+        : "Verdrijf mentale mist en verbeter cognitieve functie. Natuurlijke aanpak zonder medicatie.",
+      icon: Brain,
+      href: isEnglish ? "/en/brain-fog-treatment" : "/brain-fog-behandeling",
+      category: "mental"
     },
     {
       title: isEnglish ? "Knee Injuries" : "Knieblessures",

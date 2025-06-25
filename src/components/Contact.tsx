@@ -59,8 +59,9 @@ export function Contact() {
           language: isEnglish ? 'en' : 'nl',
           newsletter: true
         });
-        // Increased timeout for success message visibility
-        setTimeout(() => setSubmitStatus('idle'), 8000);
+        
+        // Redirect to thank you page
+        window.location.href = isEnglish ? '/en/thank-you' : '/bedankt';
       }
     } catch (error) {
       setSubmitStatus('error');

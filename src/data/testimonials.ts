@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface Testimonial {
   name: string;
   text: string;
@@ -181,7 +183,7 @@ export const testimonials: Testimonial[] = [
     text: "Ik heb zonder specifieke klachten twee behandelingen bij Tim gehad. Ik was vooraf niet bekend met de methode, maar toch heeft het mij geholpen! Tim ontdekte dat er een aantal ruggenwervels van mij scheef stonden. Dit heeft hij met zijn behandeling weer recht kunnen zetten. Verder zijn mijn schouderbladen in een natuurlijkere positie komen te staan. Al met al een aanrader, ook als je niet-specifieke klachten hebt!",
     textEn: "I had two treatments with Tim without specific complaints. I wasn't familiar with the method beforehand, but it still helped me! Tim discovered that some of my vertebrae were crooked. He was able to correct this with his treatment. Furthermore, my shoulder blades have come into a more natural position. All in all, highly recommended, even if you have non-specific complaints!",
     rating: 5,
-    image: "https://lh3.googleusercontent.com/a/ACg8ocLSeyd8rxP4jBFFqA8X6wvqKcfPgKdYEIp_8OK2MPKmDT2msx8=s36-c-rp-mo-br100",
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjVsfJlH5MA8KAT_gcwZNKQjk9RgQhpw7IvR-36fu8wNH-MX2ygMzw=s36-c-rp-mo-br100",
     date: "2025-04-17"
   },
   {
@@ -217,7 +219,7 @@ export const testimonials: Testimonial[] = [
     text: "Hele fijne behandelingen! Heeft me erg geholpen en ik vond het heel interessant om te horen wat hij allemaal kon vinden bij mijn lichaam. Ik zou het zeker aanraden!",
     textEn: "Very pleasant treatments! It helped me a lot and I found it very interesting to hear what he could find in my body. I would definitely recommend it!",
     rating: 5,
-    image: "https://lh3.googleusercontent.com/a/ACg8ocJCZSfTcDyVzWiHGfqVy25oSQ8bitUZYxdF2WU5-kJYCDSkQQ=s36-c-rp-mo-br100",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocLqkbWKqB3qllNBcqpG_CG013qhyBhAykvjzA5pqEx7sKEdLw=s36-c-rp-mo-br100",
     date: "2025-05-05"
   },
   {
@@ -228,6 +230,24 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     image: "https://lh3.googleusercontent.com/a-/ALV-UjWR_3xz1DaaOrpauE2XOZPMIGTnkUWCyA2IcyEHgYK6X7Ci1FTl=s72-c-rp-mo-br100",
     date: "2025-05-11"
+  },
+  {
+    id: "jessica-1",
+    name: "Jessica",
+    text: "Tim heeft een rustige aanpak en informeert je tijdens de behandeling goed wat hij gaat doen. De behandeling heeft mij zeker geholpen.",
+    textEn: "Tim has a calm approach and informs you well during the treatment about what he is going to do. The treatment has definitely helped me.",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocJpNTFAutMg2ymBeR9GjUSv3_i7ica_q5JmmPQJhu53pHL0uQ=s72-c-rp-mo-br100",
+    date: "2025-05-10"
+  },
+  {
+    id: "cynthia-1",
+    name: "Cynthia",
+    text: "Tijdje terug 2 behandelingen gehad bij Tim. Goede communicatie vooraf en vragen kunnen stellen. Tim had al snel door waar ik last van had aan de hand van de wervels (wat dus overeen kwam met de lichamelijke/ mentale klachten die ik ervaarde), legde alles goed uit en ging aan de slag met oefeningen/ bewegingen en aanrakingen. Na de 1e behandeling merkte ik al dat ik losser was, minder scheef stond qua heupen, meer ontspannen was en sliep ik beter. De 2e behandeling was wat anders in opzet en ook toen merkte ik dat er veel gebeurde in mijn lijf en spieren (soort spierpijn). Ik heb de behandelingen dan ook als positief ervaren. 😀 Verder is Tim erg professioneel, communicatief en relaxed. Hij kan je ondanks de soms gekke bewegingen/ oefeningen goed op je gemak stellen en bovenal: het helpt!",
+    textEn: "A while back I had 2 treatments with Tim. Good communication beforehand and able to ask questions. Tim quickly figured out what was bothering me based on the vertebrae (which matched the physical/mental complaints I was experiencing), explained everything well, and got to work with exercises/movements and touches. After the 1st treatment, I already noticed I was looser, my hips were less crooked, I was more relaxed, and I slept better. The 2nd treatment was somewhat different in approach, and again I noticed a lot happening in my body and muscles (kind of like muscle soreness). I experienced the treatments as positive. 😀 Furthermore, Tim is very professional, communicative, and relaxed. Despite the sometimes strange movements/exercises, he can make you feel at ease and above all: it works!",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocIMSPHvunI5Xup_1KbxcasMRzk9Orgi1GONAxYm5axU3OWs3A=s72-c-rp-mo-br100",
+    date: "2025-05-18"
   }
 ];
 

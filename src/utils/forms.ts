@@ -77,6 +77,8 @@ export async function submitContactForm(formData: ContactFormData, retryCount = 
             form_success: true
           });
         }
+        
+        // Return success without redirecting
         return true;
       }
 
@@ -111,6 +113,7 @@ export async function submitContactForm(formData: ContactFormData, retryCount = 
             });
           }
           
+          // Return success without redirecting
           return true;
         }
 

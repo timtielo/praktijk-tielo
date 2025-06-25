@@ -22,11 +22,13 @@ const routes = [
   { path: '/oplossingen', priority: '0.9', changefreq: 'weekly' },
   { path: '/werveltherapie', priority: '0.9', changefreq: 'weekly' },
   { path: '/gratis-intake', priority: '0.9', changefreq: 'weekly' },
+  { path: '/bedankt', priority: '0.5', changefreq: 'monthly' },
   
   // Dutch landing pages
   { path: '/rugpijn-en-lage-rugklachten', priority: '0.9', changefreq: 'weekly' },
   { path: '/rugpijn-en-lage-rugklachten2', priority: '0.9', changefreq: 'weekly' },
   { path: '/alternatief-voor-chiropractor', priority: '0.9', changefreq: 'weekly' },
+  { path: '/alternatief-voor-fysiotherapie', priority: '0.9', changefreq: 'weekly' },
   { path: '/sportblessures-behandeling', priority: '0.9', changefreq: 'weekly' },
   { path: '/sportblessures-behandeling2', priority: '0.9', changefreq: 'weekly' },
   { path: '/burnout-stress-behandeling', priority: '0.9', changefreq: 'weekly' },
@@ -41,6 +43,8 @@ const routes = [
   { path: '/depressie-behandeling', priority: '0.9', changefreq: 'weekly' },
   { path: '/rug-nek-problemen', priority: '0.9', changefreq: 'weekly' },
   { path: '/rug-nek-problemen2', priority: '0.9', changefreq: 'weekly' },
+  { path: '/hersenbloeding-herstel', priority: '0.9', changefreq: 'weekly' },
+  { path: '/brain-fog-behandeling', priority: '0.9', changefreq: 'weekly' },
   
   // English pages
   { path: '/en', priority: '1.0', changefreq: 'weekly' },
@@ -51,11 +55,13 @@ const routes = [
   { path: '/en/solutions', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/vertebral-therapy', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/free-intake', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/thank-you', priority: '0.5', changefreq: 'monthly' },
   
   // English landing pages
   { path: '/en/back-pain-treatment', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/back-pain-treatment2', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/alternative-to-chiropractic', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/alternative-to-physiotherapy', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/sports-injury-treatment', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/sports-injury-treatment2', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/burnout-stress-treatment', priority: '0.9', changefreq: 'weekly' },
@@ -69,7 +75,9 @@ const routes = [
   { path: '/en/migraine-treatment', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/depression-treatment', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/back-neck-problems', priority: '0.9', changefreq: 'weekly' },
-  { path: '/en/back-neck-problems2', priority: '0.9', changefreq: 'weekly' }
+  { path: '/en/back-neck-problems2', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/stroke-recovery', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/brain-fog-treatment', priority: '0.9', changefreq: 'weekly' }
 ];
 
 // Generate sitemap content
@@ -97,6 +105,8 @@ const generateSitemap = () => {
       '/en/vertebral-therapy': '/werveltherapie',
       '/gratis-intake': '/en/free-intake',
       '/en/free-intake': '/gratis-intake',
+      '/bedankt': '/en/thank-you',
+      '/en/thank-you': '/bedankt',
       
       // Landing pages
       '/rugpijn-en-lage-rugklachten': '/en/back-pain-treatment',
@@ -105,6 +115,8 @@ const generateSitemap = () => {
       '/en/back-pain-treatment2': '/rugpijn-en-lage-rugklachten2',
       '/alternatief-voor-chiropractor': '/en/alternative-to-chiropractic',
       '/en/alternative-to-chiropractic': '/alternatief-voor-chiropractor',
+      '/alternatief-voor-fysiotherapie': '/en/alternative-to-physiotherapy',
+      '/en/alternative-to-physiotherapy': '/alternatief-voor-fysiotherapie',
       '/sportblessures-behandeling': '/en/sports-injury-treatment',
       '/en/sports-injury-treatment': '/sportblessures-behandeling',
       '/sportblessures-behandeling2': '/en/sports-injury-treatment2',
@@ -132,7 +144,11 @@ const generateSitemap = () => {
       '/rug-nek-problemen': '/en/back-neck-problems',
       '/en/back-neck-problems': '/rug-nek-problemen',
       '/rug-nek-problemen2': '/en/back-neck-problems2',
-      '/en/back-neck-problems2': '/rug-nek-problemen2'
+      '/en/back-neck-problems2': '/rug-nek-problemen2',
+      '/hersenbloeding-herstel': '/en/stroke-recovery',
+      '/en/stroke-recovery': '/hersenbloeding-herstel',
+      '/brain-fog-behandeling': '/en/brain-fog-treatment',
+      '/en/brain-fog-treatment': '/brain-fog-behandeling'
     };
     
     return pathMap[path] || path;

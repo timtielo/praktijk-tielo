@@ -18,6 +18,7 @@ const SolutionsPage = lazy(() => import('./pages/SolutionsPage').then(module => 
 const BeforeTreatmentPage = lazy(() => import('./pages/BeforeTreatmentPage').then(module => ({ default: module.BeforeTreatmentPage })));
 const AfterTreatmentPage = lazy(() => import('./pages/AfterTreatmentPage').then(module => ({ default: module.AfterTreatmentPage })));
 const VertebraTherapyPage = lazy(() => import('./pages/VertebraTherapyPage').then(module => ({ default: module.VertebraTherapyPage })));
+const ThankYouPage = lazy(() => import('./pages/ThankYouPage').then(module => ({ default: module.ThankYouPage })));
 
 // Lazy load landing pages
 const BackPainPage = lazy(() => import('./pages/landing/BackPainPage').then(module => ({ default: module.BackPainPage })));
@@ -38,6 +39,9 @@ const DepressionPage = lazy(() => import('./pages/landing/DepressionPage').then(
 const BackNeckProblemsPage = lazy(() => import('./pages/landing/BackNeckProblemsPage').then(module => ({ default: module.BackNeckProblemsPage })));
 const BackNeckProblemsPage2 = lazy(() => import('./pages/landing/BackNeckProblemsPage2').then(module => ({ default: module.BackNeckProblemsPage2 })));
 const FreeIntakePage = lazy(() => import('./pages/landing/FreeIntakePage').then(module => ({ default: module.FreeIntakePage })));
+const StrokePage = lazy(() => import('./pages/landing/StrokePage').then(module => ({ default: module.StrokePage })));
+const PhysiotherapyAlternativePage = lazy(() => import('./pages/landing/PhysiotherapyAlternativePage').then(module => ({ default: module.PhysiotherapyAlternativePage })));
+const BrainFogPage = lazy(() => import('./pages/landing/BrainFogPage').then(module => ({ default: module.BrainFogPage })));
 
 function App() {
   const { i18n } = useTranslation();
@@ -109,6 +113,7 @@ function App() {
             <Route path="/voor-de-behandeling" element={<BeforeTreatmentPage />} />
             <Route path="/na-de-behandeling" element={<AfterTreatmentPage />} />
             <Route path="/werveltherapie" element={<VertebraTherapyPage />} />
+            <Route path="/bedankt" element={<ThankYouPage />} />
             <Route path="/blessure" element={<KneeInjuryPage />} />
             <Route path="/rugpijn" element={<BackPainTreatmentPage />} />
             <Route path="/bindweefselbehandeling" element={<ConnectiveTissuePage />} />
@@ -118,6 +123,9 @@ function App() {
             <Route path="/migraine-behandeling" element={<MigrainePage />} />
             <Route path="/depressie-behandeling" element={<DepressionPage />} />
             <Route path="/rug-nek-problemen" element={<BackNeckProblemsPage />} />
+            <Route path="/hersenbloeding-herstel" element={<StrokePage />} />
+            <Route path="/alternatief-voor-fysiotherapie" element={<PhysiotherapyAlternativePage />} />
+            <Route path="/brain-fog-behandeling" element={<BrainFogPage />} />
             {/* Redirect from old URL to new URL */}
             <Route path="/rug-nek-klachten" element={<Navigate to="/rug-nek-problemen" replace />} />
             
@@ -144,6 +152,7 @@ function App() {
             <Route path="/en/before-treatment" element={<BeforeTreatmentPage />} />
             <Route path="/en/after-treatment" element={<AfterTreatmentPage />} />
             <Route path="/en/vertebral-therapy" element={<VertebraTherapyPage />} />
+            <Route path="/en/thank-you" element={<ThankYouPage />} />
             <Route path="/en/injury" element={<KneeInjuryPage />} />
             <Route path="/en/back-pain" element={<BackPainTreatmentPage />} />
             <Route path="/en/connective-tissue-treatment" element={<ConnectiveTissuePage />} />
@@ -153,6 +162,9 @@ function App() {
             <Route path="/en/migraine-treatment" element={<MigrainePage />} />
             <Route path="/en/depression-treatment" element={<DepressionPage />} />
             <Route path="/en/back-neck-problems" element={<BackNeckProblemsPage />} />
+            <Route path="/en/stroke-recovery" element={<StrokePage />} />
+            <Route path="/en/alternative-to-physiotherapy" element={<PhysiotherapyAlternativePage />} />
+            <Route path="/en/brain-fog-treatment" element={<BrainFogPage />} />
             
             {/* English Landing Pages */}
             <Route path="/en/back-pain-treatment" element={<BackPainPage />} />
