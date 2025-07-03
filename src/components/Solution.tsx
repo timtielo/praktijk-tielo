@@ -129,7 +129,7 @@ export function Solution() {
                   <div>
                     <h4 className="font-semibold">{t('solution.treatment.first.title')}</h4>
                     <p className="text-blue-100">
-                      {t('solution.treatment.first.description')}
+                      {isEnglish ? "Straightening the entire body, focused on the spine." : "Rechtzetten van het hele lichaam, gefocust op de wervelkolom."}
                     </p>
                   </div>
                 </div>

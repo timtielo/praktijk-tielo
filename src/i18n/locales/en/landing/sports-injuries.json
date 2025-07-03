@@ -5,7 +5,7 @@
   },
   "hero": {
     "title": "Injury? Recover quickly and come back stronger",
-    "subtitle": "Our natural treatment method helps you get moving again quickly. With personal attention and lasting results.",
+    "subtitle": "My natural treatment method helps you get moving again quickly. With personal attention and lasting results.",
     "schedule": "Schedule appointment"
   },
   "benefits": {
@@ -15,11 +15,11 @@
     "personal": "Personal approach"
   },
   "injuries": {
-    "title": "Which sports injuries do we help with?",
+    "title": "Which sports injuries do I help with?",
     "list": [
       {
         "title": "Knee Injuries",
-        "description": "Knee problems can severely limit you during sports. We help you move pain-free again.",
+        "description": "Knee problems can severely limit you during sports. I help you move pain-free again.",
         "symptoms": [
           "Knee overload",
           "Tendonitis",
@@ -29,7 +29,7 @@
       },
       {
         "title": "Ankle Injuries",
-        "description": "A stable ankle is essential for any sport. Our treatment focuses on complete recovery.",
+        "description": "A stable ankle is essential for any sport. My treatment focuses on complete recovery.",
         "symptoms": [
           "Sprains",
           "Instability",
@@ -39,7 +39,7 @@
       },
       {
         "title": "Muscle Injuries",
-        "description": "Muscle injuries can be persistent. We address not only the pain but also the cause.",
+        "description": "Muscle injuries can be persistent. I address not only the pain but also the cause.",
         "symptoms": [
           "Hamstring injuries",
           "Muscle tears",
@@ -50,10 +50,10 @@
     ]
   },
   "approach": {
-    "title": "Our approach",
+    "title": "My approach",
     "quick": {
       "title": "Quick return to movement",
-      "description": "Noticeable effect after the first treatment. We focus on rapid but sustainable improvement."
+      "description": "Noticeable effect after the first treatment. I focus on rapid but sustainable improvement."
     },
     "natural": {
       "title": "Natural treatment method",
@@ -61,11 +61,11 @@
     },
     "prevention": {
       "title": "Prevent recurrence",
-      "description": "We not only address your current injury but also teach you how to prevent new injuries."
+      "description": "I not only address your current injury but also teach you how to prevent new injuries."
     }
   },
   "testimonials": {
-    "title": "What athletes say about us"
+    "title": "What athletes say about me"
   },
   "cta": {
     "title": "Ready to exercise pain-free again?",

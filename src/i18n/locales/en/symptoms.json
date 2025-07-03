@@ -1,6 +1,6 @@
 {
   "title": "Do you recognize this?",
-  "subtitle": "Many of our customers come to us with these complaints. Do you recognize yourself in this?",
+  "subtitle": "Many of my customers come to me with these complaints. Do you recognize yourself in this?",
   "cards": {
     "notFeelGood": {
       "title": "Not feeling well",
@@ -21,6 +21,6 @@
   },
   "conclusion": {
     "part1": "These complaints can significantly affect your daily life.",
-    "part2": "We are happy to help you get back in balance."
+    "part2": "I am happy to help you get back in balance."
   }
 }

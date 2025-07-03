@@ -5,7 +5,7 @@
   },
   "hero": {
     "title": "Gentle spine treatment without cracking",
-    "subtitle": "An effective alternative to chiropractic care. We treat the fascia - the tissue that connects your bones and muscles - for lasting results.",
+    "subtitle": "An effective alternative to chiropractic care. I treat the fascia - the tissue that connects your bones and muscles - for lasting results.",
     "schedule": "Schedule appointment"
   },
   "benefits": {
@@ -15,18 +15,18 @@
     "fasciaFocus": "Focus on fascia for sustainable recovery"
   },
   "difference": {
-    "title": "Why choose our approach?",
+    "title": "Why choose my approach?",
     "gentle": {
       "title": "Gentle treatment",
-      "description": "Unlike traditional chiropractic care, we don't use sudden movements or cracking. Our gentle treatment method is comfortable and safe, while being just as effective."
+      "description": "Unlike traditional chiropractic care, I don't use sudden movements or cracking. My gentle treatment method is comfortable and safe, while being just as effective."
     },
     "fascia": {
       "title": "Focus on fascia",
-      "description": "We focus on the fascia - the connective tissue that connects your entire body. By treating this tissue, we can address the underlying cause of your complaints, not just the symptoms."
+      "description": "I focus on the fascia - the connective tissue that connects your entire body. By treating this tissue, I can address the underlying cause of your complaints, not just the symptoms."
     },
     "lasting": {
       "title": "Lasting results",
-      "description": "By treating the fascia and helping your body restore its natural balance, we work towards a lasting solution. Not temporary relief, but sustainable recovery."
+      "description": "By treating the fascia and helping your body restore its natural balance, I work towards a lasting solution. Not temporary relief, but sustainable recovery."
     }
   },
   "testimonials": {
@@ -34,7 +34,7 @@
   },
   "cta": {
     "title": "Experience the difference",
-    "subtitle": "Discover our gentle and effective treatment method",
+    "subtitle": "Discover my gentle and effective treatment method",
     "schedule": "Schedule appointment"
   }
 }

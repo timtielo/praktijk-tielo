@@ -1,6 +1,7 @@
 import React from 'react';
-import { Timer, UserCheck, Calendar } from 'lucide-react';
+import { Timer, UserCheck, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { statistics } from '../data/statistics';
 
 export function USPs() {
   const { t } = useTranslation();
@@ -33,10 +34,10 @@ export function USPs() {
           </div>
 
           <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <Calendar className="w-12 h-12 text-blue-600 mb-6" />
-            <h3 className="text-xl font-semibold mb-3">{t('usps.cards.flexibleHours.title')}</h3>
+            <Users className="w-12 h-12 text-blue-600 mb-6" />
+            <h3 className="text-xl font-semibold mb-3">{t('usps.cards.peopleHelped.title')}</h3>
             <p className="text-gray-600">
-              {t('usps.cards.flexibleHours.description')}
+              {t('usps.cards.peopleHelped.description', { count: statistics.peopleHelped })}
             </p>
           </div>
         </div>

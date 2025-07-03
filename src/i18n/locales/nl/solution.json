@@ -1,6 +1,6 @@
 {
-  "title": "Onze behandelmethode",
-  "subtitle": "Bij Praktijk Tielo werken we met eenvoudige zelfhulpoefeningen die je lichaam helpen terug te keren naar zijn natuurlijke houding.",
+  "title": "Mijn behandelmethode",
+  "subtitle": "Bij Praktijk Tielo werk ik met eenvoudige zelfhulpoefeningen die je lichaam helpen terug te keren naar zijn natuurlijke houding.",
   "howItWorks": {
     "title": "Hoe het werkt",
     "description1": "Natuurlijke bewegingen in combinatie met lichte aanrakingen op specifieke plaatsen maken het mogelijk dat de positie van heupen, wervelkolom, heiligbeen en stuitbeen waar nodig wordt gecorrigeerd.",
@@ -8,7 +8,7 @@
   },
   "forWhom": {
     "title": "Voor wie is het geschikt?",
-    "description": "Onze behandeling is geschikt voor mensen met uiteenlopende klachten en kan voor jong en oud een groot verschil maken:",
+    "description": "Mijn behandeling is geschikt voor mensen met uiteenlopende klachten en kan voor jong en oud een groot verschil maken:",
     "items": {
       "physicalPain": "Lichamelijke pijnen",
       "migraines": "Migraines",
@@ -19,20 +19,20 @@
       "weightIssues": "Gewichtsproblemen",
       "fertility": "Vruchtbaarheidsproblemen"
     },
-    "expandedTitle": "Onze behandeling kan ook helpen bij:",
+    "expandedTitle": "Mijn behandeling kan ook helpen bij:",
     "expandedItems": {
       "healthy": "Mensen die zich gezond voelen en hun functionaliteit willen optimaliseren",
       "children": "Kinderen met groei- en gedragsproblemen",
       "autoimmune": "Mensen met auto-immuunziekten zoals diabetes, MS, astma, eczeem, chronische vermoeidheid",
       "unexplained": "Mensen met onverklaarbare aandoeningen waarbij \"de dokter zegt dat ik OK ben, maar ik voel me gewoon niet goed\""
     },
-    "disclaimer": "Lees onze disclaimer"
+    "disclaimer": "Lees mijn disclaimer"
   },
   "treatment": {
     "title": "Behandeltraject",
     "first": {
       "title": "Eerste behandeling (60 min)",
-      "description": "Uitlijnen van de wervelkolom, correctie van het heiligbeen en beenlengte verschil."
+      "description": "Rechtzetten van het hele lichaam, gefocust op de wervelkolom."
     },
     "second": {
       "title": "Tweede behandeling (60 min)",

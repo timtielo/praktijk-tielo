@@ -4,8 +4,8 @@
     "description": "Suffering from burnout or stress? ✓ Natural treatment method ✓ Body alignment and relaxation ✓ Quick results ✓ Also open evenings and weekends"
   },
   "hero": {
-    "title": "Burnout? Stress? Find peace and recovery with our natural approach",
-    "subtitle": "Stress and tension continue to build up in your body. With our alignment technique and relaxation exercises, we help your body release and regain balance.",
+    "title": "Burnout? Stress? Find peace and recovery with my natural approach",
+    "subtitle": "Stress and tension continue to build up in your body. With my alignment technique and relaxation exercises, I help your body release and regain balance.",
     "schedule": "Schedule appointment"
   },
   "benefits": {
@@ -30,11 +30,11 @@
     }
   },
   "method": {
-    "title": "Our method - Body Alignment & Relaxation",
+    "title": "My method - Body Alignment & Relaxation",
     "steps": [
       {
         "title": "1. Alignment and posture correction",
-        "description": "We restore the natural balance in your body through gentle corrections.",
+        "description": "I restore the natural balance in your body through gentle corrections.",
         "benefits": [
           "Relieves physical tension",
           "Improves energy flow",
@@ -52,7 +52,7 @@
       },
       {
         "title": "3. Self-help and breathing exercises",
-        "description": "You learn techniques for lasting relaxation in daily life.",
+        "description": "I teach you techniques for lasting relaxation in daily life.",
         "benefits": [
           "Immediately applicable",
           "Prevents new tension",
@@ -62,7 +62,7 @@
     ]
   },
   "testimonials": {
-    "title": "What our clients say"
+    "title": "What my clients say"
   },
   "cta": {
     "title": "Ready to release stress?",

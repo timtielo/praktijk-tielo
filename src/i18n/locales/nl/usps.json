@@ -1,18 +1,18 @@
 {
   "title": "Waarom kiezen voor Praktijk Tielo?",
-  "subtitle": "Wij bieden een unieke aanpak die zich richt op jouw persoonlijke situatie",
+  "subtitle": "Ik bied een unieke aanpak die zich richt op jouw persoonlijke situatie",
   "cards": {
     "quickResults": {
       "title": "Snel en blijvend resultaat",
-      "description": "Onze behandelmethode is erop gericht om niet alleen snelle verlichting te bieden, maar ook langdurige resultaten te behalen"
+      "description": "Mijn behandelmethode is erop gericht om niet alleen snelle verlichting te bieden, maar ook langdurige resultaten te behalen"
     },
     "personalApproach": {
       "title": "Persoonlijke aanpak",
-      "description": "We kijken naar jouw specifieke situatie en stellen een behandelplan op dat bij jou past"
+      "description": "Ik neem de tijd om naar jouw verhaal te luisteren en bied persoonlijke aandacht tijdens elke behandeling"
     },
-    "flexibleHours": {
-      "title": "Flexibele openingstijden",
-      "description": "Ook 's avonds en in het weekend open op afspraak, zodat je altijd een moment vindt dat past"
+    "peopleHelped": {
+      "title": "Bewezen resultaten",
+      "description": "Ik heb al {{count}} mensen geholpen met diverse klachten"
     }
   }
 }

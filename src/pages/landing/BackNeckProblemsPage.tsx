@@ -35,16 +35,16 @@ export function BackNeckProblemsPage() {
         ? "Back & Neck Pain Treatment | Natural Approach"
         : "Rug & Nekpijn Behandeling | Natuurlijke Aanpak",
       description: isEnglish
-        ? "Suffering from back or neck pain? Our gentle treatment method helps relieve pain and improve mobility without medication. Experience natural relief today."
-        : "Last van rug- of nekpijn? Onze zachte behandelmethode helpt pijn te verlichten en mobiliteit te verbeteren zonder medicatie. Ervaar vandaag nog natuurlijke verlichting."
+        ? "Suffering from back or neck pain? My gentle treatment method helps relieve pain and improve mobility without medication. Experience natural relief today."
+        : "Last van rug- of nekpijn? Mijn zachte behandelmethode helpt pijn te verlichten en mobiliteit te verbeteren zonder medicatie. Ervaar vandaag nog natuurlijke verlichting."
     },
     hero: {
       title: isEnglish
         ? "Relief from back and neck problems"
         : "Verlichting van rug- en nekklachten",
       description: isEnglish
-        ? "Are you dealing with stress, neck pain, limited movement, headaches, or poor sleep? Our gentle treatment method helps you regain mobility and comfort without medication."
-        : "Heb je last van stress, nekpijn, beperkte beweging, hoofdpijn of slaapproblemen? Onze zachte behandelmethode helpt je om zonder medicatie weer mobiliteit en comfort te krijgen."
+        ? "Are you dealing with stress, neck pain, limited movement, headaches, or poor sleep? My gentle treatment method helps you regain mobility and comfort without medication."
+        : "Heb je last van stress, nekpijn, beperkte beweging, hoofdpijn of slaapproblemen? Mijn zachte behandelmethode helpt je om zonder medicatie weer mobiliteit en comfort te krijgen."
     },
     problems: {
       title: isEnglish ? "Common complaints" : "Veelvoorkomende klachten",
@@ -83,16 +83,16 @@ export function BackNeckProblemsPage() {
       ]
     },
     approach: {
-      title: isEnglish ? "Our approach" : "Onze aanpak",
+      title: isEnglish ? "My approach" : "Mijn aanpak",
       description: isEnglish
-        ? "We use gentle techniques that focus on restoring proper alignment and movement. Through natural movements and light touches, we help your body release tension and find its natural balance again."
-        : "We gebruiken zachte technieken die zich richten op het herstellen van de juiste uitlijning en beweging. Door middel van natuurlijke bewegingen en lichte aanrakingen helpen we je lichaam om spanning los te laten en zijn natuurlijke balans terug te vinden."
+        ? "I use gentle techniques that focus on restoring proper alignment and movement. Through natural movements and light touches, I help your body release tension and find its natural balance again."
+        : "Ik gebruik zachte technieken die zich richten op het herstellen van de juiste uitlijning en beweging. Door middel van natuurlijke bewegingen en lichte aanrakingen help ik je lichaam om spanning los te laten en zijn natuurlijke balans terug te vinden."
     },
     cta: {
       title: isEnglish ? "Start your recovery today" : "Begin vandaag nog met je herstel",
       description: isEnglish
-        ? "Don't let back and neck problems limit your life any longer. Experience our gentle and effective approach."
-        : "Laat rug- en nekklachten je leven niet langer beperken. Ervaar onze zachte en effectieve aanpak."
+        ? "Don't let back and neck problems limit your life any longer. Experience my gentle and effective approach."
+        : "Laat rug- en nekklachten je leven niet langer beperken. Ervaar mijn zachte en effectieve aanpak."
     }
   };
 

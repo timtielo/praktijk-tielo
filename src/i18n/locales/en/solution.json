@@ -1,6 +1,6 @@
 {
-  "title": "Our treatment method",
-  "subtitle": "At Praktijk Tielo, we work with simple self-help exercises that help your body return to its natural posture.",
+  "title": "My treatment method",
+  "subtitle": "At Praktijk Tielo, I work with simple self-help exercises that help your body return to its natural posture.",
   "howItWorks": {
     "title": "How it works",
     "description1": "Natural movements combined with light touches at specific places make it possible to correct the position of hips, spine, sacrum, and coccyx where necessary.",
@@ -8,7 +8,7 @@
   },
   "forWhom": {
     "title": "Who is it suitable for?",
-    "description": "Our treatment is suitable for people with various complaints and can make a big difference for young and old:",
+    "description": "My treatment is suitable for people with various complaints and can make a big difference for young and old:",
     "items": {
       "physicalPain": "Physical pain",
       "migraines": "Migraines",
@@ -19,20 +19,20 @@
       "weightIssues": "Weight issues",
       "fertility": "Fertility issues"
     },
-    "expandedTitle": "Our treatment can also help with:",
+    "expandedTitle": "My treatment can also help with:",
     "expandedItems": {
       "healthy": "People who feel healthy and want to optimize their functionality",
       "children": "Children with growth and behavioral problems",
       "autoimmune": "People with autoimmune diseases such as diabetes, MS, asthma, eczema, chronic fatigue",
       "unexplained": "People with any unexplained condition when \"the doctor says I'm OK, but I just don't feel right\""
     },
-    "disclaimer": "Read our disclaimer"
+    "disclaimer": "Read my disclaimer"
   },
   "treatment": {
     "title": "Treatment process",
     "first": {
       "title": "First treatment (60 min)",
-      "description": "Alignment of the spine, correction of the sacrum and leg length difference."
+      "description": "Straightening the entire body, focused on the spine."
     },
     "second": {
       "title": "Second treatment (60 min)",

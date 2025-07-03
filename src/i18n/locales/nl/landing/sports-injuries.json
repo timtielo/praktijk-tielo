@@ -5,7 +5,7 @@
   },
   "hero": {
     "title": "Blessure? Herstel snel en kom sterker terug",
-    "subtitle": "Onze natuurlijke behandelmethode helpt je snel weer in beweging te komen. Met persoonlijke aandacht en blijvend resultaat.",
+    "subtitle": "Mijn natuurlijke behandelmethode helpt je snel weer in beweging te komen. Met persoonlijke aandacht en blijvend resultaat.",
     "schedule": "Plan een afspraak"
   },
   "benefits": {
@@ -15,11 +15,11 @@
     "personal": "Persoonlijke aanpak"
   },
   "injuries": {
-    "title": "Voor welke sportblessures helpen wij?",
+    "title": "Voor welke sportblessures help ik?",
     "list": [
       {
         "title": "Knieblessures",
-        "description": "Knieklachten kunnen je enorm beperken tijdens het sporten. Wij helpen je weer pijnvrij te bewegen.",
+        "description": "Knieklachten kunnen je enorm beperken tijdens het sporten. Ik help je weer pijnvrij te bewegen.",
         "symptoms": [
           "Overbelasting van de knie",
           "Peesontstekingen",
@@ -29,7 +29,7 @@
       },
       {
         "title": "Enkelblessures",
-        "description": "Een stabiele enkel is essentieel voor elke sport. Onze behandeling richt zich op volledig herstel.",
+        "description": "Een stabiele enkel is essentieel voor elke sport. Mijn behandeling richt zich op volledig herstel.",
         "symptoms": [
           "Verzwikking",
           "Instabiliteit",
@@ -39,7 +39,7 @@
       },
       {
         "title": "Spierblessures",
-        "description": "Spierblessures kunnen hardnekkig zijn. Wij pakken niet alleen de pijn aan, maar ook de oorzaak.",
+        "description": "Spierblessures kunnen hardnekkig zijn. Ik pak niet alleen de pijn aan, maar ook de oorzaak.",
         "symptoms": [
           "Hamstringblessures",
           "Spierscheuren",
@@ -50,10 +50,10 @@
     ]
   },
   "approach": {
-    "title": "Onze aanpak",
+    "title": "Mijn aanpak",
     "quick": {
       "title": "Snel weer in beweging",
-      "description": "Direct merkbaar effect na de eerste behandeling. We richten ons op snelle maar duurzame verbetering."
+      "description": "Direct merkbaar effect na de eerste behandeling. Ik richt me op snelle maar duurzame verbetering."
     },
     "natural": {
       "title": "Natuurlijke behandelmethode",
@@ -61,11 +61,11 @@
     },
     "prevention": {
       "title": "Voorkom herhaling",
-      "description": "We pakken niet alleen je huidige blessure aan, maar leren je ook hoe je nieuwe blessures kunt voorkomen."
+      "description": "Ik pak niet alleen je huidige blessure aan, maar leer je ook hoe je nieuwe blessures kunt voorkomen."
     }
   },
   "testimonials": {
-    "title": "Wat sporters over ons zeggen"
+    "title": "Wat sporters over mij zeggen"
   },
   "cta": {
     "title": "Klaar om weer pijnvrij te sporten?",

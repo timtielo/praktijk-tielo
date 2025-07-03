@@ -1,18 +1,18 @@
 {
   "title": "Why choose Praktijk Tielo?",
-  "subtitle": "We offer a unique approach that focuses on your personal situation",
+  "subtitle": "I offer a unique approach that focuses on your personal situation",
   "cards": {
     "quickResults": {
       "title": "Quick and lasting results",
-      "description": "Our treatment method is designed to not only provide quick relief but also achieve long-lasting results"
+      "description": "My treatment method is designed to not only provide quick relief but also achieve long-lasting results"
     },
     "personalApproach": {
       "title": "Personal approach",
-      "description": "We look at your specific situation and create a treatment plan that suits you"
+      "description": "I take the time to listen to your story and provide personal attention during each treatment"
     },
-    "flexibleHours": {
-      "title": "Flexible opening hours",
-      "description": "Also open in the evenings and on weekends by appointment, so you always find a time that fits"
+    "peopleHelped": {
+      "title": "Proven track record",
+      "description": "I have already helped {{count}} people with various complaints"
     }
   }
 }

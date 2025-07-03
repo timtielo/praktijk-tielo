@@ -109,7 +109,7 @@ export function SportsInjuriesPage() {
               </div>
             </div>
             
-             <div className="w-full lg:w-[40%] aspect-square max-w-lg">
+                      <div className="w-full lg:w-[40%] aspect-square max-w-lg">
               <img
                 src="/assets/photos/sportinjury.jpg"
                 alt="Sportblessure behandeling"
