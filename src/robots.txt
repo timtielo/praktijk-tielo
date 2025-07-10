@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /disclaimer
+Disallow: /privacybeleid
+Disallow: /en/privacy-policy
 Disallow: /bedankt
 Disallow: /en/thank-you
 Disallow: /hersenbloeding-herstel

@@ -57,6 +57,10 @@ function AppInitializer({ children }: { children: React.ReactNode }) {
       setupResponsiveImages();
       preloadCriticalImages();
       
+      // Fix for page refreshing issue - remove any auto-refresh meta tags
+      const metaTags = document.querySelectorAll('meta[http-equiv="refresh"]');
+      metaTags.forEach(tag => tag.remove());
+      
       // Preconnect to external domains
       const preconnectDomains = [
         'https://fonts.googleapis.com',

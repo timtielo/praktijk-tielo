@@ -214,6 +214,10 @@ export function Footer() {
               <Link to={getLocalizedPath('/disclaimer')} className="text-gray-400 hover:text-white transition-colors">
                 {t('footer.disclaimer')}
               </Link>
+              <span className="mx-2">|</span>
+              <Link to={getLocalizedPath('/privacybeleid')} className="text-gray-400 hover:text-white transition-colors">
+                {t('footer.privacy')}
+              </Link>
             </div>
             
             <div className="flex items-center gap-4">

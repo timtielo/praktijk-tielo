@@ -48,6 +48,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/disclaimer" />
   </url>
   <url>
+    <loc>https://www.praktijk-tielo.nl/privacybeleid</loc>
+    <lastmod>2025-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/privacybeleid" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/privacybeleid" />
+  </url>
+  <url>
     <loc>https://www.praktijk-tielo.nl/oplossingen</loc>
     <lastmod>2025-03-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -284,6 +293,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/disclaimer" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/disclaimer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/disclaimer" />
+  </url>
+  <url>
+    <loc>https://www.praktijk-tielo.nl/en/privacy-policy</loc>
+    <lastmod>2025-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.praktijk-tielo.nl/en/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.praktijk-tielo.nl/privacybeleid" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.praktijk-tielo.nl/privacybeleid" />
   </url>
   <url>
     <loc>https://www.praktijk-tielo.nl/en/solutions</loc>

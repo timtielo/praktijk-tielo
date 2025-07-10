@@ -123,7 +123,9 @@ i18n
     
     detection: {
       order: ['path', 'navigator'],
-      lookupFromPathIndex: 0
+      lookupFromPathIndex: 0,
+      caches: ['localStorage'],
+      cookieExpirationDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365)
     },
 
     // Add missing key handling

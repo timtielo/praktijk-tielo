@@ -22,6 +22,7 @@ const routes = [
   { path: '/oplossingen', priority: '0.9', changefreq: 'weekly' },
   { path: '/werveltherapie', priority: '0.9', changefreq: 'weekly' },
   { path: '/gratis-intake', priority: '0.9', changefreq: 'weekly' },
+  { path: '/privacybeleid', priority: '0.7', changefreq: 'monthly' },
   { path: '/bedankt', priority: '0.5', changefreq: 'monthly' },
   
   // Dutch landing pages
@@ -55,6 +56,7 @@ const routes = [
   { path: '/en/solutions', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/vertebral-therapy', priority: '0.9', changefreq: 'weekly' },
   { path: '/en/free-intake', priority: '0.9', changefreq: 'weekly' },
+  { path: '/en/privacy-policy', priority: '0.7', changefreq: 'monthly' },
   { path: '/en/thank-you', priority: '0.5', changefreq: 'monthly' },
   
   // English landing pages
@@ -100,6 +102,8 @@ const generateSitemap = () => {
       '/disclaimer': '/en/disclaimer',
       '/en/disclaimer': '/disclaimer',
       '/oplossingen': '/en/solutions',
+     '/privacybeleid': '/en/privacy-policy',
+     '/en/privacy-policy': '/privacybeleid',
       '/en/solutions': '/oplossingen',
       '/werveltherapie': '/en/vertebral-therapy',
       '/en/vertebral-therapy': '/werveltherapie',

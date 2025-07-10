@@ -62,6 +62,9 @@ export function LanguageSwitcher() {
     const newLanguage = currentLanguage.startsWith('nl') ? 'en' : 'nl';
     i18n.changeLanguage(newLanguage);
     
+    // Store language preference in localStorage to prevent flickering
+    localStorage.setItem('i18nextLng', newLanguage);
+    
     // Get the corresponding route in the new language
     const currentPath = location.pathname;
     

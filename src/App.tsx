@@ -36,6 +36,7 @@ const NoBackCrackingPage = lazy(() => import('./pages/landing/NoBackCrackingPage
 const SleepProblemsPage = lazy(() => import('./pages/landing/SleepProblemsPage').then(module => ({ default: module.SleepProblemsPage })));
 const MigrainePage = lazy(() => import('./pages/landing/MigrainePage').then(module => ({ default: module.MigrainePage })));
 const DepressionPage = lazy(() => import('./pages/landing/DepressionPage').then(module => ({ default: module.DepressionPage })));
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage').then(module => ({ default: module.PrivacyPolicyPage })));
 const BackNeckProblemsPage = lazy(() => import('./pages/landing/BackNeckProblemsPage').then(module => ({ default: module.BackNeckProblemsPage })));
 const BackNeckProblemsPage2 = lazy(() => import('./pages/landing/BackNeckProblemsPage2').then(module => ({ default: module.BackNeckProblemsPage2 })));
 const FreeIntakePage = lazy(() => import('./pages/landing/FreeIntakePage').then(module => ({ default: module.FreeIntakePage })));
@@ -109,6 +110,7 @@ function App() {
             <Route path="/over-ons" element={<AboutUsPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/privacybeleid" element={<PrivacyPolicyPage />} />
             <Route path="/oplossingen" element={<SolutionsPage />} />
             <Route path="/voor-de-behandeling" element={<BeforeTreatmentPage />} />
             <Route path="/na-de-behandeling" element={<AfterTreatmentPage />} />
@@ -148,6 +150,7 @@ function App() {
             <Route path="/en/about-us" element={<AboutUsPage />} />
             <Route path="/en/blog" element={<BlogPage />} />
             <Route path="/en/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/en/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/en/solutions" element={<SolutionsPage />} />
             <Route path="/en/before-treatment" element={<BeforeTreatmentPage />} />
             <Route path="/en/after-treatment" element={<AfterTreatmentPage />} />
