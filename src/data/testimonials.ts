@@ -241,6 +241,24 @@ export const testimonials: Testimonial[] = [
     date: "2025-05-10"
   },
   {
+    id: "claudia-1",
+    name: "Claudia",
+    text: "Een fijne en professionele behandeling met een rustige en prettige werkwijze. Alles werd duidelijk uitgelegd en ik voelde me op mijn gemak. Tim is vriendelijk en betrokken, wat zorgde voor een prettige sfeer. Zeker een positieve ervaring!",
+    textEn: "A pleasant and professional treatment with a calm and pleasant approach. Everything was clearly explained and I felt at ease. Tim is friendly and involved, which created a pleasant atmosphere. Definitely a positive experience!",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocIj-JDbFbVdOqRIM76l8mH0Jwdt2ktxUIb09t5svuVPnr1jMw=s36-c-rp-mo-br100",
+    date: "2025-07-10"
+  },
+  {
+    id: "cerine-1",
+    name: "Cerine",
+    text: "In één woord: Zeer tevreden. Haha oeps, meer woorden dan verwacht. Dat is precies wat ik heb ervaren na de behandelingen: Veel meer dan verwacht! Ik was sceptisch en vroeg me af hoeveel je kon bereiken in 2 behandelingen, maar al heel veel dus. Na de eerste keer had ik al spierpijn en ik merkte dat mijn lichaam automatisch rechterop ging zitten. Zowel tijdens het mediteren als tijdens het werken heeft het mijn houding verbeterd en pijn geminimaliseerd! :)",
+    textEn: "In one word: Very satisfied. Haha oops, more words than expected. That's exactly what I experienced after the treatments: Much more than expected! I was skeptical and wondered how much you could achieve in 2 treatments, but quite a lot actually. After the first time I already had muscle soreness and I noticed that my body automatically sat up straighter. Both during meditation and during work it has improved my posture and minimized pain! :)",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjVAhI-jkxvqj_GfXMZ3ZN0wfyJiVr7F7zicYqt69Orja0mhIqGM=s36-c-rp-mo-ba2-br100",
+    date: "2025-07-21"
+  },
+  {
     id: "cynthia-1",
     name: "Cynthia",
     text: "Tijdje terug 2 behandelingen gehad bij Tim. Goede communicatie vooraf en vragen kunnen stellen. Tim had al snel door waar ik last van had aan de hand van de wervels (wat dus overeen kwam met de lichamelijke/ mentale klachten die ik ervaarde), legde alles goed uit en ging aan de slag met oefeningen/ bewegingen en aanrakingen. Na de 1e behandeling merkte ik al dat ik losser was, minder scheef stond qua heupen, meer ontspannen was en sliep ik beter. De 2e behandeling was wat anders in opzet en ook toen merkte ik dat er veel gebeurde in mijn lijf en spieren (soort spierpijn). Ik heb de behandelingen dan ook als positief ervaren. 😀 Verder is Tim erg professioneel, communicatief en relaxed. Hij kan je ondanks de soms gekke bewegingen/ oefeningen goed op je gemak stellen en bovenal: het helpt!",
